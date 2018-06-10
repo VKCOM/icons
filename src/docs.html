@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="https://vk.com/images/icons/favicons/fav_logo_2x.ico?6">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<style>
+    body, html {
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #edeef0;
+    }
+    .root {
+        padding: 0 40px 30px;
+        max-width: 1080px;
+        margin: auto;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: -3px;
+    }
+
+    .icon {
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        color: #71757A;
+        background-color: rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+        margin: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-name {
+        position: absolute;
+        top: calc(100% + 8px);
+        background-color: #000;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 14px;
+        padding: 4px 6px;
+        z-index: 2;
+        visibility: hidden;
+    }
+
+    .icon:hover .icon-name {
+        visibility: visible;
+    }
+
+    p, pre {
+        font-size: 16px;
+    }
+
+    a {
+        color: #2a5885;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    code {
+        padding: 1px 3px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 2px;
+    }
+
+    pre {
+        padding: 10px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 2px;
+    }
+
+    label {
+        color: #656565;
+        padding: 6px 0;
+        font-size: 13px;
+    }
+
+    [type="text"] {
+        padding: 5px 9px 7px;
+        border-radius: 2px;
+        box-sizing: border-box;
+        height: 30px;
+        color: #000;
+        margin: 0;
+        border: 1px solid #d3d9de;
+        background-color: #fff;
+        outline: none;
+        font-size: 13px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    [type="text"]:focus {
+        border-color: #c9d0d6;
+    }
+</style>
+<body>
+    <div id="root"></div>
+</body>
+</html>

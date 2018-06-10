@@ -1,5 +1,5 @@
 const path = require('path');
-const entries = require('./entries');
+const entries = require('./src/entries');
 
 const config = {
   entry: entries,
@@ -25,6 +25,7 @@ const config = {
     ]
   },
   optimization: {
+    minimize: false,
     splitChunks: {
       minChunks: 2,
       name: 'icons.common',
