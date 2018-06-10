@@ -2,8 +2,9 @@ node_modules
 loaders
 
 webpack.config.js
-npm-debug.log
+entries.js
 
+npm-debug.log
 .idea
 .DS_Store
 .env
