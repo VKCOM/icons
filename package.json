@@ -10,6 +10,9 @@
   },
   "author": "a.stambultsian@corp.vk.com",
   "license": "SEE LICENSE IN LICENSE",
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
