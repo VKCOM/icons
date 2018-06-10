@@ -11,6 +11,12 @@
   "author": "a.stambultsian@corp.vk.com",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "glob": "^7.1.2",
     "path": "^0.12.7",
     "svg-sprite-loader": "^3.8.0",

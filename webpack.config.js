@@ -13,6 +13,8 @@ const config = {
       {
         test: /\.svg$/,
         use: [{
+          loader: 'babel-loader'
+        }, {
           loader: path.resolve('./loaders/svgToReact')
         }, {
           loader: 'svg-sprite-loader'
@@ -23,7 +25,6 @@ const config = {
     ]
   },
   optimization: {
-    minimize: false,
     splitChunks: {
       minChunks: 2,
       name: 'icons.common',
