@@ -37,7 +37,7 @@ class Docs extends React.PureComponent {
         <pre>{example}</pre>
         <h2>Стилизация</h2>
         <p>
-          Иконки можно красить. Для к элементу <code>svg</code> применено правило <code>fill: currentColor</code>.
+          Иконки можно красить. Для этого к элементу <code>svg</code> применено правило <code>fill: currentColor</code>.
           Иными словами, цвет иконки соответствует текущему значению свойства <code>color</code>.
         </p>
         <label>
