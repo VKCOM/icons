@@ -13,8 +13,7 @@ Object.keys(icons).forEach((iconPath) => {
 });
 
 const example =
-`import @vkontakte/icons; 
-import Icon24Cancel from '@vkontakte/icons/dist/24/cancel'; 
+`import Icon24Cancel from '@vkontakte/icons/dist/24/cancel'; 
 
 <Icon24Cancel />`;
 
@@ -31,22 +30,18 @@ class Docs extends React.PureComponent {
     return (
       <div className="root">
         <h1>VK Icons</h1>
-        <p>Набор иконок, представленный в виде React компонентов.</p>
+        <p>Набор SVG иконок, представленный в виде React компонентов.</p>
         <h2>Установка</h2>
         <pre>npm i @vkonktate/icons</pre>
         <h2>Пример</h2>
-        <p>
-          Под капотом используется <a target="_blank" href="https://github.com/kisenka/svg-sprite-loader">svg-sprite-loader</a>, и так как каждая иконка – это отдельный js файл, общий код
-          был вынесен в <code>icons.common.js</code>, который нужно импортировать до импорта самих иконок. Пример:
-        </p>
         <pre>{example}</pre>
         <h2>Стилизация</h2>
         <p>
           Иконки можно красить. Для к элементу <code>svg</code> применено правило <code>fill: currentColor</code>.
-          Иными словами, цвет иконки соответствует текущему свойству <code>color</code>.
+          Иными словами, цвет иконки соответствует текущему значению свойства <code>color</code>.
         </p>
         <label>
-          Текущий currentColor:&nbsp;&nbsp;<input type="text" onChange={this.onCurrentColorChange} value={this.state.currentColor}/>
+          currentColor:&nbsp;&nbsp;<input type="text" onChange={this.onCurrentColorChange} value={this.state.currentColor}/>
         </label>
 
         {Object.keys(Icons).map((size) => (

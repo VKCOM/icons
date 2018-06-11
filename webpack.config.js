@@ -25,17 +25,14 @@ const config = {
     ]
   },
   optimization: {
-    minimize: false,
-    splitChunks: {
-      minChunks: 2,
-      name: 'icons.common',
-      chunks: 'all'
-    }
+    minimize: false
   },
   mode: process.env.NODE_ENV || 'development',
   externals: {
     'react': 'react',
-    'prop-types': 'prop-types'
+    'prop-types': 'prop-types',
+    'svg-baker-runtime/browser-symbol': 'svg-baker-runtime/browser-symbol',
+    'svg-sprite-loader/runtime/browser-sprite.build': 'svg-sprite-loader/runtime/browser-sprite.build'
   }
 };
 
