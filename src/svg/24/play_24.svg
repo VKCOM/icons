@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>play_24</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M7.19958835,4.38224791 L19.2104238,11.3071966 C19.5931891,11.5278831 19.7245798,12.0170775 19.5038933,12.3998427 C19.4335899,12.521779 19.3323601,12.6230088 19.2104238,12.6933122 L7.19958835,19.6182609 C6.81682308,19.8389474 6.32762872,19.7075566 6.10694217,19.3247914 C6.03688026,19.2032739 6,19.0654712 6,18.925203 L6,5.07530574 C6,4.63347794 6.3581722,4.27530574 6.8,4.27530574 C6.94026817,4.27530574 7.0780709,4.312186 7.19958835,4.38224791 Z" id="path-1"></path>
-    </defs>
-    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-452.000000, -607.000000)">
-        <g id="play_24" transform="translate(452.000000, 607.000000)">
-            <rect id="Mask" opacity="0.4" x="0" y="0" width="24" height="24"></rect>
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="play_24">
+            <rect id="Rectangle-737" x="0" y="0" width="24" height="24"></rect>
+            <path d="M8.13340613,5.10548415 L18.6302189,11.3490274 C18.9862176,11.5607768 19.1031549,12.0210275 18.8914055,12.3770263 C18.8275944,12.4843072 18.7380161,12.5739651 18.630792,12.6378716 L8.1339792,18.8940586 C7.77816893,19.1061245 7.31781437,18.9895966 7.10574852,18.6337864 C7.03653786,18.5176627 7,18.3849915 7,18.2498072 L7,5.75007685 C7,5.33586328 7.33578644,5.00007685 7.75,5.00007685 C7.88495801,5.00007685 8.01741554,5.03649252 8.13340613,5.10548415 Z" id="Mask" fill="currentColor"></path>
         </g>
     </g>
 </svg>

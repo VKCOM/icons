@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 69);
+/******/ 	return __webpack_require__(__webpack_require__.s = 78);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 69:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "add_outline_28",
   "use": "add_outline_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"add_outline_28\"><path d=\"M15,13 L22,13 C22.5522847,13 23,13.4477153 23,14 C23,14.5522847 22.5522847,15 22,15 L15,15 L15,22 C15,22.5522847 14.5522847,23 14,23 C13.4477153,23 13,22.5522847 13,22 L13,15 L6,15 C5.44771525,15 5,14.5522847 5,14 C5,13.4477153 5.44771525,13 6,13 L13,13 L13,6 C13,5.44771525 13.4477153,5 14,5 C14.5522847,5 15,5.44771525 15,6 L15,13 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 28 28\" id=\"add_outline_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M15 13h7a1 1 0 0 1 0 2h-7v7a1 1 0 0 1-2 0v-7H6a1 1 0 0 1 0-2h7V6a1 1 0 0 1 2 0v7z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

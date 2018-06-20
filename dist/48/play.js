@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -115,7 +115,8 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 /***/ }),
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -145,7 +146,7 @@ var symbol = new _browserSymbol2.default({
   "id": "play_48",
   "use": "play_48-usage",
   "viewBox": "0 0 48 48",
-  "content": "<symbol viewBox=\"0 0 48 48\" id=\"play_48\"><path d=\"M14.3991767,8.76449581 L38.4208476,22.6143931 C39.1863781,23.0557662 39.4491596,24.0341549 39.0077865,24.7996855 C38.8671797,25.0435581 38.6647202,25.2460176 38.4208476,25.3866244 L14.3991767,39.2365217 C13.6336462,39.6778948 12.6552574,39.4151133 12.2138843,38.6495828 C12.0737605,38.4065479 12,38.1309424 12,37.8504061 L12,10.1506115 C12,9.26695587 12.7163444,8.55061147 13.6,8.55061147 C13.8805363,8.55061147 14.1561418,8.624372 14.3991767,8.76449581 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 48 48\" id=\"play_48\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h48v48H0z\" /><path d=\"M14.4 8.764l24.02 13.85a1.6 1.6 0 0 1 0 2.773L14.4 39.237A1.6 1.6 0 0 1 12 37.85v-27.7a1.6 1.6 0 0 1 2.4-1.386z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

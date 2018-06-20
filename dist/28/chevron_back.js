@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 63);
+/******/ 	return __webpack_require__(__webpack_require__.s = 72);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 63:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "chevron_back_28",
   "use": "chevron_back_28-usage",
   "viewBox": "0 0 20 28",
-  "content": "<symbol viewBox=\"0 0 20 28\" id=\"chevron_back_28\"><path d=\"M4.56066017,12.9393398 L13,4.5 C13.5522847,3.94771525 14.4477153,3.94771525 15,4.5 L15,4.5 C15.5522847,5.05228475 15.5522847,5.94771525 15,6.5 L7.5,14 L15,21.5 C15.5522847,22.0522847 15.5522847,22.9477153 15,23.5 L15,23.5 C14.4477153,24.0522847 13.5522847,24.0522847 13,23.5 L4.56066017,15.0606602 C3.97487373,14.4748737 3.97487373,13.5251263 4.56066017,12.9393398 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 20 28\" id=\"chevron_back_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h20v28H0z\" /><path d=\"M4.56 12.94L13 4.5a1.414 1.414 0 0 1 2 2L7.5 14l7.5 7.5a1.414 1.414 0 0 1-2 2l-8.44-8.44a1.5 1.5 0 0 1 0-2.12z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

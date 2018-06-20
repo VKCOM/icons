@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 195);
+/******/ 	return __webpack_require__(__webpack_require__.s = 217);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 195:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "user_add_16",
   "use": "user_add_16-usage",
   "viewBox": "0 0 16 16",
-  "content": "<symbol viewBox=\"0 0 16 16\" id=\"user_add_16\"><path d=\"M12.5,5.5 C12.5,4.11875 11.38125,3 10,3 C8.61875,3 7.5,4.11875 7.5,5.5 C7.5,6.88125 8.61875,8 10,8 C11.38125,8 12.5,6.88125 12.5,5.5 Z M3.5,7 L4.75,7 C5.16421356,7 5.5,7.33578644 5.5,7.75 C5.5,8.16421356 5.16421356,8.5 4.75,8.5 L3.5,8.5 L3.5,9.75 C3.5,10.1642136 3.16421356,10.5 2.75,10.5 C2.33578644,10.5 2,10.1642136 2,9.75 L2,8.5 L0.75,8.5 C0.335786438,8.5 5.07265313e-17,8.16421356 0,7.75 C-5.07265313e-17,7.33578644 0.335786438,7 0.75,7 L2,7 L2,5.75 C2,5.33578644 2.33578644,5 2.75,5 C3.16421356,5 3.5,5.33578644 3.5,5.75 L3.5,7 Z M5,11.7692308 C5,9.61538462 8.19732666,9 10,9 C11.8026733,9 15,9.61538462 15,11.7692308 L15,12.20404 C15,12.6436366 14.6436366,13 14.20404,13 L5.79596,13 C5.35636343,13 5,12.6436366 5,12.20404 L5,11.7692308 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 16 16\" id=\"user_add_16\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h16v16H0z\" /><path d=\"M12.5 5.5a2.5 2.5 0 1 0-4.999-.001A2.5 2.5 0 0 0 12.5 5.5zM3.5 7h1.25a.75.75 0 0 1 0 1.5H3.5v1.25a.75.75 0 1 1-1.5 0V8.5H.75a.75.75 0 0 1 0-1.5H2V5.75a.75.75 0 0 1 1.5 0V7zM5 11.77C5 9.614 8.197 9 10 9s5 .615 5 2.77v.434c0 .44-.356.796-.796.796H5.796A.796.796 0 0 1 5 12.204v-.435z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

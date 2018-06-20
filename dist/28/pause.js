@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 47);
+/******/ 	return __webpack_require__(__webpack_require__.s = 49);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 47:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "pause_28",
   "use": "pause_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"pause_28\"><path d=\"M7.29999995,5 L10.7,5 C11.4179702,5 12,5.5820298 12,6.29999995 L12,21.7 C12,22.4179702 11.4179702,23 10.7,23 L7.29999995,23 C6.5820298,23 6,22.4179702 6,21.7 L6,6.29999995 C6,5.5820298 6.5820298,5 7.29999995,5 Z M16.3,5 L19.7,5 C20.4179702,5 21,5.5820298 21,6.29999995 L21,21.7 C21,22.4179702 20.4179702,23 19.7,23 L16.3,23 C15.5820298,23 15,22.4179702 15,21.7 L15,6.29999995 C15,5.5820298 15.5820298,5 16.3,5 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 28 28\" id=\"pause_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M7.3 5h3.4A1.3 1.3 0 0 1 12 6.3v15.4a1.3 1.3 0 0 1-1.3 1.3H7.3A1.3 1.3 0 0 1 6 21.7V6.3A1.3 1.3 0 0 1 7.3 5zm9 0h3.4A1.3 1.3 0 0 1 21 6.3v15.4a1.3 1.3 0 0 1-1.3 1.3h-3.4a1.3 1.3 0 0 1-1.3-1.3V6.3A1.3 1.3 0 0 1 16.3 5z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

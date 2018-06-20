@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 190);
+/******/ 	return __webpack_require__(__webpack_require__.s = 212);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 190:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "add_outline_24",
   "use": "add_outline_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"add_outline_24\"><path d=\"M12.5,11.0000409 L19.2500409,11.0000409 C19.6642319,11.0000409 20,11.335809 20,11.75 C20,12.164191 19.6642319,12.4999591 19.2500409,12.4999591 L12.5,12.4999591 L12.5,19.2501196 C12.5,19.6642911 12.1642476,20.0000435 11.7500761,20.0000435 C11.7500616,20.0000435 11.7500471,20.0000435 11.7500326,20.0000435 C11.33583,20.0000195 11.0000652,19.6642352 11.0000652,19.2500326 L11.0000652,12.4999591 L3.74995907,12.4999591 C3.33576811,12.4999591 3,12.164191 3,11.75 C3,11.335809 3.33576811,11.0000409 3.74995907,11.0000409 L11.0000652,11.0000409 L11.0000652,3.74996739 C11.0000652,3.33577184 11.3358371,3 11.7500326,3 C12.1642282,3 12.5,3.33577184 12.5,3.74996739 L12.5,11.0000409 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"add_outline_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12.9 11.1h7.2a.9.9 0 1 1 0 1.8h-7.2v7.2a.9.9 0 0 1-1.8 0v-7.2H3.9a.9.9 0 1 1 0-1.8h7.2V3.9a.9.9 0 0 1 1.8 0v7.2z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

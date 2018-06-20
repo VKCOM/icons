@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 137);
+/******/ 	return __webpack_require__(__webpack_require__.s = 152);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 137:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "market_outline_24",
   "use": "market_outline_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"market_outline_24\"><path d=\"M12 3.5A2.5 2.5 0 0 0 9.5 6h5A2.5 2.5 0 0 0 12 3.5zM16.5 6h.35a3.25 3.25 0 0 1 3.239 2.98l.701 8.417A4.25 4.25 0 0 1 16.555 22h-9.11a4.25 4.25 0 0 1-4.235-4.603l.701-8.417A3.25 3.25 0 0 1 7.151 6H7.5a4.5 4.5 0 0 1 9 0zM7.15 8a1.25 1.25 0 0 0-1.246 1.146l-.7 8.417A2.25 2.25 0 0 0 7.444 20h9.11a2.25 2.25 0 0 0 2.242-2.437l-.701-8.417A1.25 1.25 0 0 0 16.85 8h-9.7z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"market_outline_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12 3.5A2.5 2.5 0 0 0 9.5 6h5A2.5 2.5 0 0 0 12 3.5zM16.5 6h.35a3.25 3.25 0 0 1 3.239 2.98l.701 8.417A4.25 4.25 0 0 1 16.555 22h-9.11a4.25 4.25 0 0 1-4.235-4.603l.701-8.417A3.25 3.25 0 0 1 7.151 6H7.5a4.5 4.5 0 0 1 9 0zM7.15 8a1.25 1.25 0 0 0-1.246 1.146l-.7 8.417A2.25 2.25 0 0 0 7.444 20h9.11a2.25 2.25 0 0 0 2.242-2.437l-.701-8.417A1.25 1.25 0 0 0 16.85 8h-9.7z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

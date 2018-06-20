@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 191);
+/******/ 	return __webpack_require__(__webpack_require__.s = 213);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 191:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "add_24",
   "use": "add_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"add_24\"><path d=\"M13.000006,11 L19.5,11 C20.0522847,11 20.5,11.4477153 20.5,12 C20.5,12.5522847 20.0522847,13 19.5,13 L13.000006,13 L13.000006,19.500084 C13.000006,20.0523464 12.5523089,20.5000435 12.0000465,20.5000435 C12.000032,20.5000435 12.0000175,20.5000435 12.000003,20.5000435 C11.4477096,20.5000195 11,20.0522904 11,19.499997 L11,13 L4.5,13 C3.94771525,13 3.5,12.5522847 3.5,12 C3.5,11.4477153 3.94771525,11 4.5,11 L11,11 L11,4.50000301 C11,3.9477166 11.4477166,3.5 12.000003,3.5 C12.5522894,3.5 13.000006,3.9477166 13.000006,4.50000301 L13.000006,11 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"add_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M13 11h6.5a1 1 0 0 1 0 2H13v6.5a1 1 0 0 1-2 0V13H4.5a1 1 0 0 1 0-2H11V4.5a1 1 0 0 1 2 0V11z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

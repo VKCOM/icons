@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 170);
+/******/ 	return __webpack_require__(__webpack_require__.s = 192);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 170:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "download_24",
   "use": "download_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"download_24\"><path d=\"M9,3 L15,3 L15,9 L18.0343146,9 C18.2552285,9 18.4343146,9.1790861 18.4343146,9.4 C18.4343146,9.5060866 18.3921718,9.60782816 18.3171573,9.68284271 L12.2828427,15.7171573 C12.126633,15.873367 11.873367,15.873367 11.7171573,15.7171573 L5.68284271,9.68284271 C5.526633,9.526633 5.526633,9.273367 5.68284271,9.11715729 C5.75785726,9.04214274 5.85959883,9 5.96568542,9 L9,9 L9,3 Z M6,18 L18,18 C18.5522847,18 19,18.4477153 19,19 L19,19 C19,19.5522847 18.5522847,20 18,20 L6,20 C5.44771525,20 5,19.5522847 5,19 L5,19 C5,18.4477153 5.44771525,18 6,18 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"download_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M9 3h6v6h3.034a.4.4 0 0 1 .283.683l-6.034 6.034a.4.4 0 0 1-.566 0L5.683 9.683A.4.4 0 0 1 5.966 9H9V3zM6 18h12a1 1 0 0 1 0 2H6a1 1 0 0 1 0-2z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

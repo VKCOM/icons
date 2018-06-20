@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 176);
+/******/ 	return __webpack_require__(__webpack_require__.s = 198);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 176:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "delete_24",
   "use": "delete_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"delete_24\"><path d=\"M8.5,21 L15.5,21 C16.8807119,21 18,19.8807119 18,18.5 L18,7 L6,7 L6,18.5 C6,19.8807119 7.11928813,21 8.5,21 Z M8.76756439,4 C9.11337381,3.40219863 9.75971764,3 10.5,3 L13.5,3 C14.2402824,3 14.8866262,3.40219863 15.2324356,4 L18,4 C18.5522847,4 19,4.44771525 19,5 L19,5.75 C19,5.88807119 18.8880712,6 18.75,6 L5.25,6 C5.11192881,6 5,5.88807119 5,5.75 L5,5 C5,4.44771525 5.44771525,4 6,4 L8.76756439,4 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"delete_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M8.5 21h7a2.5 2.5 0 0 0 2.5-2.5V7H6v11.5A2.5 2.5 0 0 0 8.5 21zm.268-17A2 2 0 0 1 10.5 3h3a2 2 0 0 1 1.732 1H18a1 1 0 0 1 1 1v.75a.25.25 0 0 1-.25.25H5.25A.25.25 0 0 1 5 5.75V5a1 1 0 0 1 1-1h2.768z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

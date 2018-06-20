@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 206);
+/******/ 	return __webpack_require__(__webpack_require__.s = 229);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 206:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "more_horizontal_16",
   "use": "more_horizontal_16-usage",
   "viewBox": "0 0 16 16",
-  "content": "<symbol viewBox=\"0 0 16 16\" id=\"more_horizontal_16\"><path d=\"M12.5,9 C11.6715729,9 11,8.32842712 11,7.5 C11,6.67157288 11.6715729,6 12.5,6 C13.3284271,6 14,6.67157288 14,7.5 C14,8.32842712 13.3284271,9 12.5,9 Z M7.5,9 C6.67157288,9 6,8.32842712 6,7.5 C6,6.67157288 6.67157288,6 7.5,6 C8.32842712,6 9,6.67157288 9,7.5 C9,8.32842712 8.32842712,9 7.5,9 Z M2.5,9 C1.67157288,9 1,8.32842712 1,7.5 C1,6.67157288 1.67157288,6 2.5,6 C3.32842712,6 4,6.67157288 4,7.5 C4,8.32842712 3.32842712,9 2.5,9 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 16 16\" id=\"more_horizontal_16\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h16v16H0z\" /><path d=\"M13 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

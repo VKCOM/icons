@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 88);
+/******/ 	return __webpack_require__(__webpack_require__.s = 98);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 88:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "upload_24",
   "use": "upload_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"upload_24\"><path d=\"M9,16 L15,16 L15,10 L18.0343146,10 C18.2552285,10 18.4343146,9.8209139 18.4343146,9.6 C18.4343146,9.4939134 18.3921718,9.39217184 18.3171573,9.31715729 L12.2828427,3.28284271 C12.126633,3.126633 11.873367,3.126633 11.7171573,3.28284271 L5.68284271,9.31715729 C5.526633,9.473367 5.526633,9.726633 5.68284271,9.88284271 C5.75785726,9.95785726 5.85959883,10 5.96568542,10 L9,10 L9,16 Z M6,18 L18,18 C18.5522847,18 19,18.4477153 19,19 L19,19 C19,19.5522847 18.5522847,20 18,20 L6,20 C5.44771525,20 5,19.5522847 5,19 L5,19 C5,18.4477153 5.44771525,18 6,18 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"upload_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M9 16h6v-6h3.034a.4.4 0 0 0 .283-.683l-6.034-6.034a.4.4 0 0 0-.566 0L5.683 9.317a.4.4 0 0 0 .283.683H9v6zm-3 2h12a1 1 0 0 1 0 2H6a1 1 0 0 1 0-2z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

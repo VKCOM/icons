@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 145);
+/******/ 	return __webpack_require__(__webpack_require__.s = 160);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 145:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "logo_facebook_24",
   "use": "logo_facebook_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"logo_facebook_24\"><path d=\"M3,5 L3,19 C3,20.1045695 3.8954305,21 5,21 L10.997,21 L10.997,14.9925 L8.995,14.9925 L8.995,11.991 L10.9975,11.991 L10.9975,9.959 C10.9975,7.763 12.4665356,6.00836182 15.0363598,6.00836182 C15.9743598,6.00836182 17.2635,6.137 17.4985,6.1685 L17.3998015,8.96400023 L15.7698005,8.92498779 C14.7800706,8.96400045 13.9870005,9.72391895 13.9870005,10.4669189 L13.987,11.991 L16.993,11.991 L16.662,14.9925 L13.987,14.9925 L13.987,21 L19,21 C20.1045695,21 21,20.1045695 21,19 L21,5 C21,3.8954305 20.1045695,3 19,3 L5,3 C3.8954305,3 3,3.8954305 3,5 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"logo_facebook_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M3 5v14a2 2 0 0 0 2 2h5.997v-6.008H8.995v-3.001h2.003V9.959c0-2.196 1.469-3.95 4.038-3.95.938 0 2.228.128 2.463.16l-.1 2.795-1.63-.039c-.989.039-1.782.799-1.782 1.542v1.524h3.006l-.331 3.002h-2.675V21H19a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

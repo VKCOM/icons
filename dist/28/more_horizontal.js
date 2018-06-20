@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 51);
+/******/ 	return __webpack_require__(__webpack_require__.s = 54);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 51:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "more_horizontal_28",
   "use": "more_horizontal_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"more_horizontal_28\"><path d=\"M6.75,16.5 C5.50735931,16.5 4.5,15.4926407 4.5,14.25 C4.5,13.0073593 5.50735931,12 6.75,12 C7.99264069,12 9,13.0073593 9,14.25 C9,15.4926407 7.99264069,16.5 6.75,16.5 Z M13.75,16.5 C12.5073593,16.5 11.5,15.4926407 11.5,14.25 C11.5,13.0073593 12.5073593,12 13.75,12 C14.9926407,12 16,13.0073593 16,14.25 C16,15.4926407 14.9926407,16.5 13.75,16.5 Z M20.75,16.5 C19.5073593,16.5 18.5,15.4926407 18.5,14.25 C18.5,13.0073593 19.5073593,12 20.75,12 C21.9926407,12 23,13.0073593 23,14.25 C23,15.4926407 21.9926407,16.5 20.75,16.5 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 28 28\" id=\"more_horizontal_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M6.75 16.5a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5zm7 0a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5zm7 0a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

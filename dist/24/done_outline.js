@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 171);
+/******/ 	return __webpack_require__(__webpack_require__.s = 193);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 171:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "done_outline_24",
   "use": "done_outline_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"done_outline_24\"><path d=\"M4.53033041,11.9696702 C4.23743737,11.6767768 3.76256364,11.6767766 3.46967024,11.9696696 C3.17677684,12.2625626 3.17677655,12.7374364 3.46966959,13.0303298 L8.46966349,18.0303298 C8.7625566,18.3232232 9.23743047,18.3232234 9.53032384,18.0303302 L21.0303299,6.53033023 C21.3232232,6.23743709 21.3232234,5.76256335 21.0303302,5.46967005 C20.7374371,5.17677676 20.2625634,5.17677663 19.9696701,5.46966977 L8.99999436,16.4393396 L4.53033041,11.9696702 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"done_outline_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M19.864 5.364a.9.9 0 1 1 1.272 1.272l-11.5 11.5a.9.9 0 0 1-1.272 0l-5-5a.9.9 0 1 1 1.272-1.272L9 16.227 19.864 5.364z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>done_outline_24</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M4.53033041,11.9696702 C4.23743737,11.6767768 3.76256364,11.6767766 3.46967024,11.9696696 C3.17677684,12.2625626 3.17677655,12.7374364 3.46966959,13.0303298 L8.46966349,18.0303298 C8.7625566,18.3232232 9.23743047,18.3232234 9.53032384,18.0303302 L21.0303299,6.53033023 C21.3232232,6.23743709 21.3232234,5.76256335 21.0303302,5.46967005 C20.7374371,5.17677676 20.2625634,5.17677663 19.9696701,5.46966977 L8.99999436,16.4393396 L4.53033041,11.9696702 Z" id="path-1"></path>
-    </defs>
-    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-788.000000, -751.000000)">
-        <g id="done_outline_24" transform="translate(788.000000, 751.000000)">
-            <rect id="Mask" opacity="0.100000001" x="0" y="0" width="24" height="24"></rect>
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="done_outline_24">
+            <rect id="Bounds" x="0" y="0" width="24" height="24"></rect>
+            <path d="M19.8636041,5.36360373 C20.215076,5.01213196 20.7849245,5.01213211 21.1363963,5.36360407 C21.487868,5.71507602 21.4878679,6.2849245 21.1363959,6.63639627 L9.63638983,18.1363963 C9.28491779,18.4878681 8.71506914,18.4878679 8.3635974,18.1363957 L3.36360351,13.1363957 C3.01213186,12.7849236 3.01213221,12.2150752 3.36360429,11.8636035 C3.71507636,11.5121319 4.28492484,11.5121322 4.63639649,11.8636043 L8.99999445,16.2272076 L19.8636041,5.36360373 Z" id="Mask" fill="currentColor" fill-rule="nonzero"></path>
         </g>
     </g>
 </svg>

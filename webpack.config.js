@@ -19,7 +19,7 @@ const config = {
         }, {
           loader: 'svg-sprite-loader'
         }, {
-          loader: path.resolve('./loaders/optimizeSvg')
+          loader: 'svgo-loader'
         }]
       }
     ]

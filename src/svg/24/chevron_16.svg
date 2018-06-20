@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron_16</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron_16">
+            <rect id="Bounds" x="0" y="0" width="12" height="16"></rect>
+            <path d="M7.2272139,8 L3.86361,4.6363961 C3.51213814,4.28492424 3.51213814,3.71507576 3.86361,3.3636039 C4.21508186,3.01213203 4.78493034,3.01213203 5.13640221,3.3636039 L9.13640221,7.3636039 C9.48787407,7.71507576 9.48787407,8.28492424 9.13640221,8.6363961 L5.13640221,12.6363961 C4.78493034,12.987868 4.21508186,12.987868 3.86361,12.6363961 C3.51213814,12.2849242 3.51213814,11.7150758 3.86361,11.3636039 L7.2272139,8 Z" id="Mask" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

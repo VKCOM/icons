@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 19:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "place_32",
   "use": "place_32-usage",
   "viewBox": "0 0 32 32",
-  "content": "<symbol viewBox=\"0 0 32 32\" id=\"place_32\"><path d=\"M6,12 C6,16.0237426 8.93827679,21.8230511 14.8148304,29.3979255 L14.8148258,29.3979291 C15.322624,30.0524807 16.2648947,30.1714478 16.9194463,29.6636496 C17.0188083,29.586565 17.1080822,29.4972911 17.1851668,29.3979291 C23.0617223,21.823053 26,16.0237433 26,12 C26,6.47142857 21.5285714,2 16,2 C10.4714286,2 6,6.47142857 6,12 Z M12.5014212,12.0014823 C12.5014212,10.0694823 14.0694212,8.50148228 16.0014212,8.50148228 C17.9334212,8.50148228 19.5014212,10.0694823 19.5014212,12.0014823 C19.5014212,13.9334823 17.9334212,15.5014823 16.0014212,15.5014823 C14.0694212,15.5014823 12.5014212,13.9334823 12.5014212,12.0014823 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 32 32\" id=\"place_32\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h32v32H0z\" /><path d=\"M6 12c0 4.024 2.938 9.823 8.815 17.398a1.5 1.5 0 0 0 2.37 0C23.062 21.823 26 16.024 26 12c0-5.529-4.471-10-10-10S6 6.471 6 12zm6.501.001c0-1.932 1.568-3.5 3.5-3.5s3.5 1.568 3.5 3.5-1.568 3.5-3.5 3.5a3.501 3.501 0 0 1-3.5-3.5z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

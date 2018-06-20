@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 186);
+/******/ 	return __webpack_require__(__webpack_require__.s = 208);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 186:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 208:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "attachments_24",
   "use": "attachments_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"attachments_24\"><path d=\"M20,17.9999774 L20,6.76375 C20,5.23737302 18.762627,4 17.23625,4 L6.00002261,4 C6.00540939,2.89450829 6.90324289,2 8.01,2 L18.4825,2 C20.4251616,2 22,3.57483839 22,5.5175 L22,15.99 C22,17.0967571 21.1054917,17.9945906 20,17.9999756 Z M15.99,6 L4.01,6 C2.89990765,6 2,6.89990765 2,8.01 L2,19.99 C2,21.1000923 2.89990765,22 4.01,22 L15.99,22 C17.1000923,22 18,21.1000923 18,19.99 L18,8.01 C18,6.89990765 17.1000923,6 15.99,6 Z M7,15.25 L9.14285714,17.7583333 L12.1428571,14 L15.4647859,18.3062039 C15.6100819,18.4945507 15.5751825,18.7650216 15.3868357,18.9103176 C15.311462,18.9684631 15.218949,19 15.123754,19 L4.89615485,19 C4.65827791,19 4.46544056,18.8071626 4.46544056,18.5692857 C4.46544056,18.4714828 4.49872648,18.3765919 4.55982349,18.3002206 L7,15.25 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"attachments_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M20 18V6.764A2.764 2.764 0 0 0 17.236 4H6a2.01 2.01 0 0 1 2.01-2h10.473A3.518 3.518 0 0 1 22 5.518V15.99A2.01 2.01 0 0 1 20 18zM15.99 6H4.01C2.9 6 2 6.9 2 8.01v11.98C2 21.1 2.9 22 4.01 22h11.98c1.11 0 2.01-.9 2.01-2.01V8.01C18 6.9 17.1 6 15.99 6zM7 15.25l2.143 2.508 3-3.758 3.322 4.306a.43.43 0 0 1-.341.694H4.896a.43.43 0 0 1-.336-.7L7 15.25z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

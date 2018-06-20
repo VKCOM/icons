@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 181);
+/******/ 	return __webpack_require__(__webpack_require__.s = 203);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 181:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "chevron_24",
   "use": "chevron_24-usage",
   "viewBox": "0 0 16 24",
-  "content": "<symbol viewBox=\"0 0 16 24\" id=\"chevron_24\"><path d=\"M4.70577316,7.70577316 C4.31598541,7.31598541 4.31811142,6.68188858 4.70607704,6.29392296 L4.79392296,6.20607704 C5.18387854,5.81612146 5.81350851,5.81350851 6.20798751,6.20798751 L11.2920125,11.2920125 C11.6830232,11.6830232 11.6864915,12.3135085 11.2920125,12.7079875 L6.20798751,17.7920125 C5.81697681,18.1830232 5.18188858,18.1818886 4.79392296,17.793923 L4.70607704,17.706077 C4.31612146,17.3161215 4.31277239,16.6872276 4.70577316,16.2942268 L9,12 L4.70577316,7.70577316 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 16 24\" id=\"chevron_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h16v24H0z\" /><path d=\"M4.706 7.706a1 1 0 0 1 0-1.412l.088-.088a.997.997 0 0 1 1.414.002l5.084 5.084a.998.998 0 0 1 0 1.416l-5.084 5.084a1.002 1.002 0 0 1-1.414.002l-.088-.088a.995.995 0 0 1 0-1.412L9 12 4.706 7.706z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

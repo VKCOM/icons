@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 42:
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "search_outline_28",
   "use": "search_outline_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"search_outline_28\"><path d=\"M18.9633363,17.5491228 L23.2071068,21.7928932 C23.5976311,22.1834175 23.5976311,22.8165825 23.2071068,23.2071068 C22.8165825,23.5976311 22.1834175,23.5976311 21.7928932,23.2071068 L17.5491228,18.9633363 C16.2873239,19.9273642 14.7105351,20.5 13,20.5 C8.85786438,20.5 5.5,17.1421356 5.5,13 C5.5,8.85786438 8.85786438,5.5 13,5.5 C17.1421356,5.5 20.5,8.85786438 20.5,13 C20.5,14.7105351 19.9273642,16.2873239 18.9633363,17.5491228 Z M13,18.5 C16.0375661,18.5 18.5,16.0375661 18.5,13 C18.5,9.96243388 16.0375661,7.5 13,7.5 C9.96243388,7.5 7.5,9.96243388 7.5,13 C7.5,16.0375661 9.96243388,18.5 13,18.5 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 28 28\" id=\"search_outline_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M18.963 17.55l4.244 4.243a1 1 0 0 1-1.414 1.414l-4.244-4.244a7.5 7.5 0 1 1 1.414-1.414zM13 18.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

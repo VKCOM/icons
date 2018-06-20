@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 115);
+/******/ 	return __webpack_require__(__webpack_require__.s = 130);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 115:
+/***/ 130:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "poll_24",
   "use": "poll_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"poll_24\"><path d=\"M6,8 C7.1045695,8 8,8.8954305 8,10 L8,18 C8,19.1045695 7.1045695,20 6,20 C4.8954305,20 4,19.1045695 4,18 L4,10 C4,8.8954305 4.8954305,8 6,8 Z M18,11 C19.1045695,11 20,11.8954305 20,13 L20,18 C20,19.1045695 19.1045695,20 18,20 C16.8954305,20 16,19.1045695 16,18 L16,13 C16,11.8954305 16.8954305,11 18,11 Z M12,2 C13.1045695,2 14,2.8954305 14,4 L14,18 C14,19.1045695 13.1045695,20 12,20 C10.8954305,20 10,19.1045695 10,18 L10,4 C10,2.8954305 10.8954305,2 12,2 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"poll_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M6 8a2 2 0 0 1 2 2v8a2 2 0 1 1-4 0v-8a2 2 0 0 1 2-2zm12 3a2 2 0 0 1 2 2v5a2 2 0 1 1-4 0v-5a2 2 0 0 1 2-2zm-6-9a2 2 0 0 1 2 2v14a2 2 0 1 1-4 0V4a2 2 0 0 1 2-2z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

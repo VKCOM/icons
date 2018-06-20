@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 152);
+/******/ 	return __webpack_require__(__webpack_require__.s = 167);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 152:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "link_24",
   "use": "link_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"link_24\"><path d=\"M16.5438596,9.19289385 L7.09644692,18.6403066 C6.61685569,19.1198978 5.83928466,19.1198978 5.35969343,18.6403066 C4.88010219,18.1607153 4.88010219,17.3831443 5.35969343,16.9035531 L14.8071062,7.45614035 L8.92982456,7.45614035 C8.25158013,7.45614035 7.70175439,6.90631461 7.70175439,6.22807018 C7.70175439,5.54982575 8.25158013,5 8.92982456,5 L17.7719298,5 C18.4501743,5 19,5.54982575 19,6.22807018 L19,15.0701754 C19,15.7484199 18.4501743,16.2982456 17.7719298,16.2982456 C17.0936854,16.2982456 16.5438596,15.7484199 16.5438596,15.0701754 L16.5438596,9.19289385 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"link_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M16.544 9.193L7.096 18.64a1.228 1.228 0 0 1-1.736-1.736l9.447-9.448H8.93A1.228 1.228 0 1 1 8.93 5h8.842C18.45 5 19 5.55 19 6.228v8.842a1.228 1.228 0 1 1-2.456 0V9.193z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

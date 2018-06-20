@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 105);
+/******/ 	return __webpack_require__(__webpack_require__.s = 117);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 105:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "repost_24",
   "use": "repost_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"repost_24\"><path d=\"M15,10 L8.5,10 C7.67157288,10 7,10.6715729 7,11.5 L7,15.5 C7,16.3284271 7.67157288,17 8.5,17 L13.5,17 C14.3284271,17 15,17.6715729 15,18.5 C15,19.3284271 14.3284271,20 13.5,20 L8,20 C5.790861,20 4,18.209139 4,16 L4,11 C4,8.790861 5.790861,7 8,7 L15,7 L15,4.65 C15,4.26340068 15.3134007,3.95 15.7,3.95 C15.8514591,3.95 15.9988327,3.99912451 16.12,4.09 L21.2533333,7.94 C21.5626128,8.17195959 21.6252929,8.61072054 21.3933333,8.92 C21.3535354,8.97306397 21.3063973,9.02020203 21.2533333,9.06 L16.12,12.91 C15.8107205,13.1419596 15.3719596,13.0792795 15.14,12.77 C15.0491245,12.6488327 15,12.5014591 15,12.35 L15,10 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"repost_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M15 10H8.5A1.5 1.5 0 0 0 7 11.5v4A1.5 1.5 0 0 0 8.5 17h5a1.5 1.5 0 0 1 0 3H8a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4h7V4.65a.7.7 0 0 1 1.12-.56l5.133 3.85a.7.7 0 0 1 0 1.12l-5.133 3.85a.7.7 0 0 1-1.12-.56V10z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 104);
+/******/ 	return __webpack_require__(__webpack_require__.s = 116);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 104:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "search_24",
   "use": "search_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"search_24\"><path d=\"M16.53492,15.1207064 L20.7071068,19.2928932 C21.0976311,19.6834175 21.0976311,20.3165825 20.7071068,20.7071068 C20.3165825,21.0976311 19.6834175,21.0976311 19.2928932,20.7071068 L15.1207064,16.53492 C13.9054708,17.4545098 12.3914384,18 10.75,18 C6.74593556,18 3.5,14.7540644 3.5,10.75 C3.5,6.74593556 6.74593556,3.5 10.75,3.5 C14.7540644,3.5 18,6.74593556 18,10.75 C18,12.3914384 17.4545098,13.9054708 16.53492,15.1207064 Z M10.75,16 C13.6494949,16 16,13.6494949 16,10.75 C16,7.85050506 13.6494949,5.5 10.75,5.5 C7.85050506,5.5 5.5,7.85050506 5.5,10.75 C5.5,13.6494949 7.85050506,16 10.75,16 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"search_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M16.535 15.12l4.172 4.173a1 1 0 0 1-1.414 1.414l-4.172-4.172a7.25 7.25 0 1 1 1.414-1.414zM10.75 16a5.25 5.25 0 1 0 0-10.5 5.25 5.25 0 0 0 0 10.5z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

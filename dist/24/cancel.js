@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 182);
+/******/ 	return __webpack_require__(__webpack_require__.s = 204);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 182:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "cancel_24",
   "use": "cancel_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"cancel_24\"><path d=\"M18.3,5.7 L18.3,5.7 C17.9134007,5.31340068 17.2865993,5.31340068 16.9,5.7 L12,10.6 L7.1,5.7 C6.71340068,5.31340068 6.08659932,5.31340068 5.7,5.7 L5.7,5.7 C5.31340068,6.08659932 5.31340068,6.71340068 5.7,7.1 L10.6,12 L5.7,16.9 C5.31340068,17.2865993 5.31340068,17.9134007 5.7,18.3 L5.7,18.3 C6.08659932,18.6865993 6.71340068,18.6865993 7.1,18.3 L12,13.4 L16.9,18.3 C17.2865993,18.6865993 17.9134007,18.6865993 18.3,18.3 L18.3,18.3 C18.6865993,17.9134007 18.6865993,17.2865993 18.3,16.9 L13.4,12 L18.3,7.1 C18.6865993,6.71340068 18.6865993,6.08659932 18.3,5.7 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"cancel_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M18.3 5.7a.99.99 0 0 0-1.4 0L12 10.6 7.1 5.7a.99.99 0 0 0-1.4 1.4l4.9 4.9-4.9 4.9a.99.99 0 0 0 1.4 1.4l4.9-4.9 4.9 4.9a.99.99 0 0 0 1.4-1.4L13.4 12l4.9-4.9a.99.99 0 0 0 0-1.4z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -161,13 +168,6 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

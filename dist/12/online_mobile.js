@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 222);
+/******/ 	return __webpack_require__(__webpack_require__.s = 247);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 222:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "online_mobile_12",
   "use": "online_mobile_12-usage",
   "viewBox": "0 0 8 12",
-  "content": "<symbol viewBox=\"0 0 8 12\" id=\"online_mobile_12\"><path d=\"M2.01,0 L5.99,0 C7.10009235,-2.03920656e-16 8,0.899907653 8,2.01 L8,9.99 C8,11.1000923 7.10009235,12 5.99,12 L2.01,12 C0.899907653,12 1.12190717e-15,11.1000923 0,9.99 L0,2.01 C-1.35947104e-16,0.899907653 0.899907653,2.03920656e-16 2.01,0 Z M2.0025,3 C1.72497691,3 1.5,3.22497691 1.5,3.5025 L1.5,8.4975 C1.5,8.77502309 1.72497691,9 2.0025,9 L5.9975,9 C6.27502309,9 6.5,8.77502309 6.5,8.4975 L6.5,3.5025 C6.5,3.22497691 6.27502309,3 5.9975,3 L2.0025,3 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 8 12\" id=\"online_mobile_12\"><path d=\"M2.01 0h3.98C7.1 0 8 .9 8 2.01v7.98C8 11.1 7.1 12 5.99 12H2.01C.9 12 0 11.1 0 9.99V2.01C0 .9.9 0 2.01 0zm-.007 3a.502.502 0 0 0-.503.502v4.996c0 .277.225.502.502.502h3.995a.502.502 0 0 0 .503-.502V3.503A.502.502 0 0 0 5.997 3H2.003z\" fill=\"currentColor\" fill-rule=\"evenodd\" /></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

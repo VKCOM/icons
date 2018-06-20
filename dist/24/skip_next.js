@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 107);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,14 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
-
-/***/ }),
-
-/***/ 96:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +140,7 @@ var symbol = new _browserSymbol2.default({
   "id": "skip_next_24",
   "use": "skip_next_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"skip_next_24\"><path d=\"M13,11.2683229 L13,7.45669505 C13,7.06816273 13.3149677,6.75319505 13.7035,6.75319505 C13.8230405,6.75319505 13.9406095,6.78365621 14.0451104,6.84170352 L22.2228501,11.3842068 C22.5625005,11.5728731 22.6848974,12.0011583 22.4962312,12.3408088 C22.432424,12.455679 22.3377203,12.5503827 22.2228501,12.6141899 L14.0451104,17.1566932 C13.70546,17.3453594 13.2771747,17.2229625 13.0885085,16.8833121 C13.0304612,16.7788112 13,16.6612422 13,16.5417017 L13,12.7300738 L5.04552288,17.155546 C4.70599907,17.34444 4.27763179,17.2223305 4.08873777,16.8828067 C4.03054265,16.778205 4,16.6604842 4,16.5407838 L4,7.45761295 C4,7.06908063 4.31496768,6.75411295 4.7035,6.75411295 C4.82320038,6.75411295 4.94092121,6.7846556 5.04552288,6.84285072 L13,11.2683229 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"skip_next_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M13 11.268V7.457a.704.704 0 0 1 1.045-.615l8.178 4.542a.704.704 0 0 1 0 1.23l-8.178 4.543A.704.704 0 0 1 13 16.542V12.73l-7.954 4.426A.704.704 0 0 1 4 16.54V7.458a.704.704 0 0 1 1.046-.615L13 11.268z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -168,6 +161,13 @@ function SvgIcon(props) {
   );
 }
 exports.default = SvgIcon;
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 

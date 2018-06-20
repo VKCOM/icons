@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 75);
+/******/ 	return __webpack_require__(__webpack_require__.s = 84);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 75:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +147,7 @@ var symbol = new _browserSymbol2.default({
   "id": "view_24",
   "use": "view_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"view_24\"><path d=\"M12,19 C6,19 2,13.4 2,12 C2,10.6 6,5 12,5 C18,5 22,10.6 22,12 C22,13.4 18,19 12,19 Z M12,17 C14.7614237,17 17,14.7614237 17,12 C17,9.23857625 14.7614237,7 12,7 C9.23857625,7 7,9.23857625 7,12 C7,14.7614237 9.23857625,17 12,17 Z M12.0009513,14.5 C10.6202394,14.5 9.50095131,13.3807119 9.50095131,12 C9.50095131,10.6192881 10.6202394,9.5 12.0009513,9.5 C13.3816632,9.5 14.5009513,10.6192881 14.5009513,12 C14.5009513,13.3807119 13.3816632,14.5 12.0009513,14.5 Z\" /></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"view_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12 19c-6 0-10-5.6-10-7 0-1.4 4-7 10-7s10 5.6 10 7c0 1.4-4 7-10 7zm0-2a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm.001-2.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
