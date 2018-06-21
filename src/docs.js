@@ -46,7 +46,7 @@ class Docs extends React.PureComponent {
   onIconClick = (e) => {
     const { name, size } = e.currentTarget.dataset;
     this.setState({
-      selectedIcon: `import Icon24${dashToCamel(name)} from '@vkontakte/icons/dist/${size}/${name}';`,
+      selectedIcon: `import Icon${size}${dashToCamel(name)} from '@vkontakte/icons/dist/${size}/${name}';`,
       anchorSize: size,
       anchorName: name
     }, () => {
