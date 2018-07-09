@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 188);
+/******/ 	return __webpack_require__(__webpack_require__.s = 141);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 188:
+/***/ 141:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -139,10 +139,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var symbol = new _browserSymbol2.default({
-  "id": "favorite_outline_24",
-  "use": "favorite_outline_24-usage",
+  "id": "notification_disable_24",
+  "use": "notification_disable_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"favorite_outline_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M11.525 4.386l-2.186 5.04-5.016.481c-.669.065-.787.457-.28.878l3.963 3.295-1.458 5.316c-.175.639.121.848.662.467L12 16.479l4.791 3.384c.545.385.837.173.661-.467l-1.457-5.316 3.963-3.295c.502-.417.382-.814-.28-.878l-5.017-.48-2.185-5.04c-.262-.606-.689-.607-.951 0zm4.365 3.35l3.96.38c2.246.215 2.998 2.608 1.259 4.054l-3.072 2.552 1.151 4.198c.62 2.263-1.505 3.776-3.435 2.413L12 18.683l-3.752 2.65c-1.923 1.358-4.056-.148-3.435-2.413l1.15-4.198-3.07-2.552c-1.745-1.45-.996-3.838 1.258-4.054l3.959-.38L9.873 3.67c.89-2.051 3.366-2.05 4.255 0l1.762 4.066z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"notification_disable_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12.001 22.5c-1.692 0-3-.875-3-2.5h6c0 1.625-1.307 2.5-3 2.5zm7.41-3.678h-.001L7.098 6.511v-.002l-2.3-2.301a.997.997 0 0 1 0-1.41l.002-.003a1.004 1.004 0 0 1 1.417.003l2.108 2.108c.755-.666 1.695-1.049 2.818-1.049 0-.643.428-.857.857-.857s.857.214.857.857c3.429 0 5.138 3.567 5.138 7.853v2.868l3.706 3.707a1 1 0 0 1-1.414 1.415l-.877-.878zm-2.657.173H6c-1.714 0-2.143-.428-2.143-1.285S6 16.424 6 14.71v-3c0-1.107.114-2.165.343-3.126l10.411 10.411z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

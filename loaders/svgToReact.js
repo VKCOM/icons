@@ -7,12 +7,15 @@ module.exports = function (source) {
     const height = symbol.viewBox.split(' ')[3];
     const size = Math.max(width, height); 
     
-    function SvgIcon (props) {
-      const className = 'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (props.className || '');
+    function SvgIcon ({ className, fill, style, ...restProps }) {
       return (
-        <div className={className} style={{ width: width + 'px', height: height + 'px', ...props.style }} onClick={props.onClick}>
+        <div 
+          {...restProps} 
+          className={'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (className || '')}
+          style={{ ...style, width: width + 'px', height: height + 'px' }} 
+        >
           <svg viewBox={symbol.viewBox} width={width} height={height} style={{ display: 'block' }}>
-            <use xlinkHref={'#' + symbol.id} style={{ fill: 'currentColor', color: props.fill }} />
+            <use xlinkHref={'#' + symbol.id} style={{ fill: 'currentColor', color: fill }} />
           </svg>
         </div>
       );

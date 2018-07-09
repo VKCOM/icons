@@ -122,18 +122,20 @@
     }
 
     [type="text"] {
-        padding: 5px 9px 7px;
-        border-radius: 2px;
+        padding: 18px 40px 22px;
+        line-height: 30px;
+        font-size: 30px;
         box-sizing: border-box;
-        height: 30px;
         color: #000;
         margin: 0;
-        border: 1px solid #d3d9de;
         background-color: #fff;
         outline: none;
-        font-size: 13px;
         -webkit-appearance: none;
         -moz-appearance: none;
+        border: none;
+        border-radius: 50px;
+        display: block;
+        width: 100%;
     }
 
     [type="text"]:focus {
@@ -174,6 +176,22 @@
         100% {
             opacity: 0;
         }
+    }
+
+    .color {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .color p {
+        max-width: 50%;
+        margin: 0;
+    }
+
+    .color-picker {
+        flex-shrink: 0;
+        flex-grow: 1;
+        max-width: 50%;
     }
 </style>
 <body>

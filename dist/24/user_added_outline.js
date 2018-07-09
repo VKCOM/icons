@@ -143,6 +143,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var symbol = new _browserSymbol2.default({
   "id": "user_added_outline_24",
   "use": "user_added_outline_24-usage",
@@ -155,15 +157,22 @@ var width = symbol.viewBox.split(' ')[2];
 var height = symbol.viewBox.split(' ')[3];
 var size = Math.max(width, height);
 
-function SvgIcon(props) {
-  var className = 'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (props.className || '');
+function SvgIcon(_ref) {
+  var className = _ref.className,
+      fill = _ref.fill,
+      style = _ref.style,
+      restProps = _objectWithoutProperties(_ref, ["className", "fill", "style"]);
+
   return _react2.default.createElement(
     "div",
-    { className: className, style: _extends({ width: width + 'px', height: height + 'px' }, props.style), onClick: props.onClick },
+    _extends({}, restProps, {
+      className: 'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (className || ''),
+      style: _extends({}, style, { width: width + 'px', height: height + 'px' })
+    }),
     _react2.default.createElement(
       "svg",
       { viewBox: symbol.viewBox, width: width, height: height, style: { display: 'block' } },
-      _react2.default.createElement("use", { xlinkHref: '#' + symbol.id, style: { fill: 'currentColor', color: props.fill } })
+      _react2.default.createElement("use", { xlinkHref: '#' + symbol.id, style: { fill: 'currentColor', color: fill } })
     )
   );
 }
