@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>browser_back_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Master" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="browser_back_24">
+            <rect id="body" x="0" y="0" width="24" height="24"></rect>
+            <path d="M8.6556353,12 L15.7778175,19.1221822 C16.2073942,19.5517589 16.2073942,20.2482404 15.7778175,20.6778171 C15.3482407,21.1073938 14.6517593,21.1073938 14.2221825,20.6778171 L6.32218292,12.7778175 C5.8926062,12.3482407 5.8926062,11.6517593 6.32218292,11.2221825 L14.2221825,3.32218292 C14.6517593,2.8926062 15.3482407,2.8926062 15.7778175,3.32218292 C16.2073942,3.75175964 16.2073942,4.44824112 15.7778175,4.87781784 L8.6556353,12 Z" id="Path" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
