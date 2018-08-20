@@ -7,10 +7,11 @@ module.exports = function (source) {
     const height = symbol.viewBox.split(' ')[3];
     const size = Math.max(width, height); 
     
-    function SvgIcon ({ className, fill, style, ...restProps }) {
+    function SvgIcon ({ className, fill, style, getRootRef, ...restProps }) {
       return (
         <div 
           {...restProps} 
+          ref={getRootRef}
           className={'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (className || '')}
           style={{ ...style, width: width + 'px', height: height + 'px' }} 
         >

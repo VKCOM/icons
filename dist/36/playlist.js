@@ -165,11 +165,13 @@ function SvgIcon(_ref) {
   var className = _ref.className,
       fill = _ref.fill,
       style = _ref.style,
-      restProps = _objectWithoutProperties(_ref, ["className", "fill", "style"]);
+      getRootRef = _ref.getRootRef,
+      restProps = _objectWithoutProperties(_ref, ["className", "fill", "style", "getRootRef"]);
 
   return _react2.default.createElement(
     "div",
     _extends({}, restProps, {
+      ref: getRootRef,
       className: 'Icon' + ' Icon--' + size + ' Icon--' + symbol.id + ' ' + (className || ''),
       style: _extends({}, style, { width: width + 'px', height: height + 'px' })
     }),
