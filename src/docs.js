@@ -90,6 +90,14 @@ class Docs extends React.PureComponent {
       <div className="root">
         <h1>VK Icons</h1>
         <p>Набор SVG иконок, представленный в виде React компонентов.</p>
+        <ul>
+          <li>
+            <a href="https://github.com/VKCOM/icons">Github</a>
+          </li>
+          <li>
+            <a href="https://npmjs.com/package/@vkontakte/icons">npm</a>
+          </li>
+        </ul>
         <h2>Установка</h2>
         <pre>npm i @vkontakte/icons</pre>
         <h2>Пример</h2>
