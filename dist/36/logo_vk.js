@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 64);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,14 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
-
-/***/ }),
-
-/***/ 64:
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,10 +139,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var symbol = new _browserSymbol2.default({
-  "id": "info_outline_28",
-  "use": "info_outline_28-usage",
-  "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"info_outline_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M3 14C3 7.928 7.928 3 14 3s11 4.928 11 11-4.928 11-11 11S3 20.072 3 14zm11-9.2c-5.078 0-9.2 4.122-9.2 9.2 0 5.078 4.122 9.2 9.2 9.2 5.078 0 9.2-4.122 9.2-9.2 0-5.078-4.122-9.2-9.2-9.2zm-1 13.7v-5a1 1 0 0 1 2 0v5a1 1 0 0 1-2 0zm-.25-8.75A1.25 1.25 0 1 1 14 11c-.69 0-1.25-.56-1.25-1.25z\" fill=\"currentColor\" /></g></symbol>"
+  "id": "logo_vk_36",
+  "use": "logo_vk_36-usage",
+  "viewBox": "0 0 36 36",
+  "content": "<symbol viewBox=\"0 0 36 36\" id=\"logo_vk_36\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h36v36H0z\" /><path d=\"M35.174 9.422c.25-.82 0-1.422-1.191-1.422h-3.939c-1 0-1.463.52-1.713 1.094 0 0-2.003 4.795-4.84 7.91-.918.901-1.335 1.188-1.836 1.188-.25 0-.613-.287-.613-1.106V9.422c0-.984-.29-1.422-1.125-1.422h-6.189c-.626 0-1.002.457-1.002.89 0 .932 1.419 1.147 1.565 3.77v5.696c0 1.25-.23 1.476-.73 1.476-1.336 0-4.583-4.817-6.51-10.328C6.674 8.433 6.295 8 5.29 8H1.35C.225 8 0 8.52 0 9.094c0 1.025 1.335 6.107 6.217 12.828C9.471 26.512 14.057 29 18.229 29c2.504 0 2.813-.553 2.813-1.505v-3.469c0-1.105.238-1.326 1.03-1.326.584 0 1.586.287 3.922 2.5 2.67 2.623 3.111 3.8 4.613 3.8h3.939c1.125 0 1.687-.553 1.363-1.643-.355-1.087-1.63-2.664-3.322-4.534-.918-1.065-2.295-2.213-2.712-2.786-.584-.738-.417-1.066 0-1.722 0 0 4.798-6.639 5.299-8.893z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -179,6 +172,13 @@ function SvgIcon(_ref) {
   );
 }
 exports.default = SvgIcon;
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 
