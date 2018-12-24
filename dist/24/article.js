@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 241);
+/******/ 	return __webpack_require__(__webpack_require__.s = 219);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 241:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,10 +146,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var symbol = new _browserSymbol2.default({
-  "id": "like_outline_16",
-  "use": "like_outline_16-usage",
-  "viewBox": "0 0 16 16",
-  "content": "<symbol viewBox=\"0 0 16 16\" id=\"like_outline_16\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h16v16H0z\" /><path d=\"M10.96 2.5A4.04 4.04 0 0 1 15 6.54c0 2.214-.884 3.32-4.52 6.149l-1.099.854a2.25 2.25 0 0 1-2.762 0L5.52 12.69C1.884 9.86 1 8.754 1 6.539A4.04 4.04 0 0 1 5.04 2.5c1.111 0 2.103.482 2.96 1.404.857-.922 1.849-1.404 2.96-1.404zM5.04 4A2.54 2.54 0 0 0 2.5 6.54c0 1.59.653 2.407 3.94 4.965l1.1.854c.27.21.65.21.92 0l1.1-.854c3.287-2.558 3.94-3.375 3.94-4.966A2.54 2.54 0 0 0 10.96 4c-.848 0-1.618.482-2.343 1.53L8 6.423l-.617-.893C6.658 4.482 5.888 4 5.04 4z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
+  "id": "article_24",
+  "use": "article_24-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"article_24\"><defs><path d=\"M20 11a1 1 0 0 1 1 1v.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V12a1 1 0 0 1 1-1h16zm0-5.5a1 1 0 0 1 1 1V7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.5a1 1 0 0 1 1-1h16zM4 19a1 1 0 0 1-1-1v-.5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v.5a1 1 0 0 1-1 1H4z\" id=\"article_24_a\" /></defs><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><use fill=\"currentColor\" fill-rule=\"nonzero\" xlink:href=\"#article_24_a\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
