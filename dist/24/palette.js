@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 246);
+/******/ 	return __webpack_require__(__webpack_require__.s = 145);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,14 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
-
-/***/ }),
-
-/***/ 246:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,10 +139,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var symbol = new _browserSymbol2.default({
-  "id": "fire_verified_16",
-  "use": "fire_verified_16-usage",
-  "viewBox": "0 0 16 16",
-  "content": "<symbol viewBox=\"0 0 16 16\" id=\"fire_verified_16\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h16v16H0z\" /><path d=\"M7.457.05a.25.25 0 0 1 .393.255c-.036.157-.08.277-.133.36-1.888 2.914-1.06 4.666.214 4.855 1.316.194 2.28-.688 2.074-2.592a406.7 406.7 0 0 1-.09-.829.23.23 0 0 1 .356-.216c.428.282.94.795 1.536 1.538C13.929 6.068 14.012 8.283 14 9.235 13.957 12.651 11.429 15 8 15s-6-2.349-6-5.765C2.015 6.65 3.322 3.01 6.928.435 7.063.34 7.24.21 7.457.05zM5.495 8.504a.7.7 0 0 0-.99.99l2 2a.7.7 0 0 0 .99 0l4-4a.7.7 0 1 0-.99-.99L7 10.01 5.495 8.505z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
+  "id": "palette_24",
+  "use": "palette_24-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"palette_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -179,6 +172,13 @@ function SvgIcon(_ref) {
   );
 }
 exports.default = SvgIcon;
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 
