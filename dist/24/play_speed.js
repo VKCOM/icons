@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 137);
+/******/ 	return __webpack_require__(__webpack_require__.s = 127);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 137:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -130,7 +130,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -142,7 +142,7 @@ var symbol = new _browserSymbol2.default({
   "id": "play_speed_24",
   "use": "play_speed_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"play_speed_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M11 4.07V2.05c-2.01.2-3.84 1-5.32 2.21L7.1 5.69A7.941 7.941 0 0 1 11 4.07zM5.69 7.1L4.26 5.68A9.949 9.949 0 0 0 2.05 11h2.02c.18-1.46.76-2.79 1.62-3.9zM2.05 13c.2 2.01 1 3.84 2.21 5.32l1.43-1.43A7.868 7.868 0 0 1 4.07 13H2.05zM11 21.95v-2.02a7.941 7.941 0 0 1-3.9-1.62l-1.42 1.43A9.981 9.981 0 0 0 11 21.95zM22 12c0 5.16-3.92 9.42-8.95 9.95v-2.02C16.97 19.41 20 16.05 20 12s-3.03-7.41-6.95-7.93V2.05C18.08 2.58 22 6.84 22 12zM10.688 8.576l4.746 2.736a.792.792 0 0 1 0 1.372l-4.746 2.737a.792.792 0 0 1-1.188-.686V9.262a.792.792 0 0 1 1.188-.686z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"play_speed_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M11 4.07V2.05c-2.01.2-3.84 1-5.32 2.21L7.1 5.69A7.941 7.941 0 0 1 11 4.07zM5.69 7.1L4.26 5.68A9.949 9.949 0 0 0 2.05 11h2.02c.18-1.46.76-2.79 1.62-3.9zM2.05 13c.2 2.01 1 3.84 2.21 5.32l1.43-1.43A7.868 7.868 0 0 1 4.07 13H2.05zM11 21.95v-2.02a7.941 7.941 0 0 1-3.9-1.62l-1.42 1.43A9.981 9.981 0 0 0 11 21.95zM22 12c0 5.16-3.92 9.42-8.95 9.95v-2.02C16.97 19.41 20 16.05 20 12s-3.03-7.41-6.95-7.93V2.05C18.08 2.58 22 6.84 22 12zM10.688 8.576l4.746 2.736a.792.792 0 0 1 0 1.372l-4.746 2.737a.792.792 0 0 1-1.188-.686V9.262a.792.792 0 0 1 1.188-.686z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 218);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 46:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,7 +129,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -137,7 +137,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -149,7 +149,7 @@ var symbol = new _browserSymbol2.default({
   "id": "send_28",
   "use": "send_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"send_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M6.934 18.123c-.763 2.044-1.242 3.48-1.438 4.307-.615 2.599-1.062 3.184 1.23 1.949 2.29-1.235 13.384-7.352 15.86-8.711 3.226-1.772 3.269-1.634-.174-3.516-2.622-1.433-13.585-7.39-15.687-8.56-2.101-1.17-1.844-.65-1.23 1.949.2.838.686 2.287 1.46 4.346a4.4 4.4 0 0 0 3.29 2.772l6.432 1.233a.11.11 0 0 1 0 .216L10.23 15.34a4.4 4.4 0 0 0-3.296 2.783z\" fill=\"currentColor\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" id=\"send_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M6.934 18.123c-.763 2.044-1.242 3.48-1.438 4.307-.615 2.599-1.062 3.184 1.23 1.949 2.29-1.235 13.384-7.352 15.86-8.711 3.226-1.772 3.269-1.634-.174-3.516-2.622-1.433-13.585-7.39-15.687-8.56-2.101-1.17-1.844-.65-1.23 1.949.2.838.686 2.287 1.46 4.346a4.4 4.4 0 0 0 3.29 2.772l6.432 1.233a.11.11 0 0 1 0 .216L10.23 15.34a4.4 4.4 0 0 0-3.296 2.783z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

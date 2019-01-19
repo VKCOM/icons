@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,33 +91,29 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 261);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
 
 /***/ }),
-
-/***/ 1:
+/* 1 */
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
-
-/***/ 2:
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
-
-/***/ 261:
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,7 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -137,7 +133,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -149,7 +145,7 @@ var symbol = new _browserSymbol2.default({
   "id": "fire_12",
   "use": "fire_12-usage",
   "viewBox": "0 0 12 12",
-  "content": "<symbol viewBox=\"0 0 12 12\" id=\"fire_12\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h12v12H0z\" /><path d=\"M6.092.787a.188.188 0 0 1 .295.192.85.85 0 0 1-.1.27c-1.416 2.185-.794 3.5.16 3.64.988.147 1.71-.515 1.556-1.943l-.067-.622a.172.172 0 0 1 .266-.162c.321.212.706.596 1.153 1.154 1.591 1.985 1.653 3.646 1.644 4.36C10.967 10.239 9.071 12 6.5 12 3.93 12 2 10.239 2 7.677c.011-1.94.991-4.67 3.696-6.6l.396-.29z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 12 12\" id=\"fire_12\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h12v12H0z\" /><path d=\"M6.092.787a.188.188 0 0 1 .295.192.85.85 0 0 1-.1.27c-1.416 2.185-.794 3.5.16 3.64.988.147 1.71-.515 1.556-1.943l-.067-.622a.172.172 0 0 1 .266-.162c.321.212.706.596 1.153 1.154 1.591 1.985 1.653 3.646 1.644 4.36C10.967 10.239 9.071 12 6.5 12 3.93 12 2 10.239 2 7.677c.011-1.94.991-4.67 3.696-6.6l.396-.29z\" fill=\"currentColor\" fill-rule=\"nonzero\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -181,6 +177,5 @@ function SvgIcon(_ref) {
 exports.default = SvgIcon;
 
 /***/ })
-
-/******/ });
+/******/ ]);
 });

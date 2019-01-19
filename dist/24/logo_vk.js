@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 161);
+/******/ 	return __webpack_require__(__webpack_require__.s = 103);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 161:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -130,7 +130,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -142,7 +142,7 @@ var symbol = new _browserSymbol2.default({
   "id": "logo_vk_24",
   "use": "logo_vk_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"logo_vk_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M21.461 6.726c.092-.465-.11-.726-.586-.726h-2.4c-.55 0-.752.242-.917.596 0 0-1.272 2.947-2.851 4.717-.507.573-.596.745-.876.745-.226 0-.33-.191-.33-.708V6.826c0-.633-.072-.826-.586-.826H9.094c-.295 0-.492.163-.492.4 0 .596.898.73.898 2.346v3.332c0 .67-.037.931-.348.931-.825 0-2.966-2.869-4.066-6.146C4.866 6.193 4.63 6 4.004 6H1.61a.587.587 0 0 0-.61.603c0 .651.751 3.668 3.702 7.708 1.979 2.718 4.75 4.189 7.095 4.189 1.43 0 1.704-.252 1.704-.867v-2.085c0-.521.202-.745.495-.745.33 0 .816.118 2.177 1.481 1.612 1.564 1.722 2.216 2.602 2.216h2.693c.275 0 .532-.13.532-.596 0-.614-.788-1.713-1.997-3.016-.495-.67-1.302-1.396-1.558-1.731-.367-.392-.257-.615 0-1.025 0 0 2.741-4.103 3.016-5.406z\" fill=\"currentColor\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"logo_vk_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M21.461 6.726c.092-.465-.11-.726-.586-.726h-2.4c-.55 0-.752.242-.917.596 0 0-1.272 2.947-2.851 4.717-.507.573-.596.745-.876.745-.226 0-.33-.191-.33-.708V6.826c0-.633-.072-.826-.586-.826H9.094c-.295 0-.492.163-.492.4 0 .596.898.73.898 2.346v3.332c0 .67-.037.931-.348.931-.825 0-2.966-2.869-4.066-6.146C4.866 6.193 4.63 6 4.004 6H1.61a.587.587 0 0 0-.61.603c0 .651.751 3.668 3.702 7.708 1.979 2.718 4.75 4.189 7.095 4.189 1.43 0 1.704-.252 1.704-.867v-2.085c0-.521.202-.745.495-.745.33 0 .816.118 2.177 1.481 1.612 1.564 1.722 2.216 2.602 2.216h2.693c.275 0 .532-.13.532-.596 0-.614-.788-1.713-1.997-3.016-.495-.67-1.302-1.396-1.558-1.731-.367-.392-.257-.615 0-1.025 0 0 2.741-4.103 3.016-5.406z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

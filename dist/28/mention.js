@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 64);
+/******/ 	return __webpack_require__(__webpack_require__.s = 200);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,7 +117,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ }),
 
-/***/ 64:
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -129,7 +129,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -137,7 +137,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -149,7 +149,7 @@ var symbol = new _browserSymbol2.default({
   "id": "mention_28",
   "use": "mention_28-usage",
   "viewBox": "0 0 28 28",
-  "content": "<symbol viewBox=\"0 0 28 28\" id=\"mention_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M15.26 13.5l.45-2.85c-.24-.06-.57-.12-.93-.12-1.98 0-3.54 1.95-3.54 4.26 0 1.14.51 1.83 1.47 1.83 1.14 0 2.31-1.38 2.55-3.12zm2.58 7.83l.51 1.71c-1.8.81-3.36 1.08-5.49 1.08-4.98 0-9.36-3.57-9.36-9.45 0-6.12 4.47-11.43 11.22-11.43 5.31 0 9.09 3.63 9.09 8.67 0 4.38-2.46 7.17-5.7 7.17-1.41 0-2.43-.75-2.58-2.34h-.06c-.96 1.53-2.28 2.34-3.9 2.34-1.92 0-3.36-1.47-3.36-3.96 0-3.66 2.73-6.96 7.05-6.96 1.32 0 2.82.33 3.54.72l-.9 5.58c-.27 1.74-.06 2.58.78 2.61 1.29.06 2.91-1.62 2.91-5.07 0-3.93-2.52-6.93-7.17-6.93-4.62 0-8.61 3.57-8.61 9.33 0 5.04 3.18 7.86 7.65 7.86 1.53 0 3.18-.33 4.38-.93z\" fill=\"currentColor\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" id=\"mention_28\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h28v28H0z\" /><path d=\"M15.26 13.5l.45-2.85c-.24-.06-.57-.12-.93-.12-1.98 0-3.54 1.95-3.54 4.26 0 1.14.51 1.83 1.47 1.83 1.14 0 2.31-1.38 2.55-3.12zm2.58 7.83l.51 1.71c-1.8.81-3.36 1.08-5.49 1.08-4.98 0-9.36-3.57-9.36-9.45 0-6.12 4.47-11.43 11.22-11.43 5.31 0 9.09 3.63 9.09 8.67 0 4.38-2.46 7.17-5.7 7.17-1.41 0-2.43-.75-2.58-2.34h-.06c-.96 1.53-2.28 2.34-3.9 2.34-1.92 0-3.36-1.47-3.36-3.96 0-3.66 2.73-6.96 7.05-6.96 1.32 0 2.82.33 3.54.72l-.9 5.58c-.27 1.74-.06 2.58.78 2.61 1.29.06 2.91-1.62 2.91-5.07 0-3.93-2.52-6.93-7.17-6.93-4.62 0-8.61 3.57-8.61 9.33 0 5.04 3.18 7.86 7.65 7.86 1.53 0 3.18-.33 4.38-.93z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 163);
+/******/ 	return __webpack_require__(__webpack_require__.s = 101);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 163:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -130,7 +130,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -142,7 +142,7 @@ var symbol = new _browserSymbol2.default({
   "id": "logo_skype_24",
   "use": "logo_skype_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"logo_skype_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12.043 17.751c-3.355 0-4.856-1.653-4.856-2.893 0-.635.468-1.08 1.113-1.08 1.436 0 1.064 2.066 3.743 2.066 1.371 0 2.129-.746 2.129-1.51 0-.46-.226-.969-1.13-1.192l-2.984-.747c-2.403-.604-2.84-1.906-2.84-3.13 0-2.543 2.389-3.497 4.63-3.497 2.066 0 4.5 1.144 4.5 2.67 0 .653-.564 1.033-1.209 1.033-1.225 0-1-1.7-3.468-1.7-1.224 0-1.903.555-1.903 1.351 0 .794.968 1.048 1.807 1.24l2.21.491c2.419.54 3.032 1.956 3.032 3.29 0 2.066-1.581 3.608-4.774 3.608m9.25-4.082l-.018.107-.034-.202c.018.031.034.064.051.095.103-.563.157-1.14.157-1.715 0-1.278-.25-2.518-.742-3.685a9.416 9.416 0 0 0-2.024-3.01 9.415 9.415 0 0 0-3.002-2.028 9.503 9.503 0 0 0-5.469-.574c.034.017.067.033.1.051l-.2-.03.1-.02A5.584 5.584 0 0 0 7.592 2a5.546 5.546 0 0 0-3.954 1.642A5.577 5.577 0 0 0 2 7.605c0 .953.244 1.89.703 2.717.006-.035.01-.07.017-.103l.034.198c-.018-.031-.033-.064-.05-.095a9.574 9.574 0 0 0-.143 1.632c0 1.278.25 2.517.743 3.685a9.426 9.426 0 0 0 2.023 3.009 9.4 9.4 0 0 0 3.002 2.028 9.343 9.343 0 0 0 3.677.745 9.47 9.47 0 0 0 1.653-.147c-.031-.018-.064-.034-.096-.053l.202.035c-.035.007-.07.011-.106.018a5.58 5.58 0 0 0 6.703-.915A5.57 5.57 0 0 0 22 16.396c0-.956-.246-1.896-.708-2.727\" fill=\"currentColor\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"logo_skype_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M0 0h24v24H0z\" /><path d=\"M12.043 17.751c-3.355 0-4.856-1.653-4.856-2.893 0-.635.468-1.08 1.113-1.08 1.436 0 1.064 2.066 3.743 2.066 1.371 0 2.129-.746 2.129-1.51 0-.46-.226-.969-1.13-1.192l-2.984-.747c-2.403-.604-2.84-1.906-2.84-3.13 0-2.543 2.389-3.497 4.63-3.497 2.066 0 4.5 1.144 4.5 2.67 0 .653-.564 1.033-1.209 1.033-1.225 0-1-1.7-3.468-1.7-1.224 0-1.903.555-1.903 1.351 0 .794.968 1.048 1.807 1.24l2.21.491c2.419.54 3.032 1.956 3.032 3.29 0 2.066-1.581 3.608-4.774 3.608m9.25-4.082l-.018.107-.034-.202c.018.031.034.064.051.095.103-.563.157-1.14.157-1.715 0-1.278-.25-2.518-.742-3.685a9.416 9.416 0 0 0-2.024-3.01 9.415 9.415 0 0 0-3.002-2.028 9.503 9.503 0 0 0-5.469-.574c.034.017.067.033.1.051l-.2-.03.1-.02A5.584 5.584 0 0 0 7.592 2a5.546 5.546 0 0 0-3.954 1.642A5.577 5.577 0 0 0 2 7.605c0 .953.244 1.89.703 2.717.006-.035.01-.07.017-.103l.034.198c-.018-.031-.033-.064-.05-.095a9.574 9.574 0 0 0-.143 1.632c0 1.278.25 2.517.743 3.685a9.426 9.426 0 0 0 2.023 3.009 9.4 9.4 0 0 0 3.002 2.028 9.343 9.343 0 0 0 3.677.745 9.47 9.47 0 0 0 1.653-.147c-.031-.018-.064-.034-.096-.053l.202.035c-.035.007-.07.011-.106.018a5.58 5.58 0 0 0 6.703-.915A5.57 5.57 0 0 0 22 16.396c0-.956-.246-1.896-.708-2.727\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 

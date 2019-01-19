@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol"));
+		module.exports = factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "svg-sprite-loader/runtime/browser-sprite.build", "svg-baker-runtime/browser-symbol"], factory);
+		define(["svg-baker-runtime/browser-symbol", "svg-sprite-loader/runtime/browser-sprite.build", "react"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("react"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("svg-baker-runtime/browser-symbol")) : factory(root["react"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["svg-baker-runtime/browser-symbol"]);
+		var a = typeof exports === 'object' ? factory(require("svg-baker-runtime/browser-symbol"), require("svg-sprite-loader/runtime/browser-sprite.build"), require("react")) : factory(root["svg-baker-runtime/browser-symbol"], root["svg-sprite-loader/runtime/browser-sprite.build"], root["react"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 190);
+/******/ 	return __webpack_require__(__webpack_require__.s = 74);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -110,7 +110,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 190:
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +129,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _browserSymbol = __webpack_require__(2);
+var _browserSymbol = __webpack_require__(0);
 
 var _browserSymbol2 = _interopRequireDefault(_browserSymbol);
 
@@ -130,7 +137,7 @@ var _browserSprite = __webpack_require__(1);
 
 var _browserSprite2 = _interopRequireDefault(_browserSprite);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -142,7 +149,7 @@ var symbol = new _browserSymbol2.default({
   "id": "forward_10_24",
   "use": "forward_10_24-usage",
   "viewBox": "0 0 24 24",
-  "content": "<symbol viewBox=\"0 0 24 24\" id=\"forward_10_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M24 24H0V0h24z\" /><path d=\"M12.12 4.25V2.356a.35.35 0 0 1 .534-.298l4.302 2.644a.35.35 0 0 1 0 .596l-4.302 2.644a.35.35 0 0 1-.533-.298V5.75a6.25 6.25 0 1 0 6.142 7.414.75.75 0 1 1 1.474.278A7.752 7.752 0 0 1 4.37 12a7.75 7.75 0 0 1 7.75-7.75zM9.4 14.65V11l-.866.346a.28.28 0 0 1-.384-.26v-.506a.35.35 0 0 1 .211-.321l1.845-.795a.35.35 0 0 1 .489.322v4.864a.35.35 0 0 1-.35.35H9.75a.35.35 0 0 1-.35-.35zm4.487.349c-1.208 0-2.19-.695-2.187-2.8.002-2.106.98-2.8 2.187-2.8 1.208 0 2.19.694 2.188 2.8-.003 2.105-.98 2.8-2.188 2.8zm.003-1.119c.61 0 .94-.404.94-1.629 0-1.224-.336-1.63-.94-1.63-.604 0-.94.406-.94 1.63 0 1.224.33 1.63.94 1.63z\" fill=\"currentColor\" /></g></symbol>"
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" id=\"forward_10_24\"><g fill=\"none\" fill-rule=\"evenodd\"><path d=\"M24 24H0V0h24z\" /><path d=\"M12.12 4.25V2.356a.35.35 0 0 1 .534-.298l4.302 2.644a.35.35 0 0 1 0 .596l-4.302 2.644a.35.35 0 0 1-.533-.298V5.75a6.25 6.25 0 1 0 6.142 7.414.75.75 0 1 1 1.474.278A7.752 7.752 0 0 1 4.37 12a7.75 7.75 0 0 1 7.75-7.75zM9.4 14.65V11l-.866.346a.28.28 0 0 1-.384-.26v-.506a.35.35 0 0 1 .211-.321l1.845-.795a.35.35 0 0 1 .489.322v4.864a.35.35 0 0 1-.35.35H9.75a.35.35 0 0 1-.35-.35zm4.487.349c-1.208 0-2.19-.695-2.187-2.8.002-2.106.98-2.8 2.187-2.8 1.208 0 2.19.694 2.188 2.8-.003 2.105-.98 2.8-2.188 2.8zm.003-1.119c.61 0 .94-.404.94-1.629 0-1.224-.336-1.63-.94-1.63-.604 0-.94.406-.94 1.63 0 1.224.33 1.63.94 1.63z\" fill=\"currentColor\" /></g></symbol>"
 });
 var result = _browserSprite2.default.add(symbol);
 
@@ -172,13 +179,6 @@ function SvgIcon(_ref) {
   );
 }
 exports.default = SvgIcon;
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 
 /***/ })
 
