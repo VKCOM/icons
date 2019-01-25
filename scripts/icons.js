@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path  = require('path');
+const SVGO = require('svgo');
+const rimraf = require('rimraf');
 const { iconsMap } = require('./utils/icons');
 const symbol = require('./utils/symbol');
-const SVGO = require('svgo');
-const babel = require('@babel/core');
-const rimraf = require('rimraf');
+const { transformFile, transform } = require('./utils/babel');
 
 console.log('generating icons...');
 
@@ -25,10 +25,15 @@ if (!fs.existsSync(path.join(cwd, DIST_FOLDER))) {
 }
 
 // Собираем файл с инстансом спрайта
-babel.transformFile(path.join(cwd, 'src/sprite.js'), {
-  configFile: path.resolve(cwd, 'scripts/utils', 'babel.icons.js')
-}, (err, result) => {
-  fs.writeFileSync(path.join(cwd, DIST_FOLDER, 'sprite.js'), result.code);
+transformFile({
+  path: path.join(cwd, 'src/sprite.js'),
+  outputPath: path.join(cwd, DIST_FOLDER, 'sprite.js')
+});
+
+// Собираем компонент иконки
+transformFile({
+  path: path.join(cwd, 'src/SvgIcon.js'),
+  outputPath:path.join(cwd, DIST_FOLDER, 'SvgIcon.js')
 });
 
 // Собираем иконки
@@ -39,17 +44,13 @@ const promises = icons.map(({ id, size }) => {
   }).then((content) => {
     return symbol({ content, id: `${id}_${size}` })
   }).then((es6) => {
-    return new Promise((resolve) => {
-      babel.transform(es6, {
-        configFile: path.resolve(cwd, 'scripts/utils', 'babel.icons.js')
-      }, (err, result) => resolve(result.code));
-    });
+    return transform(es6);
   }).then((result) => {
-    const dirPath = path.join(cwd, DIST_FOLDER, size);
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath)
+    const iconDir = path.join(cwd, DIST_FOLDER, size);
+    if (!fs.existsSync(iconDir)) {
+      fs.mkdirSync(iconDir)
     }
-    fs.writeFileSync(path.join(dirPath, `${id}.js`), result);
+    fs.writeFileSync(path.join(iconDir, `${id}.js`), result);
   })
 });
 

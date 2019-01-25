@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const webpackConfig = require('./utils/webpack.docs');
+const webpackConfig = require('./utils/webpack.config-docs');
 const rimraf = require('rimraf');
 const path = require('path');
 
