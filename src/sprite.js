@@ -1,6 +1,8 @@
 import BrowserSprite from 'svg-baker-runtime/browser-sprite';
 
-const browserSprite = new BrowserSprite();
+const spriteNodeId = '__SVG_SPRITE_NODE__';
+
+const browserSprite = new BrowserSprite({ attrs: { id: spriteNodeId } });
 
 browserSprite.mount();
 
