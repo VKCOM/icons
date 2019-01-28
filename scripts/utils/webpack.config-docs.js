@@ -26,6 +26,14 @@ module.exports = {
             ]
           }
         }]
+      },
+      {
+        test: /\.(otf|svg)/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.css/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -39,5 +47,5 @@ module.exports = {
       icons: JSON.stringify(icons.iconsMap())
     })
   ],
-  mode: 'production',
+  mode: 'development',
 };
