@@ -7,37 +7,29 @@ const reactify = (symbol) =>
 import browserSprite from '../sprite';
 import SvgIcon from '../SvgIcon';
 import React from 'react';
-import polyfill from 'es6-object-assign';
-
-const viewBox = '${symbol.viewBox}';
-const id = '${symbol.id}';
-const content = '${symbol.render()}';
+import { assign } from 'es6-object-assign';
 
 const browserSymbol = new BrowserSymbol({
-  id: id,
-  viewBox: viewBox,
-  content: content
+  id: '${symbol.id}',
+  viewBox: '${symbol.viewBox}',
+  content: '${symbol.render()}'
 });
 
 browserSprite.add(browserSymbol);
-  
-const width = ${symbol.viewBox.split(' ')[2]};
-const height = ${symbol.viewBox.split(' ')[3]};
 
 function Icon (props) {
-  
-  return React.createElement(SvgIcon, polyfill.assign({}, props, {
-    width: width,
-    height: height,
-    viewBox: viewBox,
-    id: id
-  }));
+  return React.createElement(SvgIcon, assign({
+    id: '${symbol.id}',
+    viewBox: '${symbol.viewBox}',
+    width: ${symbol.viewBox.split(' ')[2]},
+    height: ${symbol.viewBox.split(' ')[3]}
+  }, props));
 }
 
 export default Icon;`;
 
 function symbol ({ content, id }) {
-  return compiler.addSymbol({ content, id, path: '' }).then(symbol => reactify(symbol));
+  return compiler.addSymbol({ content, id, path: '' }).then(reactify);
 }
 
 module.exports = symbol;
