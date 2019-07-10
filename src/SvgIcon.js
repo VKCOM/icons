@@ -16,7 +16,7 @@ function SvgIcon ({ width, height, viewBox, id, className, style, fill, getRootR
         <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
       </svg>
     </div>
-  )
+  );
 }
 
 SvgIcon.defaultProps = {

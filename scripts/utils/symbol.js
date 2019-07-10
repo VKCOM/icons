@@ -3,11 +3,11 @@ const Compiler = require('svg-baker');
 const compiler = new Compiler();
 
 const reactify = (symbol) =>
-`import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
+  `import React from 'react';
+import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
+import { assign } from 'es6-object-assign';
 import browserSprite from '../sprite';
 import SvgIcon from '../SvgIcon';
-import React from 'react';
-import polyfill from 'es6-object-assign';
 
 const viewBox = '${symbol.viewBox}';
 const id = '${symbol.id}';
@@ -20,15 +20,12 @@ const browserSymbol = new BrowserSymbol({
 });
 
 browserSprite.add(browserSymbol);
-  
-const width = ${symbol.viewBox.split(' ')[2]};
-const height = ${symbol.viewBox.split(' ')[3]};
 
 function Icon (props) {
-  
-  return React.createElement(SvgIcon, polyfill.assign({}, props, {
-    width: width,
-    height: height,
+  return React.createElement(SvgIcon, assign({
+    width: ${symbol.viewBox.split(' ')[2]},
+    height: ${symbol.viewBox.split(' ')[3]}
+  }, props, {
     viewBox: viewBox,
     id: id
   }));
