@@ -6,7 +6,7 @@ import './docs.css';
 let Icons = {};
 
 icons.forEach(({ size, id }) => {
-  let Icon = require('../../dist/' + size + '/' + id +'.js').default;
+  let Icon = require('../../dist/' + size + '/' + id + '.js').default;
   if (!Icons.hasOwnProperty(size)) Icons[size] = {};
   Icons[size][id] = Icon;
 });
@@ -16,21 +16,22 @@ const example =
 
 <Icon24Cancel />`;
 
+const sizeExample = `<Icon24LogoVk width={20} height={20} />`;
+
 function dashToCamel (dash) {
   const dashSplited = dash.split('_');
   return dashSplited.reduce((res, piece) => {
     piece = piece.charAt(0).toUpperCase() + piece.slice(1);
     return res + piece;
-  }, '')
+  }, '');
 }
 
 class Docs extends React.PureComponent {
-
   constructor (props) {
     super(props);
     const [anchorSize, anchorName] = window.location.hash.replace('#', '').split('/');
     this.state = {
-      currentColor: 'rgb(255, 0, 237)',
+      currentColor: 'rgb(0, 140, 255)',
       selectedIcon: '',
       copied: false,
       anchorSize,
@@ -67,11 +68,10 @@ class Docs extends React.PureComponent {
   getCopiedEl = el => this.copiedEl = el;
 
   isAnchor (size, name) {
-    return size === this.state.anchorSize && name === this.state.anchorName
+    return size === this.state.anchorSize && name === this.state.anchorName;
   }
 
   render () {
-
     return (
       <div className="root">
         <h1>VK Icons</h1>
@@ -88,6 +88,12 @@ class Docs extends React.PureComponent {
         <pre>npm i @vkontakte/icons</pre>
         <h2>Пример</h2>
         <pre>{example}</pre>
+        <h2>Кастомные размеры</h2>
+        <p>
+          Иногда может потребоваться установить для иконки другой размер.
+          Для этого можно передать свойства <code>width</code> и <code>height</code>, ширина и высота в пикселях. <b>Они должны быть числовыми значениями.</b>
+        </p>
+        <pre>{sizeExample}</pre>
         <h2>Стилизация</h2>
         <div className="color">
           <p>
@@ -120,7 +126,7 @@ class Docs extends React.PureComponent {
                     <Icon />
                     <div className="icon-name">{iconName}</div>
                   </a>
-                )
+                );
               })}
             </div>
           </div>
@@ -132,7 +138,7 @@ class Docs extends React.PureComponent {
         </div>
         }
       </div>
-    )
+    );
   }
 }
 
