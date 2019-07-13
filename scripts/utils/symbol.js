@@ -16,13 +16,15 @@ const viewBox = '${symbol.viewBox}';
 const id = '${symbol.id}';
 const content = '${symbol.render()}';
 
-const browserSymbol = new BrowserSymbol({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
+if (browserSprite) {
+  const browserSymbol = new BrowserSymbol({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-browserSprite.add(browserSymbol);
+  browserSprite.add(browserSymbol);
+}
 
 function Icon (props) {
   return React.createElement(SvgIcon, assign({}, props, {
