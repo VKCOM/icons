@@ -1,9 +1,18 @@
 import BrowserSprite from 'svg-baker-runtime/browser-sprite';
 
-const spriteNodeId = '__SVG_SPRITE_NODE__';
+const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
 
-const browserSprite = new BrowserSprite({ attrs: { id: spriteNodeId } });
+let browserSprite;
 
-browserSprite.mount();
+if (canUseDOM) {
+  browserSprite = new BrowserSprite({ attrs: { id: '__SVG_SPRITE_NODE__' } });
+  browserSprite.mount();
+} else {
+  browserSprite = null;
+}
 
 export default browserSprite;
