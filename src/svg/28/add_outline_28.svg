@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>add_outline_28</title>
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icons 28/add_outline_28</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Icons-28/add_outline_28" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="add_outline_28">
-            <rect id="Bounds" x="0" y="0" width="28" height="28"></rect>
-            <path d="M15,13 L22,13 C22.5522847,13 23,13.4477153 23,14 C23,14.5522847 22.5522847,15 22,15 L15,15 L15,22 C15,22.5522847 14.5522847,23 14,23 C13.4477153,23 13,22.5522847 13,22 L13,15 L6,15 C5.44771525,15 5,14.5522847 5,14 C5,13.4477153 5.44771525,13 6,13 L13,13 L13,6 C13,5.44771525 13.4477153,5 14,5 C14.5522847,5 15,5.44771525 15,6 L15,13 Z" id="Mask" fill="currentColor"></path>
+            <rect x="0" y="0" width="28" height="28"></rect>
+            <path d="M14,4 C14.5522847,4 15,4.44771525 15,5 L15,13 L23,13 C23.5522847,13 24,13.4477153 24,14 C24,14.5522847 23.5522847,15 23,15 L15,15 L15,23 C15,23.5522847 14.5522847,24 14,24 C13.4477153,24 13,23.5522847 13,23 L13,15 L5,15 C4.44771525,15 4,14.5522847 4,14 C4,13.4477153 4.44771525,13 5,13 L13,13 L13,5 C13,4.44771525 13.4477153,4 14,4 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
         </g>
     </g>
 </svg>
