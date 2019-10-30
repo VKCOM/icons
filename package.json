@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons",
-  "version": "1.10.4",
+  "version": "1.11.0",
   "description": "SVG icons, provided as a React components. With love from VKontakte",
   "repository": "https://github.com/VKCOM/icons",
   "homepage": "https://vkcom.github.io/icons/",
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "build": "node scripts/icons.js && node scripts/docs",
-    "docs": "node scripts/docs"
+    "docs": "node scripts/docs",
+    "release": "./tasks/release.sh"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
