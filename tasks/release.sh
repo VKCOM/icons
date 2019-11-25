@@ -22,5 +22,5 @@ else
   git push origin "v$1"
 
   echo "[icons release]: publish to npm"
-  yarn publish --access-public
+  yarn publish --non-interactive --access public
 fi
