@@ -75,8 +75,6 @@ const promises = icons.map(({id, size}) => {
     .then(transform)
     // Записываем JS в файл.
     .then(js => {
-      // Создаем обратную совместимость c предыдущей версией.
-      // FIXME: Fire.js = fire.js
       fs.writeFileSync(path.join(iconsDir, `${id}.js`), js);
 
       // Создаем файл прямо в дистрибутиве чтобы получать доступ по пути:
