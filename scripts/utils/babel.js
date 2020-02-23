@@ -4,29 +4,24 @@ const fs = require('fs');
 
 const configFile = path.resolve(process.cwd(), 'scripts/utils', 'babel.config-icons.js');
 
-function transformFile ({ path, outputPath, options }) {
-  return babel.transformFile(path, {
-    configFile,
-    ...options
-  }, (err, result) => {
-    if (err) {
-      throw new Error(err)
-    }
-    fs.writeFileSync(outputPath, result.code);
-  });
+/**
+ * Трансоформирует файл при помощи Babel.
+ * @param path
+ * @param outputPath
+ * @param options
+ */
+function transformFile({path, outputPath, options}) {
+  const {code} = babel.transformFileSync(path, {configFile, ...options});
+  fs.writeFileSync(outputPath, code);
 }
 
-function transform (code) {
-  return new Promise((resolve) => {
-    babel.transform(code, {
-      configFile
-    }, (err, result) => {
-      if (err) {
-        throw new Error(err)
-      }
-      resolve(result.code)
-    });
-  })
+/**
+ * Трансоформирует код при помощи Babel.
+ * @param code
+ * @returns {*}
+ */
+function transform(code) {
+  return babel.transform(code, {configFile}).code;
 }
 
 module.exports.transformFile = transformFile;

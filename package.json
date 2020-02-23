@@ -14,8 +14,9 @@
     "react": "^16.4.0"
   },
   "scripts": {
-    "build": "node scripts/icons.js && node scripts/docs",
+    "icons": "node scripts/icons.js",
     "docs": "node scripts/docs",
+    "build": "yarn run icons && yarn run docs",
     "release": "./tasks/release.sh"
   },
   "devDependencies": {

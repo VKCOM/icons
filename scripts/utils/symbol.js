@@ -2,7 +2,13 @@ const Compiler = require('svg-baker');
 
 const compiler = new Compiler();
 
-const reactify = (symbol) => {
+/**
+ * Возвращает разметку React-компонента.
+ * @param componentName
+ * @param symbol
+ * @returns {{js: *, ts: *}}
+ */
+function reactify(componentName, symbol) {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
@@ -26,7 +32,7 @@ if (browserSprite) {
   browserSprite.add(browserSymbol);
 }
 
-function Icon (props) {
+function ${componentName} (props) {
   return React.createElement(SvgIcon, assign({}, props, {
     viewBox: viewBox,
     id: id,
@@ -35,11 +41,12 @@ function Icon (props) {
   }));
 }
 
-export default Icon;`;
-};
-
-function symbol ({ content, id }) {
-  return compiler.addSymbol({ content, id, path: '' }).then(symbol => reactify(symbol));
+export default ${componentName};`;
 }
 
-module.exports = symbol;
+function symbol({content, id}) {
+  return compiler.addSymbol({content, id, path: ''});
+}
+
+exports.symbol = symbol;
+exports.reactify = reactify;
