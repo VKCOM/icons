@@ -16,7 +16,7 @@ function transformFile({path, outputPath, options}) {
 }
 
 /**
- * Трансоформирует код при помощи Babel.
+ * Трансформирует код при помощи Babel.
  * @param code
  * @returns {*}
  */
