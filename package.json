@@ -6,6 +6,8 @@
   "homepage": "https://vkcom.github.io/icons/",
   "author": "bumbledos@gmail.com",
   "license": "SEE LICENSE IN LICENSE",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "es6-object-assign": "^1.1.0",
     "svg-baker-runtime": "^1.4.2"
