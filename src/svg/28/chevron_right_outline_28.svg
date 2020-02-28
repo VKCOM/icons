@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>chevron_right_outline_28</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron_right_outline_28">
+            <rect x="0" y="0" width="28" height="28"></rect>
+            <g id="Source" transform="translate(11.000000, 7.000000)" stroke="#8BC1FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <polyline id="Path-2" points="0 0.5 6.5 7 2.84328117e-13 13.5"></polyline>
+            </g>
+            <path d="M16.0857864,14 L10.2928932,19.7928932 C9.90236893,20.1834175 9.90236893,20.8165825 10.2928932,21.2071068 C10.6834175,21.5976311 11.3165825,21.5976311 11.7071068,21.2071068 L18.2071068,14.7071068 C18.5976311,14.3165825 18.5976311,13.6834175 18.2071068,13.2928932 L11.7071068,6.79289322 C11.3165825,6.40236893 10.6834175,6.40236893 10.2928932,6.79289322 C9.90236893,7.18341751 9.90236893,7.81658249 10.2928932,8.20710678 L16.0857864,14 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
