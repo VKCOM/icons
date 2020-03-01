@@ -70,12 +70,19 @@ const promises = icons.map(({id, size}) => {
     // Создаем символ из SVG.
     .then(content => symbol({content, id: `${id}_${size}`}))
     // Превращаем в React-компонент.
-    .then(symbol => reactify(componentName, symbol))
+    .then(symbol => ({
+      backwardCompatibleJs: reactify(componentName, symbol, true),
+      js: reactify(componentName, symbol),
+    }))
     // Транспилируем в ES5.
-    .then(transform)
+    .then(({backwardCompatibleJs, js}) => ({
+      backwardCompatibleJs: transform(backwardCompatibleJs),
+      js: transform(js),
+    }))
     // Записываем JS в файл.
-    .then(js => {
-      fs.writeFileSync(path.join(iconsDir, `${id}.js`), js);
+    .then(({backwardCompatibleJs, js}) => {
+      // Сохраняем обратную совместимость.
+      fs.writeFileSync(path.join(iconsDir, `${id}.js`), backwardCompatibleJs);
 
       // Создаем файл прямо в дистрибутиве чтобы получать доступ по пути:
       // @vkontakte/icons/Fire12 или @vkontakte/icons/Fire56

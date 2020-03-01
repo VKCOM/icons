@@ -6,17 +6,19 @@ const compiler = new Compiler();
  * Возвращает разметку React-компонента.
  * @param componentName
  * @param symbol
+ * @param backwardCompatible
  * @returns {{js: *, ts: *}}
  */
-function reactify(componentName, symbol) {
+function reactify(componentName, symbol, backwardCompatible = false) {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
+  const backPath = backwardCompatible ? '..' : '.';
 
   return `import React from 'react';
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 import { assign } from 'es6-object-assign';
-import browserSprite from '../sprite';
-import SvgIcon from '../SvgIcon';
+import browserSprite from '${backPath}/sprite';
+import SvgIcon from '${backPath}/SvgIcon';
 
 const viewBox = '${symbol.viewBox}';
 const id = '${symbol.id}';
