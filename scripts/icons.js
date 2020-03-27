@@ -38,19 +38,22 @@ transformFile({
 
 // Собираем иконки
 const promises = icons.map(({ id, size }) => {
+  // Берем svg-файл
   const svg = fs.readFileSync(path.join(cwd, `src/svg/${size}/${id}_${size}.svg`), 'utf-8');
-  return svgo.optimize(svg).then(({ data }) => {
+  return svgo.optimize(svg).then(({ data }) => { // Ужимаем содержимое
     return data
   }).then((content) => {
-    return symbol({ content, id: `${id}_${size}` })
+    return symbol({ content, id: `${id}_${size}` }) // Превращаем svg-файл в js-файл в виде строки
   }).then((es6) => {
-    return transform(es6);
+    return transform(es6); // Проходимся по файлу бабелем
   }).then((result) => {
+    // Кладем полученную строку в файл в DIST_FOLTER
     const iconDir = path.join(cwd, DIST_FOLDER, size);
     if (!fs.existsSync(iconDir)) {
       fs.mkdirSync(iconDir)
     }
     fs.writeFileSync(path.join(iconDir, `${id}.js`), result);
+    fs.copyFileSync(path.join(cwd, 'src/declaration.d.ts'), path.join(iconDir, `${id}.d.ts`));
   })
 });
 
