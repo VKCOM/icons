@@ -9,7 +9,7 @@ function SvgIcon ({ width, height, viewBox, id, className, style, fill, getRootR
     <div
       {...restProps}
       ref={getRootRef}
-      className={`Icon Icon--${size} Icon--${id} ${className}`}
+      className={`Icon Icon--${size} Icon--w-${width} Icon--h-${height} Icon--${id} ${className}`}
       style={{ ...style, width, height }}
     >
       <svg viewBox={viewBox} width={width} height={height} style={svgStyle}>
