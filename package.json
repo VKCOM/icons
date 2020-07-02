@@ -10,6 +10,7 @@
     "es6-object-assign": "1.1.0",
     "svg-baker-runtime": "1.4.6"
   },
+  "files": ["dist", "src/svg"],
   "peerDependencies": {
     "react": "^16.9.0"
   },
