@@ -10,7 +10,13 @@ let browserSprite;
 
 if (canUseDOM) {
   browserSprite = new BrowserSprite({ attrs: { id: '__SVG_SPRITE_NODE__' } });
-  browserSprite.mount();
+  if (document.querySelector('body')) {
+    browserSprite.mount();
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      browserSprite.mount();
+    });
+  }
 } else {
   browserSprite = null;
 }
