@@ -6,12 +6,12 @@ const reactify = (symbol, componentName) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
-  return `import React, { useLayoutEffect, FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+  return `import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
 // @ts-ignore
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 // @ts-ignore
 import { assign } from 'es6-object-assign';
-import { addSpriteSymbol } from '../sprite';
+import { addSpriteSymbol, useIsomorphicLayoutEffect } from '../sprite';
 import { SvgIcon } from '../SvgIcon';
 
 const viewBox = '${symbol.viewBox}';
@@ -38,8 +38,8 @@ export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
   getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
 }
 
-export const ${componentName}: FC<${componentName}Props> = (props) => {
-  useLayoutEffect(() => {
+const ${componentName}: FC<${componentName}Props> = (props) => {
+  useIsomorphicLayoutEffect(() => {
     mountIcon();
   }, []);
 

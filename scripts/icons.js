@@ -60,7 +60,7 @@ function createIndexExports() {
 
   sortArrayAlphabetically(Object.keys(indexExportsMap)).forEach((componentName) => {
     const path = indexExportsMap[componentName];
-    exports.push(`export { ${componentName} } from '${path}';`);
+    exports.push(`export { default as ${componentName} } from '${path}';`);
   });
 
   const code = exports.join('\n');

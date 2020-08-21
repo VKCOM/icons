@@ -1,5 +1,6 @@
 // @ts-ignore
 import BrowserSprite from 'svg-baker-runtime/browser-sprite';
+import { useLayoutEffect, useEffect } from 'react';
 
 const canUseDOM = !!(
   typeof window !== 'undefined' &&
@@ -7,16 +8,26 @@ const canUseDOM = !!(
   window.document.createElement
 );
 
-let browserSprite: BrowserSprite;
+let browserSprite: BrowserSprite | null;
 
 if (canUseDOM) {
-  browserSprite = new BrowserSprite({ attrs: { id: '__SVG_SPRITE_NODE__' } });
-  if (document.querySelector('body')) {
-    browserSprite.mount();
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
+  const spriteId = '__SVG_SPRITE_NODE__';
+
+  browserSprite = new BrowserSprite({ attrs: { id: spriteId } });
+
+  const mount = () => {
+    const spriteNode = document.getElementById(spriteId);
+    if (spriteNode) {
+      browserSprite.attach(spriteNode);
+    } else {
       browserSprite.mount();
-    });
+    }
+  };
+
+  if (document.querySelector('body')) {
+    mount();
+  } else {
+    document.addEventListener('DOMContentLoaded', mount);
   }
 } else {
   browserSprite = null;
@@ -27,3 +38,5 @@ export function addSpriteSymbol(symbol: any) {
     browserSprite.add(symbol);
   }
 }
+
+export const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
