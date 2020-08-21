@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
 
-let Icons = {};
+const Icons = {};
 
-icons.forEach(({ size, id }) => {
-  let Icon = require('../../dist/' + size + '/' + id + '.js').default;
-  if (!Icons.hasOwnProperty(size)) Icons[size] = {};
+process.env.ICONS.forEach(({ size, id }) => {
+  const Icon = require('../../dist/' + size + '/' + id + '.js').default;
+  if (!Icons.hasOwnProperty(size)) {
+    Icons[size] = {};
+  }
   Icons[size][id] = Icon;
 });
 
@@ -36,7 +38,7 @@ class Docs extends React.PureComponent {
       copied: false,
       anchorSize,
       anchorName,
-      search: ''
+      search: '',
     };
   }
 
@@ -51,7 +53,7 @@ class Docs extends React.PureComponent {
     this.setState({
       selectedIcon: `import Icon${size}${dashToCamel(name)} from '@vkontakte/icons/dist/${size}/${name}';`,
       anchorSize: size,
-      anchorName: name
+      anchorName: name,
     }, () => {
       this.textareaEl.select();
       document.execCommand('copy');
