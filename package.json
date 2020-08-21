@@ -13,7 +13,9 @@
   "main": "dist/index.js",
   "module": "dist/es6/index.js",
   "typings": "dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "docs": "node scripts/docs",
     "build": "yarn icons-build && yarn docs",

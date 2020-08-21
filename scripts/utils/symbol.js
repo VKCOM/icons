@@ -6,7 +6,7 @@ const reactify = (symbol, componentName) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
-  return `import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+  return `import React, { useLayoutEffect, FC, HTMLAttributes, RefCallback, RefObject } from 'react';
 // @ts-ignore
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 // @ts-ignore
@@ -18,11 +18,18 @@ const viewBox = '${symbol.viewBox}';
 const id = '${symbol.id}';
 const content = '${symbol.render()}';
 
-addSpriteSymbol(new BrowserSymbol({
-  id: id,
-  viewBox: viewBox,
-  content: content,
-}));
+let isMounted = false;
+function mountIcon() {
+  if (!isMounted) {
+    addSpriteSymbol(new BrowserSymbol({
+      id: id,
+      viewBox: viewBox,
+      content: content,
+    }));
+
+    isMounted = true;
+  }
+}
 
 export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
   fill?: string;
@@ -32,6 +39,10 @@ export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const ${componentName}: FC<${componentName}Props> = (props) => {
+  useLayoutEffect(() => {
+    mountIcon();
+  }, []);
+
   return React.createElement(SvgIcon, assign({}, props, {
     viewBox: viewBox,
     id: id,
