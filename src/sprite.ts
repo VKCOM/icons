@@ -1,3 +1,4 @@
+// @ts-ignore
 import BrowserSprite from 'svg-baker-runtime/browser-sprite';
 
 const canUseDOM = !!(
@@ -6,7 +7,7 @@ const canUseDOM = !!(
   window.document.createElement
 );
 
-let browserSprite;
+let browserSprite: BrowserSprite;
 
 if (canUseDOM) {
   browserSprite = new BrowserSprite({ attrs: { id: '__SVG_SPRITE_NODE__' } });
@@ -21,4 +22,8 @@ if (canUseDOM) {
   browserSprite = null;
 }
 
-export default browserSprite;
+export function addSpriteSymbol(symbol: any) {
+  if (browserSprite) {
+    browserSprite.add(symbol);
+  }
+}

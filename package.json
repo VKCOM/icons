@@ -6,22 +6,32 @@
   "homepage": "https://vkcom.github.io/icons/",
   "author": "bumbledos@gmail.com",
   "license": "SEE LICENSE IN LICENSE",
-  "dependencies": {
-    "es6-object-assign": "1.1.0",
-    "svg-baker-runtime": "1.4.6"
-  },
   "files": [
     "dist",
     "src/svg"
   ],
+  "main": "dist/index.js",
+  "module": "dist/es6/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "docs": "node scripts/docs",
+    "build": "yarn icons-build && yarn docs",
+    "release": "./tasks/release.sh",
+
+    "icons-babel": "NODE_ENV=production babel --config-file ./scripts/babel.config-icons.js tmp/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js",
+    "icons-babel-es6": "NODE_ENV=production babel --config-file ./scripts/babel.es6.config-icons.js tmp/ --out-dir dist/es6/ --source-maps --extensions .tsx,.jsx,.ts,.js",
+    "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/",
+    "icons-tsc-es6": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/es6/",
+    "icons-build-cjs": "yarn icons-tsc && yarn icons-babel",
+    "icons-build-es6": "yarn icons-tsc-es6 && yarn icons-babel-es6",
+    "icons-build": "node scripts/icons.js && yarn icons-build-cjs && yarn icons-build-es6 && rm -rf tmp"
+  },
+  "dependencies": {
+    "es6-object-assign": "1.1.0",
+    "svg-baker-runtime": "1.4.6"
+  },
   "peerDependencies": {
     "react": "^16.9.0"
-  },
-  "scripts": {
-    "icons": "node scripts/icons.js",
-    "docs": "node scripts/docs",
-    "build": "yarn icons && yarn docs",
-    "release": "./tasks/release.sh"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
@@ -30,6 +40,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.9.5",
     "@babel/preset-env": "7.9.5",
     "@babel/preset-react": "7.9.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/react": "16.9.34",
     "babel-loader": "8.1.0",
     "css-loader": "3.5.2",
@@ -44,6 +55,7 @@
     "style-loader": "1.1.4",
     "svg-baker": "1.7.0",
     "svgo": "1.3.2",
+    "typescript": "^4.0.2",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
     "webpack-merge": "4.2.2"

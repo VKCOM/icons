@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+
+interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
+  width?: number;
+  height?: number;
+  viewBox?: string;
+  fill?: string;
+  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
+}
 
 const svgStyle = { display: 'block' };
 
-function SvgIcon ({ width, height, viewBox, id, className, style, fill, getRootRef, ...restProps }) {
+export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, className, style, fill, getRootRef, ...restProps }) => {
   const size = Math.max(width, height);
 
   return (
@@ -17,11 +25,9 @@ function SvgIcon ({ width, height, viewBox, id, className, style, fill, getRootR
       </svg>
     </div>
   );
-}
+};
 
 SvgIcon.defaultProps = {
   className: '',
   style: {},
 };
-
-export default SvgIcon;

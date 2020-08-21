@@ -2,44 +2,50 @@ const Compiler = require('svg-baker');
 
 const compiler = new Compiler();
 
-const reactify = (symbol) => {
+const reactify = (symbol, componentName) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
-  return `import React from 'react';
+  return `import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+// @ts-ignore
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
+// @ts-ignore
 import { assign } from 'es6-object-assign';
-import browserSprite from '../sprite';
-import SvgIcon from '../SvgIcon';
+import { addSpriteSymbol } from '../sprite';
+import { SvgIcon } from '../SvgIcon';
 
 const viewBox = '${symbol.viewBox}';
 const id = '${symbol.id}';
 const content = '${symbol.render()}';
 
-if (browserSprite) {
-  const browserSymbol = new BrowserSymbol({
-    id: id,
-    viewBox: viewBox,
-    content: content
-  });
+addSpriteSymbol(new BrowserSymbol({
+  id: id,
+  viewBox: viewBox,
+  content: content,
+}));
 
-  browserSprite.add(browserSymbol);
+export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
+  fill?: string;
+  width?: number;
+  height?: number;
+  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
 }
 
-function Icon (props) {
+export const ${componentName}: FC<${componentName}Props> = (props) => {
   return React.createElement(SvgIcon, assign({}, props, {
     viewBox: viewBox,
     id: id,
     width: !isNaN(props.width) ? +props.width : ${width},
-    height: !isNaN(props.height) ? +props.height : ${height}
+    height: !isNaN(props.height) ? +props.height : ${height},
   }));
-}
-
-export default Icon;`;
 };
 
-function symbol ({ content, id }) {
-  return compiler.addSymbol({ content, id, path: '' }).then(symbol => reactify(symbol));
+export default ${componentName};
+`;
+};
+
+function symbol({ content, id, componentName }) {
+  return compiler.addSymbol({ content, id, path: '' }).then(symbol => reactify(symbol, componentName));
 }
 
 module.exports = symbol;

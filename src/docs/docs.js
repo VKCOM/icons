@@ -5,12 +5,12 @@ import './docs.css';
 
 const Icons = {};
 
-process.env.ICONS.forEach(({ size, id }) => {
+process.env.ICONS.forEach(({ size, id, componentName }) => {
   const Icon = require('../../dist/' + size + '/' + id + '.js').default;
   if (!Icons.hasOwnProperty(size)) {
     Icons[size] = {};
   }
-  Icons[size][id] = Icon;
+  Icons[size][id] = { Icon, componentName };
 });
 
 const example =
@@ -19,14 +19,6 @@ const example =
 <Icon24Cancel />`;
 
 const sizeExample = `<Icon24LogoVk width={20} height={20} />`;
-
-function dashToCamel (dash) {
-  const dashSplited = dash.split('_');
-  return dashSplited.reduce((res, piece) => {
-    piece = piece.charAt(0).toUpperCase() + piece.slice(1);
-    return res + piece;
-  }, '');
-}
 
 class Docs extends React.PureComponent {
   constructor (props) {
@@ -49,9 +41,9 @@ class Docs extends React.PureComponent {
   onTextareaChange = () => this.setState({ selectedIcon: null });
 
   onIconClick = (e) => {
-    const { name, size } = e.currentTarget.dataset;
+    const { name, size, component } = e.currentTarget.dataset;
     this.setState({
-      selectedIcon: `import Icon${size}${dashToCamel(name)} from '@vkontakte/icons/dist/${size}/${name}';`,
+      selectedIcon: `import ${component} from '@vkontakte/icons/dist/${size}/${name}';`,
       anchorSize: size,
       anchorName: name,
     }, () => {
@@ -114,7 +106,7 @@ class Docs extends React.PureComponent {
             <h3>{size}</h3>
             <div className="icons">
               {Object.keys(Icons[size]).filter(iconName => iconName.indexOf(this.state.search) > -1).map((iconName) => {
-                const Icon = Icons[size][iconName];
+                const { Icon, componentName } = Icons[size][iconName];
                 return (
                   <a
                     href={`#${size}/${iconName}`}
@@ -124,6 +116,7 @@ class Docs extends React.PureComponent {
                     onClick={this.onIconClick}
                     data-name={iconName}
                     data-size={size}
+                    data-component={componentName}
                   >
                     <Icon />
                     <div className="icon-name">{iconName}</div>
