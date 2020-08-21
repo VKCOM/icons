@@ -21,7 +21,7 @@ function SvgIcon ({ width, height, viewBox, id, className, style, fill, getRootR
 
 SvgIcon.defaultProps = {
   className: '',
-  style: {}
+  style: {},
 };
 
 export default SvgIcon;

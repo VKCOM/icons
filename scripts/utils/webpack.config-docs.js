@@ -18,34 +18,34 @@ module.exports = {
           options: {
             presets: [
               '@babel/preset-env',
-              '@babel/preset-react'
+              '@babel/preset-react',
             ],
             plugins: [
               '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-proposal-object-rest-spread'
-            ]
-          }
-        }]
+              '@babel/plugin-proposal-object-rest-spread',
+            ],
+          },
+        }],
       },
       {
         test: /\.(otf|svg)/,
-        use: 'file-loader'
+        use: 'file-loader',
       },
       {
         test: /\.css/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/docs/docs.html',
       title: 'VK Icons',
-      hash: true
+      hash: true,
     }),
     new webpack.DefinePlugin({
-      icons: JSON.stringify(icons.iconsMap())
-    })
+      'process.env.ICONS': JSON.stringify(icons.iconsMap()),
+    }),
   ],
   mode: 'development',
 };
