@@ -51,6 +51,8 @@ const ${componentName}: FC<${componentName}Props> = (props) => {
   }));
 };
 
+(${componentName} as any).mountIcon = mountIcon;
+
 export default ${componentName};
 `;
 };
