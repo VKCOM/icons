@@ -39,4 +39,4 @@ export function addSpriteSymbol(symbol: any) {
   }
 }
 
-export const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+export const useIsomorphicLayoutEffect = canUseDOM ? useLayoutEffect : useEffect;
