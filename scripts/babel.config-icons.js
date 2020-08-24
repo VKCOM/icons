@@ -1,4 +1,4 @@
-const pkg = require('../../package');
+const pkg = require('../package');
 
 module.exports = function (api) {
   if (api) {
@@ -13,7 +13,9 @@ module.exports = function (api) {
             browsers: pkg.browserslist,
           },
         },
-      ], '@babel/preset-react',
+      ],
+      '@babel/preset-react',
+      '@babel/preset-typescript',
     ],
     plugins: [
       '@babel/plugin-proposal-class-properties',

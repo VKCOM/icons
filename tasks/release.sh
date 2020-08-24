@@ -16,7 +16,7 @@ else
   git tag -a "v$1" -m "v$1"
 
   echo "[icons release]: pushing updates"
-  git push origin master
+  git push origin HEAD
 
   echo "[icons release]: pushing new tag"
   git push origin "v$1"
