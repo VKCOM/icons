@@ -19,7 +19,6 @@
   "scripts": {
     "docs": "node scripts/docs",
     "build": "yarn icons-build && yarn docs",
-    "release": "./tasks/release.sh",
     "icons-babel": "NODE_ENV=production babel --config-file ./scripts/babel.config-icons.js tmp/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js",
     "icons-babel-es6": "NODE_ENV=production babel --config-file ./scripts/babel.es6.config-icons.js tmp/ --out-dir dist/es6/ --source-maps --extensions .tsx,.jsx,.ts,.js",
     "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/",
