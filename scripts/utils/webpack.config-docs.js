@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), 'docs'),
   },
+  target: ['web', 'es5'],
   module: {
     rules: [
       {
@@ -44,7 +45,7 @@ module.exports = {
       hash: true,
     }),
     new webpack.DefinePlugin({
-      'process.env.ICONS': JSON.stringify(icons.iconsMap()),
+      'window.ICONS': JSON.stringify(icons.iconsMap()),
     }),
   ],
   mode: 'development',

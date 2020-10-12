@@ -5,7 +5,7 @@ import './docs.css';
 
 const Icons = {};
 
-process.env.ICONS.forEach(({ size, id, componentName }) => {
+window.ICONS.forEach(({ size, id, componentName }) => {
   const Icon = require('../../dist/' + size + '/' + id + '.js').default;
   if (!Icons.hasOwnProperty(size)) {
     Icons[size] = {};
