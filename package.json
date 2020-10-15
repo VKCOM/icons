@@ -1,0 +1,68 @@
+{
+  "name": "@vkontakte/icons",
+  "version": "1.45.0",
+  "description": "SVG icons, provided as a React components. With love from VKontakte",
+  "repository": "https://github.com/VKCOM/icons",
+  "homepage": "https://vkcom.github.io/icons/",
+  "author": "bumbledos@gmail.com",
+  "license": "SEE LICENSE IN LICENSE",
+  "files": [
+    "dist",
+    "src/svg"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/es6/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "docs": "node scripts/docs",
+    "build": "yarn icons-build && yarn docs",
+    "icons-babel": "NODE_ENV=production babel --config-file ./scripts/babel.config-icons.js tmp/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js",
+    "icons-babel-es6": "NODE_ENV=production babel --config-file ./scripts/babel.es6.config-icons.js tmp/ --out-dir dist/es6/ --source-maps --extensions .tsx,.jsx,.ts,.js",
+    "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/",
+    "icons-tsc-es6": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/es6/",
+    "icons-build-cjs": "yarn icons-tsc && yarn icons-babel",
+    "icons-build-es6": "yarn icons-tsc-es6 && yarn icons-babel-es6",
+    "icons-build": "node scripts/icons.js && yarn icons-build-cjs && yarn icons-build-es6 && rm -rf tmp"
+  },
+  "dependencies": {
+    "es6-object-assign": "1.1.0",
+    "svg-baker-runtime": "1.4.6"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.11.0",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
+    "@types/react": "16.9.34",
+    "babel-loader": "8.1.0",
+    "css-loader": "4.3.0",
+    "file-loader": "6.1.1",
+    "glob": "7.1.6",
+    "html-webpack-plugin": "4.5.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.9.0",
+    "react-color": "2.18.0",
+    "react-dom": "^16.9.0",
+    "rimraf": "3.0.2",
+    "style-loader": "2.0.0",
+    "svg-baker": "1.7.0",
+    "svgo": "1.3.2",
+    "typescript": "^4.0.2",
+    "webpack": "5.0.0",
+    "webpack-cli": "4.0.0",
+    "webpack-merge": "4.2.2"
+  },
+  "browserslist": [
+    "android >= 4.4",
+    "ios >= 9"
+  ]
+}

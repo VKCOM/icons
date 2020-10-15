@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>block_outline_28</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="block_outline_28">
+            <polygon points="0 0 28 0 28 28 0 28"></polygon>
+            <path d="M20.3287318,21.7429453 L6.25705467,7.67126824 C4.84636529,9.39513881 4,11.5987298 4,14 C4,19.5228475 8.4771525,24 14,24 C16.4012702,24 18.6048612,23.1536347 20.3287318,21.7429453 L20.3287318,21.7429453 Z M21.7429453,20.3287318 C23.1536347,18.6048612 24,16.4012702 24,14 C24,8.4771525 19.5228475,4 14,4 C11.5987298,4 9.39513881,4.84636529 7.67126824,6.25705467 L21.7429453,20.3287318 L21.7429453,20.3287318 Z M14,26 C7.372583,26 2,20.627417 2,14 C2,7.372583 7.372583,2 14,2 C20.627417,2 26,7.372583 26,14 C26,20.627417 20.627417,26 14,26 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

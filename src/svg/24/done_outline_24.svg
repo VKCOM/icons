@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>done_outline_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="done_outline_24">
+            <rect id="Bounds" x="0" y="0" width="24" height="24"></rect>
+            <path d="M19.8636041,5.36360373 C20.215076,5.01213196 20.7849245,5.01213211 21.1363963,5.36360407 C21.487868,5.71507602 21.4878679,6.2849245 21.1363959,6.63639627 L9.63638983,18.1363963 C9.28491779,18.4878681 8.71506914,18.4878679 8.3635974,18.1363957 L3.36360351,13.1363957 C3.01213186,12.7849236 3.01213221,12.2150752 3.36360429,11.8636035 C3.71507636,11.5121319 4.28492484,11.5121322 4.63639649,11.8636043 L8.99999445,16.2272076 L19.8636041,5.36360373 Z" id="Mask" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

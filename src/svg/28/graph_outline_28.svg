@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>graph_outline_28</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-28/graph_outline_28" fill-rule="nonzero">
+            <g id="graph_outline_28">
+                <rect opacity="0.256742932" x="0" y="0" width="28" height="28"></rect>
+                <path d="M6,16 C6.55228475,16 7,16.4477153 7,17 L7,23 C7,23.5522847 6.55228475,24 6,24 C5.44771525,24 5,23.5522847 5,23 L5,17 C5,16.4477153 5.44771525,16 6,16 Z M11,4 C11.5522847,4 12,4.44771525 12,5 L12,23 C12,23.5522847 11.5522847,24 11,24 C10.4477153,24 10,23.5522847 10,23 L10,5 C10,4.44771525 10.4477153,4 11,4 Z M16,12 C16.5522847,12 17,12.4477153 17,13 L17,23 C17,23.5522847 16.5522847,24 16,24 C15.4477153,24 15,23.5522847 15,23 L15,13 C15,12.4477153 15.4477153,12 16,12 Z M21,8 C21.5522847,8 22,8.44771525 22,9 L22,23 C22,23.5522847 21.5522847,24 21,24 C20.4477153,24 20,23.5522847 20,23 L20,9 C20,8.44771525 20.4477153,8 21,8 Z" id="↳-Icon-Color" fill="currentColor"></path>
+            </g>
+        </g>
+    </g>
+</svg>

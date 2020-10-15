@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>info_20</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="info_20" fill-rule="nonzero">
+            <g>
+                <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+                <path d="M10,1 C14.968,1 19,5.032 19,10 C19,14.968 14.968,19 10,19 C5.032,19 1,14.968 1,10 C1,5.032 5.032,1 10,1 Z M10,9 C9.50294373,9 9.1,9.40294373 9.1,9.9 L9.1,13.6 C9.1,14.0970563 9.50294373,14.5 10,14.5 C10.4970563,14.5 10.9,14.0970563 10.9,13.6 L10.9,9.9 C10.9,9.40294373 10.4970563,9 10,9 Z M10,5.5 C9.44771525,5.5 9,5.94771525 9,6.5 C9,7.05228475 9.44771525,7.5 10,7.5 C10.5522847,7.5 11,7.05228475 11,6.5 C11,5.94771525 10.5522847,5.5 10,5.5 Z" id="↳-Icon-Color" fill="currentColor"></path>
+            </g>
+        </g>
+    </g>
+</svg>

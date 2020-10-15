@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>spinner_regular</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Kit-Item" transform="translate(-198.000000, -44.000000)" fill="currentColor" fill-rule="nonzero">
+            <g id="Circular-Loader-16pt-@Controls.Loaders" transform="translate(64.000000, 2.000000)">
+                <path d="M146,66 C145.309644,66 144.75,65.4403559 144.75,64.75 C144.75,64.0596441 145.309644,63.5 146,63.5 C151.246705,63.5 155.5,59.2467051 155.5,54 C155.5,48.7532949 151.246705,44.5 146,44.5 C140.753295,44.5 136.5,48.7532949 136.5,54 C136.5,55.100947 136.686807,56.1745691 137.047896,57.1883378 C137.279535,57.8386721 136.940115,58.5536527 136.289781,58.7852916 C135.639447,59.0169306 134.924466,58.6775109 134.692827,58.0271766 C134.236162,56.7450746 134,55.3877987 134,54 C134,47.372583 139.372583,42 146,42 C152.627417,42 158,47.372583 158,54 C158,60.627417 152.627417,66 146,66 Z" id="spinner_regular"></path>
+            </g>
+        </g>
+    </g>
+</svg>

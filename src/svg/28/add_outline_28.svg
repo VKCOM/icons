@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>add_outline_28</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add_outline_28">
+            <rect x="0" y="0" width="28" height="28"></rect>
+            <path d="M14,4 C14.5522847,4 15,4.44771525 15,5 L15,13 L23,13 C23.5522847,13 24,13.4477153 24,14 C24,14.5522847 23.5522847,15 23,15 L15,15 L15,23 C15,23.5522847 14.5522847,24 14,24 C13.4477153,24 13,23.5522847 13,23 L13,15 L5,15 C4.44771525,15 4,14.5522847 4,14 C4,13.4477153 4.44771525,13 5,13 L13,13 L13,5 C13,4.44771525 13.4477153,4 14,4 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

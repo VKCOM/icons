@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>recent_outline_20</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-20/recent_outline_20-@-clock,-time">
+            <g id="recent_outline_20">
+                <polygon points="0 0 20 0 20 20 0 20"></polygon>
+                <path d="M10,1.5 C14.6944204,1.5 18.5,5.30557963 18.5,10 C18.5,14.6944204 14.6944204,18.5 10,18.5 C5.30557963,18.5 1.5,14.6944204 1.5,10 C1.5,5.30557963 5.30557963,1.5 10,1.5 Z M10,3 C6.13400675,3 3,6.13400675 3,10 C3,13.8659932 6.13400675,17 10,17 C13.8659932,17 17,13.8659932 17,10 C17,6.13400675 13.8659932,3 10,3 Z M9.25,6 C9.66421356,6 10,6.33578644 10,6.75 L10,9.98490068 L12.7692343,11.0499908 C13.1558387,11.1986848 13.3487032,11.6326299 13.2000092,12.0192343 C13.0513152,12.4058387 12.6173701,12.5987032 12.2307657,12.4500092 L8.98076569,11.2000092 C8.69112166,11.0886077 8.5,10.8103288 8.5,10.5 L8.5,6.75 C8.5,6.33578644 8.83578644,6 9.25,6 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

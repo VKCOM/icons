@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Icons 56/info_outline_56</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons-56/info_outline_56" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="info_outline_56">
+            <rect x="0" y="0" width="56" height="56"></rect>
+            <path d="M28,4 C41.254834,4 52,14.745166 52,28 C52,41.254834 41.254834,52 28,52 C14.745166,52 4,41.254834 4,28 C4,14.745166 14.745166,4 28,4 Z M28,7 C16.4020203,7 7,16.4020203 7,28 C7,39.5979797 16.4020203,49 28,49 C39.5979797,49 49,39.5979797 49,28 C49,16.4020203 39.5979797,7 28,7 Z M28,24.5 C28.7796961,24.5 29.4204487,25.0948881 29.4931334,25.85554 L29.5,26 L29.5,37 C29.5,37.8284271 28.8284271,38.5 28,38.5 C27.2203039,38.5 26.5795513,37.9051119 26.5068666,37.14446 L26.5,37 L26.5,26 C26.5,25.1715729 27.1715729,24.5 28,24.5 Z M28,17 C29.1045695,17 30,17.8954305 30,19 C30,20.1045695 29.1045695,21 28,21 C26.8954305,21 26,20.1045695 26,19 C26,17.8954305 26.8954305,17 28,17 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

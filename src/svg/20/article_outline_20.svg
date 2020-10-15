@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>article_outline_20</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M17.5,5.25 C17.5,4.83578644 17.1585208,4.5 16.7561477,4.5 L3.24385233,4.5 C2.83303403,4.5 2.5,4.83289862 2.5,5.25 L2.5,5.25 C2.5,5.66421356 2.84147918,6 3.24385233,6 L16.7561477,6 C17.166966,6 17.5,5.66710138 17.5,5.25 L17.5,5.25 Z M17.5,10.25 C17.5,9.83578644 17.1585208,9.5 16.7561477,9.5 L3.24385233,9.5 C2.83303403,9.5 2.5,9.83289862 2.5,10.25 L2.5,10.25 C2.5,10.6642136 2.84147918,11 3.24385233,11 L16.7561477,11 C17.166966,11 17.5,10.6671014 17.5,10.25 L17.5,10.25 Z M2.5,15.25 C2.5,15.6642136 2.83746157,16 3.25513411,16 L12.2448659,16 C12.6619149,16 13,15.6671014 13,15.25 L13,15.25 C13,14.8357864 12.6625384,14.5 12.2448659,14.5 L3.25513411,14.5 C2.83808506,14.5 2.5,14.8328986 2.5,15.25 L2.5,15.25 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="article_outline_20">
+            <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

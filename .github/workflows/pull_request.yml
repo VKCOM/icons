@@ -1,0 +1,19 @@
+name: 'Pull Request'
+
+on: ['pull_request']
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: Uploading docs artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs/

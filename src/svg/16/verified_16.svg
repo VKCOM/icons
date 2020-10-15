@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>verified_16</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Badges/verified_16">
+            <g id="verified_16">
+                <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                <path d="M4.5,9.58578644 L2.95710678,8.04289322 C2.56658249,7.65236893 1.93341751,7.65236893 1.54289322,8.04289322 C1.15236893,8.43341751 1.15236893,9.06658249 1.54289322,9.45710678 L3.79289322,11.7071068 C4.18341751,12.0976311 4.81658249,12.0976311 5.20710678,11.7071068 L10.4571068,6.45710678 C10.8476311,6.06658249 10.8476311,5.43341751 10.4571068,5.04289322 C10.0665825,4.65236893 9.43341751,4.65236893 9.04289322,5.04289322 L4.5,9.58578644 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
