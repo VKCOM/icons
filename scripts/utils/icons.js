@@ -32,6 +32,9 @@ function getIconComponentName(name, size) {
 function iconsMap() {
   return glob.sync(path.join(process.cwd(), 'src/svg/**/*.svg')).map((iconPath) => {
     const match = iconPath.match(/[/|\\](\d\d)[/|\\](.+)_(\d\d)\.svg/);
+    if (!match) {
+      throw new Error(`Icon path is incorrect: ${iconPath}`);
+    }
     const size = match[1];
     const id = match[2];
     return { id, size, componentName: getIconComponentName(id, size) };
