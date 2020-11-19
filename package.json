@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons",
-  "version": "1.54.0",
+  "version": "1.55.0",
   "description": "SVG icons, provided as a React components. With love from VKontakte",
   "repository": "https://github.com/VKCOM/icons",
   "homepage": "https://vkcom.github.io/icons/",
@@ -32,8 +32,8 @@
     "svg-baker-runtime": "1.4.6"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "@types/react": "^16.9.34"
+    "@types/react": "^16.9.34",
+    "react": "^16.9.0"
   },
   "devDependencies": {
     "@babel/cli": "7.11.6",
