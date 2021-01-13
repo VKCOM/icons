@@ -1,0 +1,22 @@
+name: 'Clear docs for closed PR'
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - name: Remove docs
+        run: rm -rf pull/${{ github.event.pull_request.number }}
+
+      - name: Unpublish docs
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Remove PR ${{ github.event.pull_request.number }}"
+          branch: gh-pages
