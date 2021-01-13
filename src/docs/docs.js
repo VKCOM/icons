@@ -14,7 +14,7 @@ window.ICONS.forEach(({ size, id, componentName }) => {
 });
 
 const example =
-`import Icon24Cancel from '@vkontakte/icons/dist/24/cancel';
+`import { Icon24Cancel } from '@vkontakte/icons';
 
 <Icon24Cancel />`;
 
@@ -43,7 +43,7 @@ class Docs extends React.PureComponent {
   onIconClick = (e) => {
     const { name, size, component } = e.currentTarget.dataset;
     this.setState({
-      selectedIcon: `import ${component} from '@vkontakte/icons/dist/${size}/${name}';`,
+      selectedIcon: `import { ${component} } from '@vkontakte/icons';`,
       anchorSize: size,
       anchorName: name,
     }, () => {
