@@ -43,6 +43,7 @@ module.exports = {
       template: './src/docs/docs.html',
       title: 'VK Icons',
       hash: true,
+      scriptLoading: 'blocking',
     }),
     new webpack.DefinePlugin({
       'window.ICONS': JSON.stringify(icons.iconsMap()),
