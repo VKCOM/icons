@@ -91,8 +91,8 @@ class Docs extends React.PureComponent {
         <h2>Стилизация</h2>
         <div className="color">
           <p>
-            Иконки можно красить. Для этого к элементу <code>svg</code> применено правило <code>fill: currentColor</code>.
-            Иными словами, цвет иконки соответствует текущему значению свойства <code>color</code>.
+            Иконки можно красить. Для этого к элементу <code>svg</code> применено правило <code>fill: {this.state.currentColor}</code>.
+            Иными словами, цвет иконки соответствует текущему значению свойства <code>{this.state.currentColor}</code>.
           </p>
           <div className="color-picker">
             <Hue color={this.state.currentColor} onChangeComplete={this.onCurrentColorChange} width="100%"/>
