@@ -1,4 +1,5 @@
-import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+import React, { FC, HTMLAttributes, RefCallback, RefObject, useContext } from 'react';
+import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 
 interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
   width?: number;
@@ -10,14 +11,30 @@ interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const svgStyle = { display: 'block' };
 
+function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
+  let res = '';
+  for (let i = 0; i < fragments.length; i++) {
+    if (classPrefix) {
+      res += ' ' + (classPrefix + fragments[i]);
+    }
+    if (!classPrefix || globalClasses) {
+      res += ' ' + fragments[i];
+    }
+  }
+  return res;
+}
+
 export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, className, style, fill, getRootRef, ...restProps }) => {
   const size = Math.max(width, height);
+
+  const iconSettings = useContext(IconSettingsContext);
+  const ownClass = iconClass(['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`], iconSettings);
 
   return (
     <div
       {...restProps}
       ref={getRootRef}
-      className={`Icon Icon--${size} Icon--w-${width} Icon--h-${height} Icon--${id} ${className}`}
+      className={`${ownClass} ${className}`}
       style={{ ...style, width, height }}
     >
       <svg viewBox={viewBox} width={width} height={height} style={svgStyle}>
