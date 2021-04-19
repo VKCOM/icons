@@ -33,6 +33,9 @@ fs.copyFileSync(path.resolve(cwd, 'src/sprite.ts'), path.join(TMP_FOLDER, 'sprit
 // Копируем компонент иконки
 fs.copyFileSync(path.resolve(cwd, 'src/SvgIcon.tsx'), path.join(TMP_FOLDER, 'SvgIcon.tsx'));
 
+// Копируем контекст настроек
+fs.copyFileSync(path.resolve(cwd, 'src/IconSettings.tsx'), path.join(TMP_FOLDER, 'IconSettings.tsx'));
+
 const indexExportsMap = {};
 
 // Собираем иконки
@@ -56,7 +59,9 @@ const promises = icons.map(({ id, size, componentName }) => {
 });
 
 function createIndexExports() {
-  const exports = [];
+  const exports = [
+    `export { IconSettingsProvider } from './IconSettings';`
+  ];
 
   sortArrayAlphabetically(Object.keys(indexExportsMap)).forEach((componentName) => {
     const path = indexExportsMap[componentName];
