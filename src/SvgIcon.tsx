@@ -32,6 +32,7 @@ export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, classNam
 
   return (
     <div
+      role="presentation"
       {...restProps}
       ref={getRootRef}
       className={`${ownClass} ${className}`}
