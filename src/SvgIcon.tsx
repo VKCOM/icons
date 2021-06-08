@@ -31,17 +31,17 @@ export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, classNam
   const ownClass = iconClass(['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`], iconSettings);
 
   return (
-    <span
+    <div
       role="presentation"
       {...restProps}
       ref={getRootRef}
       className={`${ownClass} ${className}`}
-      style={{ display: 'block', ...style, width, height }}
+      style={{ ...style, width, height }}
     >
       <svg viewBox={viewBox} width={width} height={height} style={svgStyle}>
         <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
       </svg>
-    </span>
+    </div>
   );
 };
 
