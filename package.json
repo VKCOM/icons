@@ -28,7 +28,6 @@
     "icons-build": "node scripts/icons.js && yarn icons-build-cjs && yarn icons-build-es6 && rm -rf tmp"
   },
   "dependencies": {
-    "es6-object-assign": "1.1.0",
     "svg-baker-runtime": "1.4.7"
   },
   "peerDependencies": {

@@ -1,7 +1,10 @@
 import React, { ElementType, FC, HTMLAttributes, RefCallback, RefObject, useContext } from 'react';
+// @ts-ignore
+import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
+import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 
-interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
+export interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
   width?: number;
   height?: number;
   viewBox?: string;
@@ -51,3 +54,36 @@ SvgIcon.defaultProps = {
   className: '',
   style: {},
 };
+
+export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
+  componentName: string,
+  id: string,
+  viewBox: string,
+  content: string,
+  width: number,
+  height: number
+): FC<Props> {
+  let isMounted = false;
+  function mountIcon() {
+    if (!isMounted) {
+      addSpriteSymbol(new BrowserSymbol({ id, viewBox, content }));
+      isMounted = true;
+    }
+  }
+  const Icon: FC<Props> = (props) => {
+    useIsomorphicLayoutEffect(mountIcon, []);
+
+    return (
+      <SvgIcon
+        {...props}
+        viewBox={viewBox}
+        id={id}
+        width={!isNaN(props.width) ? +props.width : width}
+        height={!isNaN(props.height) ? +props.height : height}
+      />
+    )
+  };
+  (Icon as any).mountIcon = mountIcon;
+  Icon.displayName = componentName;
+  return Icon;
+}
