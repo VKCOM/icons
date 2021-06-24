@@ -1,13 +1,13 @@
-import React, { ElementType, FC, HTMLAttributes, RefCallback, RefObject, useContext } from 'react';
+import React, { ElementType, FC, AllHTMLAttributes, RefCallback, RefObject, useContext } from 'react';
 import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 
-interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
+interface SvgIconProps extends AllHTMLAttributes<HTMLElement> {
   width?: number;
   height?: number;
   viewBox?: string;
   fill?: string;
-  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
-  Component?: ElementType,
+  getRootRef?: RefCallback<HTMLElement> | RefObject<HTMLElement>;
+  Component?: ElementType;
 }
 
 const svgStyle = { display: 'block' };

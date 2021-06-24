@@ -6,7 +6,7 @@ const reactify = (symbol, componentName) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
-  return `import React, { FC, HTMLAttributes, RefCallback, RefObject } from 'react';
+  return `import React, { FC, AllHTMLAttributes, RefCallback, RefObject, ElementType } from 'react';
 // @ts-ignore
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 // @ts-ignore
@@ -31,11 +31,12 @@ function mountIcon() {
   }
 }
 
-export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
+export interface ${componentName}Props extends AllHTMLAttributes<HTMLElement> {
   fill?: string;
   width?: number;
   height?: number;
-  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
+  getRootRef?: RefCallback<HTMLElement> | RefObject<HTMLElement>;
+  Component?: ElementType;
 }
 
 const ${componentName}: FC<${componentName}Props> = (props) => {
