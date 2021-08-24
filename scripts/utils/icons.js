@@ -30,15 +30,43 @@ function getIconComponentName(name, size) {
  * @return {Array<{id: string; size: string, componentName: string}>}
  */
 function iconsMap() {
-  return glob.sync(path.join(process.cwd(), 'src/svg/**/*.svg')).map((iconPath) => {
+  const numberSizedIcons = glob.sync(path.join(process.cwd(), 'src/svg/[0-9][0-9]/*.svg')).map((iconPath) => {
     const match = iconPath.match(/[/|\\](\d\d)[/|\\](.+)_(\d\d)\.svg/);
     if (!match) {
       throw new Error(`Icon path is incorrect: ${iconPath}`);
     }
     const size = match[1];
     const id = match[2];
-    return { id, size, componentName: getIconComponentName(id, size) };
+
+    return {
+      id,
+      dirname: size.toString(),
+      filename: `${id}_${size}`,
+      componentName: getIconComponentName(id, size),
+    };
   });
+
+  const unsortedIcons = glob.sync(path.join(process.cwd(), 'src/svg/Unsorted/*.svg')).map((iconPath) => {
+    const { name } = path.parse(iconPath);
+
+    const sizeMatches = name.match(/_(\d+)$/);
+    const size = sizeMatches ? sizeMatches[1] : '';
+
+    const idMatches = name.match(/(\w+?)(_\d+)?$/);
+    const id = idMatches ? idMatches[1] : name;
+
+    return {
+      id: name,
+      dirname: 'Unsorted',
+      filename: name,
+      componentName: getIconComponentName(id, size),
+    };
+  });
+
+  return [
+    ...numberSizedIcons,
+    ...unsortedIcons,
+  ];
 }
 
 module.exports = {

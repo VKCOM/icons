@@ -39,22 +39,22 @@ fs.copyFileSync(path.resolve(cwd, 'src/IconSettings.tsx'), path.join(TMP_FOLDER,
 const indexExportsMap = {};
 
 // Собираем иконки
-const promises = icons.map(({ id, size, componentName }) => {
+const promises = icons.map(({ id, dirname, filename, componentName }) => {
   // Берем svg-файл
-  const svg = fs.readFileSync(path.join(cwd, `src/svg/${size}/${id}_${size}.svg`), 'utf-8');
+  const svg = fs.readFileSync(path.join(cwd, `src/svg/${dirname}/${filename}.svg`), 'utf-8');
   return svgo.optimize(svg).then(({ data }) => { // Ужимаем содержимое
     return data;
   }).then((content) => {
-    return symbol({ content, id: `${id}_${size}`, componentName }); // Превращаем svg-файл в ts-файл в виде строки
+    return symbol({ content, id: filename, componentName }); // Превращаем svg-файл в ts-файл в виде строки
   }).then((result) => {
     // Кладем полученную строку в файл в DIST_FOLTER
-    const iconDir = path.join(cwd, TMP_FOLDER, size);
+    const iconDir = path.join(cwd, TMP_FOLDER, dirname);
     if (!fs.existsSync(iconDir)) {
       fs.mkdirSync(iconDir);
     }
     fs.writeFileSync(path.join(iconDir, `${id}.ts`), result);
 
-    indexExportsMap[componentName] = `./${size}/${id}`;
+    indexExportsMap[componentName] = `./${dirname}/${id}`;
   });
 });
 
