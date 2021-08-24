@@ -19,7 +19,7 @@ function dashToCamel(dash) {
 
 /**
  *
- * @param {string} id
+ * @param {string} name
  * @param {string|number} size
  */
 function getIconComponentName(name, size) {
@@ -27,7 +27,7 @@ function getIconComponentName(name, size) {
 }
 
 /**
- * @return {Array<{id: string; size: string, componentName: string}>}
+ * @return {Array<{id: string; dirname: string, filename: string, componentName: string}>}
  */
 function iconsMap() {
   const numberSizedIcons = glob.sync(path.join(process.cwd(), 'src/svg/[0-9][0-9]/*.svg')).map((iconPath) => {
