@@ -16,6 +16,9 @@
   "sideEffects": [
     "*.css"
   ],
+  "engines": {
+    "yarn": ">=1.21.1 <=1.22.18"
+  },
   "scripts": {
     "docs": "node scripts/docs",
     "build": "yarn icons-build && yarn docs",
