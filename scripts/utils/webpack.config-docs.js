@@ -45,7 +45,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'window.ICONS': JSON.stringify(icons.iconsMap()),
     }),
-    new webpack.ProgressPlugin(),
   ],
   mode: 'development',
   cache: {
