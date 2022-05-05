@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
+import * as allIcons from '../../dist/es6';
 
 const Icons = {};
 
-window.ICONS.forEach(({ size, id, componentName }) => {
-  const Icon = require('../../dist/' + size + '/' + id + '.js').default;
-  if (!Icons.hasOwnProperty(size)) {
-    Icons[size] = {};
+window.ICONS.forEach(({ dirname, id, componentName }) => {
+  if (!Icons.hasOwnProperty(dirname)) {
+    Icons[dirname] = {};
   }
-  Icons[size][id] = { Icon, componentName };
+  Icons[dirname][id] = {
+    Icon: allIcons[componentName],
+    componentName
+  };
 });
 
 const example =

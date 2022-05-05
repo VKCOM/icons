@@ -7,7 +7,7 @@ const reactify = (symbol, componentName) => {
   const height = symbol.viewBox.split(' ')[3];
 
   return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
-  import { makeIcon } from '../SvgIcon';
+import { makeIcon } from '../SvgIcon';
 
 export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
   fill?: string;
