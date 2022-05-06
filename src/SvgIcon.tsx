@@ -1,16 +1,16 @@
-import React, { ElementType, FC, HTMLAttributes, RefCallback, RefObject, useContext } from 'react';
+import React from 'react';
 // @ts-ignore
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 
-export interface SvgIconProps extends HTMLAttributes<HTMLDivElement> {
+export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: number;
   height?: number;
   viewBox?: string;
   fill?: string;
-  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
-  Component?: ElementType,
+  getRootRef?: React.RefCallback<HTMLDivElement> | React.RefObject<HTMLDivElement>;
+  Component?: React.ElementType,
 }
 
 const svgStyle = { display: 'block' };
@@ -28,10 +28,21 @@ function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSett
   return res;
 }
 
-export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, className, style, fill, getRootRef, Component, ...restProps }) => {
+const SvgIcon: React.FC<SvgIconProps> = ({
+  width,
+  height,
+  viewBox,
+  id,
+  className = '',
+  style = {},
+  fill,
+  getRootRef,
+  Component = 'div',
+  ...restProps
+}) => {
   const size = Math.max(width, height);
 
-  const iconSettings = useContext(IconSettingsContext);
+  const iconSettings = React.useContext(IconSettingsContext);
   const ownClass = iconClass(['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`], iconSettings);
 
   return (
@@ -49,12 +60,6 @@ export const SvgIcon: FC<SvgIconProps> = ({ width, height, viewBox, id, classNam
   );
 };
 
-SvgIcon.defaultProps = {
-  Component: 'div',
-  className: '',
-  style: {},
-};
-
 export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   componentName: string,
   id: string,
@@ -62,7 +67,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   content: string,
   width: number,
   height: number
-): FC<Props> {
+): React.FC<Props> {
   let isMounted = false;
   function mountIcon() {
     if (!isMounted) {
@@ -70,7 +75,8 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
       isMounted = true;
     }
   }
-  const Icon: FC<Props> = (props) => {
+
+  const Icon: React.FC<Props> = (props) => {
     useIsomorphicLayoutEffect(mountIcon, []);
 
     return (
@@ -83,7 +89,9 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
       />
     )
   };
+
   (Icon as any).mountIcon = mountIcon;
   Icon.displayName = componentName;
+
   return Icon;
 }

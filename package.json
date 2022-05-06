@@ -8,11 +8,12 @@
   "license": "SEE LICENSE IN LICENSE",
   "files": [
     "dist",
+    "ts",
     "src/svg"
   ],
   "main": "dist/index.js",
   "module": "dist/es6/index.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/typings/index.d.ts",
   "sideEffects": [
     "*.css"
   ],
@@ -22,13 +23,11 @@
   "scripts": {
     "docs": "node scripts/docs",
     "build": "yarn icons-build && yarn docs",
-    "icons-babel": "NODE_ENV=production babel --config-file ./scripts/babel.config-icons.js tmp/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js",
-    "icons-babel-es6": "NODE_ENV=production babel --config-file ./scripts/babel.es6.config-icons.js tmp/ --out-dir dist/es6/ --source-maps --extensions .tsx,.jsx,.ts,.js",
-    "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/",
-    "icons-tsc-es6": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/es6/",
-    "icons-build-cjs": "yarn icons-tsc && yarn icons-babel",
-    "icons-build-es6": "yarn icons-tsc-es6 && yarn icons-babel-es6",
-    "icons-build": "node scripts/icons.js && yarn icons-build-cjs && yarn icons-build-es6 && rm -rf tmp"
+    "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/typings",
+    "swc-build-cjs": "swc ts/ -d dist/ -C jsc.target=es5 -C module.type=commonjs",
+    "swc-build-es6": "swc ts/ -d dist/es6/ -C jsc.target=es5",
+    "swc-build-all": "yarn swc-build-es6 && yarn swc-build-cjs",
+    "icons-build": "node scripts/icons.js && yarn swc-build-all && yarn icons-tsc"
   },
   "dependencies": {
     "svg-baker-runtime": "1.4.7"
@@ -38,30 +37,24 @@
     "react": "^16.9.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.16",
-    "@babel/core": "7.12.16",
-    "@babel/plugin-proposal-class-properties": "7.12.13",
-    "@babel/plugin-proposal-object-rest-spread": "7.12.13",
-    "@babel/preset-env": "7.12.16",
-    "@babel/preset-react": "7.12.13",
-    "@babel/preset-typescript": "7.12.16",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.177",
     "@types/react": "16.9.34",
-    "babel-loader": "8.2.2",
     "css-loader": "5.2.4",
     "file-loader": "6.2.0",
     "glob": "7.1.6",
     "html-webpack-plugin": "5.3.1",
-    "prop-types": "^15.6.2",
     "react": "^16.9.0",
     "react-color": "2.18.0",
     "react-dom": "^16.9.0",
     "rimraf": "3.0.2",
     "style-loader": "2.0.0",
     "svg-baker": "1.7.0",
-    "svgo": "1.3.2",
+    "svgo": "2.8.0",
+    "swc-loader": "^0.2.0",
     "typescript": "^4.0.2",
-    "webpack": "5.37.0",
-    "webpack-cli": "4.7.0",
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2",
     "webpack-merge": "4.2.2"
   },
   "browserslist": [

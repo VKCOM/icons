@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'version'
+        description: 'version (without v)'
         required: true
 
 jobs:
@@ -15,10 +15,10 @@ jobs:
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 14
+          cache: 'yarn'
 
       - run: yarn install --frozen-lockfile
 

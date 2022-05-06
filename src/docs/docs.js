@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
+import * as allIcons from '../../dist/es6';
 
 const Icons = {};
 
-window.ICONS.forEach(({ size, id, componentName }) => {
-  const Icon = require('../../dist/' + size + '/' + id + '.js').default;
-  if (!Icons.hasOwnProperty(size)) {
-    Icons[size] = {};
+window.ICONS.forEach(({ dirname, id, componentName }) => {
+  if (!Icons.hasOwnProperty(dirname)) {
+    Icons[dirname] = {};
   }
-  Icons[size][id] = { Icon, componentName };
+  Icons[dirname][id] = {
+    Icon: allIcons[componentName],
+    componentName
+  };
 });
 
 const example =
@@ -104,14 +107,14 @@ class Docs extends React.PureComponent {
         {Object.keys(Icons).map((size) => (
           <div key={size} className="size">
             <h3>{size}</h3>
-            <div className="icons">
+            <div className="icons" style={{ color: this.state.currentColor }}>
               {Object.keys(Icons[size]).filter(iconName => iconName.indexOf(this.state.search) > -1).map((iconName) => {
                 const { Icon, componentName } = Icons[size][iconName];
                 return (
                   <a
                     href={`#${size}/${iconName}`}
                     className={`icon ${this.isAnchor(size, iconName) ? 'icon--anchor' : ''}`}
-                    style={{ width: `${size}px`, height: `${size}px`, color: this.state.currentColor }}
+                    style={{ width: `${size}px`, height: `${size}px`, color: 'inherit' }}
                     key={iconName}
                     onClick={this.onIconClick}
                     data-name={iconName}

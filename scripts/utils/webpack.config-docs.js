@@ -15,17 +15,14 @@ module.exports = {
         test: /\.js/,
         exclude: /node_modules/,
         use: [{
-          loader: 'babel-loader',
+          loader: 'swc-loader',
           options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react',
-            ],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-proposal-object-rest-spread',
-            ],
-          },
+            jsc: {
+                parser: {
+                    jsx: true,
+                }
+            }
+          }
         }],
       },
       {
@@ -50,4 +47,7 @@ module.exports = {
     }),
   ],
   mode: 'development',
+  cache: {
+    type: 'filesystem',
+  },
 };
