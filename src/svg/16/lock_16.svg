@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>lock_16</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="lock_16">
-            <rect id="Body" x="0" y="0" width="16" height="16"></rect>
-            <path d="M4,7 L4,5.00156808 C4,2.79156306 5.79535615,1 8,1 C10.209139,1 12,2.78203382 12,5.00138569 L12,6.07470703 L12,7 L12.9975267,7 C13.5511774,7 14,7.45303631 14,7.99703014 L14,14.0029699 C14,14.5536144 13.544239,15 12.9975267,15 L3.00247329,15 C2.44882258,15 2,14.5469637 2,14.0029699 L2,7.99703014 C2,7.4463856 2.45576096,7 3.00247329,7 L4,7 Z M6,5 L6,7 L10,7 L10,5 C10,3.88772964 9.1045695,3 8,3 C6.88772964,3 6,3.8954305 6,5 Z" id="Icon" fill="currentColor"></path>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M14 10v1c0 1.4001 0 2.1002-.2725 2.635a2.5 2.5 0 0 1-1.0925 1.0925C12.1002 15 11.4001 15 10 15H6c-1.4001 0-2.1002 0-2.635-.2725a2.5 2.5 0 0 1-1.0925-1.0925C2 13.1002 2 12.4001 2 11v-1c0-1.4001 0-2.1002.2725-2.635A2.5001 2.5001 0 0 1 3.365 6.2725c.1846-.094.389-.1557.635-.196V5c0-2.2091 1.7909-4 4-4 2.2091 0 4 1.7909 4 4v1.0765c.246.0403.4504.102.635.196a2.5 2.5 0 0 1 1.0925 1.0925C14 7.8998 14 8.6 14 10Zm-4-5v1H6V5c0-1.1046.8954-2 2-2s2 .8954 2 2Z" clip-rule="evenodd"/></svg>
