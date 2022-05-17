@@ -31,7 +31,7 @@ function getIconComponentName(name, prefix) {
  *
  * @param {string} dirName
  * @param {boolean} needPrefix
- * @return {Array<{id: string; dirname: string, filename: string, componentName: string}>}
+ * @return {Array<{id: string; dirname: string, filename: string, symbolID: string, componentName: string}>}
  */
 function iconsDirMap(dirName, needPrefix=false) {
   return glob.sync(path.join(process.cwd(), `src/svg/${dirName}/*.svg`)).map((iconPath) => {
@@ -49,13 +49,14 @@ function iconsDirMap(dirName, needPrefix=false) {
       id: name,
       dirname: dirName,
       filename: name,
+      symbolID: (needPrefix ? dirName + '/' : '') + name,
       componentName: getIconComponentName(id, prefix),
     };
   })
 }
 
 /**
- * @return {Array<{id: string; dirname: string, filename: string, componentName: string}>}
+ * @return {Array<{id: string; dirname: string, filename: string, symbolID: string, componentName: string}>}
  */
 function iconsMap() {
   const numberSizedIcons = glob.sync(path.join(process.cwd(), 'src/svg/[0-9][0-9]/*.svg')).map((iconPath) => {
@@ -70,6 +71,7 @@ function iconsMap() {
       id,
       dirname: size.toString(),
       filename: `${id}_${size}`,
+      symbolID: `${id}_${size}`,
       componentName: getIconComponentName(id, size),
     };
   });

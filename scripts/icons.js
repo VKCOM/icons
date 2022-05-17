@@ -37,14 +37,14 @@ console.timeEnd('Creating icons map');
 const indexExportsMap = {};
 
 // Собираем иконки
-const promises = icons.map(({ id, dirname, filename, componentName }) => {
+const promises = icons.map(({ id, dirname, filename, symbolID, componentName }) => {
   // Берем svg-файл
   const svg = fs.readFileSync(path.join(cwd, `src/svg/${dirname}/${filename}.svg`), 'utf-8');
 
   // Превращаем svg-файл в ts-файл в виде строки
   return symbol({
     content: optimize(svg),
-    id: filename,
+    id: symbolID,
     componentName,
   }).then((result) => {
     // Кладем полученную строку в файл в DIST_FOLTER
