@@ -77,7 +77,6 @@ function iconsMap() {
   return [
     ...numberSizedIcons,
     ...iconsDirMap('Unsorted'),
-    ...iconsDirMap('Paradigm', true)
   ];
 }
 
