@@ -20,10 +20,38 @@ function dashToCamel(dash) {
 /**
  *
  * @param {string} name
- * @param {string|number} size
+ * @param {string|number} prefix
  */
-function getIconComponentName(name, size) {
-  return `Icon${size}${dashToCamel(name)}`;
+function getIconComponentName(name, prefix) {
+  return `Icon${prefix}${dashToCamel(name)}`;
+}
+
+
+/**
+ *
+ * @param {string} dirName
+ * @param {boolean} needPrefix
+ * @return {Array<{id: string; dirname: string, filename: string, componentName: string}>}
+ */
+function iconsDirMap(dirName, needPrefix=false) {
+  return glob.sync(path.join(process.cwd(), `src/svg/${dirName}/*.svg`)).map((iconPath) => {
+    const { name } = path.parse(iconPath);
+
+    const sizeMatches = name.match(/_(\d+)$/);
+    const size = sizeMatches ? sizeMatches[1] : '';
+
+    const idMatches = name.match(/(\w+?)(_\d+)?$/);
+    const id = idMatches ? idMatches[1] : name;
+
+    const prefix = (needPrefix ? dirName : '') + size
+
+    return {
+      id: name,
+      dirname: dirName,
+      filename: name,
+      componentName: getIconComponentName(id, prefix),
+    };
+  })
 }
 
 /**
@@ -46,26 +74,10 @@ function iconsMap() {
     };
   });
 
-  const unsortedIcons = glob.sync(path.join(process.cwd(), 'src/svg/Unsorted/*.svg')).map((iconPath) => {
-    const { name } = path.parse(iconPath);
-
-    const sizeMatches = name.match(/_(\d+)$/);
-    const size = sizeMatches ? sizeMatches[1] : '';
-
-    const idMatches = name.match(/(\w+?)(_\d+)?$/);
-    const id = idMatches ? idMatches[1] : name;
-
-    return {
-      id: name,
-      dirname: 'Unsorted',
-      filename: name,
-      componentName: getIconComponentName(id, size),
-    };
-  });
-
   return [
     ...numberSizedIcons,
-    ...unsortedIcons,
+    ...iconsDirMap('Unsorted'),
+    ...iconsDirMap('Paradigm', true)
   ];
 }
 
