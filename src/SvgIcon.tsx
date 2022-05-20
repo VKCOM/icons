@@ -38,6 +38,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   fill,
   getRootRef,
   Component = 'div',
+  role,
   "aria-label": ariaLabel,
   "aria-hidden": ariaHidden,
   ...restProps
@@ -60,6 +61,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
         width={width}
         height={height}
         style={svgStyle}
+        role={role}
         aria-label={ariaLabel}
         aria-hidden={ariaHidden}
       >
