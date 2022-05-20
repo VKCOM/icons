@@ -38,6 +38,8 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   fill,
   getRootRef,
   Component = 'div',
+  "aria-label": ariaLabel,
+  "aria-hidden": ariaHidden,
   ...restProps
 }) => {
   const size = Math.max(width, height);
@@ -53,7 +55,14 @@ const SvgIcon: React.FC<SvgIconProps> = ({
       className={`${ownClass} ${className}`}
       style={{ ...style, width, height }}
     >
-      <svg viewBox={viewBox} width={width} height={height} style={svgStyle}>
+      <svg 
+        viewBox={viewBox}
+        width={width}
+        height={height}
+        style={svgStyle}
+        aria-label={ariaLabel}
+        aria-hidden={ariaHidden}
+      >
         <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
       </svg>
     </Component>
