@@ -22,6 +22,8 @@ if (canUseDOM) {
     } else {
       browserSprite.mount();
     }
+
+    document.removeEventListener('DOMContentLoaded', mount);
   };
 
   if (document.querySelector('body')) {
