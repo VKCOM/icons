@@ -21,6 +21,7 @@
     "yarn": ">=1.21.1 <=1.22.18"
   },
   "scripts": {
+    "size": "yarn icons-build && size-limit",
     "docs": "node scripts/docs",
     "build": "yarn icons-build && yarn docs",
     "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/typings",
@@ -37,6 +38,8 @@
     "react": "^16.9.0 || ^17.0.0"
   },
   "devDependencies": {
+    "@size-limit/file": "^7.0.8",
+    "@size-limit/webpack": "^7.0.8",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.177",
     "@types/react": "16.9.34",
@@ -48,6 +51,7 @@
     "react-color": "2.18.0",
     "react-dom": "^16.9.0",
     "rimraf": "3.0.2",
+    "size-limit": "^7.0.8",
     "style-loader": "2.0.0",
     "svg-baker": "1.7.0",
     "svgo": "2.8.0",
@@ -60,5 +64,32 @@
   "browserslist": [
     "android >= 4.4",
     "ios >= 9"
+  ],
+  "size-limit": [
+    {
+      "name": "JS",
+      "path": "dist/index.js",
+      "gzip": false
+    },
+    {
+      "name": "JS (gzip)",
+      "path": "dist/index.js"
+    },
+    {
+      "name": "JS (brotli)",
+      "path": "dist/index.js",
+      "brotli": true
+    },
+    {
+      "name": "JS ES6 with Icon16Add only import (tree shaking)",
+      "path": "dist/es6/index.js",
+      "import": "{ Icon16Add }"
+    },
+    {
+      "name": "SVG",
+      "path": "src/**/*.svg",
+      "gzip": false,
+      "webpack": false
+    }
   ]
 }
