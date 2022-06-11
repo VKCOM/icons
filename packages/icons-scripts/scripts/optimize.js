@@ -1,4 +1,5 @@
 const { optimize: svgo } = require('svgo');
+const removeTransparentPaths = require('./plugins/removeTransparentPaths.js');
 
 /**
  * @param {string} svg
@@ -15,6 +16,7 @@ function optimize(svg) {
           },
         },
       },
+      removeTransparentPaths,
     ],
   }).data;
 }
