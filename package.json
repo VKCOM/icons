@@ -18,7 +18,7 @@
     "*.css"
   ],
   "engines": {
-    "yarn": ">=1.21.1 <=1.22.18"
+    "yarn": "^1.21.1"
   },
   "scripts": {
     "size": "yarn icons-build && size-limit",
