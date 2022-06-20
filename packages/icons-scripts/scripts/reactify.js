@@ -27,8 +27,8 @@ export default makeIcon<${componentName}Props>(
 `;
 };
 
-function symbol({ content, id, componentName }) {
-  return compiler.addSymbol({ content, id, path: '' }).then(symbol => reactify(symbol, componentName));
+function reactifyIcon({ content, id, componentName }) {
+  return compiler.addSymbol({ content, id, path: '' }).then((symbol) => reactify(symbol, componentName));
 }
 
-module.exports = symbol;
+module.exports = { reactifyIcon };

@@ -56,7 +56,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
       className={`${ownClass} ${className}`}
       style={{ ...style, width, height }}
     >
-      <svg 
+      <svg
         viewBox={viewBox}
         width={width}
         height={height}

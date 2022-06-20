@@ -1,9 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const icons = require('./icons');
+
+const iconsMap = fs.readFileSync(path.resolve(process.cwd(), 'dist/icons-map.json'), {
+  encoding: 'utf-8',
+});
 
 module.exports = {
+  mode: 'production',
   entry: './src/docs/docs.js',
   output: {
     path: path.resolve(process.cwd(), 'docs'),
@@ -18,9 +23,9 @@ module.exports = {
           loader: 'swc-loader',
           options: {
             jsc: {
-                parser: {
-                    jsx: true,
-                }
+              parser: {
+                jsx: true,
+              }
             }
           }
         }],
@@ -43,7 +48,7 @@ module.exports = {
       scriptLoading: 'blocking',
     }),
     new webpack.DefinePlugin({
-      'window.ICONS': JSON.stringify(icons.iconsMap()),
+      'window.ICONS': iconsMap,
     }),
   ],
   mode: 'development',
