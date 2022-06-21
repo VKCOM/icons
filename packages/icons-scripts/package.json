@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons-scripts",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "Tools for building SVG icons",
   "repository": "https://github.com/VKCOM/icons",
   "homepage": "https://vkcom.github.io/icons/",
