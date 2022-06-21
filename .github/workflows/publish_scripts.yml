@@ -34,6 +34,7 @@ jobs:
           git config --local user.name "GitHub Action"
 
       - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
+      - run: git add -A && git commit -m '[icons-scripts] v${{ github.event.inputs.version }}'
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
@@ -42,6 +43,6 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: Publishing release
-        run: yarn publish --non-interactive
+        run: yarn publish --non-interactive --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
