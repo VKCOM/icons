@@ -10,6 +10,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/icons-scripts
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -21,8 +25,6 @@ jobs:
           cache: 'yarn'
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
-
-      - run: cd packages/icons-scripts
 
       - run: yarn install --frozen-lockfile
 
