@@ -22,13 +22,9 @@
   },
   "scripts": {
     "size": "yarn icons-build && size-limit",
-    "docs": "node scripts/docs",
+    "docs": "node --max-old-space-size=4096 scripts/docs",
     "build": "yarn icons-build && yarn docs",
-    "icons-tsc": "NODE_ENV=production tsc --emitDeclarationOnly --declaration --project tsconfig-icons.json --outDir dist/typings",
-    "swc-build-cjs": "swc ts/ -d dist/ -C jsc.target=es5 -C module.type=commonjs",
-    "swc-build-es6": "swc ts/ -d dist/es6/ -C jsc.target=es5",
-    "swc-build-all": "yarn swc-build-es6 && yarn swc-build-cjs",
-    "icons-build": "node scripts/icons.js && yarn swc-build-all && yarn icons-tsc"
+    "icons-build": "node scripts/build-icons.js"
   },
   "dependencies": {
     "svg-baker-runtime": "1.4.7"
@@ -40,26 +36,19 @@
   "devDependencies": {
     "@size-limit/file": "^7.0.8",
     "@size-limit/webpack": "^7.0.8",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.177",
+    "@swc/core": "^1.2.204",
     "@types/react": "16.9.34",
+    "@vkontakte/icons-scripts": "file:./packages/icons-scripts",
     "css-loader": "5.2.4",
     "file-loader": "6.2.0",
-    "glob": "7.1.6",
     "html-webpack-plugin": "5.3.1",
     "react": "^16.9.0",
     "react-color": "2.18.0",
     "react-dom": "^16.9.0",
-    "rimraf": "3.0.2",
     "size-limit": "^7.0.8",
     "style-loader": "2.0.0",
-    "svg-baker": "1.7.0",
-    "svgo": "2.8.0",
-    "swc-loader": "^0.2.0",
-    "typescript": "^4.0.2",
-    "webpack": "5.72.0",
-    "webpack-cli": "4.9.2",
-    "webpack-merge": "4.2.2"
+    "swc-loader": "^0.2.3",
+    "webpack": "5.73.0"
   },
   "browserslist": [
     "android >= 4.4",

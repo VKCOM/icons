@@ -16,7 +16,7 @@ function optimize(svg) {
         },
       },
     ],
-  }).data
+  }).data;
 }
 
 module.exports = { optimize };

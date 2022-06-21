@@ -1,16 +1,14 @@
 const webpack = require('webpack');
-const webpackConfig = require('./utils/webpack.config-docs');
-const merge = require('webpack-merge');
+const webpackConfig = require('./webpack.config-docs');
 const rimraf = require('rimraf');
 const path = require('path');
 
 console.log('creating doc');
 
 const directory = path.join(process.cwd(), 'docs');
-
 rimraf.sync(`${directory}/*`);
 
-const compiler = webpack(merge(webpackConfig, { mode: 'production' }));
+const compiler = webpack(webpackConfig);
 
 compiler.run((err, stats) => {
   if (err) {

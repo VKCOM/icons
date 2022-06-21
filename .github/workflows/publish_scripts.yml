@@ -1,10 +1,10 @@
-name: 'Publish icons'
+name: 'Publish scripts'
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'icons version (without v)'
+        description: 'scripts version (without v)'
         required: true
 
 jobs:
@@ -22,9 +22,9 @@ jobs:
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
 
-      - run: yarn install --frozen-lockfile
+      - run: cd packages/icons-scripts
 
-      - run: yarn icons-build
+      - run: yarn install --frozen-lockfile
 
       - name: Set Git credentials
         run: |
@@ -43,13 +43,3 @@ jobs:
         run: yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
-
-      - name: Creating doc
-        run: yarn docs
-
-      - name: Publishing doc
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs

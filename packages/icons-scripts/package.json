@@ -1,0 +1,26 @@
+{
+  "name": "@vkontakte/icons-scripts",
+  "version": "0.0.3",
+  "description": "Tools for building SVG icons",
+  "repository": "https://github.com/VKCOM/icons",
+  "homepage": "https://vkcom.github.io/icons/",
+  "author": {
+    "name": "Igor Fedorov",
+    "email": "ig.fedorov@corp.vk.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "yarn": "^1.21.1",
+    "node": ">12.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.204",
+    "glob": "^8.0.3",
+    "rimraf": "^3.0.2",
+    "svg-baker": "^1.7.0",
+    "svgo": "^2.8.0",
+    "typescript": "^4.7.3"
+  }
+}
