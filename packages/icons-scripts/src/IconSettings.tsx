@@ -7,7 +7,11 @@ export type IconSettingsInterface = {
 
 export const IconSettingsContext = React.createContext<IconSettingsInterface>({});
 
-export const IconSettingsProvider: React.FC<IconSettingsInterface> = ({ children, ...settings }) => {
+type Props = IconSettingsInterface & {
+  children?: React.ReactNode;
+}
+
+export const IconSettingsProvider = ({ children, ...settings }: Props) => {
   const contextValue = React.useMemo(() => settings, [settings.classPrefix, settings.globalClasses]);
 
   return (

@@ -193,7 +193,7 @@
     csstype "^2.2.0"
 
 "@vkontakte/icons-scripts@file:./packages/icons-scripts":
-  version "0.0.3"
+  version "0.0.6"
   dependencies:
     "@swc/cli" "^0.1.57"
     "@swc/core" "^1.2.204"
