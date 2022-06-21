@@ -33,7 +33,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks
+      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
