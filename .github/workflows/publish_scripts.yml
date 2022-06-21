@@ -10,6 +10,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/icons-scripts
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -22,8 +26,6 @@ jobs:
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
 
-      - run: cd packages/icons-scripts
-
       - run: yarn install --frozen-lockfile
 
       - name: Set Git credentials
@@ -31,7 +33,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks
+      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
