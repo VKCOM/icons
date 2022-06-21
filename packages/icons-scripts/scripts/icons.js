@@ -93,7 +93,13 @@ function generateIcons(options) {
     debugInfo('Running tsc...');
     // const tsBuildInfoFile = path.resolve(cwd, 'node_modules', '.cache', '.tsbuildinfo');
     // --incremental --tsBuildInfoFile ${tsBuildInfoFile}
-    execSync(`tsc --rootDir ${tsFilesDirectory} --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop`);
+
+    [
+      '/**/*.ts',
+      '/*.ts',
+    ].forEach((search) => {
+      execSync(`tsc ${tsFilesDirectory + search} --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`);
+    });
   };
 
   Promise.all(promises).then(() => {
