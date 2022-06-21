@@ -192,8 +192,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@vkontakte/icons-scripts@file:./packages/icons-scripts":
+"@vkontakte/icons-scripts@^0.0.6":
   version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons-scripts/-/icons-scripts-0.0.6.tgz#092540808d2325677b4c4a99f7e63d9bee8a46fb"
+  integrity sha512-G4ksxOZOs69X3xFHHZxFlQ1W5iVCGrTdtOjLoYSStyUd3f/QPi+LvKw9D0bEabMI16bbhVJjU/VGzczAfqhMDA==
   dependencies:
     "@swc/cli" "^0.1.57"
     "@swc/core" "^1.2.204"
