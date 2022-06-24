@@ -44,7 +44,6 @@ src/
     "svg-baker-runtime": "1.4.7"
   },
   "peerDependencies": {
-    "@types/react": "^18.0.0",
     "react": "^18.0.0"
   },
   "devDependencies": {
