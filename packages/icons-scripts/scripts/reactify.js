@@ -2,9 +2,17 @@ const Compiler = require('svg-baker');
 
 const compiler = new Compiler();
 
+function pxToEm(pxSize, baseSize) {
+  return `${Number((pxSize / baseSize).toFixed(4))}em`;
+}
+
 const reactify = (symbol, componentName) => {
-  const width = symbol.viewBox.split(' ')[2];
-  const height = symbol.viewBox.split(' ')[3];
+  const defaultWidth = Number(symbol.viewBox.split(' ')[2]);
+  const defaultHeight = Number(symbol.viewBox.split(' ')[3]);
+
+  const baseSize = Math.max(defaultWidth, defaultHeight);
+  const relativeWidth = pxToEm(defaultWidth, baseSize);
+  const relativeHeight = pxToEm(defaultHeight, baseSize);
 
   return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
 import { makeIcon } from '../SvgIcon';
@@ -20,9 +28,12 @@ export default makeIcon<${componentName}Props>(
   '${componentName}',
   '${symbol.id}',
   '${symbol.viewBox}',
-  '${symbol.render()}',
-  ${width},
-  ${height}
+  ${defaultWidth},
+  ${defaultHeight},
+  '${relativeWidth}',
+  '${relativeHeight}',
+  ${baseSize},
+  '${symbol.render()}'
 );
 `;
 };

@@ -21,7 +21,16 @@ const example =
 
 <Icon24Cancel />`;
 
-const sizeExample = `<Icon24LogoVk width={20} height={20} />`;
+const sizeExampleFontSizeInherit =
+`<p style={{ fontSize: 16 }>
+  <a href="https://google.com" target="_blank">
+      https://google.com <Icon24ExternalLinkOutline fontSize="inherit" />
+  </a>
+</p>`;
+
+const sizeExampleFontSizeFix = `<Icon24LogoVk fontSize={20} />`;
+
+const sizeExampleFixSize = `<Icon16MoreVertical width={12} height={24} />`;
 
 class Docs extends React.PureComponent {
   constructor (props) {
@@ -87,10 +96,32 @@ class Docs extends React.PureComponent {
         <pre>{example}</pre>
         <h2>Кастомные размеры</h2>
         <p>
-          Иногда может потребоваться установить для иконки другой размер.
-          Для этого можно передать свойства <code>width</code> и <code>height</code>, ширина и высота в пикселях. <b>Они должны быть числовыми значениями.</b>
+          Иногда может потребоваться установить для иконки другой размер. Для этого используйте параметр
+          {" "}<code>fontSize</code>, который принимает все валидные для него значения.
         </p>
-        <pre>{sizeExample}</pre>
+        <p>
+          Например, иконка вставлена в блок с текстом и, для лучшего выравнивания, нам нужно, чтобы она имела размер,
+          равный высоте текста. Мы добьёмся этого передав <code>fontSize="inherit"</code> или
+          {" "}<code>fontSize="1em"</code>:
+        </p>
+        <pre>{sizeExampleFontSizeInherit}</pre>
+        <p>
+          А вот пример с фиксированным размером иконки:
+        </p>
+        <pre>{sizeExampleFontSizeFix}</pre>
+        <br />
+        <p>
+          Также можно изменить размер через параметры <code>width</code> и <code>height</code>. Нюансы:
+
+          <ol>
+            <li>значения должны быть <b>числовыми</b>;</li>
+            <li>следует соблюсти <b>соотношение сторон</b> (см. <code>viewBox</code> конкретной иконки);</li>
+            <li>параметр <code>fontSize</code> больше не будет играть роли</li>
+          </ol>
+
+          Пример:
+        </p>
+        <pre>{sizeExampleFixSize}</pre>
         <h2>Стилизация</h2>
         <div className="color">
           <p>
