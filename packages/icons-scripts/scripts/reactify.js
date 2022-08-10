@@ -7,12 +7,12 @@ function pxToEm(pxSize, baseSize) {
 }
 
 const reactify = (symbol, componentName) => {
-  const defaultWidth = Number(symbol.viewBox.split(' ')[2]);
-  const defaultHeight = Number(symbol.viewBox.split(' ')[3]);
+  const viewBoxWidth = Number(symbol.viewBox.split(' ')[2]);
+  const viewBoxHeight = Number(symbol.viewBox.split(' ')[3]);
 
-  const baseSize = Math.max(defaultWidth, defaultHeight);
-  const relativeWidth = pxToEm(defaultWidth, baseSize);
-  const relativeHeight = pxToEm(defaultHeight, baseSize);
+  const fontSize = Math.max(viewBoxWidth, viewBoxHeight);
+  const fontSizeWidth = pxToEm(viewBoxWidth, fontSize);
+  const fontSizeHeight = pxToEm(viewBoxHeight, fontSize);
 
   return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
 import { makeIcon } from '../SvgIcon';
@@ -28,11 +28,11 @@ export default makeIcon<${componentName}Props>(
   '${componentName}',
   '${symbol.id}',
   '${symbol.viewBox}',
-  ${defaultWidth},
-  ${defaultHeight},
-  '${relativeWidth}',
-  '${relativeHeight}',
-  ${baseSize},
+  ${viewBoxWidth},
+  ${viewBoxHeight},
+  ${fontSize},
+  '${fontSizeWidth}',
+  '${fontSizeHeight}',
   '${symbol.render()}'
 );
 `;

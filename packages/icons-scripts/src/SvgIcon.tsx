@@ -4,6 +4,7 @@ import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 
+/** @public */
 export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Для пропорционального изменения размера иконки относительно размера шрифта.
@@ -21,11 +22,12 @@ export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
   Component?: React.ElementType,
 }
 
+/** @private */
 interface SvgIconInternalProps extends SvgIconProps {
-  defaultWidth: number;
-  defaultHeight: number;
-  relativeWidth: string;
-  relativeHeight: string;
+  viewBoxWidth: number;
+  viewBoxHeight: number;
+  fontSizeWidth: string;
+  fontSizeHeight: string;
 }
 
 const svgStyle = { display: 'block' };
@@ -45,12 +47,12 @@ function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSett
 
 const SvgIcon: React.FC<SvgIconInternalProps> = ({
   /**
-   * Внутренние параметры (скрыты от пользователя)
+   * Внутренние параметры (скрыты от пользователя).
    */
-  defaultWidth,
-  defaultHeight,
-  relativeWidth,
-  relativeHeight,
+  viewBoxWidth,
+  viewBoxHeight,
+  fontSizeWidth,
+  fontSizeHeight,
 
   /**
    * Пользовательские параметры.
@@ -72,13 +74,13 @@ const SvgIcon: React.FC<SvgIconInternalProps> = ({
 }) => {
   const iconSettings = React.useContext(IconSettingsContext);
 
-  const classNameWidth = widthProp || defaultWidth;
-  const classNameHeight = heightProp || defaultHeight;
+  const classNameWidth = widthProp || viewBoxWidth;
+  const classNameHeight = heightProp || viewBoxHeight;
   const classNameSize = Math.max(classNameWidth, classNameHeight);
   const ownClass = iconClass(['Icon', `Icon--${classNameSize}`, `Icon--w-${classNameWidth}`, `Icon--h-${classNameHeight}`, `Icon--${id}`], iconSettings);
 
-  const width = widthProp || relativeWidth;
-  const height = heightProp || relativeHeight;
+  const width = widthProp || fontSizeWidth;
+  const height = heightProp || fontSizeHeight;
 
   return (
     <Component
@@ -106,25 +108,25 @@ const SvgIcon: React.FC<SvgIconInternalProps> = ({
 export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   componentName: string,
   id: string,
-  defaultViewBox: string,
-  defaultWidth: number,
-  defaultHeight: number,
-  relativeWidth: string,
-  relativeHeight: string,
-  defaultFontSize: number,
+  viewBox: string,
+  viewBoxWidth: number,
+  viewBoxHeight: number,
+  fontSize: number,
+  fontSizeWidth: string,
+  fontSizeHeight: string,
   content: string,
 ): React.FC<Props> {
   let isMounted = false;
   function mountIcon() {
     if (!isMounted) {
-      addSpriteSymbol(new BrowserSymbol({ id, viewBox: defaultViewBox, content }));
+      addSpriteSymbol(new BrowserSymbol({ id, viewBox, content }));
       isMounted = true;
     }
   }
 
   const Icon: React.FC<Props> = ({
-    viewBox = defaultViewBox,
-    fontSize = defaultFontSize,
+    viewBox: viewBoxProp = viewBox,
+    fontSize: fontSizeProp = fontSize,
     ...restProps
   }) => {
     useIsomorphicLayoutEffect(mountIcon, []);
@@ -132,13 +134,13 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
     return (
       <SvgIcon
         {...restProps}
+        viewBox={viewBoxProp}
+        fontSize={fontSizeProp}
         id={id}
-        viewBox={viewBox}
-        defaultWidth={defaultWidth}
-        defaultHeight={defaultHeight}
-        relativeWidth={relativeWidth}
-        relativeHeight={relativeHeight}
-        fontSize={fontSize}
+        viewBoxWidth={viewBoxWidth}
+        viewBoxHeight={viewBoxHeight}
+        fontSizeWidth={fontSizeWidth}
+        fontSizeHeight={fontSizeHeight}
       />
     )
   };
