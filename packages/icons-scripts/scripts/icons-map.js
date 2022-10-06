@@ -20,6 +20,20 @@ function getIconComponentName(name, prefix = '') {
 }
 
 /**
+ * @param {string} name
+ * @return {[id: string, size: string]}
+ */
+function getIconIdAndSize(name) {
+  const idMatches = name.match(/(\w+?)(_\d+)?$/);
+  const id = idMatches ? idMatches[1] : name;
+
+  const sizeMatches = name.match(/_(\d+)$/);
+  const size = sizeMatches ? sizeMatches[1] : '';
+
+  return [id, size];
+}
+
+/**
  * @param {string} src
  * @param {string} pattern
  * @param {string} [prefix]
@@ -33,11 +47,7 @@ function dirMap(src, pattern, prefix = '') {
 
     const dirname = dir.split(path.sep).pop();
 
-    const sizeMatches = name.match(/_(\d+)$/);
-    const size = sizeMatches ? sizeMatches[1] : '';
-
-    const idMatches = name.match(/(\w+?)(_\d+)?$/);
-    const id = idMatches ? idMatches[1] : name;
+    const [id, size] = getIconIdAndSize(name);
 
     return {
       id,
