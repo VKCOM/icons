@@ -45,6 +45,7 @@ function generateIcons(options) {
     'src/sprite.ts',
     'src/SvgIcon.tsx',
     'src/IconSettings.tsx',
+    'src/warnOnce.ts',
   ].forEach((srcFile) => {
     const scriptsSrc = path.resolve(__dirname, '..');
     fs.copyFileSync(path.resolve(scriptsSrc, srcFile), path.join(tsFilesDirectory, path.basename(srcFile)));
