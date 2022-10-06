@@ -6,14 +6,17 @@ import * as allIcons from '../../dist/es6';
 
 const Icons = {};
 
-window.ICONS.forEach(({ dirname, id, componentName }) => {
+window.ICONS.forEach(({ dirname, id, componentName, deprecated }) => {
   if (!Icons.hasOwnProperty(dirname)) {
     Icons[dirname] = {};
   }
-  Icons[dirname][id] = {
-    Icon: allIcons[componentName],
-    componentName
-  };
+
+  if (!deprecated) {
+    Icons[dirname][id] = {
+      Icon: allIcons[componentName],
+      componentName
+    };
+  }
 });
 
 const example =
