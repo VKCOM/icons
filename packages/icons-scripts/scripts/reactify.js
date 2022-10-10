@@ -6,6 +6,18 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
+  let jsdoc = ""
+  if (deprecated) {
+    const replacementNotice = replacement
+      ? `. Замените на ${replacement}`
+      : "";
+
+    jsdoc = `/**
+ * @deprecated Иконка устарела${replacementNotice}
+ */
+`
+  }
+
   return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
 import { makeIcon } from '../SvgIcon';
 
@@ -18,6 +30,7 @@ export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
   replacement?: string;
 }
 
+${jsdoc}
 export default makeIcon<${componentName}Props>(
   '${componentName}',
   '${symbol.id}',
