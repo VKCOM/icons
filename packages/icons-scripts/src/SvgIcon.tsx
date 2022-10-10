@@ -77,7 +77,9 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   viewBox: string,
   content: string,
   width: number,
-  height: number
+  height: number,
+  deprecated?: boolean,
+  replacement?: string
 ): React.FC<Props> {
   let isMounted = false;
   function mountIcon() {
@@ -89,6 +91,10 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
 
   const Icon: React.FC<Props> = (props) => {
     useIsomorphicLayoutEffect(mountIcon, []);
+
+    if (deprecated) {
+      console.log({ componentName, replacement });
+    }
 
     return (
       <SvgIcon

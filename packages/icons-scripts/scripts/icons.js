@@ -25,6 +25,7 @@ function generateIcons(options) {
     tsFilesDirectory,
     extraCategories,
     cwd,
+    deprecatedIcons,
   } = prepareOptions(options);
 
   debugInfo('Generating icons...');
@@ -50,13 +51,13 @@ function generateIcons(options) {
   });
 
   debugInfo('Creating icons map...');
-  const iconsMap = createIconsMap(srcDirectory, extraCategories);
+  const iconsMap = createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons);
 
   const exportsMap = {};
 
   debugInfo(`Optimizing and writing ${iconsMap.length} components...`);
   const promises = iconsMap.map((icon) => {
-    const { id, dirname, filename, componentName } = icon;
+    const { id, dirname, filename, componentName, deprecated, replacement } = icon;
 
     // Берем svg-файл
     const svg = fs.readFileSync(path.join(cwd, `src/svg/${dirname}/${filename}.svg`), 'utf-8');
@@ -66,6 +67,8 @@ function generateIcons(options) {
       content: optimize(svg),
       id: filename,
       componentName,
+      deprecated,
+      replacement,
     }).then((result) => {
       // Записываем компонент в файл
       const iconDir = path.join(tsFilesDirectory, dirname);

@@ -3,6 +3,10 @@ const fs = require('fs');
 const { debugError } = require('./utils');
 
 /**
+ * @typedef {Object.<string, string | null>} DeprecatedIcons
+ */
+
+/**
  * @typedef {Object} GenerateOptions
  * @property {string} srcDirectory
  * @property {string} distDirectory
@@ -10,6 +14,7 @@ const { debugError } = require('./utils');
  * @property {boolean} [keepTSSources]
  * @property {string[]} [extraCategories] List of glob patterns for directory with icons
  * @property {string} [cwd]
+ * @property {DeprecatedIcons} [deprecatedIcons] List of deprecated icons
  */
 
 /**
@@ -24,6 +29,7 @@ function prepareOptions(options) {
     keepTSSources,
     extraCategories = ['Unsorted'],
     cwd = process.cwd(),
+    deprecatedIcons = {},
   } = options;
 
   if (!srcDirectory || !distDirectory) {
@@ -45,6 +51,7 @@ function prepareOptions(options) {
     tsFilesDirectory: tsFilesDirectory ? directoryPath(tsFilesDirectory) : path.resolve(distDirectory, '../ts'),
     extraCategories,
     cwd,
+    deprecatedIcons,
   };
 }
 

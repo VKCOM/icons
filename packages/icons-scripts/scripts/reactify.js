@@ -2,7 +2,7 @@ const Compiler = require('svg-baker');
 
 const compiler = new Compiler();
 
-const reactify = (symbol, componentName) => {
+const reactify = (symbol, componentName, deprecated, replacement) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
@@ -14,6 +14,8 @@ export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
   width?: number;
   height?: number;
   getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
+  deprecated?: boolean;
+  replacement?: string;
 }
 
 export default makeIcon<${componentName}Props>(
@@ -22,13 +24,15 @@ export default makeIcon<${componentName}Props>(
   '${symbol.viewBox}',
   '${symbol.render()}',
   ${width},
-  ${height}
+  ${height},
+  ${!!deprecated},
+  ${replacement ? `'${replacement}'` : undefined}
 );
 `;
 };
 
-function reactifyIcon({ content, id, componentName }) {
-  return compiler.addSymbol({ content, id, path: '' }).then((symbol) => reactify(symbol, componentName));
+function reactifyIcon({ content, id, componentName, deprecated, replacement }) {
+  return compiler.addSymbol({ content, id, path: '' }).then((symbol) => reactify(symbol, componentName, deprecated, replacement));
 }
 
 module.exports = { reactifyIcon };
