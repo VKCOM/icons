@@ -37,7 +37,7 @@
     "@size-limit/webpack": "^7.0.8",
     "@swc/core": "^1.2.204",
     "@types/react": "16.9.34",
-    "@vkontakte/icons-scripts": "^0.7.0",
+    "@vkontakte/icons-scripts": "^0.8.0",
     "css-loader": "5.2.4",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "5.3.1",
