@@ -3,6 +3,7 @@ import React from 'react';
 import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
+import { warnOnce } from './warnOnce';
 
 export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: number;
@@ -77,7 +78,9 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   viewBox: string,
   content: string,
   width: number,
-  height: number
+  height: number,
+  deprecated?: boolean,
+  replacement?: string
 ): React.FC<Props> {
   let isMounted = false;
   function mountIcon() {
@@ -87,8 +90,17 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
     }
   }
 
+  const warn = deprecated ? warnOnce(componentName) : null;
   const Icon: React.FC<Props> = (props) => {
     useIsomorphicLayoutEffect(mountIcon, []);
+
+    if (deprecated) {
+      const replacementNotice = replacement
+        ? `. Замените на ${replacement}`
+        : "";
+
+      warn("Иконка устарела" + replacementNotice);
+    }
 
     return (
       <SvgIcon
