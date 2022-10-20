@@ -48,7 +48,9 @@ function prepareOptions(options) {
     srcDirectory: directoryPath(srcDirectory),
     distDirectory: directoryPath(distDirectory),
     keepTSSources: keepTSSources == null ? !!tsFilesDirectory : keepTSSources,
-    tsFilesDirectory: tsFilesDirectory ? directoryPath(tsFilesDirectory) : path.resolve(distDirectory, '../ts'),
+    tsFilesDirectory: tsFilesDirectory
+      ? directoryPath(tsFilesDirectory)
+      : path.resolve(distDirectory, '../ts'),
     extraCategories,
     cwd,
     deprecatedIcons,

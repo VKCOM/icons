@@ -16,12 +16,14 @@ compiler.run((err, stats) => {
     process.exit(1);
   }
 
-  console.log(stats.toString({
-    colors: true,
-    children: false,
-    modules: false,
-    version: false,
-    chunks: false,
-    warnings: false,
-  }));
+  console.log(
+    stats.toString({
+      colors: true,
+      children: false,
+      modules: false,
+      version: false,
+      chunks: false,
+      warnings: false,
+    }),
+  );
 });

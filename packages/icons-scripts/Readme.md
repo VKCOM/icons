@@ -27,16 +27,11 @@ src/
 {
   "name": "@scope/react-icons-library",
   "version": "0.0.0",
-  "files": [
-    "dist",
-    "src/svg"
-  ],
+  "files": ["dist", "src/svg"],
   "main": "dist/index.js",
   "module": "dist/es6/index.js",
   "typings": "dist/typings/index.d.ts",
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "scripts": {
     "build-icons": "node scripts/build-icons.js"
   },
@@ -62,13 +57,10 @@ const { generateIcons } = require('@vkontakte/icons-scripts');
 generateIcons({
   srcDirectory: './src',
   distDirectory: './dist',
-  extraCategories: [
-    'Unsorted',
-    'Foo',
-  ],
+  extraCategories: ['Unsorted', 'Foo'],
   deprecatedIcons: {
     deprecated_icon_24: null,
-    deprecated_icon_28: "replacement_icon_28",
+    deprecated_icon_28: 'replacement_icon_28',
   },
 });
 ```
@@ -76,17 +68,17 @@ generateIcons({
 ## Опции скрипта
 
 **`srcDirectory`** _`{string}`_<br>
-  Директория с иконками. В ней должна быть папка `svg` с категориями.
+Директория с иконками. В ней должна быть папка `svg` с категориями.
 
 **`distDirectory`** _`{string}`_<br>
-  Папка для сгенерированных компонентов.
+Папка для сгенерированных компонентов.
 
 **`extraCategories`** _`{string[]}`_<br>
-  Дополнительные категории. По умолчанию скрипт будет искать иконки в `svg/[0-9][0-9]` и `svg/Unsorted`.
+Дополнительные категории. По умолчанию скрипт будет искать иконки в `svg/[0-9][0-9]` и `svg/Unsorted`.
 
-  Может быть паттерном для `glob`.
+Может быть паттерном для `glob`.
 
 **`deprecatedIcons`** _`{Record<string, string | null>>}`_<br>
-  Список устаревших иконок.
-  
-  Объект, в котором свойство — это имя файла устаревшей иконки, а значение этого свойства — имя файла иконки на замену устаревшей (или `null`, если такой нет).
+Список устаревших иконок.
+
+Объект, в котором свойство — это имя файла устаревшей иконки, а значение этого свойства — имя файла иконки на замену устаревшей (или `null`, если такой нет).

@@ -19,7 +19,7 @@ function sortArrayAlphabetically(array) {
  * @param {string} dash
  * @return {string}
  */
- function dashToCamel(dash) {
+function dashToCamel(dash) {
   const dashSplitted = dash.split('_');
   return dashSplitted.reduce((res, piece) => {
     piece = piece.charAt(0).toUpperCase() + piece.slice(1);
@@ -32,4 +32,4 @@ module.exports = {
   debugError,
   sortArrayAlphabetically,
   dashToCamel,
-}
+};

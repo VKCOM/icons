@@ -3,11 +3,7 @@ const path = require('path');
 const { performance } = require('perf_hooks');
 const rimraf = require('rimraf');
 const { execSync } = require('child_process');
-const {
-  debugInfo,
-  debugError,
-  sortArrayAlphabetically,
-} = require('./utils');
+const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
 const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
@@ -41,15 +37,15 @@ function generateIcons(options) {
   });
 
   debugInfo('Copying templates...');
-  [
-    'src/sprite.ts',
-    'src/SvgIcon.tsx',
-    'src/IconSettings.tsx',
-    'src/warnOnce.ts',
-  ].forEach((srcFile) => {
-    const scriptsSrc = path.resolve(__dirname, '..');
-    fs.copyFileSync(path.resolve(scriptsSrc, srcFile), path.join(tsFilesDirectory, path.basename(srcFile)));
-  });
+  ['src/sprite.ts', 'src/SvgIcon.tsx', 'src/IconSettings.tsx', 'src/warnOnce.ts'].forEach(
+    (srcFile) => {
+      const scriptsSrc = path.resolve(__dirname, '..');
+      fs.copyFileSync(
+        path.resolve(scriptsSrc, srcFile),
+        path.join(tsFilesDirectory, path.basename(srcFile)),
+      );
+    },
+  );
 
   debugInfo('Creating icons map...');
   const iconsMap = createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons);
@@ -89,7 +85,9 @@ function generateIcons(options) {
     }
 
     debugInfo('Running swc commonjs...');
-    execSync(`swc ${tsFilesDirectory} -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`);
+    execSync(
+      `swc ${tsFilesDirectory} -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
+    );
 
     debugInfo('Running swc es6...');
     execSync(`swc ${tsFilesDirectory} -d ${distDirectory}/es6/ --config-file ${swcConfig}`);
@@ -98,38 +96,46 @@ function generateIcons(options) {
     // const tsBuildInfoFile = path.resolve(cwd, 'node_modules', '.cache', '.tsbuildinfo');
     // --incremental --tsBuildInfoFile ${tsBuildInfoFile}
 
-    [
-      '/**/*.ts',
-      '/*.ts',
-    ].forEach((search) => {
-      execSync(`tsc ${tsFilesDirectory + search} --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`);
+    ['/**/*.ts', '/*.ts'].forEach((search) => {
+      execSync(
+        `tsc ${
+          tsFilesDirectory + search
+        } --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
+      );
     });
   };
 
-  Promise.all(promises).then(() => {
-    debugInfo('Creating index.ts file with exports');
-    createIndexExports(exportsMap, tsFilesDirectory);
+  Promise.all(promises)
+    .then(() => {
+      debugInfo('Creating index.ts file with exports');
+      createIndexExports(exportsMap, tsFilesDirectory);
 
-    return compile();
-  }).then(() => {
-    fs.writeFileSync(path.resolve(distDirectory, 'icons-map.json'), JSON.stringify(iconsMap));
+      return compile();
+    })
+    .then(() => {
+      fs.writeFileSync(path.resolve(distDirectory, 'icons-map.json'), JSON.stringify(iconsMap));
 
-    debugInfo(`Icons successfully generated to ${distDirectory} in ${Math.ceil(performance.now() - start)}ms!`);
-  }).catch((e) => {
-    if (e.output) {
-      e.output = String(e.output);
-    }
+      debugInfo(
+        `Icons successfully generated to ${distDirectory} in ${Math.ceil(
+          performance.now() - start,
+        )}ms!`,
+      );
+    })
+    .catch((e) => {
+      if (e.output) {
+        e.output = String(e.output);
+      }
 
-    if (e.stdout) {
-      e.stdout = String(e.stdout);
-    }
+      if (e.stdout) {
+        e.stdout = String(e.stdout);
+      }
 
-    if (e.stderr) {
-      e.stderr = String(e.stderr);
-    }
+      if (e.stderr) {
+        e.stderr = String(e.stderr);
+      }
 
-    debugError(e);
-  });
+      debugError(e);
+    });
 }
 
 /**
@@ -137,9 +143,7 @@ function generateIcons(options) {
  * @param {string} dir
  */
 function createIndexExports(exportsMap, dir) {
-  const exports = [
-    `export { IconSettingsProvider } from './IconSettings';`
-  ];
+  const exports = [`export { IconSettingsProvider } from './IconSettings';`];
 
   sortArrayAlphabetically(Object.keys(exportsMap)).forEach((componentName) => {
     const importSource = exportsMap[componentName];
