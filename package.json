@@ -24,8 +24,12 @@
     "size": "yarn icons-build && size-limit",
     "docs": "node --max-old-space-size=4096 scripts/docs",
     "build": "yarn icons-build && yarn docs",
-    "icons-build": "node scripts/build-icons.js"
+    "icons-build": "node scripts/build-icons.js",
+    "lint:prettier": "yarn prettier --check --ignore-unknown ."
   },
+  "pre-commit": [
+    "lint:prettier"
+  ],
   "dependencies": {
     "svg-baker-runtime": "1.4.7"
   },
