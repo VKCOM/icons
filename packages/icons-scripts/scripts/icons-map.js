@@ -73,7 +73,7 @@ function dirMap(src, pattern, prefix = '', deprecatedIcons) {
       componentName: getIconComponentName(id, prefix + size),
       deprecated,
       replacement: deprecated ? getReplacementIconComponentName(deprecatedIcons[name]) : undefined,
-    }
+    };
   });
 }
 

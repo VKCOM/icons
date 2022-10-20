@@ -6,16 +6,14 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
   const width = symbol.viewBox.split(' ')[2];
   const height = symbol.viewBox.split(' ')[3];
 
-  let jsdoc = ""
+  let jsdoc = '';
   if (deprecated) {
-    const replacementNotice = replacement
-      ? `. Замените на ${replacement}`
-      : "";
+    const replacementNotice = replacement ? `. Замените на ${replacement}` : '';
 
     jsdoc = `/**
  * @deprecated Иконка устарела${replacementNotice}
  */
-`
+`;
   }
 
   return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
@@ -45,7 +43,9 @@ export default makeIcon<${componentName}Props>(
 };
 
 function reactifyIcon({ content, id, componentName, deprecated, replacement }) {
-  return compiler.addSymbol({ content, id, path: '' }).then((symbol) => reactify(symbol, componentName, deprecated, replacement));
+  return compiler
+    .addSymbol({ content, id, path: '' })
+    .then((symbol) => reactify(symbol, componentName, deprecated, replacement));
 }
 
 module.exports = { reactifyIcon };

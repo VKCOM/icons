@@ -11,7 +11,7 @@ export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
   viewBox?: string;
   fill?: string;
   getRootRef?: React.RefCallback<HTMLDivElement> | React.RefObject<HTMLDivElement>;
-  Component?: React.ElementType,
+  Component?: React.ElementType;
 }
 
 const svgStyle = { display: 'block' };
@@ -40,14 +40,17 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   getRootRef,
   Component = 'div',
   role,
-  "aria-label": ariaLabel,
-  "aria-hidden": ariaHidden,
+  'aria-label': ariaLabel,
+  'aria-hidden': ariaHidden,
   ...restProps
 }) => {
   const size = Math.max(width, height);
 
   const iconSettings = React.useContext(IconSettingsContext);
-  const ownClass = iconClass(['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`], iconSettings);
+  const ownClass = iconClass(
+    ['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`],
+    iconSettings,
+  );
 
   return (
     <Component
@@ -80,7 +83,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   width: number,
   height: number,
   deprecated?: boolean,
-  replacement?: string
+  replacement?: string,
 ): React.FC<Props> {
   let isMounted = false;
   function mountIcon() {
@@ -95,11 +98,9 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
     useIsomorphicLayoutEffect(mountIcon, []);
 
     if (deprecated) {
-      const replacementNotice = replacement
-        ? `. Замените на ${replacement}`
-        : "";
+      const replacementNotice = replacement ? `. Замените на ${replacement}` : '';
 
-      warn("Иконка устарела" + replacementNotice);
+      warn('Иконка устарела' + replacementNotice);
     }
 
     return (
@@ -110,7 +111,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
         width={!isNaN(props.width) ? +props.width : width}
         height={!isNaN(props.height) ? +props.height : height}
       />
-    )
+    );
   };
 
   (Icon as any).mountIcon = mountIcon;

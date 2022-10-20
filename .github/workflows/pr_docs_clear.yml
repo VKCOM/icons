@@ -18,5 +18,5 @@ jobs:
       - name: Unpublish docs
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Remove PR ${{ github.event.pull_request.number }}"
+          commit_message: 'Remove PR ${{ github.event.pull_request.number }}'
           branch: gh-pages

@@ -19,16 +19,18 @@ module.exports = {
       {
         test: /\.js/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'swc-loader',
-          options: {
-            jsc: {
-              parser: {
-                jsx: true,
-              }
-            }
-          }
-        }],
+        use: [
+          {
+            loader: 'swc-loader',
+            options: {
+              jsc: {
+                parser: {
+                  jsx: true,
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(otf|svg)/,

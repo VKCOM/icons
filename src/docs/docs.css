@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   margin: 0;
   padding: 0;
@@ -22,7 +23,7 @@ body, html {
   padding: 10px;
   text-align: center;
   position: relative;
-  color: #71757A;
+  color: #71757a;
   background-color: rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
@@ -41,7 +42,7 @@ body, html {
 
 .icon:active {
   background-color: rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .icon--anchor {
@@ -50,7 +51,7 @@ body, html {
 }
 
 .icon--changed .Icon {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .icon-name {
@@ -80,7 +81,8 @@ body, html {
   visibility: visible;
 }
 
-p, pre {
+p,
+pre {
   font-size: 16px;
 }
 
@@ -96,14 +98,14 @@ a:hover {
 code {
   padding: 1px 3px;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, .12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
 }
 
 pre {
   padding: 10px;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, .12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
 }
 
@@ -113,7 +115,7 @@ label {
   font-size: 13px;
 }
 
-[type="text"] {
+[type='text'] {
   padding: 18px 40px 22px;
   line-height: 30px;
   font-size: 30px;
@@ -130,7 +132,7 @@ label {
   width: 100%;
 }
 
-[type="text"]:focus {
+[type='text']:focus {
   border-color: #c9d0d6;
 }
 
@@ -152,7 +154,7 @@ textarea {
   top: 0;
   color: #fff;
   font-size: 200px;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
   animation-name: copied;
   animation-duration: 1.25s;
   animation-timing-function: ease-in-out;
