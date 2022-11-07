@@ -5,11 +5,9 @@ import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 import { warnOnce } from './warnOnce';
 
-export interface SvgIconProps extends React.HTMLAttributes<SVGSVGElement> {
+export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
-  viewBox?: string;
-  fill?: string;
   getRef?: React.Ref<SVGSVGElement>;
 }
 
@@ -26,7 +24,7 @@ function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSett
   return res;
 }
 
-const SvgIcon: React.FC<SvgIconProps> = ({
+const SvgIcon = ({
   width,
   height,
   viewBox,
@@ -36,7 +34,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   fill,
   getRef,
   ...restProps
-}) => {
+}: SvgIconProps) => {
   const size = Math.max(width, height);
 
   const iconSettings = React.useContext(IconSettingsContext);
@@ -80,7 +78,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   }
 
   const warn = deprecated ? warnOnce(componentName) : null;
-  const Icon: React.FC<Props> = (props) => {
+  const Icon = (props: Props) => {
     useIsomorphicLayoutEffect(mountIcon, []);
 
     if (deprecated) {

@@ -16,10 +16,10 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
 `;
   }
 
-  return `import { HTMLAttributes, Ref } from 'react';
+  return `import { SVGProps, Ref } from 'react';
 import { makeIcon } from '../SvgIcon';
 
-export interface ${componentName}Props extends HTMLAttributes<SVGSVGElement> {
+export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
   fill?: string;
   width?: number;
   height?: number;
