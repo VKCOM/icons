@@ -16,14 +16,14 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
 `;
   }
 
-  return `import { HTMLAttributes, RefCallback, RefObject } from 'react';
+  return `import { HTMLAttributes, Ref } from 'react';
 import { makeIcon } from '../SvgIcon';
 
-export interface ${componentName}Props extends HTMLAttributes<HTMLDivElement> {
+export interface ${componentName}Props extends HTMLAttributes<SVGSVGElement> {
   fill?: string;
   width?: number;
   height?: number;
-  getRootRef?: RefCallback<HTMLDivElement> | RefObject<HTMLDivElement>;
+  getRef?: Ref<SVGSVGElement>;
   deprecated?: boolean;
   replacement?: string;
 }
