@@ -35,7 +35,6 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   style = {},
   fill,
   getRef,
-  role = 'presentation',
   ...restProps
 }) => {
   const size = Math.max(width, height);
@@ -48,7 +47,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
 
   return (
     <svg
-      role="presentation"
+      aria-hidden="true"
       {...restProps}
       className={`${ownClass} ${className}`}
       viewBox={viewBox}
