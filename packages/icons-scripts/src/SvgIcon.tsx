@@ -5,16 +5,13 @@ import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 import { warnOnce } from './warnOnce';
 
-export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SvgIconProps extends React.HTMLAttributes<SVGSVGElement> {
   width?: number;
   height?: number;
   viewBox?: string;
   fill?: string;
-  getRootRef?: React.RefCallback<HTMLDivElement> | React.RefObject<HTMLDivElement>;
-  Component?: React.ElementType;
+  getRef?: React.Ref<SVGSVGElement>;
 }
-
-const svgStyle = { display: 'block' };
 
 function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
   let res = '';
@@ -37,11 +34,8 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   className = '',
   style = {},
   fill,
-  getRootRef,
-  Component = 'div',
-  role,
-  'aria-label': ariaLabel,
-  'aria-hidden': ariaHidden,
+  getRef,
+  role = 'presentation',
   ...restProps
 }) => {
   const size = Math.max(width, height);
@@ -53,25 +47,18 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   );
 
   return (
-    <Component
+    <svg
       role="presentation"
       {...restProps}
-      ref={getRootRef}
       className={`${ownClass} ${className}`}
-      style={{ ...style, width, height }}
+      viewBox={viewBox}
+      width={width}
+      height={height}
+      style={{ ...style, display: 'block', width, height }}
+      ref={getRef}
     >
-      <svg
-        viewBox={viewBox}
-        width={width}
-        height={height}
-        style={svgStyle}
-        role={role}
-        aria-label={ariaLabel}
-        aria-hidden={ariaHidden}
-      >
-        <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
-      </svg>
-    </Component>
+      <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
+    </svg>
   );
 };
 
