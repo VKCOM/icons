@@ -4,3 +4,5 @@ dist
 .vscode
 LICENSE
 yarn.lock
+docs
+ts

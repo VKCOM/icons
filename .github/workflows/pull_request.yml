@@ -77,3 +77,14 @@ jobs:
           # only affects current branch
           skip_step: install
           build_script: 'icons-build'
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 14
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn test

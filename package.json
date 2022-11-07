@@ -25,6 +25,7 @@
     "docs": "node --max-old-space-size=4096 scripts/docs",
     "build": "yarn icons-build && yarn docs",
     "icons-build": "node scripts/build-icons.js",
+    "test": "yarn lint:prettier",
     "lint:prettier": "yarn prettier --check --ignore-unknown ."
   },
   "pre-commit": [
