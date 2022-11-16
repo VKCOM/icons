@@ -3,15 +3,34 @@ name: 'Publish icons'
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'icons version (without v)'
+      type:
+        description: 'icons version type. Choose empty option if using custom version'
+        type: choice
+        default: 'minor'
+        options:
+          - patch
+          - minor
+          - major
+          - prerelease
+          - prepatch
+          - preminor
+          - premajor
+          - ~
         required: true
+      custom_version:
+        description: 'custom version: x.y.z-preid.a (without "v"). Overrides version type'
+        required: false
+      tag:
+        description: 'prerelease tag: preid ("alpha" or "beta"). Leave empty for release'
+        required: false
+
+run-name: Publish @vkontakte/icons ${{ inputs.custom_version }} ${{ inputs.type }} ${{ inputs.tag }}
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
 
@@ -31,7 +50,15 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks
+      - name: Bumping @vkontakte/icons version
+        run: |
+          if [ ${{ !github.event.inputs.custom_version }} ]; then
+            yarn version --${{ github.event.inputs.type }} --no-commit-hooks --preid ${{ github.event.inputs.tag }}
+            exit 0
+          else
+            yarn version --new-version ${{ github.event.inputs.custom_version }} --no-commit-hooks --preid ${{ github.event.inputs.tag }}
+            exit 0
+          fi
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
