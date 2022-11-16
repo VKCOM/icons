@@ -3,9 +3,28 @@ name: 'Publish scripts'
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'scripts version (without v)'
+      type:
+        description: 'scripts version type. Choose empty option if using custom version'
+        type: choice
+        default: 'minor'
+        options:
+          - patch
+          - minor
+          - major
+          - prerelease
+          - prepatch
+          - preminor
+          - premajor
+          - ~
         required: true
+      custom_version:
+        description: 'custom version: x.y.z-preid.a (without "v"). Overrides version type'
+        required: false
+      tag:
+        description: 'prerelease tag: preid ("alpha" or "beta"). Leave empty for release'
+        required: false
+
+run-name: Publish @vkontakte/icons-scripts ${{ inputs.custom_version }} ${{ inputs.type }} ${{ inputs.tag }}
 
 jobs:
   publish:
@@ -15,7 +34,7 @@ jobs:
         working-directory: ./packages/icons-scripts
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
 
@@ -33,8 +52,19 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - run: yarn version --new-version ${{ github.event.inputs.version }} --no-commit-hooks --no-git-tag-version
-      - run: git add -A && git commit -m '[icons-scripts] v${{ github.event.inputs.version }}'
+      - name: Bumping @vkontakte/icons-scripts version
+        id: updated_version
+        run: |
+          if [ ${{ !github.event.inputs.custom_version }} ]; then
+            yarn version --${{ github.event.inputs.type }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
+            exit 0
+          else
+            yarn version --new-version ${{ github.event.inputs.custom_version }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
+            exit 0
+          fi
+          echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - run: git add -A && git commit -m '[icons-scripts] v${{ steps.updated_version.outputs.version }}'
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
