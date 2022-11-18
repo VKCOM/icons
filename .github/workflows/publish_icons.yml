@@ -50,15 +50,15 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Bumping @vkontakte/icons version
+      - name: Bumping @vkontakte/icons version via version type
+        if: ${{ !github.event.inputs.custom_version }}
         run: |
-          if [ ${{ !github.event.inputs.custom_version }} ]; then
-            yarn version --${{ github.event.inputs.type }} --no-commit-hooks --preid ${{ github.event.inputs.tag }}
-            exit 0
-          else
-            yarn version --new-version ${{ github.event.inputs.custom_version }} --no-commit-hooks --preid ${{ github.event.inputs.tag }}
-            exit 0
-          fi
+          yarn version --${{ github.event.inputs.type }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks
+
+      - name: Bumping @vkontakte/icons version via custom version
+        if: ${{ github.event.inputs.custom_version }}
+        run: |
+          yarn version --new-version ${{ github.event.inputs.custom_version }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
