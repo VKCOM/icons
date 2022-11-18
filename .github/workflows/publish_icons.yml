@@ -68,13 +68,7 @@ jobs:
 
       - name: Publishing release
         run: |
-          if [ ${{ !github.event.inputs.tag }} ]; then
-            yarn publish --non-interactive
-            exit 0
-          else
-            yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive
-            exit 0
-          fi
+          yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
 
