@@ -52,15 +52,15 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Bumping @vkontakte/icons-scripts version
+      - name: Bumping @vkontakte/icons-scripts version via version type
+        if: ${{ !github.event.inputs.custom_version }}
         run: |
-          if [ ${{ !github.event.inputs.custom_version }} ]; then
-            yarn version --${{ github.event.inputs.type }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
-            exit 0
-          else
-            yarn version --new-version ${{ github.event.inputs.custom_version }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
-            exit 0
-          fi
+          yarn version --${{ github.event.inputs.type }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks --no-git-tag-version
+
+      - name: Bumping @vkontakte/icons-scripts version via custom version
+        if: ${{ github.event.inputs.custom_version }}
+        run: |
+          yarn version --new-version ${{ github.event.inputs.custom_version }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks --no-git-tag-version
 
       - name: Saving updated version to env
         id: updated_version
