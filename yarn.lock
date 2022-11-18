@@ -192,10 +192,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@vkontakte/icons-scripts@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons-scripts/-/icons-scripts-0.8.1.tgz#6be7c708d90a7721e36d9a72f06b84dc0c650ad5"
-  integrity sha512-dxjTSMuDV1cQkYUhH31XjTPGuWStxFQIQ8QZ2/1wSZbpHwTdQfSHURuHGEDvDx9YGfiqyn/H6O4gdYxGcBIUqQ==
+"@vkontakte/icons-scripts@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons-scripts/-/icons-scripts-1.0.0-alpha.3.tgz#f9d551148a5c3c8e108bc6687e6938d1e682dcc6"
+  integrity sha512-zV/btHIcIrkCeaggPskqwNW8Umg66J6UYBzK9FVUg9mXSApPvLBrMJmDPHaBiCzqsqlJnfF44O6urbWLleuriQ==
   dependencies:
     "@swc/cli" "^0.1.57"
     "@swc/core" "^1.2.204"
