@@ -77,8 +77,16 @@ jobs:
           github_token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
-      - name: Publishing release
+      - name: Publishing tagged release
+        if: ${{ github.event.inputs.tag }}
         run: |
           yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+
+      - name: Publishing release
+        if: ${{ !github.event.inputs.tag }}
+        run: |
+          yarn publish --non-interactive --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
