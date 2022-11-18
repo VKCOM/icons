@@ -53,7 +53,6 @@ jobs:
           git config --local user.name "GitHub Action"
 
       - name: Bumping @vkontakte/icons-scripts version
-        id: updated_version
         run: |
           if [ ${{ !github.event.inputs.custom_version }} ]; then
             yarn version --${{ github.event.inputs.type }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
@@ -62,9 +61,15 @@ jobs:
             yarn version --new-version ${{ github.event.inputs.custom_version }} --no-commit-hooks --preid ${{ github.event.inputs.tag }} --no-git-tag-version
             exit 0
           fi
+
+      - name: Saving updated version to env
+        id: updated_version
+        run: |
           echo "::set-output name=version::$(node -p "require('./package.json').version")"
 
-      - run: git add -A && git commit -m '[icons-scripts] v${{ steps.updated_version.outputs.version }}'
+      - name: Adding commit with updated version number
+        run: |
+          git add -A && git commit -m '[icons-scripts] v${{ steps.updated_version.outputs.version }}'
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
@@ -73,6 +78,13 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: Publishing release
-        run: yarn publish --non-interactive --access public
+        run: |
+          if [ ${{ !github.event.inputs.tag }} ]; then
+            yarn publish --non-interactive --access public
+            exit 0
+          else
+            yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive --access public
+            exit 0
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
