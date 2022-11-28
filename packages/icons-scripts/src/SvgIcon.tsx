@@ -30,7 +30,6 @@ const SvgIcon = ({
   viewBox,
   id,
   className = '',
-  style = {},
   fill,
   getRef,
   ...restProps
@@ -51,7 +50,6 @@ const SvgIcon = ({
       viewBox={viewBox}
       width={width}
       height={height}
-      style={{ ...style, display: 'block', width, height }}
       ref={getRef}
     >
       <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
