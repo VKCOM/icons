@@ -8,7 +8,7 @@ import { warnOnce } from './warnOnce';
 export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
-  getRef?: React.Ref<SVGSVGElement>;
+  getRootRef?: React.Ref<SVGSVGElement>;
 }
 
 function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
@@ -32,7 +32,7 @@ const SvgIcon = ({
   className = '',
   style = {},
   fill,
-  getRef,
+  getRootRef,
   ...restProps
 }: SvgIconProps) => {
   const size = Math.max(width, height);
@@ -52,7 +52,7 @@ const SvgIcon = ({
       width={width}
       height={height}
       style={{ ...style, display: 'block', width, height }}
-      ref={getRef}
+      ref={getRootRef}
     >
       <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
     </svg>

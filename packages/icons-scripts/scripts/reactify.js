@@ -23,7 +23,7 @@ export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
   fill?: string;
   width?: number;
   height?: number;
-  getRef?: Ref<SVGSVGElement>;
+  getRootRef?: Ref<SVGSVGElement>;
   deprecated?: boolean;
   replacement?: string;
 }
