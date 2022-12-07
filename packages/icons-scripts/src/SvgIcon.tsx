@@ -5,16 +5,11 @@ import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 import { warnOnce } from './warnOnce';
 
-export interface SvgIconProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
-  viewBox?: string;
-  fill?: string;
-  getRootRef?: React.RefCallback<HTMLDivElement> | React.RefObject<HTMLDivElement>;
-  Component?: React.ElementType;
+  getRootRef?: React.Ref<SVGSVGElement>;
 }
-
-const svgStyle = { display: 'block' };
 
 function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
   let res = '';
@@ -29,7 +24,7 @@ function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSett
   return res;
 }
 
-const SvgIcon: React.FC<SvgIconProps> = ({
+const SvgIcon = ({
   width,
   height,
   viewBox,
@@ -38,12 +33,8 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   style = {},
   fill,
   getRootRef,
-  Component = 'div',
-  role,
-  'aria-label': ariaLabel,
-  'aria-hidden': ariaHidden,
   ...restProps
-}) => {
+}: SvgIconProps) => {
   const size = Math.max(width, height);
 
   const iconSettings = React.useContext(IconSettingsContext);
@@ -53,25 +44,18 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   );
 
   return (
-    <Component
-      role="presentation"
+    <svg
+      aria-hidden="true"
       {...restProps}
-      ref={getRootRef}
       className={`${ownClass} ${className}`}
-      style={{ ...style, width, height }}
+      viewBox={viewBox}
+      width={width}
+      height={height}
+      style={{ ...style, display: 'block', width, height }}
+      ref={getRootRef}
     >
-      <svg
-        viewBox={viewBox}
-        width={width}
-        height={height}
-        style={svgStyle}
-        role={role}
-        aria-label={ariaLabel}
-        aria-hidden={ariaHidden}
-      >
-        <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
-      </svg>
-    </Component>
+      <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
+    </svg>
   );
 };
 
@@ -94,7 +78,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   }
 
   const warn = deprecated ? warnOnce(componentName) : null;
-  const Icon: React.FC<Props> = (props) => {
+  const Icon = (props: Props) => {
     useIsomorphicLayoutEffect(mountIcon, []);
 
     if (deprecated) {

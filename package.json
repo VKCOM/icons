@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons",
-  "version": "1.209.0",
+  "version": "2.0.0-alpha.3",
   "description": "SVG icons, provided as a React components. With love from VKontakte",
   "repository": "https://github.com/VKCOM/icons",
   "homepage": "https://vkcom.github.io/icons/",
@@ -42,7 +42,7 @@
     "@size-limit/webpack": "^7.0.8",
     "@swc/core": "^1.2.204",
     "@types/react": "16.9.34",
-    "@vkontakte/icons-scripts": "^0.8.1",
+    "@vkontakte/icons-scripts": "^1.0.0",
     "@vkontakte/prettier-config": "^0.1.0",
     "css-loader": "5.2.4",
     "file-loader": "6.2.0",
