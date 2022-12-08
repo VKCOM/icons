@@ -9,6 +9,7 @@ export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
   getRootRef?: React.Ref<SVGSVGElement>;
+  title?: string;
 }
 
 function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
@@ -33,6 +34,7 @@ const SvgIcon = ({
   style = {},
   fill,
   getRootRef,
+  title,
   ...restProps
 }: SvgIconProps) => {
   const size = Math.max(width, height);
@@ -54,6 +56,7 @@ const SvgIcon = ({
       style={{ ...style, display: 'block', width, height }}
       ref={getRootRef}
     >
+      {title && <title>{title}</title>}
       <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
     </svg>
   );
