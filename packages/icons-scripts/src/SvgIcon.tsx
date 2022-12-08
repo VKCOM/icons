@@ -31,9 +31,9 @@ const SvgIcon = ({
   viewBox,
   id,
   className = '',
-  style = {},
   fill,
   getRootRef,
+  style: propsStyle = {},
   title,
   ...restProps
 }: SvgIconProps) => {
@@ -45,6 +45,13 @@ const SvgIcon = ({
     iconSettings,
   );
 
+  const style = {
+    display: 'block',
+    width,
+    height,
+    ...propsStyle,
+  };
+
   return (
     <svg
       aria-hidden="true"
@@ -53,7 +60,7 @@ const SvgIcon = ({
       viewBox={viewBox}
       width={width}
       height={height}
-      style={{ ...style, display: 'block', width, height }}
+      style={style}
       ref={getRootRef}
     >
       {title && <title>{title}</title>}
