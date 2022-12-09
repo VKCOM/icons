@@ -46,7 +46,6 @@ const SvgIcon = ({
   );
 
   const style = {
-    display: 'block',
     width,
     height,
     ...propsStyle,
@@ -55,6 +54,7 @@ const SvgIcon = ({
   return (
     <svg
       aria-hidden="true"
+      display="block"
       {...restProps}
       className={`${ownClass} ${className}`}
       viewBox={viewBox}
