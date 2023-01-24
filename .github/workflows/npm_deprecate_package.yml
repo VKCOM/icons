@@ -1,0 +1,24 @@
+name: 'Deprecate NPM package'
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'type version: x.y.z (without "v")'
+        required: true
+      reason:
+        description: 'reason for deprecation (only latin supported)'
+        required: true
+
+run-name: Deprecate @vkontakte/icons@${{ inputs.version }}
+
+jobs:
+  deprecate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: VKCOM/.github/.github/workflows/npm_deprecate_package.yml@main
+        with:
+          package: '@vkontakte/icons'
+          version: ${{ inputs.version }}
+          reason: ${{ inputs.reason }}
+          auth_token: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
