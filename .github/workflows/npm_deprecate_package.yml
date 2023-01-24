@@ -19,4 +19,5 @@ jobs:
       package: '@vkontakte/icons'
       version: ${{ inputs.version }}
       reason: ${{ inputs.reason }}
-      auth_token: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+    secrets:
+      npm_auth_token: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
