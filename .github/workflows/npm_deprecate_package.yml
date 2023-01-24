@@ -14,11 +14,9 @@ run-name: Deprecate @vkontakte/icons@${{ inputs.version }}
 
 jobs:
   deprecate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: VKCOM/.github/.github/workflows/npm_deprecate_package.yml@main
-        with:
-          package: '@vkontakte/icons'
-          version: ${{ inputs.version }}
-          reason: ${{ inputs.reason }}
-          auth_token: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+    uses: VKCOM/.github/.github/workflows/npm_deprecate_package.yml@main
+    with:
+      package: '@vkontakte/icons'
+      version: ${{ inputs.version }}
+      reason: ${{ inputs.reason }}
+      auth_token: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
