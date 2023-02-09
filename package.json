@@ -53,7 +53,7 @@
     "react-color": "^2.18.0",
     "react-dom": "^16.9.0",
     "size-limit": "^7.0.8",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.3.1",
     "swc-loader": "^0.2.3",
     "webpack": "^5.73.0"
   },
