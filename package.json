@@ -44,7 +44,7 @@
     "@types/react": "^16.9.34",
     "@vkontakte/icons-scripts": "^1.1.0",
     "@vkontakte/prettier-config": "^0.1.0",
-    "css-loader": "^5.2.4",
+    "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
     "pre-commit": "^1.2.2",
