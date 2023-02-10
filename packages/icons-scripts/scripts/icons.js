@@ -96,13 +96,9 @@ function generateIcons(options) {
     // const tsBuildInfoFile = path.resolve(cwd, 'node_modules', '.cache', '.tsbuildinfo');
     // --incremental --tsBuildInfoFile ${tsBuildInfoFile}
 
-    ['/**/*.ts', '/*.ts'].forEach((search) => {
-      execSync(
-        `tsc ${
-          tsFilesDirectory + search
-        } --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
-      );
-    });
+    execSync(
+      `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
+    );
   };
 
   Promise.all(promises)
