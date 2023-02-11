@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrowserSprite attach 1`] = `
+<body>
+  <svg
+    aria-hidden="true"
+    id="sprite"
+    style="position:absolute;width:0;height:0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <symbol
+      id="symbol2"
+    />
+    <symbol
+      id="symbol1"
+    />
+  </svg>
+</body>
+`;
+
+exports[`BrowserSprite mount && unmount prepend: mount 1`] = `
+<body>
+  <svg
+    aria-hidden="true"
+    id="sprite"
+    style="position:absolute;width:0;height:0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <symbol
+      id="symbol"
+    />
+  </svg>
+  <div
+    id="block"
+  />
+</body>
+`;
+
+exports[`BrowserSprite mount && unmount prepend: unmount 1`] = `
+<body>
+  <div
+    id="block"
+  />
+</body>
+`;
+
+exports[`BrowserSprite mount && unmount: mount 1`] = `
+<body>
+  <div
+    id="block"
+  />
+  <svg
+    aria-hidden="true"
+    id="sprite"
+    style="position:absolute;width:0;height:0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <symbol
+      id="symbol1"
+    />
+    <symbol
+      id="symbol2"
+    />
+  </svg>
+</body>
+`;
+
+exports[`BrowserSprite mount && unmount: unmount 1`] = `
+<body>
+  <div
+    id="block"
+  />
+</body>
+`;
