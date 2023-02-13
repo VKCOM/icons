@@ -38,8 +38,8 @@
     "react": "^16.9.34 || ^17 || ^18"
   },
   "devDependencies": {
-    "@size-limit/file": "^7.0.8",
-    "@size-limit/webpack": "^7.0.8",
+    "@size-limit/file": "^8.2.4",
+    "@size-limit/webpack": "^8.2.4",
     "@swc/core": "^1.2.204",
     "@types/react": "^16.9.34",
     "@vkontakte/icons-scripts": "^1.1.0",
@@ -52,7 +52,7 @@
     "react": "^16.9.0",
     "react-color": "^2.18.0",
     "react-dom": "^16.9.0",
-    "size-limit": "^7.0.8",
+    "size-limit": "^8.2.4",
     "style-loader": "^3.3.1",
     "swc-loader": "^0.2.3",
     "webpack": "^5.73.0"
