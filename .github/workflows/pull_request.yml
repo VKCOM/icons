@@ -2,6 +2,12 @@ name: 'Pull Request'
 
 on: ['pull_request']
 
+# Для расширения доступа Dependabot
+#
+# https://github.com/peter-evans/create-or-update-comment/issues/103
+permissions:
+  pull-requests: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest
