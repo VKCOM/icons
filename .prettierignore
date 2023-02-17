@@ -6,3 +6,4 @@ LICENSE
 yarn.lock
 docs
 ts
+coverage

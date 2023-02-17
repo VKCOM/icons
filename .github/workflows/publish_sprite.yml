@@ -1,0 +1,92 @@
+name: 'Publish sprite'
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'sprite version type. Choose empty option if using custom version'
+        type: choice
+        default: 'minor'
+        options:
+          - patch
+          - minor
+          - major
+          - prerelease
+          - prepatch
+          - preminor
+          - premajor
+          - ~
+        required: true
+      custom_version:
+        description: 'custom version: x.y.z-preid.a (without "v"). Overrides version type'
+        required: false
+      tag:
+        description: 'prerelease tag: preid ("alpha" or "beta"). Leave empty for release'
+        required: false
+
+run-name: Publish @vkontakte/icons-sprite ${{ inputs.custom_version }} ${{ inputs.type }} ${{ inputs.tag }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/icons-sprite
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          always-auth: true
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Set Git credentials
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Bumping @vkontakte/icons-sprite version via version type
+        if: ${{ !github.event.inputs.custom_version }}
+        run: |
+          yarn version --${{ github.event.inputs.type }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks --no-git-tag-version
+
+      - name: Bumping @vkontakte/icons-sprite version via custom version
+        if: ${{ github.event.inputs.custom_version }}
+        run: |
+          yarn version --new-version ${{ github.event.inputs.custom_version }} --preid ${{ github.event.inputs.tag }} --no-commit-hooks --no-git-tag-version
+
+      - name: Saving updated version to env
+        id: updated_version
+        run: |
+          echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+      - name: Adding commit with updated version number
+        run: |
+          git add -A && git commit -m '[icons-sprite] v${{ steps.updated_version.outputs.version }}'
+
+      - name: Pushing changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
+      - name: Publishing tagged release
+        if: ${{ github.event.inputs.tag }}
+        run: |
+          yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+
+      - name: Publishing release
+        if: ${{ !github.event.inputs.tag }}
+        run: |
+          yarn publish --non-interactive --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}

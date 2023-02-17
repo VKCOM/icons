@@ -5,3 +5,4 @@ dist/
 ts/
 docs/
 .cache
+coverage

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "exclude": ["\\.(test|spec|e2e)\\.[jt]sx?$", "testing/"],
+  "module": {
+    "type": "es6"
+  },
+  "jsc": {
+    "externalHelpers": true,
+    "parser": {
+      "syntax": "typescript"
+    },
+    "target": "es5",
+    "preserveAllComments": true
+  },
+  "sourceMaps": true
+}
