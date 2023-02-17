@@ -1,5 +1,7 @@
 import { BrowserSymbol } from './browser-symbol';
 
+const namespaceURI = 'http://www.w3.org/2000/svg';
+
 export interface SpriteConfig {
   attrs?: Record<string, string>;
 }
@@ -8,7 +10,7 @@ export class BrowserSprite {
   private symbols: Map<string, BrowserSymbol> = new Map();
   private config: SpriteConfig = {
     attrs: {
-      'xmlns': 'http://www.w3.org/2000/svg',
+      'xmlns': namespaceURI,
       'xmlns:xlink': 'http://www.w3.org/1999/xlink',
       'style': 'position:absolute;width:0;height:0',
       'aria-hidden': 'true',
@@ -76,7 +78,7 @@ export class BrowserSprite {
   }
 
   private render() {
-    const el = document.createElement('svg');
+    const el = document.createElementNS(namespaceURI, 'svg');
 
     Object.entries(this.config.attrs!).forEach((entry) => el.setAttribute(entry[0], entry[1]));
     this.symbols.forEach((symbol) => el.appendChild(symbol.node));
