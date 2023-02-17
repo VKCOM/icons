@@ -7,7 +7,8 @@
   "jsc": {
     "externalHelpers": true,
     "parser": {
-      "syntax": "typescript"
+      "syntax": "typescript",
+      "tsx": true
     },
     "target": "es5",
     "preserveAllComments": true

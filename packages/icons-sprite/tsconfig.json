@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "target": "esnext",
     "lib": ["es6", "dom"],
     "outDir": "dist",
