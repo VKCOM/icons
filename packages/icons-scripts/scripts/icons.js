@@ -36,17 +36,6 @@ function generateIcons(options) {
     }
   });
 
-  debugInfo('Copying templates...');
-  ['src/sprite.ts', 'src/SvgIcon.tsx', 'src/IconSettings.tsx', 'src/warnOnce.ts'].forEach(
-    (srcFile) => {
-      const scriptsSrc = path.resolve(__dirname, '..');
-      fs.copyFileSync(
-        path.resolve(scriptsSrc, srcFile),
-        path.join(tsFilesDirectory, path.basename(srcFile)),
-      );
-    },
-  );
-
   debugInfo('Creating icons map...');
   const iconsMap = createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons);
 
@@ -139,7 +128,7 @@ function generateIcons(options) {
  * @param {string} dir
  */
 function createIndexExports(exportsMap, dir) {
-  const exports = [`export { IconSettingsProvider } from './IconSettings';`];
+  const exports = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
 
   sortArrayAlphabetically(Object.keys(exportsMap)).forEach((componentName) => {
     const importSource = exportsMap[componentName];

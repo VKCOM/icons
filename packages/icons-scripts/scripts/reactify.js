@@ -17,7 +17,7 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
   }
 
   return `import { SVGProps, Ref } from 'react';
-import { makeIcon } from '../SvgIcon';
+import { makeIcon } from '@vkontakte/icons-sprite';
 
 export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
   fill?: string;

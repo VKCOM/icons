@@ -36,7 +36,7 @@ src/
     "build-icons": "node scripts/build-icons.js"
   },
   "dependencies": {
-    "svg-baker-runtime": "1.4.7"
+    "@vkontakte/icons-sprite": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^18.0.0"
