@@ -1,0 +1,22 @@
+name: 'Pull Request / @vkontakte/icons-sprite'
+
+on:
+  pull_request:
+    paths:
+      - 'packages/icons-sprite/**'
+
+concurrency:
+  group: icons-sprite-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: packages/icons-sprite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test
+      - run: yarn run build
