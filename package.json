@@ -32,7 +32,7 @@
     "lint:prettier"
   ],
   "dependencies": {
-    "svg-baker-runtime": "1.4.7"
+    "@vkontakte/icons-sprite": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^16.9.34 || ^17 || ^18"
