@@ -14,6 +14,8 @@ const { debugError } = require('./utils');
  * @property {boolean} [keepTSSources]
  * @property {string[]} [extraCategories] List of glob patterns for directory with icons
  * @property {string} [cwd]
+ * @property {'react'|'source'} [mode]
+ * @property {boolean} [skipCompile]
  * @property {any[]} [svgoPlugins]
  * @property {Function} [onIconProcess]
  * @property {DeprecatedIcons} [deprecatedIcons] List of deprecated icons
@@ -31,6 +33,8 @@ function prepareOptions(options) {
     keepTSSources,
     extraCategories = ['Unsorted'],
     cwd = process.cwd(),
+    mode = 'react',
+    skipCompile,
     svgoPlugins = [],
     onIconProcess = () => {},
     deprecatedIcons = {},
@@ -57,6 +61,8 @@ function prepareOptions(options) {
       : path.resolve(distDirectory, '../ts'),
     extraCategories,
     cwd,
+    mode,
+    skipCompile,
     svgoPlugins,
     onIconProcess,
     deprecatedIcons,

@@ -26,6 +26,7 @@
     "build": "yarn icons-build && yarn docs",
     "icons-build": "node scripts/build-icons.js",
     "test": "yarn lint:prettier",
+    "prettier:write": "yarn prettier --write --ignore-unknown .",
     "lint:prettier": "yarn prettier --check --ignore-unknown ."
   },
   "pre-commit": [

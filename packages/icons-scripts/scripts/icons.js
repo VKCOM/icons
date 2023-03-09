@@ -7,7 +7,7 @@ const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
 const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
-const { createReactIcon } = require('./output');
+const { createReactIcon, createSourceIcon } = require('./output');
 const Compiler = require('svg-baker');
 
 const compiler = new Compiler();
@@ -23,6 +23,8 @@ function generateIcons(options) {
     tsFilesDirectory,
     extraCategories,
     cwd,
+    mode,
+    skipCompile,
     svgoPlugins,
     onIconProcess,
     deprecatedIcons,
@@ -71,14 +73,15 @@ function generateIcons(options) {
       content,
     });
 
-    const exportName = componentName;
+    const createFn = mode === 'source' ? createSourceIcon : createReactIcon;
+    const exportName = mode === 'source' ? 'get' + componentName : componentName;
 
     // Превращаем svg-файл в ts-файл в виде строки
-    return createReactIcon({
+    return createFn({
       id: symbol.id,
       viewBox: symbol.viewBox,
       content: symbol.render(),
-      componentName,
+      componentName: exportName,
       deprecated,
       replacement,
       width,
@@ -96,6 +99,10 @@ function generateIcons(options) {
   });
 
   const compile = async () => {
+    if (skipCompile) {
+      return;
+    }
+
     const swcConfig = path.resolve(__dirname, './configs/.swcrc');
     if (!fs.existsSync(swcConfig)) {
       debugError('swc config not found');
@@ -121,7 +128,7 @@ function generateIcons(options) {
   Promise.all(promises)
     .then(() => {
       debugInfo('Creating index.ts file with exports');
-      createIndexExports(exportsMap, tsFilesDirectory);
+      createIndexExports(mode, exportsMap, tsFilesDirectory);
 
       return compile();
     })
@@ -152,11 +159,15 @@ function generateIcons(options) {
 }
 
 /**
+ * @param {'react'|'source'} mode
  * @param {Record<string, string>} exportsMap
  * @param {string} dir
  */
-function createIndexExports(exportsMap, dir) {
-  const exported = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
+function createIndexExports(mode, exportsMap, dir) {
+  const exported = [];
+  if (mode === 'react') {
+    exported.push(`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`);
+  }
 
   sortArrayAlphabetically(Object.keys(exportsMap)).forEach((exportName) => {
     const importSource = exportsMap[exportName];
