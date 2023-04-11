@@ -159,10 +159,10 @@
     "@swc/core-win32-ia32-msvc" "1.3.49"
     "@swc/core-win32-x64-msvc" "1.3.49"
 
-"@swc/helpers@^0.4.14":
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.14.tgz#1352ac6d95e3617ccb7c1498ff019654f1e12a74"
-  integrity sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==
+"@swc/helpers@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.0.tgz#bf1d807b60f7290d0ec763feea7ccdeda06e85f1"
+  integrity sha512-SjY/p4MmECVVEWspzSRpQEM3sjR17sP8PbGxELWrT+YZMBfiUyt1MRUNjMV23zohwlG2HYtCQOsCwsTHguXkyg==
   dependencies:
     tslib "^2.4.0"
 
@@ -240,11 +240,11 @@
     typescript "^4.7.3"
 
 "@vkontakte/icons-sprite@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons-sprite/-/icons-sprite-1.0.1.tgz#ed6ecff0a62b15e417f0628691440f87d576549e"
-  integrity sha512-qS5Iu4aGqfkZQcxIt1PTSUN/uXiLtXWuuZlQlkkAKLjjRmvEjwYWYlhR+bq0MSXLQU7++oN+qZ1xBUmzF80NpQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons-sprite/-/icons-sprite-1.1.0.tgz#de8f535068548e14c78c0bf8706d43352a0fa1e7"
+  integrity sha512-LszEWc0uGTGPCBUnS2butDxx4tOfUAGpBRSYiSZFeKixZ5lz2BreNtU1joGrUDI65sC+OCWvBsDaWfgkNxPlqw==
   dependencies:
-    "@swc/helpers" "^0.4.14"
+    "@swc/helpers" "^0.5.0"
 
 "@vkontakte/prettier-config@^0.1.0":
   version "0.1.0"
