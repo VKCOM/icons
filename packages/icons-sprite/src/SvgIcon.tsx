@@ -34,6 +34,7 @@ const SvgIcon = ({
   getRootRef,
   style: propsStyle = {},
   title,
+  children,
   ...restProps
 }: SvgIconProps) => {
   const size = Math.max(width, height);
@@ -63,7 +64,9 @@ const SvgIcon = ({
       ref={getRootRef}
     >
       {title && <title>{title}</title>}
-      <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }} />
+      <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }}>
+        {children}
+      </use>
     </svg>
   );
 };
