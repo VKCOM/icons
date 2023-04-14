@@ -248,9 +248,9 @@
     typescript "^4.7.3"
 
 "@vkontakte/icons-sprite@^1.0.1":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons-sprite/-/icons-sprite-1.1.0.tgz#de8f535068548e14c78c0bf8706d43352a0fa1e7"
-  integrity sha512-LszEWc0uGTGPCBUnS2butDxx4tOfUAGpBRSYiSZFeKixZ5lz2BreNtU1joGrUDI65sC+OCWvBsDaWfgkNxPlqw==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons-sprite/-/icons-sprite-1.1.1.tgz#04c7a6a1268be39f324de070d27b490f157d04dd"
+  integrity sha512-mZt34A0wK72+C0Jr0rtypuEFtfJO3qBFt9RQQC5lpBDTVGB+sMKmI8Vi+CYbq1kPO8Uv7GiPQxLv8+Ti7cT24g==
   dependencies:
     "@swc/helpers" "^0.5.0"
 
