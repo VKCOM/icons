@@ -847,7 +847,7 @@ glob-parent@^5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-glob@^10.0.0:
+glob@^10.0.0, glob@^10.2.5:
   version "10.2.5"
   resolved "https://registry.yarnpkg.com/glob/-/glob-10.2.5.tgz#73c1850ac8f077810d8370ba414b382ad1a86083"
   integrity sha512-Gj+dFYPZ5hc5dazjXzB0iHg2jKWJZYMjITXYPBRQ/xc2Buw7H0BINknRTwURJ6IC6MEFpYbLvtgVb3qD+DwyuA==
@@ -1617,11 +1617,11 @@ reusify@^1.0.4:
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
 rimraf@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-5.0.0.tgz#5bda14e410d7e4dd522154891395802ce032c2cb"
-  integrity sha512-Jf9llaP+RvaEVS5nPShYFhtXIrb3LRKP281ib3So0KkeZKo2wIKyq0Re7TOSwanasA423PSr6CCIL4bP6T040g==
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-5.0.1.tgz#0881323ab94ad45fec7c0221f27ea1a142f3f0d0"
+  integrity sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==
   dependencies:
-    glob "^10.0.0"
+    glob "^10.2.5"
 
 run-parallel@^1.1.9:
   version "1.2.0"
