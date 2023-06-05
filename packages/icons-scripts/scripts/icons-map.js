@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const fs = require('fs');
+const Compiler = require('svg-baker');
 const { dashToCamel, sortArrayAlphabetically } = require('./utils');
 
 /**
@@ -90,16 +91,46 @@ function dirMap(src, pattern, prefix = '', deprecatedIcons) {
  * @param {string[]} extraCategories
  * @param {string} [prefix]
  * @param {DeprecatedIcons} [deprecatedIcons]
+ * @param {(content: string) => string} [optimizeFn]
  * @return {Icon[]}
  */
-function createIconsMap(src, extraCategories = [], prefix = '', deprecatedIcons = {}) {
-  return [
+async function createIconsMap(
+  src,
+  extraCategories = [],
+  prefix = '',
+  deprecatedIcons = {},
+  optimizeFn = (content) => content,
+) {
+  const icons = [
     ...dirMap(src, '[0-9][0-9]', prefix, deprecatedIcons),
     ...extraCategories.map((category) => dirMap(src, category, prefix, deprecatedIcons)).flat(),
   ];
+
+  const compiler = new Compiler();
+
+  const promises = icons.map(async (icon) => {
+    const content = optimizeFn(icon.content);
+
+    const symbol = await compiler.addSymbol({ content, id: icon.filename, path: '' });
+
+    const viewBox = symbol.viewBox;
+    const width = viewBox.split(' ')[2];
+    const height = viewBox.split(' ')[3];
+
+    return {
+      ...icon,
+      content,
+      symbolId: symbol.id,
+      symbol: symbol.render(),
+      viewBox,
+      width,
+      height,
+    };
+  });
+
+  return await Promise.all(promises);
 }
 
 module.exports = {
-  getIconComponentName,
   createIconsMap,
 };

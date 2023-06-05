@@ -1,4 +1,4 @@
-async function createReactIcon({
+function createReactIcon({
   id,
   viewBox,
   content,
