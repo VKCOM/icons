@@ -25,11 +25,12 @@
     "docs": "node --max-old-space-size=4096 scripts/docs",
     "build": "yarn icons-build && yarn docs",
     "icons-build": "node scripts/build-icons.js",
-    "test": "yarn lint:prettier",
-    "lint:prettier": "yarn prettier --check --ignore-unknown ."
+    "test": "yarn prettier:check",
+    "prettier:write": "yarn prettier --write --ignore-unknown .",
+    "prettier:check": "yarn prettier --check --ignore-unknown ."
   },
   "pre-commit": [
-    "lint:prettier"
+    "prettier:check"
   ],
   "dependencies": {
     "@vkontakte/icons-sprite": "^1.0.1"
