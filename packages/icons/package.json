@@ -1,0 +1,89 @@
+{
+  "name": "@vkontakte/icons",
+  "version": "2.43.0",
+  "description": "SVG icons, provided as a React components. With love from VKontakte",
+  "homepage": "https://vkcom.github.io/icons/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VKCOM/icons.git",
+    "directory": "packages/icons"
+  },
+  "license": "MIT",
+  "author": "bumbledos@gmail.com",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/es6/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "files": [
+    "dist",
+    "ts",
+    "src/svg"
+  ],
+  "scripts": {
+    "build": "yarn icons-build && yarn docs",
+    "docs": "node --max-old-space-size=4096 scripts/docs",
+    "icons-build": "yarn node scripts/build-icons.js",
+    "size": "yarn icons-build && yarn run size-limit",
+    "size:ci": "YARN_ENABLE_SCRIPTS=false yarn install --immutable && yarn icons-build"
+  },
+  "browserslist": [
+    "android >= 4.4",
+    "ios >= 9"
+  ],
+  "dependencies": {
+    "@vkontakte/icons-sprite": "workspace:*"
+  },
+  "devDependencies": {
+    "@size-limit/file": "^8.2.4",
+    "@size-limit/webpack": "^8.2.4",
+    "@swc/cli": "^0.1.61",
+    "@swc/core": "^1.3.63",
+    "@types/react": "16.14.34",
+    "@vkontakte/icons-scripts": "workspace:*",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "pre-commit": "^1.2.2",
+    "react": "16.10.0",
+    "react-color": "^2.18.0",
+    "react-dom": "^16.9.0",
+    "size-limit": "^8.2.4",
+    "style-loader": "^3.3.1",
+    "swc-loader": "0.2.3",
+    "typescript": "^5.1.3",
+    "webpack": "^5.73.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.34 || ^17 || ^18"
+  },
+  "packageManager": "yarn@3.6.0",
+  "size-limit": [
+    {
+      "name": "JS",
+      "path": "dist/index.js",
+      "gzip": false
+    },
+    {
+      "name": "JS (gzip)",
+      "path": "dist/index.js"
+    },
+    {
+      "name": "JS (brotli)",
+      "path": "dist/index.js",
+      "brotli": true
+    },
+    {
+      "name": "JS ES6 with Icon16Add only import (tree shaking)",
+      "path": "dist/es6/index.js",
+      "import": "{ Icon16Add }"
+    },
+    {
+      "name": "SVG",
+      "path": "src/**/*.svg",
+      "gzip": false,
+      "webpack": false
+    }
+  ]
+}

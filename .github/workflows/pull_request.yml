@@ -18,13 +18,13 @@ jobs:
           cache: 'yarn'
           node-version: 18
 
-      - run: yarn install --frozen-lockfile
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
       - run: yarn build
       - name: Uploading docs artifact
         uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: docs/
+          path: packages/icons/docs/
 
   deploy_docs:
     runs-on: ubuntu-latest
@@ -77,13 +77,17 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+      - run: yarn workspace @vkontakte/icons-sprite build
       - uses: andresz1/size-limit-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # only affects current branch
           skip_step: install
-          build_script: 'icons-build'
+          build_script: 'size:ci'
+          directory: packages/icons/
+          # В 1.7.0 пока нет этого свойства. См. packages/icons/yarn.lock
+          # package_manager: yarn
   test:
     runs-on: ubuntu-latest
     steps:
@@ -93,5 +97,5 @@ jobs:
           cache: 'yarn'
           node-version: 18
 
-      - run: yarn install --frozen-lockfile
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
       - run: yarn test

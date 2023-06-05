@@ -1,92 +1,27 @@
 {
-  "name": "@vkontakte/icons",
-  "version": "2.43.0",
-  "description": "SVG icons, provided as a React components. With love from VKontakte",
-  "repository": "https://github.com/VKCOM/icons",
-  "homepage": "https://vkcom.github.io/icons/",
-  "author": "bumbledos@gmail.com",
-  "license": "SEE LICENSE IN LICENSE",
-  "files": [
-    "dist",
-    "ts",
-    "src/svg"
+  "name": "@vkontakte/icons-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "main": "dist/index.js",
-  "module": "dist/es6/index.js",
-  "typings": "dist/typings/index.d.ts",
-  "sideEffects": [
-    "*.css"
-  ],
-  "engines": {
-    "yarn": "^1.21.1"
-  },
   "scripts": {
-    "size": "yarn icons-build && size-limit",
-    "docs": "node --max-old-space-size=4096 scripts/docs",
-    "build": "yarn icons-build && yarn docs",
-    "icons-build": "node scripts/build-icons.js",
+    "build": "yarn build:icons-sprite && yarn build:icons && yarn build:icons-docs",
+    "build:icons": "yarn workspace @vkontakte/icons run icons-build",
+    "build:icons-docs": "yarn workspace @vkontakte/icons run docs",
+    "build:icons-sprite": "yarn workspace @vkontakte/icons-sprite run build",
     "test": "yarn prettier:check",
     "prettier:write": "yarn prettier --write --ignore-unknown .",
-    "prettier:check": "yarn prettier --check --ignore-unknown ."
+    "prettier:check": "yarn prettier --check --ignore-unknown .",
+    "size": "yarn workspace @vkontakte/icons run size",
+    "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version"
   },
   "pre-commit": [
     "prettier:check"
   ],
-  "dependencies": {
-    "@vkontakte/icons-sprite": "^1.1.1"
-  },
-  "peerDependencies": {
-    "react": "^16.9.34 || ^17 || ^18"
-  },
   "devDependencies": {
-    "@size-limit/file": "^8.2.4",
-    "@size-limit/webpack": "^8.2.4",
-    "@swc/core": "^1.2.204",
-    "@types/react": "^16.9.34",
-    "@vkontakte/icons-scripts": "^3.0.0",
     "@vkontakte/prettier-config": "^0.1.0",
-    "css-loader": "^6.7.3",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.1",
-    "pre-commit": "^1.2.2",
-    "prettier": "^2.7.1",
-    "react": "^16.9.0",
-    "react-color": "^2.18.0",
-    "react-dom": "^16.9.0",
-    "size-limit": "^8.2.4",
-    "style-loader": "^3.3.1",
-    "swc-loader": "^0.2.3",
-    "webpack": "^5.73.0"
+    "prettier": "^2.7.1"
   },
-  "browserslist": [
-    "android >= 4.4",
-    "ios >= 9"
-  ],
-  "size-limit": [
-    {
-      "name": "JS",
-      "path": "dist/index.js",
-      "gzip": false
-    },
-    {
-      "name": "JS (gzip)",
-      "path": "dist/index.js"
-    },
-    {
-      "name": "JS (brotli)",
-      "path": "dist/index.js",
-      "brotli": true
-    },
-    {
-      "name": "JS ES6 with Icon16Add only import (tree shaking)",
-      "path": "dist/es6/index.js",
-      "import": "{ Icon16Add }"
-    },
-    {
-      "name": "SVG",
-      "path": "src/**/*.svg",
-      "gzip": false,
-      "webpack": false
-    }
-  ]
+  "packageManager": "yarn@3.6.0"
 }

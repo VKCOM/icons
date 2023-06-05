@@ -7,3 +7,5 @@ yarn.lock
 docs
 ts
 coverage
+.pnp.*
+.yarn/*
