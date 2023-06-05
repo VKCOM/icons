@@ -2,9 +2,10 @@ const { optimize: svgo } = require('svgo');
 
 /**
  * @param {string} svg
+ * @param {any[]} plugins
  * @return {string}
  */
-function optimize(svg) {
+function optimize(svg, plugins) {
   return svgo(svg, {
     plugins: [
       {
@@ -15,6 +16,7 @@ function optimize(svg) {
           },
         },
       },
+      ...plugins,
     ],
   }).data;
 }

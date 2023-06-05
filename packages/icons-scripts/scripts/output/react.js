@@ -1,11 +1,13 @@
-const Compiler = require('svg-baker');
-
-const compiler = new Compiler();
-
-const reactify = (symbol, componentName, deprecated, replacement) => {
-  const width = symbol.viewBox.split(' ')[2];
-  const height = symbol.viewBox.split(' ')[3];
-
+async function createReactIcon({
+  id,
+  viewBox,
+  content,
+  componentName,
+  deprecated,
+  replacement,
+  width,
+  height,
+}) {
   let jsdoc = '';
   if (deprecated) {
     const replacementNotice = replacement ? `. Замените на ${replacement}` : '';
@@ -16,6 +18,7 @@ const reactify = (symbol, componentName, deprecated, replacement) => {
 `;
   }
 
+  // TODO: Избавиться от default export
   return `import { SVGProps, Ref } from 'react';
 import { makeIcon } from '@vkontakte/icons-sprite';
 
@@ -30,23 +33,19 @@ export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
 }
 
 ${jsdoc}
-export default makeIcon<${componentName}Props>(
+export const ${componentName} = makeIcon<${componentName}Props>(
   '${componentName}',
-  '${symbol.id}',
-  '${symbol.viewBox}',
-  '${symbol.render()}',
+  '${id}',
+  '${viewBox}',
+  '${content}',
   ${width},
   ${height},
   ${!!deprecated},
   ${replacement ? `'${replacement}'` : undefined}
 );
-`;
-};
 
-function reactifyIcon({ content, id, componentName, deprecated, replacement }) {
-  return compiler
-    .addSymbol({ content, id, path: '' })
-    .then((symbol) => reactify(symbol, componentName, deprecated, replacement));
+export default ${componentName};
+`;
 }
 
-module.exports = { reactifyIcon };
+module.exports = { createReactIcon };
