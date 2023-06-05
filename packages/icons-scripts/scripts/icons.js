@@ -7,7 +7,10 @@ const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
 const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
-const { reactifyIcon } = require('./reactify');
+const { createReactIcon } = require('./output');
+const Compiler = require('svg-baker');
+
+const compiler = new Compiler();
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -17,10 +20,11 @@ function generateIcons(options) {
   const {
     srcDirectory,
     distDirectory,
-    keepTSSources,
     tsFilesDirectory,
     extraCategories,
     cwd,
+    svgoPlugins,
+    onIconProcess,
     deprecatedIcons,
   } = prepareOptions(options);
 
@@ -42,19 +46,43 @@ function generateIcons(options) {
   const exportsMap = {};
 
   debugInfo(`Optimizing and writing ${iconsMap.length} components...`);
-  const promises = iconsMap.map((icon) => {
+  const promises = iconsMap.map(async (icon) => {
     const { id, dirname, filename, componentName, deprecated, replacement } = icon;
 
-    // Берем svg-файл
     const svg = fs.readFileSync(path.join(cwd, `src/svg/${dirname}/${filename}.svg`), 'utf-8');
+    const content = optimize(svg, svgoPlugins);
 
-    // Превращаем svg-файл в ts-файл в виде строки
-    return reactifyIcon({
-      content: optimize(svg),
-      id: filename,
+    const symbol = await compiler.addSymbol({ content, id: filename, path: '' });
+
+    const viewBox = symbol.viewBox;
+    const width = viewBox.split(' ')[2];
+    const height = viewBox.split(' ')[3];
+
+    onIconProcess({
+      id,
+      dirname,
+      filename,
       componentName,
       deprecated,
       replacement,
+      viewBox,
+      width,
+      height,
+      content,
+    });
+
+    const exportName = componentName;
+
+    // Превращаем svg-файл в ts-файл в виде строки
+    return createReactIcon({
+      id: symbol.id,
+      viewBox: symbol.viewBox,
+      content: symbol.render(),
+      componentName,
+      deprecated,
+      replacement,
+      width,
+      height,
     }).then((result) => {
       // Записываем компонент в файл
       const iconDir = path.join(tsFilesDirectory, dirname);
@@ -63,7 +91,7 @@ function generateIcons(options) {
       }
 
       fs.writeFileSync(path.join(iconDir, `${id}.ts`), result);
-      exportsMap[componentName] = `./${dirname}/${id}`;
+      exportsMap[exportName] = `./${dirname}/${id}`;
     });
   });
 
@@ -128,14 +156,14 @@ function generateIcons(options) {
  * @param {string} dir
  */
 function createIndexExports(exportsMap, dir) {
-  const exports = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
+  const exported = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
 
-  sortArrayAlphabetically(Object.keys(exportsMap)).forEach((componentName) => {
-    const importSource = exportsMap[componentName];
-    exports.push(`export { default as ${componentName} } from '${importSource}';`);
+  sortArrayAlphabetically(Object.keys(exportsMap)).forEach((exportName) => {
+    const importSource = exportsMap[exportName];
+    exported.push(`export { ${exportName} } from '${importSource}';`);
   });
 
-  const code = exports.join('\n');
+  const code = exported.join('\n');
   fs.writeFileSync(path.join(dir, 'index.ts'), code);
 }
 
