@@ -8,9 +8,6 @@ const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
 const { createReactIcon } = require('./output');
-const Compiler = require('svg-baker');
-
-const compiler = new Compiler();
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -22,10 +19,7 @@ function generateIcons(options) {
     distDirectory,
     tsFilesDirectory,
     extraCategories,
-    cwd,
-    noEmit,
     svgoPlugins,
-    onIconProcess,
     deprecatedIcons,
   } = prepareOptions(options);
 
@@ -41,78 +35,94 @@ function generateIcons(options) {
     }
   });
 
-  debugInfo('Creating icons map...');
-  const iconsMap = createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons);
-
   const exportsMap = {};
 
-  debugInfo(`Optimizing and writing ${iconsMap.length} components...`);
-  const promises = iconsMap.map(async (icon) => {
-    const {
-      id,
-      dirname,
-      filename,
-      filepath,
-      componentName,
-      deprecated,
-      replacement,
-      content: contentInitial,
-    } = icon;
+  debugInfo('Creating icons map...');
+  createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons, (content) => {
+    return optimize(content, svgoPlugins);
+  })
+    .then((iconsMap) => {
+      debugInfo(`Writing ${iconsMap.length} components...`);
 
-    const content = optimize(contentInitial, svgoPlugins);
-    const symbol = await compiler.addSymbol({ content, id: filename, path: '' });
+      iconsMap.forEach((icon) => {
+        const {
+          id,
+          symbolId,
+          viewBox,
+          symbol,
+          componentName,
+          deprecated,
+          replacement,
+          width,
+          height,
+          dirname,
+        } = icon;
 
-    const viewBox = symbol.viewBox;
-    const width = viewBox.split(' ')[2];
-    const height = viewBox.split(' ')[3];
+        // Превращаем svg-файл в ts-файл в виде строки
+        const reactSource = createReactIcon({
+          id: symbolId,
+          viewBox,
+          content: symbol,
+          componentName,
+          deprecated,
+          replacement,
+          width,
+          height,
+        });
 
-    onIconProcess({
-      id,
-      dirname,
-      filename,
-      filepath,
-      componentName,
-      deprecated,
-      replacement,
-      viewBox,
-      width,
-      height,
-      content,
-    });
+        const exportName = componentName;
 
-    if (noEmit) {
-      return;
-    }
+        // Записываем компонент в файл
+        const iconDir = path.join(tsFilesDirectory, dirname);
+        if (!fs.existsSync(iconDir)) {
+          fs.mkdirSync(iconDir);
+        }
 
-    const exportName = componentName;
+        fs.writeFileSync(path.join(iconDir, `${id}.ts`), reactSource);
+        exportsMap[exportName] = `./${dirname}/${id}`;
+      });
 
-    // Превращаем svg-файл в ts-файл в виде строки
-    return createReactIcon({
-      id: symbol.id,
-      viewBox: symbol.viewBox,
-      content: symbol.render(),
-      componentName,
-      deprecated,
-      replacement,
-      width,
-      height,
-    }).then((result) => {
-      // Записываем компонент в файл
-      const iconDir = path.join(tsFilesDirectory, dirname);
-      if (!fs.existsSync(iconDir)) {
-        fs.mkdirSync(iconDir);
+      debugInfo('Creating index.ts file with exports');
+      createIndexExports(exportsMap, tsFilesDirectory);
+
+      fs.writeFileSync(
+        path.resolve(distDirectory, 'icons-map.json'),
+        JSON.stringify(
+          iconsMap.map((icon) => {
+            const copy = { ...icon };
+
+            // Удаляем лишние данные, они не нужны в документации
+            delete copy.content;
+            delete copy.symbol;
+
+            return copy;
+          }),
+        ),
+      );
+
+      return compile();
+    })
+    .then(() => {
+      const time = Math.ceil(performance.now() - start);
+      debugInfo(`Icons successfully generated to ${distDirectory} in ${time}ms!`);
+    })
+    .catch((e) => {
+      if (e.output) {
+        e.output = String(e.output);
       }
 
-      fs.writeFileSync(path.join(iconDir, `${id}.ts`), result);
-      exportsMap[exportName] = `./${dirname}/${id}`;
+      if (e.stdout) {
+        e.stdout = String(e.stdout);
+      }
+
+      if (e.stderr) {
+        e.stderr = String(e.stderr);
+      }
+
+      debugError(e);
     });
-  });
 
   const compile = async () => {
-    if (noEmit) {
-      return;
-    }
-
     const swcConfig = path.resolve(__dirname, './configs/.swcrc');
     if (!fs.existsSync(swcConfig)) {
       debugError('swc config not found');
@@ -131,42 +141,6 @@ function generateIcons(options) {
       `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
     );
   };
-
-  Promise.all(promises)
-    .then(() => {
-      debugInfo('Creating index.ts file with exports');
-      createIndexExports(exportsMap, tsFilesDirectory);
-
-      return compile();
-    })
-    .then(() => {
-      if (noEmit) {
-        return;
-      }
-
-      fs.writeFileSync(path.resolve(distDirectory, 'icons-map.json'), JSON.stringify(iconsMap));
-
-      debugInfo(
-        `Icons successfully generated to ${distDirectory} in ${Math.ceil(
-          performance.now() - start,
-        )}ms!`,
-      );
-    })
-    .catch((e) => {
-      if (e.output) {
-        e.output = String(e.output);
-      }
-
-      if (e.stdout) {
-        e.stdout = String(e.stdout);
-      }
-
-      if (e.stderr) {
-        e.stderr = String(e.stderr);
-      }
-
-      debugError(e);
-    });
 }
 
 /**
