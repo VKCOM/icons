@@ -1,5 +1,6 @@
 const glob = require('glob');
 const path = require('path');
+const fs = require('fs');
 const { dashToCamel, sortArrayAlphabetically } = require('./utils');
 
 /**
@@ -7,7 +8,9 @@ const { dashToCamel, sortArrayAlphabetically } = require('./utils');
  * @property {string} id
  * @property {string} dirname
  * @property {string} filename
+ * @property {string} filepath
  * @property {string} componentName
+ * @property {string} content
  */
 
 /**
@@ -57,8 +60,9 @@ function getReplacementIconComponentName(name) {
 function dirMap(src, pattern, prefix = '', deprecatedIcons) {
   const files = glob.sync(path.join(src, `./svg/${pattern}/*.svg`));
 
-  return sortArrayAlphabetically(files).map((iconPath) => {
-    const { name, dir } = path.parse(iconPath);
+  return sortArrayAlphabetically(files).map((filepath) => {
+    const { name, dir } = path.parse(filepath);
+    const content = fs.readFileSync(filepath, 'utf-8');
 
     const dirname = dir.split(path.sep).pop();
 
@@ -69,10 +73,12 @@ function dirMap(src, pattern, prefix = '', deprecatedIcons) {
     return {
       id,
       dirname,
+      filepath,
       filename: name,
       componentName: getIconComponentName(id, prefix + size),
       deprecated,
       replacement: deprecated ? getReplacementIconComponentName(deprecatedIcons[name]) : undefined,
+      content,
     };
   });
 }

@@ -48,11 +48,18 @@ function generateIcons(options) {
 
   debugInfo(`Optimizing and writing ${iconsMap.length} components...`);
   const promises = iconsMap.map(async (icon) => {
-    const { id, dirname, filename, componentName, deprecated, replacement } = icon;
+    const {
+      id,
+      dirname,
+      filename,
+      filepath,
+      componentName,
+      deprecated,
+      replacement,
+      content: contentInitial,
+    } = icon;
 
-    const svg = fs.readFileSync(path.join(cwd, `src/svg/${dirname}/${filename}.svg`), 'utf-8');
-    const content = optimize(svg, svgoPlugins);
-
+    const content = optimize(contentInitial, svgoPlugins);
     const symbol = await compiler.addSymbol({ content, id: filename, path: '' });
 
     const viewBox = symbol.viewBox;
@@ -63,6 +70,7 @@ function generateIcons(options) {
       id,
       dirname,
       filename,
+      filepath,
       componentName,
       deprecated,
       replacement,
