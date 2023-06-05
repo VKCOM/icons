@@ -23,6 +23,7 @@ function generateIcons(options) {
     tsFilesDirectory,
     extraCategories,
     cwd,
+    noEmit,
     svgoPlugins,
     onIconProcess,
     deprecatedIcons,
@@ -71,6 +72,10 @@ function generateIcons(options) {
       content,
     });
 
+    if (noEmit) {
+      return;
+    }
+
     const exportName = componentName;
 
     // Превращаем svg-файл в ts-файл в виде строки
@@ -96,6 +101,10 @@ function generateIcons(options) {
   });
 
   const compile = async () => {
+    if (noEmit) {
+      return;
+    }
+
     const swcConfig = path.resolve(__dirname, './configs/.swcrc');
     if (!fs.existsSync(swcConfig)) {
       debugError('swc config not found');
@@ -110,9 +119,6 @@ function generateIcons(options) {
     execSync(`swc ${tsFilesDirectory} -d ${distDirectory}/es6/ --config-file ${swcConfig}`);
 
     debugInfo('Running tsc...');
-    // const tsBuildInfoFile = path.resolve(cwd, 'node_modules', '.cache', '.tsbuildinfo');
-    // --incremental --tsBuildInfoFile ${tsBuildInfoFile}
-
     execSync(
       `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
     );
@@ -126,6 +132,10 @@ function generateIcons(options) {
       return compile();
     })
     .then(() => {
+      if (noEmit) {
+        return;
+      }
+
       fs.writeFileSync(path.resolve(distDirectory, 'icons-map.json'), JSON.stringify(iconsMap));
 
       debugInfo(
@@ -157,6 +167,11 @@ function generateIcons(options) {
  */
 function createIndexExports(exportsMap, dir) {
   const exported = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
+
+  const keys = Object.keys(exportsMap);
+  if (!keys) {
+    return;
+  }
 
   sortArrayAlphabetically(Object.keys(exportsMap)).forEach((exportName) => {
     const importSource = exportsMap[exportName];
