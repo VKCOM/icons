@@ -247,7 +247,7 @@
     svgo "^3.0.2"
     typescript "^4.7.3"
 
-"@vkontakte/icons-sprite@^1.0.1":
+"@vkontakte/icons-sprite@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@vkontakte/icons-sprite/-/icons-sprite-1.1.1.tgz#04c7a6a1268be39f324de070d27b490f157d04dd"
   integrity sha512-mZt34A0wK72+C0Jr0rtypuEFtfJO3qBFt9RQQC5lpBDTVGB+sMKmI8Vi+CYbq1kPO8Uv7GiPQxLv8+Ti7cT24g==

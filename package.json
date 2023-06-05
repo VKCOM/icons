@@ -33,7 +33,7 @@
     "prettier:check"
   ],
   "dependencies": {
-    "@vkontakte/icons-sprite": "^1.0.1"
+    "@vkontakte/icons-sprite": "^1.1.1"
   },
   "peerDependencies": {
     "react": "^16.9.34 || ^17 || ^18"
