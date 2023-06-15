@@ -1,7 +1,7 @@
 {
   "name": "@vkontakte/icons",
   "version": "2.43.0",
-  "description": "SVG icons, provided as a React components. With love from VKontakte",
+  "description": "[TEST CI] SVG icons, provided as a React components. With love from VKontakte",
   "homepage": "https://vkcom.github.io/icons/",
   "repository": {
     "type": "git",
