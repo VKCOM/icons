@@ -85,7 +85,7 @@ jobs:
           # only affects current branch
           skip_step: install
           build_script: 'icons-build'
-          script: yarn --silent run icons:size:ci 2>/dev/null || /usr/local/bin/npx size-limit --json
+          script: /bin/bash -c "[[ $(cat package.json| jq '.scripts."icons:size:ci"') != null ]] && yarn run icons:size:ci || npx size-limit --json"
   test:
     runs-on: ubuntu-latest
     steps:
