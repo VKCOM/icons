@@ -85,7 +85,7 @@ jobs:
           # only affects current branch
           skip_step: install
           build_script: 'icons-build'
-          directory: packages/icons/
+          script: cd packages/icons && yarn run size-limit --json
   test:
     runs-on: ubuntu-latest
     steps:

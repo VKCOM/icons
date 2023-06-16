@@ -22,11 +22,10 @@
     "src/svg"
   ],
   "scripts": {
-    "build": "yarn build:icons && yarn docs",
-    "build:icons": "yarn node scripts/build-icons.js",
+    "build": "yarn icons-build && yarn docs",
     "docs": "node --max-old-space-size=4096 scripts/docs",
-    "icons-build": "cd ../../; yarn run icons-build",
-    "size": "yarn build:icons && yarn run size-limit",
+    "icons-build": "yarn node scripts/build-icons.js",
+    "size": "yarn icons-build && yarn run size-limit",
     "size:ci": "YARN_ENABLE_SCRIPTS=false yarn install --immutable && yarn icons-build"
   },
   "browserslist": [
