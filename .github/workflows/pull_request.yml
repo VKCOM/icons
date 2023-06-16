@@ -84,10 +84,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # only affects current branch
           skip_step: install
-          build_script: 'size:ci'
-          directory: packages/icons/
-          # В 1.7.0 пока нет этого свойства. См. packages/icons/yarn.lock
-          # package_manager: yarn
+          build_script: 'icons-build'
+          script: cd packages/icons && yarn run size-limit --json
   test:
     runs-on: ubuntu-latest
     steps:
