@@ -94,7 +94,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
         shell: bash
         run: |
-          yarn config set npmRegistryServer "https://npm.pkg.github.com"
+          yarn config set npmAlwaysAuth true
           yarn config set npmAuthToken $NODE_AUTH_TOKEN
 
       - name: Publishing tagged release
