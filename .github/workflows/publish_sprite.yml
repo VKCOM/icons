@@ -87,6 +87,7 @@ jobs:
         with:
           github_token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+          tags: true
 
       - name: Setup NPM Auth Token to .yarnrc.yml
         env:
@@ -94,7 +95,6 @@ jobs:
         shell: bash
         run: |
           yarn config set npmRegistryServer "https://npm.pkg.github.com"
-          yarn config set npmAlwaysAuth true
           yarn config set npmAuthToken $NODE_AUTH_TOKEN
 
       - name: Publishing tagged release
