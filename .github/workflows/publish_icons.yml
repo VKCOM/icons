@@ -91,19 +91,24 @@ jobs:
           github_token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
+      - name: Setup NPM Auth Token to .yarnrc.yml
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+        shell: bash
+        run: |
+          yarn config set npmRegistryServer "https://npm.pkg.github.com"
+          yarn config set npmAlwaysAuth true
+          yarn config set npmAuthToken $NODE_AUTH_TOKEN
+
       - name: Publishing tagged release
         if: ${{ github.event.inputs.tag }}
         run: |
-          yarn publish --tag ${{ github.event.inputs.tag }} --non-interactive
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+          yarn npm publish --tag ${{ github.event.inputs.tag }}
 
       - name: Publishing release
         if: ${{ !github.event.inputs.tag }}
         run: |
-          yarn publish --non-interactive
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+          yarn npm publish
 
       - name: Creating doc
         run: yarn docs
