@@ -8,4 +8,4 @@ SVG файлы надо добавлять в [/packages/icons/src/svg/](/packag
 
 ## Публикация иконок
 
-Описана в [Publishing.md](/PUBLISHING.md)
+Описана в разделе [Публикация пакетов в NPM](/PUBLISHING.md)
