@@ -80,6 +80,7 @@ function dirMap(src, pattern, prefix = '', deprecatedIcons) {
       deprecated,
       replacement: deprecated ? getReplacementIconComponentName(deprecatedIcons[name]) : undefined,
       content,
+      size,
     };
   });
 }
