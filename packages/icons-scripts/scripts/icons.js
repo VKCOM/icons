@@ -56,6 +56,7 @@ function generateIcons(options) {
           width,
           height,
           dirname,
+          size,
         } = icon;
 
         // Превращаем svg-файл в ts-файл в виде строки
@@ -78,8 +79,9 @@ function generateIcons(options) {
           fs.mkdirSync(iconDir);
         }
 
-        fs.writeFileSync(path.join(iconDir, `${id}.ts`), reactSource);
-        exportsMap[exportName] = `./${dirname}/${id}`;
+        const fileName = `${id}${size ? `_${size}` : ''}`;
+        fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
+        exportsMap[exportName] = `./${dirname}/${fileName}`;
       });
 
       debugInfo('Creating index.ts file with exports');
