@@ -252,9 +252,9 @@
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
 "@vkontakte/icons-scripts@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons-scripts/-/icons-scripts-3.0.0.tgz#9e8fb7a0e77c9ea1c5f6b66b382c12ae2ff72ef1"
-  integrity sha512-HKnQ/Sl9ch9qTwwYFS/KRpi6SofUIYr2Fv7WRTz5C9p73qS5X1dYTebglf4ZJxNwXyYpzCLRgCupEtmmqdh2qw==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons-scripts/-/icons-scripts-3.0.1.tgz#54b0a9602bf59b407e1b09e259f5ce01e0d7ce18"
+  integrity sha512-yTmzIu9cFll3OgsUlOqhtI4hwHF1pCAwaSJB+QtKNoOJzOmBk1m1DoVwBeZaMYBFUW4olhmV9/O6p+xybGMzoA==
   dependencies:
     "@swc/cli" "^0.1.57"
     "@swc/core" "^1.2.204"
