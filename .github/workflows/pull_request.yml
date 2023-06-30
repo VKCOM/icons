@@ -18,13 +18,13 @@ jobs:
           cache: 'yarn'
           node-version: 18
 
-      - run: yarn install --frozen-lockfile
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
       - run: yarn build
       - name: Uploading docs artifact
         uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: docs/
+          path: packages/icons/docs/
 
   deploy_docs:
     runs-on: ubuntu-latest
@@ -77,13 +77,22 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile --ignore-scripts
-      - uses: andresz1/size-limit-action@v1
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+      - run: yarn workspace @vkontakte/icons-sprite build
+      - uses: andresz1/size-limit-action@v1.7.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # only affects current branch
           skip_step: install
           build_script: 'icons-build'
+          # in order to call proper size-limit command during migration to yarn workspaces the script name to
+          # run size-limit has changed bacuse root icons package has been moved to /packages/icons/
+          # size-limit-action calls same script for master branch and pr branch to compare size-limit results,
+          # but master branch package.json doesn't have script from pr branch, so it falls.
+          # Here we run the new PR script with a fallback to default size-limit script
+          # when size-limit-action checkout to master to compare.
+          # TODO: Feel free to leave just 'script: yarn run icons:size:ci' once #588 released
+          script: /bin/bash -c "cat package.json | grep -q 'icons:size:ci' && yarn run icons:size:ci || npx size-limit --json"
   test:
     runs-on: ubuntu-latest
     steps:
@@ -93,5 +102,5 @@ jobs:
           cache: 'yarn'
           node-version: 18
 
-      - run: yarn install --frozen-lockfile
+      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
       - run: yarn test

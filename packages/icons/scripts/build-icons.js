@@ -1,4 +1,4 @@
-const { generateIcons } = require('../packages/icons-scripts');
+const { generateIcons } = require('@vkontakte/icons-scripts');
 const { DEPRECATED_ICONS } = require('../src/deprecated');
 
 generateIcons({
