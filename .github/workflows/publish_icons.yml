@@ -118,6 +118,6 @@ jobs:
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
           branch: gh-pages
-          folder: docs
+          folder: packages/icons/docs
           clean: false
           force: false
