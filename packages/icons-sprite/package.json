@@ -24,7 +24,7 @@
     "@swc/helpers": "^0.5.1"
   },
   "devDependencies": {
-    "@size-limit/file": "^8.1.2",
+    "@size-limit/file": "^8.2.6",
     "@size-limit/webpack": "^8.1.2",
     "@swc/cli": "^0.1.61",
     "@swc/core": "^1.3.64",

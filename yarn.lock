@@ -883,14 +883,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^8.1.2, @size-limit/file@npm:^8.2.4":
-  version: 8.2.4
-  resolution: "@size-limit/file@npm:8.2.4"
+"@size-limit/file@npm:^8.2.6":
+  version: 8.2.6
+  resolution: "@size-limit/file@npm:8.2.6"
   dependencies:
-    semver: 7.3.8
+    semver: 7.5.3
   peerDependencies:
-    size-limit: 8.2.4
-  checksum: 80253aca667e87cbab40a12999565dde6cf6be2ef252399b2042715850fdbf828e9b5fcebfaea42a488a18afe643d38a84b88736fdfb0218630ac691150f14df
+    size-limit: 8.2.6
+  checksum: bfff3d28e21752eabb64b94bb1d5741fe0293a1a639e6c027051a1e839b4cb67a14fa9d3d4c01ffee69eeb7fdfafbf94f8f08647363e9c2370fdfed785e2b099
   languageName: node
   linkType: hard
 
@@ -1399,7 +1399,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": ^8.1.2
+    "@size-limit/file": ^8.2.6
     "@size-limit/webpack": ^8.1.2
     "@swc/cli": ^0.1.61
     "@swc/core": ^1.3.64
@@ -1423,7 +1423,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons@workspace:packages/icons"
   dependencies:
-    "@size-limit/file": ^8.2.4
+    "@size-limit/file": ^8.2.6
     "@size-limit/webpack": ^8.2.4
     "@swc/cli": ^0.1.61
     "@swc/core": ^1.3.63
@@ -6671,14 +6671,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.8":
-  version: 7.3.8
-  resolution: "semver@npm:7.3.8"
+"semver@npm:7.5.3":
+  version: 7.5.3
+  resolution: "semver@npm:7.5.3"
   dependencies:
     lru-cache: ^6.0.0
   bin:
     semver: bin/semver.js
-  checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
+  checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
   languageName: node
   linkType: hard
 
