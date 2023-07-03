@@ -3,7 +3,7 @@ node_modules/
 .DS_Store
 dist/
 ts/
-docs/
+packages/icons/docs/
 .cache
 coverage
 
