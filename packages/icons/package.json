@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons",
-  "version": "2.48.0",
+  "version": "2.48.1-alpha.0",
   "description": "SVG icons, provided as a React components. With love from VKontakte",
   "homepage": "https://vkcom.github.io/icons/",
   "repository": {
@@ -16,11 +16,6 @@
   "main": "dist/index.js",
   "module": "dist/es6/index.js",
   "typings": "dist/typings/index.d.ts",
-  "files": [
-    "dist",
-    "ts",
-    "src/svg"
-  ],
   "scripts": {
     "build": "yarn icons-build && yarn docs",
     "docs": "node --max-old-space-size=4096 scripts/docs",
