@@ -16,11 +16,6 @@
   "main": "dist/index.js",
   "module": "dist/es6/index.js",
   "typings": "dist/typings/index.d.ts",
-  "files": [
-    "dist",
-    "ts",
-    "src/svg"
-  ],
   "scripts": {
     "build": "yarn icons-build && yarn docs",
     "docs": "node --max-old-space-size=4096 scripts/docs",
