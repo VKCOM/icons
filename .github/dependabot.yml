@@ -19,16 +19,29 @@ updates:
     groups:
       jest:
         patterns:
-          - 'jest'
-          - 'jest-environment-*'
-      size-limit:
+          - 'jest*'
+          - '@swc/jest'
+      webpack:
         patterns:
-          - 'size-limit'
-          - '@size-limit/*'
+          - 'webpack'
+          - 'html-webpack-plugin'
+          - 'file-loader'
+          - 'css-loader'
+          - 'style-loader'
+          - 'swc-loader'
       react:
         patterns:
           - 'react'
           - 'react-dom'
+          - '@types/react'
+      size-limit:
+        patterns:
+          - 'size-limit'
+          - '@size-limit/*'
+      prettier:
+        patterns:
+          - 'prettier'
+          - '@vkontakte/prettier-config'
     reviewers:
       - 'VKCOM/vk-sec'
       - 'VKCOM/vkui-core'
