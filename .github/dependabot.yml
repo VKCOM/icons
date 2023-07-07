@@ -5,7 +5,7 @@ updates:
     # default location of `.github/workflows`
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
     reviewers:
       - 'VKCOM/vk-sec'
       - 'VKCOM/vkui-core'
@@ -16,6 +16,19 @@ updates:
       interval: 'weekly'
     allow:
       - dependency-type: 'direct'
+    groups:
+      jest:
+        patterns:
+          - 'jest'
+          - 'jest-environment-*'
+      size-limit:
+        patterns:
+          - 'size-limit'
+          - '@size-limit/*'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
     reviewers:
       - 'VKCOM/vk-sec'
       - 'VKCOM/vkui-core'
