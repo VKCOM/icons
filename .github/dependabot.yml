@@ -5,7 +5,7 @@ updates:
     # default location of `.github/workflows`
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
     reviewers:
       - 'VKCOM/vk-sec'
       - 'VKCOM/vkui-core'
@@ -16,6 +16,32 @@ updates:
       interval: 'weekly'
     allow:
       - dependency-type: 'direct'
+    groups:
+      jest:
+        patterns:
+          - 'jest*'
+          - '@swc/jest'
+      webpack:
+        patterns:
+          - 'webpack'
+          - 'html-webpack-plugin'
+          - 'file-loader'
+          - 'css-loader'
+          - 'style-loader'
+          - 'swc-loader'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+      size-limit:
+        patterns:
+          - 'size-limit'
+          - '@size-limit/*'
+      prettier:
+        patterns:
+          - 'prettier'
+          - '@vkontakte/prettier-config'
     reviewers:
       - 'VKCOM/vk-sec'
       - 'VKCOM/vkui-core'
