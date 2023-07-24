@@ -23,7 +23,7 @@
   ],
   "devDependencies": {
     "@vkontakte/prettier-config": "^0.1.0",
-    "prettier": "^2.7.1"
+    "prettier": "^3.0.0"
   },
   "packageManager": "yarn@3.6.0"
 }
