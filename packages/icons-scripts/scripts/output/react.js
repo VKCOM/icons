@@ -18,8 +18,6 @@ function createReactIcon({
 `;
   }
 
-  // TODO: Избавиться от default export
-
   // TODO: Избавиться от use-client, если избавимся от спрайта
   // Чтобы nextjs мог рендерить иконки как серверные компоненты
   return `'use-client';
@@ -48,8 +46,6 @@ export const ${componentName} = makeIcon<${componentName}Props>(
   ${!!deprecated},
   ${replacement ? `'${replacement}'` : undefined}
 );
-
-export default ${componentName};
 `;
 }
 
