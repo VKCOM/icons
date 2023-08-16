@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserSymbol } from './browser-symbol';
-import { IconSettingsInterface, IconSettingsContext } from './IconSettings';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 import { warnOnce } from './warnOnce';
 
@@ -9,19 +8,6 @@ export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   height?: number;
   getRootRef?: React.Ref<SVGSVGElement>;
   title?: string;
-}
-
-function iconClass(fragments: string[], { classPrefix, globalClasses }: IconSettingsInterface) {
-  let res = '';
-  for (let i = 0; i < fragments.length; i++) {
-    if (classPrefix) {
-      res += ' ' + (classPrefix + fragments[i]);
-    }
-    if (!classPrefix || globalClasses) {
-      res += ' ' + fragments[i];
-    }
-  }
-  return res;
 }
 
 const SvgIcon = ({
@@ -39,12 +25,6 @@ const SvgIcon = ({
 }: SvgIconProps) => {
   const size = Math.max(width, height);
 
-  const iconSettings = React.useContext(IconSettingsContext);
-  const ownClass = iconClass(
-    ['Icon', `Icon--${size}`, `Icon--w-${width}`, `Icon--h-${height}`, `Icon--${id}`],
-    iconSettings,
-  );
-
   const style = {
     width,
     height,
@@ -56,7 +36,16 @@ const SvgIcon = ({
       aria-hidden="true"
       display="block"
       {...restProps}
-      className={`${ownClass} ${className}`}
+      className={[
+        'vkuiIcon',
+        `vkuiIcon--${size}`,
+        `vkuiIcon--w-${width}`,
+        `vkuiIcon--h-${height}`,
+        `vkuiIcon--${id}`,
+        className,
+      ]
+        .join(' ')
+        .trim()}
       viewBox={viewBox}
       width={width}
       height={height}
