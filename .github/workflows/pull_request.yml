@@ -12,7 +12,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
@@ -32,7 +32,7 @@ jobs:
     # Skip deploy from forked repo
     if: github.event.pull_request.base.repo.id == github.event.pull_request.head.repo.id
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download docs artifact
         uses: actions/download-artifact@v3
         with:
@@ -72,7 +72,7 @@ jobs:
     env:
       CI_JOB_NUMBER: 1
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -96,7 +96,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'

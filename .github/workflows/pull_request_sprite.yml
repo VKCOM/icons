@@ -16,7 +16,7 @@ jobs:
         working-directory: packages/icons-sprite
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
       - run: yarn run test
       - run: yarn run build
