@@ -80,5 +80,8 @@
       "gzip": false,
       "webpack": false
     }
-  ]
+  ],
+  "publishConfig": {
+    "provenance": true
+  }
 }

@@ -61,5 +61,8 @@
       "brotli": true,
       "import": "*"
     }
-  ]
+  ],
+  "publishConfig": {
+    "provenance": true
+  }
 }
