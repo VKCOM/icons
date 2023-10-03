@@ -29,6 +29,8 @@ run-name: Publish @vkontakte/icons-scripts ${{ inputs.custom_version }} ${{ inpu
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     defaults:
       run:
         working-directory: ./packages/icons-scripts
