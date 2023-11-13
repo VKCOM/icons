@@ -58,26 +58,27 @@
     {
       "name": "JS",
       "path": "dist/index.js",
-      "gzip": false
+      "brotli": false
     },
     {
       "name": "JS (gzip)",
-      "path": "dist/index.js"
+      "path": "dist/index.js",
+      "gzip": true
     },
     {
       "name": "JS (brotli)",
-      "path": "dist/index.js",
-      "brotli": true
+      "path": "dist/index.js"
     },
     {
       "name": "JS ES6 with Icon16Add only import (tree shaking)",
       "path": "dist/es6/index.js",
-      "import": "{ Icon16Add }"
+      "import": "{ Icon16Add }",
+      "brotli": false
     },
     {
       "name": "SVG",
       "path": "src/**/*.svg",
-      "gzip": false,
+      "brotli": false,
       "webpack": false
     }
   ],
