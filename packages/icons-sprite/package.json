@@ -47,18 +47,18 @@
     {
       "name": "JS",
       "path": "dist/index.js",
-      "gzip": false,
+      "brotli": false,
       "import": "*"
     },
     {
       "name": "JS (gzip)",
       "path": "dist/index.js",
+      "gzip": true,
       "import": "*"
     },
     {
       "name": "JS (brotli)",
       "path": "dist/index.js",
-      "brotli": true,
       "import": "*"
     }
   ],
