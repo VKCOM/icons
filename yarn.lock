@@ -998,9 +998,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/cli@npm:^0.1.61":
-  version: 0.1.62
-  resolution: "@swc/cli@npm:0.1.62"
+"@swc/cli@npm:^0.1.63":
+  version: 0.1.63
+  resolution: "@swc/cli@npm:0.1.63"
   dependencies:
     "@mole-inc/bin-wrapper": ^8.0.1
     commander: ^7.1.0
@@ -1018,7 +1018,7 @@ __metadata:
     spack: bin/spack.js
     swc: bin/swc.js
     swcx: bin/swcx.js
-  checksum: d44e88a724ba32d4f63856f15899f8eff78d90d0c5452e4882412307bf6353a64b25e7dc9992fd6e3975c87e6c0d7b494d859a0d8badb9f3c6103623ca89ddc2
+  checksum: 5cc888b995374fd35d38b42261cf73ec9bbc4ea327f220de38e8ad4cfdf2839a3e0b1a8778f56ead0e475774bc8f7925c42bef71993dd1cad5776e8b934e7e06
   languageName: node
   linkType: hard
 
@@ -1488,7 +1488,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-scripts@workspace:packages/icons-scripts"
   dependencies:
-    "@swc/cli": ^0.1.61
+    "@swc/cli": ^0.1.63
     "@swc/core": ^1.3.96
     glob: ^10.3.10
     rimraf: ^5.0.5
@@ -1504,7 +1504,7 @@ __metadata:
   dependencies:
     "@size-limit/file": ^11.0.0
     "@size-limit/webpack": ^11.0.0
-    "@swc/cli": ^0.1.61
+    "@swc/cli": ^0.1.63
     "@swc/core": ^1.3.96
     "@swc/helpers": ^0.5.3
     "@swc/jest": ^0.2.29
@@ -1528,7 +1528,7 @@ __metadata:
   dependencies:
     "@size-limit/file": ^11.0.0
     "@size-limit/webpack": ^11.0.0
-    "@swc/cli": ^0.1.61
+    "@swc/cli": ^0.1.63
     "@swc/core": ^1.3.96
     "@types/react": 16.14.34
     "@vkontakte/icons-scripts": "workspace:*"
