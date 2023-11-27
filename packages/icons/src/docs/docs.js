@@ -37,7 +37,7 @@ class Docs extends React.PureComponent {
       anchorSize,
       anchorName,
       search: '',
-      exactMatchSearch: true,
+      exactMatchSearch: false,
     };
   }
 
