@@ -37,12 +37,15 @@ class Docs extends React.PureComponent {
       anchorSize,
       anchorName,
       search: '',
+      exactMatchSearch: true,
     };
   }
 
   onCurrentColorChange = (color) => this.setState({ currentColor: color.hex });
 
   onSearchChange = (e) => this.setState({ search: e.target.value });
+
+  onSearchModeChange = (e) => this.setState({ exactMatchSearch: e.target.checked });
 
   onTextareaChange = () => this.setState({ selectedIcon: null });
 
@@ -122,14 +125,23 @@ class Docs extends React.PureComponent {
             value={this.state.search}
           />
         </h2>
-        {Object.keys(Icons).map((size) => (
+        <h2>
+          <input
+            type="checkbox"
+            id="search-mode"
+            onChange={this.onSearchModeChange}
+            checked={this.state.exactMatchSearch}
+          />
+          <label htmlFor="search-mode">Точное совпадение</label>
+        </h2>
+      {Object.keys(Icons).map((size) => (
           <div key={size} className="size">
             <h3>{size}</h3>
             <div className="icons" style={{ color: this.state.currentColor }}>
               {Object.keys(Icons[size])
                 .filter((iconName) => (
                     iconName.indexOf(this.state.search) > -1 ||
-                    aliases[iconName.replace('_outline', '')]?.findIndex((alias) => alias.includes(this.state.search)) > -1
+                    (!this.state.exactMatchSearch && aliases[iconName.replace('_outline', '')]?.findIndex((alias) => alias.includes(this.state.search)) > -1)
                 ))
                 .map((iconName) => {
                   const { Icon, componentName } = Icons[size][iconName];

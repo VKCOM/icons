@@ -1,5 +1,10 @@
 export const aliases = {
-    linked: ["chain"],
-    fullscreen: ["zoom"],
-    fullscreen_exit: ["zoom"]
+    pen: ['edit', 'write', 'ручка', 'карандаш'],
+    edit: ['pen', 'write', 'ручка', 'карандаш'],
+    write: ['pen', 'edit', 'ручка', 'карандаш'],
+    pallete: ['palette', 'палитра'],
+    linked: ['chain', 'ссылка', 'цепь'],
+    chain: ['linked', 'ссылка', 'цепь'],
+    fullscreen: ['zoom'],
+    fullscreen_exit: ['zoom']
 }
