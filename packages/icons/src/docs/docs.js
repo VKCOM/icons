@@ -53,7 +53,7 @@ class Docs extends React.PureComponent {
     const { name, size, component } = e.currentTarget.dataset;
     this.setState(
       {
-        selectedIcon: `import { ${component} } from '@vkontakte/icons';`,
+        selectedIcon: component,
         anchorSize: size,
         anchorName: name,
       },
