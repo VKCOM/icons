@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {aliases} from './aliases.js';
+import { aliases } from './aliases.js';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
 import * as allIcons from '../../dist/es6';
@@ -134,15 +134,19 @@ class Docs extends React.PureComponent {
           />
           <label htmlFor="search-mode">Точное совпадение</label>
         </h2>
-      {Object.keys(Icons).map((size) => (
+        {Object.keys(Icons).map((size) => (
           <div key={size} className="size">
             <h3>{size}</h3>
             <div className="icons" style={{ color: this.state.currentColor }}>
               {Object.keys(Icons[size])
-                .filter((iconName) => (
+                .filter(
+                  (iconName) =>
                     iconName.indexOf(this.state.search) > -1 ||
-                    (!this.state.exactMatchSearch && aliases[iconName.replace('_outline', '')]?.findIndex((alias) => alias.includes(this.state.search)) > -1)
-                ))
+                    (!this.state.exactMatchSearch &&
+                      aliases[iconName.replace('_outline', '')]?.findIndex((alias) =>
+                        alias.includes(this.state.search),
+                      ) > -1),
+                )
                 .map((iconName) => {
                   const { Icon, componentName } = Icons[size][iconName];
                   return (
