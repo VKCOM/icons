@@ -28,10 +28,6 @@ function generateIcons(options) {
   debugInfo('Generating icons...');
   const start = performance.now();
 
-  if (rasterIcons?.length) {
-    generateRasterIcons(rasterIcons, srcDirectory);
-  }
-
   debugInfo('Preparing directories...');
   [distDirectory, tsFilesDirectory].forEach((dir) => {
     if (!fs.existsSync(dir)) {
@@ -41,17 +37,25 @@ function generateIcons(options) {
     }
   });
 
-  const exportsMap = {};
+  let exportsMap = {};
 
   debugInfo('Creating icons map...');
+
+  const rasterIconsExportsMap = generateRasterIcons(rasterIcons, srcDirectory, tsFilesDirectory);
+
+  exportsMap = {
+    ...exportsMap,
+    ...rasterIconsExportsMap,
+  };
+
   createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons, (content) => {
     return optimize(content, svgoPlugins);
   })
     .then((iconsMap) => {
       debugInfo(`Writing ${iconsMap.length} components...`);
 
-      iconsMap.forEach((icon) => {
-        const {
+      iconsMap.forEach(
+        ({
           id,
           symbolId,
           viewBox,
@@ -63,32 +67,32 @@ function generateIcons(options) {
           height,
           dirname,
           size,
-        } = icon;
+        }) => {
+          // Превращаем svg-файл в ts-файл в виде строки
+          const reactSource = createReactIcon({
+            id: symbolId,
+            viewBox,
+            content: symbol,
+            componentName,
+            deprecated,
+            replacement,
+            width,
+            height,
+          });
 
-        // Превращаем svg-файл в ts-файл в виде строки
-        const reactSource = createReactIcon({
-          id: symbolId,
-          viewBox,
-          content: symbol,
-          componentName,
-          deprecated,
-          replacement,
-          width,
-          height,
-        });
+          const exportName = componentName;
 
-        const exportName = componentName;
+          // Записываем компонент в файл
+          const iconDir = path.join(tsFilesDirectory, dirname);
+          if (!fs.existsSync(iconDir)) {
+            fs.mkdirSync(iconDir);
+          }
 
-        // Записываем компонент в файл
-        const iconDir = path.join(tsFilesDirectory, dirname);
-        if (!fs.existsSync(iconDir)) {
-          fs.mkdirSync(iconDir);
-        }
-
-        const fileName = `${id}${size ? `_${size}` : ''}`;
-        fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
-        exportsMap[exportName] = `./${dirname}/${fileName}`;
-      });
+          const fileName = `${id}${size ? `_${size}` : ''}`;
+          fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
+          exportsMap[exportName] = `./${dirname}/${fileName}`;
+        },
+      );
 
       debugInfo('Creating index.ts file with exports');
       createIndexExports(exportsMap, tsFilesDirectory);
@@ -112,22 +116,23 @@ function generateIcons(options) {
     })
     .then(() => {
       const time = Math.ceil(performance.now() - start);
+
       debugInfo(`Icons successfully generated to ${distDirectory} in ${time}ms!`);
     })
-    .catch((e) => {
-      if (e.output) {
-        e.output = String(e.output);
+    .catch((error) => {
+      if (error.output) {
+        error.output = String(error.output);
       }
 
-      if (e.stdout) {
-        e.stdout = String(e.stdout);
+      if (error.stdout) {
+        error.stdout = String(error.stdout);
       }
 
-      if (e.stderr) {
-        e.stderr = String(e.stderr);
+      if (error.stderr) {
+        error.stderr = String(error.stderr);
       }
 
-      debugError(e);
+      debugError(error);
     });
 
   const compile = async () => {

@@ -1,13 +1,19 @@
 const glob = require('glob');
 const path = require('path');
+const { dashToCamel, sortArrayAlphabetically } = require('../utils');
 
 /**
- * @typedef {Map<string, unknown>} IconsEntities
+ * @param {string} name
+ * @return {string}
  */
+function getIconComponentName(name) {
+  return `RasterIcon${dashToCamel(name.replace(/([^]+)_([\d]+)$/, '$2_$1'))}`;
+}
 
 /**
  * @typedef {Object} IconEntity
  * @property {string} name
+ * @property {string} componentName
  * @property {number} size
  * @property {string} dirname
  * @property {string} [mdpi]
@@ -23,10 +29,10 @@ const path = require('path');
  * @param {string} src
  */
 function createIconsMap(icons, src) {
-  const files = glob.sync(path.join(src, `./png/**/*.png`));
+  const files = sortArrayAlphabetically(glob.sync(path.join(src, `./png/**/*.png`)));
 
   /**
-   * @type {Map<number, IconsEntities>}
+   * @type {Map<string, IconEntity>}
    */
   const iconsMap = new Map();
 
@@ -37,35 +43,28 @@ function createIconsMap(icons, src) {
       return;
     }
 
-    const [iconName, iconFormat] = icon.split('.');
-    let [iconSize, iconTheme] = iconName.split('_').reverse();
-    const dpiType = dpiFormat.split('-').pop();
+    const match = icon.match(/(([^]+?)(?:_(light|dark))?_([\d]+))\.([^]+)$/);
 
-    iconSize = Number(iconSize);
-
-    if (!iconSize) {
+    if (!match) {
       return;
     }
 
-    let iconsBySize = iconsMap.get(iconSize);
+    let [, name, id, theme, size, format] = match;
+    size = Number(size);
 
-    if (!iconsBySize) {
-      iconsBySize = new Map();
+    const dpiType = dpiFormat.split('-').pop();
 
-      iconsMap.set(iconSize, iconsBySize);
-    }
-
-    const iconEntity = iconsBySize.get(iconName) || {
-      name: iconName,
-      size: iconSize,
-      dirname: `${iconFormat}${path.sep}${iconSize}`,
+    const iconEntity = iconsMap.get(name) || {
+      id,
+      name,
+      size,
+      dirname: `${format}${path.sep}${size}`,
+      componentName: getIconComponentName(name),
     };
 
     iconEntity[dpiType] = file;
 
-    iconsBySize.set(iconName, iconEntity);
-
-    return [icon, iconName, iconSize];
+    iconsMap.set(name, iconEntity);
   });
 
   return iconsMap;
