@@ -16,6 +16,7 @@ const { debugError } = require('./utils');
  * @property {string} [cwd]
  * @property {any[]} [svgoPlugins]
  * @property {DeprecatedIcons} [deprecatedIcons] List of deprecated icons
+ * @property {string[]} [rasterIcons] List of raster icons prefixes for generate
  */
 
 /**
@@ -32,6 +33,7 @@ function prepareOptions(options) {
     cwd = process.cwd(),
     svgoPlugins = [],
     deprecatedIcons = {},
+    rasterIcons = [],
   } = options;
 
   if (!srcDirectory || !distDirectory) {
@@ -57,6 +59,7 @@ function prepareOptions(options) {
     cwd,
     svgoPlugins,
     deprecatedIcons,
+    rasterIcons,
   };
 }
 

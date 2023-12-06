@@ -6,4 +6,5 @@ generateIcons({
   distDirectory: './dist',
   tsFilesDirectory: './ts',
   deprecatedIcons: DEPRECATED_ICONS,
+  rasterIcons: ['verified'],
 });

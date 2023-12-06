@@ -8,6 +8,7 @@ const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
 const { createReactIcon } = require('./output');
+const { generateRasterIcons } = require('./raster/icons');
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -21,10 +22,15 @@ function generateIcons(options) {
     extraCategories,
     svgoPlugins,
     deprecatedIcons,
+    rasterIcons,
   } = prepareOptions(options);
 
   debugInfo('Generating icons...');
   const start = performance.now();
+
+  if (rasterIcons?.length) {
+    generateRasterIcons(rasterIcons, srcDirectory);
+  }
 
   debugInfo('Preparing directories...');
   [distDirectory, tsFilesDirectory].forEach((dir) => {
