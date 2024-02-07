@@ -13,8 +13,9 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "concurrently 'yarn:build:*'",
-    "build:cjs": "swc src/ --config-file package.swcrc -d dist/cjs -C module.type=commonjs",
-    "build:es6": "swc src/ --config-file package.swcrc -d dist",
+    "swc-base": "swc src/ --config-file package.swcrc --strip-leading-paths",
+    "build:cjs": "yarn swc-base -d dist/cjs -C module.type=commonjs",
+    "build:es6": "yarn swc-base -d dist",
     "build:types": "tsc --emitDeclarationOnly --declaration",
     "prepack": "yarn build",
     "size": "yarn build:es6 && size-limit",

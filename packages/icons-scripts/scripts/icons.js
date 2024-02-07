@@ -132,11 +132,13 @@ function generateIcons(options) {
 
     debugInfo('Running swc commonjs...');
     execSync(
-      `swc ${tsFilesDirectory} -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
+      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
     );
 
     debugInfo('Running swc es6...');
-    execSync(`swc ${tsFilesDirectory} -d ${distDirectory}/es6/ --config-file ${swcConfig}`);
+    execSync(
+      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/es6/ --config-file ${swcConfig}`,
+    );
 
     debugInfo('Running tsc...');
     execSync(
