@@ -979,10 +979,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/merge-streams@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@sindresorhus/merge-streams@npm:1.0.0"
-  checksum: 453c2a28164113a5ec4fd23ba636e291a4112f6ee9e91cd5476b9a96e0fc9ee5ff40d405fe81bbf284c9773b7ed718a3a0f31df7895a0efd413b1f9775d154fe
+"@sindresorhus/merge-streams@npm:^2.1.0":
+  version: 2.3.0
+  resolution: "@sindresorhus/merge-streams@npm:2.3.0"
+  checksum: e989d53dee68d7e49b4ac02ae49178d561c461144cea83f66fa91ff012d981ad0ad2340cbd13f2fdb57989197f5c987ca22a74eb56478626f04e79df84291159
   languageName: node
   linkType: hard
 
@@ -1004,24 +1004,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^11.0.2":
-  version: 11.0.2
-  resolution: "@size-limit/file@npm:11.0.2"
+"@size-limit/file@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "@size-limit/file@npm:11.1.1"
   peerDependencies:
-    size-limit: 11.0.2
-  checksum: a566d41a0f96325556981cc6eafb4a2be1fbd59f89f979058dc2e566d2c847b1d9f931689c15a9e8de93adc6057d04a0886e6d66f4c6e54714533377a538587f
+    size-limit: 11.1.1
+  checksum: 0d126db7b22d6fea2c0b8d20e9aadcc57e6626417270aa4bcf8d26a6fc9a4bc6d2beb995f67444e6deb72856b4d320f2e8877b98c46e459efaf12a51a3a785a3
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^11.0.2":
-  version: 11.0.2
-  resolution: "@size-limit/webpack@npm:11.0.2"
+"@size-limit/webpack@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "@size-limit/webpack@npm:11.1.1"
   dependencies:
-    nanoid: ^5.0.4
-    webpack: ^5.89.0
+    nanoid: ^5.0.6
+    webpack: ^5.90.3
   peerDependencies:
-    size-limit: 11.0.2
-  checksum: 80c1c7329530e9f67590f8de3ac7ce165dfc815a919794e7c34148e9c49f4f3de0a59ae1b743801264c5316eb17ed216519db9bcead2b5336a108f884340249f
+    size-limit: 11.1.1
+  checksum: cac8d85ef9ce7bdbb89165babe6e54defab73a852ab6936b5346241cc397c013e65b5862a5933c6bef01735b1d201d9a418f33a24b25455e69a78415fe91eb55
   languageName: node
   linkType: hard
 
@@ -1335,7 +1335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:*, @types/estree@npm:^1.0.0":
+"@types/estree@npm:*":
   version: 1.0.0
   resolution: "@types/estree@npm:1.0.0"
   checksum: 910d97fb7092c6738d30a7430ae4786a38542023c6302b95d46f49420b797f21619cdde11fa92b338366268795884111c2eb10356e4bd2c8ad5b92941e9e6443
@@ -1531,8 +1531,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": ^11.0.2
-    "@size-limit/webpack": ^11.0.2
+    "@size-limit/file": ^11.1.1
+    "@size-limit/webpack": ^11.1.1
     "@swc/cli": ^0.3.10
     "@swc/core": ^1.4.8
     "@swc/helpers": ^0.5.6
@@ -1543,7 +1543,7 @@ __metadata:
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     react: 16.10.0
-    size-limit: ^11.0.2
+    size-limit: ^11.1.1
     ts-node: ^10.9.2
     typescript: ^5.4.2
   peerDependencies:
@@ -1555,8 +1555,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons@workspace:packages/icons"
   dependencies:
-    "@size-limit/file": ^11.0.2
-    "@size-limit/webpack": ^11.0.2
+    "@size-limit/file": ^11.1.1
+    "@size-limit/webpack": ^11.1.1
     "@swc/cli": ^0.3.10
     "@swc/core": ^1.4.8
     "@types/react": 16.14.34
@@ -1569,7 +1569,7 @@ __metadata:
     react: 16.10.0
     react-color: ^2.18.0
     react-dom: ^16.9.0
-    size-limit: ^11.0.2
+    size-limit: ^11.1.1
     style-loader: ^3.3.4
     swc-loader: 0.2.6
     typescript: ^5.4.2
@@ -2216,20 +2216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.14.5, browserslist@npm:^4.21.3":
-  version: 4.21.8
-  resolution: "browserslist@npm:4.21.8"
-  dependencies:
-    caniuse-lite: ^1.0.30001502
-    electron-to-chromium: ^1.4.428
-    node-releases: ^2.0.12
-    update-browserslist-db: ^1.0.11
-  bin:
-    browserslist: cli.js
-  checksum: 20ab0adafb1832bdfb19153d09a140b779b8e883ce504221c580094cc2adec691515ed304c9091300996ad35fc24e957fbfde169ba0c4a7d219b0794ad2e1556
-  languageName: node
-  linkType: hard
-
 "browserslist@npm:^4.21.10":
   version: 4.22.3
   resolution: "browserslist@npm:4.22.3"
@@ -2241,6 +2227,20 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: e62b17348e92143fe58181b02a6a97c4a98bd812d1dc9274673a54f73eec53dbed1c855ebf73e318ee00ee039f23c9a6d0e7629d24f3baef08c7a5b469742d57
+  languageName: node
+  linkType: hard
+
+"browserslist@npm:^4.21.3":
+  version: 4.21.8
+  resolution: "browserslist@npm:4.21.8"
+  dependencies:
+    caniuse-lite: ^1.0.30001502
+    electron-to-chromium: ^1.4.428
+    node-releases: ^2.0.12
+    update-browserslist-db: ^1.0.11
+  bin:
+    browserslist: cli.js
+  checksum: 20ab0adafb1832bdfb19153d09a140b779b8e883ce504221c580094cc2adec691515ed304c9091300996ad35fc24e957fbfde169ba0c4a7d219b0794ad2e1556
   languageName: node
   linkType: hard
 
@@ -2412,9 +2412,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.3":
-  version: 3.5.3
-  resolution: "chokidar@npm:3.5.3"
+"chokidar@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "chokidar@npm:3.6.0"
   dependencies:
     anymatch: ~3.1.2
     braces: ~3.0.2
@@ -2427,7 +2427,7 @@ __metadata:
   dependenciesMeta:
     fsevents:
       optional: true
-  checksum: b49fcde40176ba007ff361b198a2d35df60d9bb2a5aab228279eb810feae9294a6b4649ab15981304447afe1e6ffbf4788ad5db77235dc770ab777c6e771980c
+  checksum: d2f29f499705dcd4f6f3bbed79a9ce2388cf530460122eed3b9c48efeab7a4e28739c6551fd15bec9245c6b9eeca7a32baa64694d64d9b6faeb74ddb8c4a413d
   languageName: node
   linkType: hard
 
@@ -3863,17 +3863,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "globby@npm:14.0.0"
+"globby@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "globby@npm:14.0.1"
   dependencies:
-    "@sindresorhus/merge-streams": ^1.0.0
+    "@sindresorhus/merge-streams": ^2.1.0
     fast-glob: ^3.3.2
     ignore: ^5.2.4
     path-type: ^5.0.0
     slash: ^5.1.0
     unicorn-magic: ^0.1.0
-  checksum: f331b42993e420c8f2b61a6ca062276977ea6d95f181640ff018f00200f4fe5b50f1fae7540903483e6570ca626fe16234ab88e848d43381a2529220548a9d39
+  checksum: 33568444289afb1135ad62d52d5e8412900cec620e3b6ece533afa46d004066f14b97052b643833d7cf4ee03e7fac571430130cde44c333df91a45d313105170
   languageName: node
   linkType: hard
 
@@ -5038,6 +5038,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jiti@npm:^1.21.0":
+  version: 1.21.0
+  resolution: "jiti@npm:1.21.0"
+  bin:
+    jiti: bin/jiti.js
+  checksum: a7bd5d63921c170eaec91eecd686388181c7828e1fa0657ab374b9372bfc1f383cf4b039e6b272383d5cb25607509880af814a39abdff967322459cca41f2961
+  languageName: node
+  linkType: hard
+
 "js-base64@npm:^2.1.9":
   version: 2.5.1
   resolution: "js-base64@npm:2.5.1"
@@ -5232,10 +5241,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lilconfig@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "lilconfig@npm:3.0.0"
-  checksum: a155f1cd24d324ab20dd6974db9ebcf3fb6f2b60175f7c052d917ff8a746b590bc1ee550f6fc3cb1e8716c8b58304e22fe2193febebc0cf16fa86d85e6f896c5
+"lilconfig@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "lilconfig@npm:3.1.1"
+  checksum: dc8a4f4afde3f0fac6bd36163cc4777a577a90759b8ef1d0d766b19ccf121f723aa79924f32af5b954f3965268215e046d0f237c41c76e5ef01d4e6d1208a15e
   languageName: node
   linkType: hard
 
@@ -5720,12 +5729,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "nanoid@npm:5.0.4"
+"nanoid@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "nanoid@npm:5.0.6"
   bin:
     nanoid: bin/nanoid.js
-  checksum: cf09cca3774f3147100948f7478f75f4c9ee97a4af65c328dd9abbd83b12f8bb35cf9f89a21c330f3b759d667a4cd0140ed84aa5fdd522c61e0d341aeaa7fb6f
+  checksum: cd5d3eebd3b148b68b4b0238d94b1d8b4d955cc1a74b8e5217c1daecaed584d4b3701f41ce0f5e909ba4cd214592aff41fb53ac1955d77ea85d58df936726f29
   languageName: node
   linkType: hard
 
@@ -7048,19 +7057,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^11.0.2":
-  version: 11.0.2
-  resolution: "size-limit@npm:11.0.2"
+"size-limit@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "size-limit@npm:11.1.1"
   dependencies:
     bytes-iec: ^3.1.1
-    chokidar: ^3.5.3
-    globby: ^14.0.0
-    lilconfig: ^3.0.0
+    chokidar: ^3.6.0
+    globby: ^14.0.1
+    jiti: ^1.21.0
+    lilconfig: ^3.1.1
     nanospinner: ^1.1.0
     picocolors: ^1.0.0
   bin:
     size-limit: bin.js
-  checksum: 41d5c4e1fbb5e8bd89bc6ea1a7ad16d584e2b5410524eeef2f7e40ca884a3ef107d1b6f904393fa30d51c42fed245fbadafc81872b29095e5cc42695309c48b5
+  checksum: 4f47263b959bf53bf299557e9e9895473e97f5fa2d5ef2a9e6daf09cad3d2dd6bc9201e6e0fbddfe0dfc5cfed5563d32d1adcd112040f59375fc3fbc8a39bfdd
   languageName: node
   linkType: hard
 
@@ -7584,29 +7594,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^5.3.7":
-  version: 5.3.7
-  resolution: "terser-webpack-plugin@npm:5.3.7"
-  dependencies:
-    "@jridgewell/trace-mapping": ^0.3.17
-    jest-worker: ^27.4.5
-    schema-utils: ^3.1.1
-    serialize-javascript: ^6.0.1
-    terser: ^5.16.5
-  peerDependencies:
-    webpack: ^5.1.0
-  peerDependenciesMeta:
-    "@swc/core":
-      optional: true
-    esbuild:
-      optional: true
-    uglify-js:
-      optional: true
-  checksum: 095e699fdeeb553cdf2c6f75f983949271b396d9c201d7ae9fc633c45c1c1ad14c7257ef9d51ccc62213dd3e97f875870ba31550f6d4f1b6674f2615562da7f7
-  languageName: node
-  linkType: hard
-
-"terser@npm:^5.10.0, terser@npm:^5.16.5":
+"terser@npm:^5.10.0":
   version: 5.16.9
   resolution: "terser@npm:5.16.9"
   dependencies:
@@ -8064,43 +8052,6 @@ __metadata:
   version: 3.2.3
   resolution: "webpack-sources@npm:3.2.3"
   checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
-  languageName: node
-  linkType: hard
-
-"webpack@npm:^5.89.0":
-  version: 5.89.0
-  resolution: "webpack@npm:5.89.0"
-  dependencies:
-    "@types/eslint-scope": ^3.7.3
-    "@types/estree": ^1.0.0
-    "@webassemblyjs/ast": ^1.11.5
-    "@webassemblyjs/wasm-edit": ^1.11.5
-    "@webassemblyjs/wasm-parser": ^1.11.5
-    acorn: ^8.7.1
-    acorn-import-assertions: ^1.9.0
-    browserslist: ^4.14.5
-    chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.15.0
-    es-module-lexer: ^1.2.1
-    eslint-scope: 5.1.1
-    events: ^3.2.0
-    glob-to-regexp: ^0.4.1
-    graceful-fs: ^4.2.9
-    json-parse-even-better-errors: ^2.3.1
-    loader-runner: ^4.2.0
-    mime-types: ^2.1.27
-    neo-async: ^2.6.2
-    schema-utils: ^3.2.0
-    tapable: ^2.1.1
-    terser-webpack-plugin: ^5.3.7
-    watchpack: ^2.4.0
-    webpack-sources: ^3.2.3
-  peerDependenciesMeta:
-    webpack-cli:
-      optional: true
-  bin:
-    webpack: bin/webpack.js
-  checksum: 43fe0dbc30e168a685ef5a86759d5016a705f6563b39a240aa00826a80637d4a3deeb8062e709d6a4b05c63e796278244c84b04174704dc4a37bedb0f565c5ed
   languageName: node
   linkType: hard
 
