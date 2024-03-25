@@ -18,9 +18,9 @@ function createReactIcon({
 `;
   }
 
-  // TODO: Избавиться от use-client, если избавимся от спрайта
+  // TODO: Избавиться от use client, если избавимся от спрайта
   // Чтобы nextjs мог рендерить иконки как серверные компоненты
-  return `'use-client';
+  return `'use client';
 
 import { SVGProps, Ref } from 'react';
 import { makeIcon } from '@vkontakte/icons-sprite';
