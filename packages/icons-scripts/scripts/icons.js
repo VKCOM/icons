@@ -44,45 +44,7 @@ function generateIcons(options) {
     .then((iconsMap) => {
       debugInfo(`Writing ${iconsMap.length} components...`);
 
-      iconsMap.forEach((icon) => {
-        const {
-          id,
-          symbolId,
-          viewBox,
-          symbol,
-          componentName,
-          deprecated,
-          replacement,
-          width,
-          height,
-          dirname,
-          size,
-        } = icon;
-
-        // Превращаем svg-файл в ts-файл в виде строки
-        const reactSource = createReactIcon({
-          id: symbolId,
-          viewBox,
-          content: symbol,
-          componentName,
-          deprecated,
-          replacement,
-          width,
-          height,
-        });
-
-        const exportName = componentName;
-
-        // Записываем компонент в файл
-        const iconDir = path.join(tsFilesDirectory, dirname);
-        if (!fs.existsSync(iconDir)) {
-          fs.mkdirSync(iconDir);
-        }
-
-        const fileName = `${id}${size ? `_${size}` : ''}`;
-        fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
-        exportsMap[exportName] = `./${dirname}/${fileName}`;
-      });
+      iconsMap.forEach(processIconMapEntity);
 
       debugInfo('Creating index.ts file with exports');
       createIndexExports(exportsMap, tsFilesDirectory);
@@ -94,8 +56,9 @@ function generateIcons(options) {
             const copy = { ...icon };
 
             // Удаляем лишние данные, они не нужны в документации
-            delete copy.content;
             delete copy.symbol;
+            delete copy.content;
+            delete copy.subcomponents;
 
             return copy;
           }),
@@ -123,6 +86,57 @@ function generateIcons(options) {
 
       debugError(e);
     });
+
+  /**
+   * @param {Icon} icon
+   */
+  const processIconMapEntity = (icon) => {
+    const {
+      id,
+      symbolId,
+      viewBox,
+      symbol,
+      componentName,
+      deprecated,
+      replacement,
+      width,
+      height,
+      dirname,
+      size,
+      subcomponents,
+      isSubcomponent,
+    } = icon;
+
+    subcomponents?.forEach(processIconMapEntity);
+
+    // Превращаем svg-файл в ts-файл в виде строки
+    const reactSource = createReactIcon({
+      id: symbolId,
+      width,
+      height,
+      viewBox,
+      content: symbol,
+      componentName,
+      deprecated,
+      replacement,
+      subcomponents,
+    });
+
+    const exportName = componentName;
+
+    // Записываем компонент в файл
+    const iconDir = path.join(tsFilesDirectory, dirname);
+    if (!fs.existsSync(iconDir)) {
+      fs.mkdirSync(iconDir);
+    }
+
+    const fileName = `${id}${size ? `_${size}` : ''}`;
+    fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
+
+    if (!isSubcomponent) {
+      exportsMap[exportName] = `./${dirname}/${fileName}`;
+    }
+  };
 
   const compile = async () => {
     const swcConfig = path.resolve(__dirname, './configs/.swcrc');

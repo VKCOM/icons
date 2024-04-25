@@ -2,16 +2,20 @@ const glob = require('glob');
 const path = require('path');
 const fs = require('fs');
 const Compiler = require('svg-baker');
-const { dashToCamel, sortArrayAlphabetically } = require('./utils');
+const { dashToCamel, sortArrayAlphabetically, longestCommonPrefix } = require('./utils');
 
 /**
  * @typedef {Object} Icon
  * @property {string} id
+ * @property {string} size
+ * @property {string} prefix
  * @property {string} dirname
  * @property {string} filename
  * @property {string} filepath
  * @property {string} componentName
  * @property {string} content
+ * @property {Icon[]} subcomponents
+ * @property {boolean} [isSubcomponent]
  */
 
 /**
@@ -59,30 +63,105 @@ function getReplacementIconComponentName(name) {
  * @return {Icon[]}
  */
 function dirMap(src, pattern, prefix = '', deprecatedIcons) {
-  const files = glob.sync(path.join(src, `./svg/${pattern}/*.svg`));
+  const files = sortArrayAlphabetically(glob.sync(path.join(src, `./svg/${pattern}/*.svg`)));
 
-  return sortArrayAlphabetically(files).map((filepath) => {
-    const { name, dir } = path.parse(filepath);
-    const content = fs.readFileSync(filepath, 'utf-8');
+  const { common, parts } = files
+    .map((filepath) => {
+      const { name, dir } = path.parse(filepath);
+      const content = fs.readFileSync(filepath, 'utf-8');
 
-    const dirname = dir.split(path.sep).pop();
+      const dirname = dir.split(path.sep).pop();
 
-    const [id, size] = getIconIdAndSize(name);
+      const [id, size] = getIconIdAndSize(name);
 
-    const deprecated = deprecatedIcons.hasOwnProperty(name);
+      const deprecated = deprecatedIcons.hasOwnProperty(name);
 
-    return {
-      id,
-      dirname,
-      filepath,
-      filename: name,
-      componentName: getIconComponentName(id, prefix + size),
-      deprecated,
-      replacement: deprecated ? getReplacementIconComponentName(deprecatedIcons[name]) : undefined,
-      content,
-      size,
-    };
+      return {
+        id,
+        size,
+        content,
+        dirname,
+        filepath,
+        deprecated,
+        filename: name,
+        componentName: getIconComponentName(id, prefix + size),
+        replacement: deprecated
+          ? getReplacementIconComponentName(deprecatedIcons[name])
+          : undefined,
+      };
+    })
+    .reduce(
+      (icons, icon) => {
+        if (icon.filename.includes('_part_')) {
+          icons.parts.push(icon);
+        } else {
+          icons.common.push(icon);
+        }
+
+        return icons;
+      },
+      {
+        common: [],
+        parts: [],
+      },
+    );
+
+  return common.concat(sortIconsByLongestCommonPrefix(parts));
+}
+
+/**
+ * Функция для сортировки иконок относительно их сабкомпонентов, логика описана в Readme.md.
+ *
+ * @param {Icon[]} icons
+ */
+function sortIconsByLongestCommonPrefix(icons) {
+  const prefixes = icons.map(({ filename }, index) => {
+    let longestPrefix = filename;
+
+    for (let i = 0; i < icons.length; i++) {
+      if (index === i) {
+        continue;
+      }
+
+      // Отбрасываем часть строки, если у нее нет _ в конце
+      const commonPrefix = longestCommonPrefix(filename, icons[i].filename).replace(
+        /([^]+_)[^_]+$/,
+        '$1',
+      );
+
+      if (commonPrefix.length > 0 && commonPrefix.length < longestPrefix.length) {
+        longestPrefix = commonPrefix;
+      }
+    }
+
+    return longestPrefix;
   });
+
+  const prefixGroups = {};
+
+  icons.forEach((icon, index) => {
+    const prefix = prefixes[index];
+    const sizePrefix = `${icon.size}${prefixes[index]}`;
+
+    icon.prefix = prefix;
+
+    prefixGroups[sizePrefix] ??= [];
+    prefixGroups[sizePrefix].push(icon);
+  });
+
+  return Object.values(prefixGroups)
+    .map((group) =>
+      group.sort(({ filename: a }, { filename: b }) => a.length - b.length || a.localeCompare(b)),
+    )
+    .map((icons) => {
+      icons[0].subcomponents = icons.slice(1).map((icon) => {
+        icon.isSubcomponent = true;
+
+        return icon;
+      });
+
+      return icons[0];
+    });
 }
 
 /**
@@ -109,27 +188,42 @@ async function createIconsMap(
 
   const compiler = new Compiler();
 
-  const promises = icons.map(async (icon) => {
-    const content = optimizeFn(icon.content);
-
-    const symbol = await compiler.addSymbol({ content, id: icon.filename, path: '' });
-
-    const viewBox = symbol.viewBox;
-    const width = viewBox.split(' ')[2];
-    const height = viewBox.split(' ')[3];
-
-    return {
-      ...icon,
-      content,
-      symbolId: symbol.id,
-      symbol: symbol.render(),
-      viewBox,
-      width,
-      height,
-    };
-  });
+  const promises = icons.map((icon) => prepareIconMapEntity(compiler, icon, optimizeFn));
 
   return await Promise.all(promises);
+}
+
+/**
+ * @param {Compiler} compiler
+ * @param {Icon} icon
+ * @param {(content: string) => string} [optimizeFn]
+ */
+async function prepareIconMapEntity(compiler, icon, optimizeFn) {
+  const subcomponentsPromises = icon.subcomponents?.map((icon) =>
+    prepareIconMapEntity(compiler, icon, optimizeFn),
+  );
+  const subcomponents = subcomponentsPromises
+    ? await Promise.all(subcomponentsPromises)
+    : undefined;
+
+  const content = optimizeFn(icon.content);
+
+  const symbol = await compiler.addSymbol({ content, id: icon.filename, path: '' });
+
+  const viewBox = symbol.viewBox;
+  const width = viewBox.split(' ')[2];
+  const height = viewBox.split(' ')[3];
+
+  return {
+    ...icon,
+    width,
+    height,
+    content,
+    viewBox,
+    subcomponents,
+    symbolId: symbol.id,
+    symbol: symbol.render(),
+  };
 }
 
 module.exports = {
