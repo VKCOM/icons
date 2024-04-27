@@ -27,9 +27,24 @@ function dashToCamel(dash) {
   }, '');
 }
 
+function longestCommonPrefix(...strings) {
+  if (!strings.length) {
+    return '';
+  }
+
+  for (let i = 0; i <= strings[0].length; i++) {
+    if (strings.some((string) => string[i] !== strings[0][i])) {
+      return strings[0].slice(0, i);
+    }
+  }
+
+  return strings[0];
+}
+
 module.exports = {
   debugInfo,
   debugError,
   sortArrayAlphabetically,
   dashToCamel,
+  longestCommonPrefix,
 };

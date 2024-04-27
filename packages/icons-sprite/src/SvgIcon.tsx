@@ -23,6 +23,10 @@ const SvgIcon = ({
   children,
   ...restProps
 }: SvgIconProps) => {
+  const child = React.Children.toArray(children)[0];
+  const hasIconChildren =
+    React.isValidElement(child) && typeof child.type === 'function' && 'mountIcon' in child.type;
+
   const size = Math.max(width, height);
 
   const style = {
@@ -53,14 +57,15 @@ const SvgIcon = ({
       ref={getRootRef}
     >
       {title && <title>{title}</title>}
+      {hasIconChildren && children}
       <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }}>
-        {children}
+        {!hasIconChildren && children}
       </use>
     </svg>
   );
 };
 
-export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
+export function makeIcon<Props extends SvgIconProps = SvgIconProps, Subcomponents = {}>(
   componentName: string,
   id: string,
   viewBox: string,
@@ -69,7 +74,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
   height: number,
   deprecated?: boolean,
   replacement?: string,
-): React.FC<Props> {
+): React.FC<Props> & Subcomponents {
   let isMounted = false;
   function mountIcon() {
     if (!isMounted) {
@@ -99,8 +104,8 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps>(
     );
   };
 
-  (Icon as any).mountIcon = mountIcon;
+  Icon.mountIcon = mountIcon;
   Icon.displayName = componentName;
 
-  return Icon;
+  return Icon as any;
 }
