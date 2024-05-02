@@ -1175,12 +1175,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/helpers@npm:^0.5.10":
-  version: 0.5.10
-  resolution: "@swc/helpers@npm:0.5.10"
+"@swc/helpers@npm:^0.5.11":
+  version: 0.5.11
+  resolution: "@swc/helpers@npm:0.5.11"
   dependencies:
     tslib: ^2.4.0
-  checksum: 7a202710e494ff8e6f74b92cc12f2ce226c4d75c0f82c7c4fb911173d27744def1b3a8274fb3820f4161403182acb06ee553eb6e8e5b77b0d0ed7132a9e85bc2
+  checksum: 5d85e641d993264f38871bf53e7509da959cdff7646a40d876153291146b9d0aa701518546e5bfef18fa17c5944333bbeb66c2f0d7a570e8c5535d0937d76bd9
   languageName: node
   linkType: hard
 
@@ -1535,7 +1535,7 @@ __metadata:
     "@size-limit/webpack": ^11.1.2
     "@swc/cli": ^0.3.12
     "@swc/core": ^1.4.17
-    "@swc/helpers": ^0.5.10
+    "@swc/helpers": ^0.5.11
     "@swc/jest": ^0.2.36
     "@types/node": ^20.12.7
     "@types/react": 16.14.34
