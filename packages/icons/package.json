@@ -21,7 +21,7 @@
     "docs": "node --max-old-space-size=4096 scripts/docs",
     "icons-build": "yarn node scripts/build-icons.js",
     "size": "yarn icons-build && yarn run size-limit",
-    "size:ci": "YARN_ENABLE_SCRIPTS=false yarn install --immutable && yarn icons-build"
+    "size:ci": "yarn run size-limit --json"
   },
   "browserslist": [
     "android >= 4.4",

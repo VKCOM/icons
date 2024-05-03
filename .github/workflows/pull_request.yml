@@ -69,6 +69,9 @@ jobs:
             See the docs for this PR at https://vkcom.github.io/icons/pull/${{ github.event.pull_request.number }}/
   size:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/icons
     env:
       CI_JOB_NUMBER: 1
     steps:
@@ -86,7 +89,7 @@ jobs:
           # only affects current branch
           skip_step: install
           build_script: 'icons-build'
-          script: yarn run icons:size:ci
+          script: yarn run size:ci
   test:
     runs-on: ubuntu-latest
     steps:

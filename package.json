@@ -14,9 +14,7 @@
     "prettier:write": "yarn prettier --write --ignore-unknown .",
     "prettier:check": "yarn prettier --check --ignore-unknown .",
     "size": "yarn workspace @vkontakte/icons run size",
-    "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version",
-    "icons-build": "cd packages/icons && yarn run icons-build",
-    "icons:size:ci": "cd packages/icons && yarn run size-limit --json"
+    "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version"
   },
   "pre-commit": [
     "prettier:check"
