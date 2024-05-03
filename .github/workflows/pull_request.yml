@@ -83,6 +83,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           package_manager: yarn
+          # only affects current branch
+          skip_step: install
+          build_script: 'icons-build'
+          script: yarn run icons:size:ci
   test:
     runs-on: ubuntu-latest
     steps:
