@@ -69,9 +69,6 @@ jobs:
             See the docs for this PR at https://vkcom.github.io/icons/pull/${{ github.event.pull_request.number }}/
   size:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./packages/icons
     env:
       CI_JOB_NUMBER: 1
     steps:
@@ -85,6 +82,7 @@ jobs:
       - uses: andresz1/size-limit-action@v1.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: packages/icons/
           package_manager: yarn
           # only affects current branch
           skip_step: install
