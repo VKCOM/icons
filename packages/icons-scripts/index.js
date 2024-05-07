@@ -3,5 +3,6 @@ const { createIconsMap } = require('./scripts/icons-map');
 
 module.exports = {
   generateIcons,
+
   createIconsMap,
 };
