@@ -1520,7 +1520,7 @@ __metadata:
     "@swc/cli": ^0.3.12
     "@swc/core": ^1.5.5
     glob: ^10.3.12
-    rimraf: ^5.0.5
+    rimraf: ^5.0.7
     svg-baker: ^1.7.0
     svgo: ^3.2.0
     typescript: ^5.4.5
@@ -6865,14 +6865,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^5.0.5":
-  version: 5.0.5
-  resolution: "rimraf@npm:5.0.5"
+"rimraf@npm:^5.0.7":
+  version: 5.0.7
+  resolution: "rimraf@npm:5.0.7"
   dependencies:
     glob: ^10.3.7
   bin:
     rimraf: dist/esm/bin.mjs
-  checksum: d66eef829b2e23b16445f34e73d75c7b7cf4cbc8834b04720def1c8f298eb0753c3d76df77325fad79d0a2c60470525d95f89c2475283ad985fd7441c32732d1
+  checksum: 884852abf8aefd4667448d87bdab04120a8641266c828cf382ac811713547eda18f81799d2146ffec3178f357d83d44ec01c10095949c82e23551660732bf14f
   languageName: node
   linkType: hard
 
