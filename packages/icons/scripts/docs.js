@@ -1,12 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config-docs');
-const rimraf = require('rimraf');
-const path = require('path');
 
 console.log('creating doc');
 
-const directory = path.join(process.cwd(), 'docs');
-rimraf.sync(`${directory}/*`);
+fs.rmSync(path.join(process.cwd(), 'docs'), {
+  force: true,
+  recursive: true,
+});
 
 const compiler = webpack(webpackConfig);
 

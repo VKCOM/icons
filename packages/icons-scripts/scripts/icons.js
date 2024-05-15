@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const { performance } = require('perf_hooks');
-const rimraf = require('rimraf');
 const { execSync } = require('child_process');
 const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
 const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
 const { createReactIcon } = require('./output');
+const { generateRasterIcons } = require('./raster/icons');
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -28,21 +28,33 @@ function generateIcons(options) {
 
   debugInfo('Preparing directories...');
   [distDirectory, tsFilesDirectory].forEach((dir) => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    } else {
-      rimraf.sync(path.join(dir, '*'));
-    }
+    fs.rmSync(dir, {
+      force: true,
+      recursive: true,
+    });
+    fs.mkdirSync(dir);
   });
 
-  const exportsMap = {};
+  let exportsMap = {};
+
+  debugInfo('Creating raster icons map...');
+  const rasterIconsExportsMap = generateRasterIcons(srcDirectory, tsFilesDirectory);
+
+  exportsMap = {
+    ...exportsMap,
+    ...rasterIconsExportsMap,
+  };
 
   debugInfo('Creating icons map...');
   createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons, (content) => {
     return optimize(content, svgoPlugins);
   })
     .then((iconsMap) => {
-      debugInfo(`Writing ${iconsMap.length} components...`);
+      debugInfo(
+        `Writing ${iconsMap.length} vector & ${
+          Object.keys(rasterIconsExportsMap).length
+        } raster components...`,
+      );
 
       iconsMap.forEach(processIconMapEntity);
 
@@ -71,20 +83,20 @@ function generateIcons(options) {
       const time = Math.ceil(performance.now() - start);
       debugInfo(`Icons successfully generated to ${distDirectory} in ${time}ms!`);
     })
-    .catch((e) => {
-      if (e.output) {
-        e.output = String(e.output);
+    .catch((error) => {
+      if (error.output) {
+        error.output = String(error.output);
       }
 
-      if (e.stdout) {
-        e.stdout = String(e.stdout);
+      if (error.stdout) {
+        error.stdout = String(error.stdout);
       }
 
-      if (e.stderr) {
-        e.stderr = String(e.stderr);
+      if (error.stderr) {
+        error.stderr = String(error.stderr);
       }
 
-      debugError(e);
+      debugError(error);
     });
 
   /**
@@ -156,7 +168,7 @@ function generateIcons(options) {
 
     debugInfo('Running tsc...');
     execSync(
-      `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015"`,
+      `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015" --skipLibCheck`,
     );
   };
 }
