@@ -178,8 +178,10 @@ function generateIcons(options) {
  * @param {string} dir
  */
 function createIndexExports(exportsMap, dir) {
-  // TODO: v3 Удалить
-  const exported = [`export { IconSettingsProvider } from '@vkontakte/icons-sprite';`];
+  // TODO: v3 Удалить IconSettingsProvider
+  const exported = [
+    `export { IconSettingsProvider, IconAppearanceProvider } from '@vkontakte/icons-sprite';`,
+  ];
 
   const keys = Object.keys(exportsMap);
   if (!keys) {
