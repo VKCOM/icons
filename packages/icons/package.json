@@ -14,7 +14,7 @@
     "*.css"
   ],
   "main": "dist/index.js",
-  "module": "dist/es6/index.js",
+  "module": "dist_es6/index.js",
   "typings": "dist/typings/index.d.ts",
   "scripts": {
     "build": "yarn icons-build && yarn docs",
@@ -70,7 +70,7 @@
     },
     {
       "name": "JS ES6 with Icon16Add only import (tree shaking)",
-      "path": "dist/es6/index.js",
+      "path": "dist_es6/index.js",
       "import": "{ Icon16Add }",
       "brotli": false
     },
