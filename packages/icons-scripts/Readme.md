@@ -27,9 +27,9 @@ src/
 {
   "name": "@scope/react-icons-library",
   "version": "0.0.0",
-  "files": ["dist", "src/svg"],
+  "files": ["dist", "dist_es6", "src/svg"],
   "main": "dist/index.js",
-  "module": "dist/es6/index.js",
+  "module": "dist_es6/index.js",
   "typings": "dist/typings/index.d.ts",
   "sideEffects": ["*.css"],
   "scripts": {

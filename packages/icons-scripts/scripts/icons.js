@@ -17,6 +17,7 @@ function generateIcons(options) {
   const {
     srcDirectory,
     distDirectory,
+    distES6Directory,
     tsFilesDirectory,
     extraCategories,
     svgoPlugins,
@@ -27,7 +28,7 @@ function generateIcons(options) {
   const start = performance.now();
 
   debugInfo('Preparing directories...');
-  [distDirectory, tsFilesDirectory].forEach((dir) => {
+  [distDirectory, distES6Directory, tsFilesDirectory].forEach((dir) => {
     fs.rmSync(dir, {
       force: true,
       recursive: true,
@@ -163,7 +164,7 @@ function generateIcons(options) {
 
     debugInfo('Running swc es6...');
     execSync(
-      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/es6/ --config-file ${swcConfig}`,
+      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distES6Directory}/ --config-file ${swcConfig}`,
     );
 
     debugInfo('Running tsc...');

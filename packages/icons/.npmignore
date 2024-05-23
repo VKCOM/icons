@@ -1,3 +1,4 @@
 *
 !/dist/**
+!/dist_es6/**
 !/src/svg/**

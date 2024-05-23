@@ -49,6 +49,7 @@ function prepareOptions(options) {
   return {
     srcDirectory: directoryPath(srcDirectory),
     distDirectory: directoryPath(distDirectory),
+    distES6Directory: directoryPath(`${distDirectory}_es6`),
     keepTSSources: keepTSSources == null ? !!tsFilesDirectory : keepTSSources,
     tsFilesDirectory: tsFilesDirectory
       ? directoryPath(tsFilesDirectory)
