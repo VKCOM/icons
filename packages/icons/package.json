@@ -19,7 +19,7 @@
   "scripts": {
     "build": "yarn icons-build && yarn docs",
     "docs": "node --max-old-space-size=4096 scripts/docs",
-    "icons-build": "yarn node scripts/build-icons.js",
+    "icons-build": "yarn run -T build:icons-sprite && yarn node scripts/build-icons.js",
     "size": "yarn icons-build && yarn run size-limit"
   },
   "browserslist": [
