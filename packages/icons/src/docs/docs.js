@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom';
 import { aliases } from './aliases.js';
 import { HuePicker as Hue } from 'react-color';
