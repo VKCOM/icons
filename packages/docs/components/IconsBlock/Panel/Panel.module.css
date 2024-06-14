@@ -1,0 +1,18 @@
+.host {
+  display: flex;
+  padding: 20px;
+  border-block-end: 1px solid var(--docs--color_stroke_separator_secondary);
+}
+
+.host > * {
+  width: 148px;
+  margin-inline-end: 10px;
+}
+
+.host > *:last-child {
+  margin-inline-end: 0;
+}
+
+.search {
+  width: 252px;
+}

@@ -1,0 +1,15 @@
+.host {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-rows: repeat(auto-fit, 170px);
+  overflow-y: auto;
+  background: var(--docs--color_background_content);
+  box-sizing: border-box;
+  color: var(--vkui--color_icon_secondary);
+}
+
+.fakeElement {
+  height: 170px;
+  visibility: hidden;
+}

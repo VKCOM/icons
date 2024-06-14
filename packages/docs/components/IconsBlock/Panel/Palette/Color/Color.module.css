@@ -1,0 +1,23 @@
+.host {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+}
+
+.host::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--vkui--color_image_border_alpha);
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.active::after {
+  inset: -2px;
+  border-radius: 7px;
+  border-color: #e0e3e7;
+}

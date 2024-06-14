@@ -6,7 +6,10 @@ LICENSE
 yarn.lock
 docs
 !packages/icons/src/docs
+!packages/docs
 ts
 coverage
 .pnp.*
 .yarn/*
+.next
+out

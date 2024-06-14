@@ -1,0 +1,25 @@
+.host {
+  width: 340px;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  border-inline-start: 1px solid var(--docs--color_stroke_separator_secondary);
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  color: var(--vkui--color_text_primary);
+}
+
+.preview > *:first-child {
+  color: #e1e3e6;
+  margin-block-end: 32px;
+}
+
+.flexStretch {
+  flex: 1;
+}

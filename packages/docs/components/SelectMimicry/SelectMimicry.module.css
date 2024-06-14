@@ -1,0 +1,8 @@
+.host {
+  text-decoration: none;
+}
+
+.text {
+  margin-inline-start: 12px;
+  color: var(--vkui--color_text_primary);
+}

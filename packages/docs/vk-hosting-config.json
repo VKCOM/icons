@@ -1,0 +1,7 @@
+{
+  "static_path": "out",
+  "app_id": 8222826,
+  "endpoints": {
+    "web": "index.html"
+  }
+}

@@ -1,0 +1,11 @@
+.host {
+  display: flex;
+}
+
+.host > * {
+  margin-inline-end: 8px;
+}
+
+.host > *:last-child {
+  margin-inline-end: 0;
+}

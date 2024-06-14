@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve@latest out"
+  },
+  "dependencies": {
+    "@vkontakte/icons": "workspace:^",
+    "@vkontakte/vkjs": "^1.1.2",
+    "@vkontakte/vkui": "^6.1.0",
+    "@vkontakte/vkui-tokens": "^4.46.0",
+    "js-levenshtein": "^1.1.6",
+    "next": "^14.2.3",
+    "nextra": "^2.13.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "use-signals": "^0.1.1"
+  }
+}

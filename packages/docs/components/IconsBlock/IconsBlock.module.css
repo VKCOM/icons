@@ -1,0 +1,11 @@
+.host {
+  border-radius: 16px;
+  border: 1px solid var(--docs--color_stroke_separator_secondary);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  height: 80vh;
+}

@@ -1,0 +1,27 @@
+.host {
+  width: 100%;
+  border-block-end: 1px solid var(--vkui--color_image_border_alpha);
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 24px 40px;
+  color: var(--vkui--color_text_primary);
+}
+
+.before,
+.after {
+  display: flex;
+}
+
+.after > * {
+  margin-inline-end: 8px;
+}
+
+.after > *:last-child {
+  margin-inline-end: 0;
+}

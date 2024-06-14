@@ -1,0 +1,45 @@
+.host {
+  border-inline-end: 1px solid var(--docs--color_stroke_separator_secondary);
+  border-block-end: 1px solid var(--docs--color_stroke_separator_secondary);
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+
+  background-color: var(--vkui--color_background_content);
+
+  border: 1px solid var(--docs--color_stroke_separator_secondary);
+  z-index: 0;
+}
+
+.text {
+  inline-size: 160px;
+  text-align: center;
+  overflow-wrap: break-word;
+  color: var(--vkui--color_text_secondary);
+}
+
+.active > .text {
+  color: var(--vkui--color_text_primary);
+}
+
+.host > * {
+  z-index: 1;
+  margin-block-end: 16px;
+}
+
+.host > *:last-child {
+  margin-block-end: 0;
+}

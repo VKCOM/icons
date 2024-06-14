@@ -1,0 +1,51 @@
+import { Tabs } from 'nextra/components';
+import { HeaderBanner } from '../vkui-nextra-theme';
+import { IconsBlock } from '../components/IconsBlock/IconsBlock';
+
+<HeaderBanner>
+# VK Icons
+
+Набор SVG иконок, представленный в виде React компонентов.
+
+<HeaderBanner.Links children={[
+
+{
+href: 'https://github.com/VKCOM/icons'
+},
+{
+href: 'https://github.com/VKCOM/icons/issues'
+},
+{
+href: 'https://www.figma.com/community/file/842772861518754130/vkui-base-library'
+},
+]}/>
+
+</HeaderBanner>
+
+<IconsBlock />
+
+## Установка
+
+```sh
+npm i @vkontakte/icons
+```
+
+## Пример
+
+```tsx
+import { Icon24Cancel } from '@vkontakte/icons';
+
+<Icon24Cancel />;
+```
+
+## Кастомные размеры
+
+Иногда может потребоваться установить для иконки другой размер. Для этого можно передать свойства width и height, ширина и высота в пикселях. Они должны быть числовыми значениями.
+
+```tsx
+<Icon24LogoVk width={20} height={20} />
+```
+
+## Стилизация
+
+Иконки можно красить. Для этого к элементу svg применено правило `fill: currentColor`. Иными словами, цвет иконки соответствует текущему значению свойства color.

@@ -1,0 +1,30 @@
+.host {
+  border-radius: 16px;
+  padding: 32px;
+  background-image: url('./background.svg');
+  background-color: #2f2f2f;
+  background-size: cover;
+  margin-block-end: 56px;
+}
+
+.host > h1 {
+  color: var(--vkui--color_text_contrast);
+  margin-block-start: 0;
+  margin-block-end: 16px;
+}
+
+.host > p {
+  margin-block: 0;
+  color: var(--vkui--color_text_primary);
+}
+
+.host > p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: var(--vkui--font_family_accent);
+}
+
+.buttons {
+  margin-block-start: 44px;
+}
