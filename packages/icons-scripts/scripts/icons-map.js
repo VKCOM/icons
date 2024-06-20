@@ -63,7 +63,7 @@ function getReplacementIconComponentName(name) {
  * @return {Icon[]}
  */
 function dirMap(src, pattern, prefix = '', deprecatedIcons) {
-  const files = sortArrayAlphabetically(glob.sync(path.join(src, `./svg/${pattern}/*.svg`)));
+  const files = sortArrayAlphabetically(glob.sync(path.posix.join(src, `./svg/${pattern}/*.svg`)));
 
   const { common, parts } = files
     .map((filepath) => {
