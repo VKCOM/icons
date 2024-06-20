@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
 const { performance } = require('perf_hooks');
 const { execSync } = require('child_process');
 const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
@@ -8,6 +9,7 @@ const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
 const { createReactIcon } = require('./output');
 const { generateRasterIcons } = require('./raster/icons');
+const tsc = require('./tsc');
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -168,9 +170,12 @@ function generateIcons(options) {
     );
 
     debugInfo('Running tsc...');
-    execSync(
-      `tsc ${tsFilesDirectory}/**/*.ts ${tsFilesDirectory}/*.ts --emitDeclarationOnly --declaration --outDir ${distDirectory}/typings --jsx react --esModuleInterop --lib "dom,es2015" --skipLibCheck`,
-    );
+    const tsFiles = [
+      ...glob.sync(path.posix.join(tsFilesDirectory, '**', '*.ts')),
+      ...glob.sync(path.posix.join(tsFilesDirectory, '*.ts')),
+    ];
+
+    tsc.compile(tsFiles, path.join(distDirectory, 'typings'));
   };
 }
 

@@ -17,7 +17,7 @@ const { dashToCamel, sortArrayAlphabetically } = require('../utils');
  * @param {string} src
  */
 function createIconsMap(src) {
-  const files = sortArrayAlphabetically(glob.sync(path.join(src, `./png/**/*.png`)));
+  const files = sortArrayAlphabetically(glob.sync(path.posix.join(src, `./png/**/*.png`)));
 
   /**
    * @type {Map<string, IconEntity>}
