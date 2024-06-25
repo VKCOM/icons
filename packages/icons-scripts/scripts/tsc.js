@@ -23,7 +23,7 @@ function compile(rootNames, outDir) {
     outDir,
     emitDeclarationOnly: true,
     declaration: true,
-    jsx: 'react',
+    jsx: ts.JsxEmit.React,
     esModuleInterop: true,
     skipLibCheck: true,
   };
