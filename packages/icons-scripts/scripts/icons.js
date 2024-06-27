@@ -2,14 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const { performance } = require('perf_hooks');
-const { execSync } = require('child_process');
+const util = require('node:util');
+const exec = util.promisify(require('node:child_process').exec);
 const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
 const { createIconsMap } = require('./icons-map');
 const { prepareOptions } = require('./options');
 const { optimize } = require('./optimize');
 const { createReactIcon } = require('./output');
 const { generateRasterIcons } = require('./raster/icons');
-const tsc = require('./tsc');
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -161,23 +161,36 @@ function generateIcons(options) {
       debugError('swc config not found');
     }
 
-    debugInfo('Running swc commonjs...');
-    execSync(
-      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
-    );
+    debugInfo('Running swc...');
 
-    debugInfo('Running swc es6...');
-    execSync(
-      `swc ${tsFilesDirectory} --strip-leading-paths -d ${distES6Directory}/ --config-file ${swcConfig}`,
-    );
+    await Promise.all([
+      exec(
+        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
+      ),
+      exec(
+        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distES6Directory}/ --config-file ${swcConfig}`,
+      ),
+    ]);
 
-    debugInfo('Running tsc...');
-    const tsFiles = [
-      ...glob.sync(path.posix.join(tsFilesDirectory, '**', '*.ts')),
-      ...glob.sync(path.posix.join(tsFilesDirectory, '*.ts')),
-    ];
+    debugInfo('Copy declarations');
 
-    tsc.compile(tsFiles, path.join(distDirectory, 'typings'));
+    /**
+     * Копирует файлы с декларациями в папку distDirectory/typings
+     *
+     * @param {string} file
+     */
+    const copyFile = async (file) => {
+      const relativePath = path.relative(distDirectory, file);
+
+      await fs.promises.mkdir(path.join(distDirectory, 'typings', path.dirname(relativePath)), {
+        recursive: true,
+      });
+      await fs.promises.copyFile(file, path.join(distDirectory, 'typings', relativePath));
+    };
+
+    const matches = await glob.glob(`${distDirectory}/**/*.d.ts`);
+
+    await Promise.all(matches.map(copyFile));
   };
 }
 
