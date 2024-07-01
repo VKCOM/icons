@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@swc/cli": "^0.3.14",
-    "@swc/core": "^1.6.5",
+    "@swc/core": "^1.6.6",
     "glob": "^10.4.2",
     "svg-baker": "^1.7.0",
     "svgo": "^3.3.2",
