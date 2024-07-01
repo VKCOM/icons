@@ -41,7 +41,7 @@ function createReactRasterIcon({ id, size, componentName, ...options }, outputPa
     },
   );
 
-  return `import { ImgHTMLAttributes, Ref } from 'react';
+  return `import { ImgHTMLAttributes, Ref, FC } from 'react';
 import { makeRasterIcon } from '@vkontakte/icons-sprite';
 ${densityBucketSetImports.join('\n')}
 
@@ -49,7 +49,7 @@ export interface ${componentName}Props extends ImgHTMLAttributes<HTMLImageElemen
   getRootRef?: Ref<HTMLImageElement>;
 }
 
-export const ${componentName} = makeRasterIcon<${componentName}Props>(
+export const ${componentName}: FC<${componentName}Props> = makeRasterIcon<${componentName}Props>(
   '${componentName}',
   '${id}',
   ${size},

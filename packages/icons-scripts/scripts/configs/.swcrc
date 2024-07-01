@@ -1,12 +1,12 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
+  "$schema": "https://swc.rs/schema.json",
   "jsc": {
     "parser": {
       "syntax": "typescript",
       "tsx": true
+    },
+    "experimental": {
+      "emitIsolatedDts": true
     }
-  },
-  "env": {
-    "coreJs": 3
   }
 }
