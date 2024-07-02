@@ -111,7 +111,7 @@ class Docs extends React.PureComponent {
           <div className="color-picker">
             <Hue
               color={this.state.currentColor}
-              onChangeComplete={this.onCurrentColorChange}
+              onChange={this.onCurrentColorChange}
               width="100%"
             />
           </div>
