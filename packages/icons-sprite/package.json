@@ -22,7 +22,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@swc/helpers": "^0.5.11"
+    "@swc/helpers": "^0.5.12"
   },
   "devDependencies": {
     "@size-limit/file": "^11.1.4",
