@@ -53,7 +53,6 @@ module.exports = {
       'window.ICONS': iconsMap,
     }),
   ],
-  mode: 'development',
   cache: {
     type: 'filesystem',
   },
