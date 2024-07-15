@@ -47,7 +47,7 @@
     "style-loader": "^4.0.0",
     "swc-loader": "0.2.6",
     "typescript": "^5.5.3",
-    "webpack": "^5.92.1"
+    "webpack": "^5.93.0"
   },
   "peerDependencies": {
     "react": "^16.9.34 || ^17 || ^18"
