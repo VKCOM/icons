@@ -46,7 +46,7 @@
     "size-limit": "^11.1.4",
     "style-loader": "^4.0.0",
     "swc-loader": "0.2.6",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "webpack": "^5.93.0"
   },
   "peerDependencies": {
