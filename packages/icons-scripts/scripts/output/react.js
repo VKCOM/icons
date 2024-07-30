@@ -2,6 +2,7 @@ const { dashToCamel } = require('../utils');
 
 function createReactIcon({
   id,
+  attrs,
   width,
   height,
   viewBox,
@@ -52,6 +53,7 @@ export const ${componentName} = makeIcon<${componentName}Props, ${typeAssigns}>(
   ${height},
   ${!!deprecated},
   ${replacement ? `'${replacement}'` : undefined}
+  ${attrs ? `, ${JSON.stringify(attrs)}` : ''}
 );
 ${assigns}
 `;
