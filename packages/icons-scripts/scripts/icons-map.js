@@ -15,6 +15,7 @@ const { dashToCamel, sortArrayAlphabetically, longestCommonPrefix } = require('.
  * @property {string} componentName
  * @property {string} content
  * @property {Icon[]} subcomponents
+ * @property {Record<string, string>} [attrs]
  * @property {boolean} [isSubcomponent]
  */
 
@@ -211,6 +212,12 @@ async function prepareIconMapEntity(compiler, icon, optimizeFn) {
   const symbol = await compiler.addSymbol({ content, id: icon.filename, path: '' });
 
   const viewBox = symbol.viewBox;
+  // Список поддерживаемых аттрибутов, которые дублируются с symbol-элемента на svg-элемент, который ссылается на symbol
+  const attrs = Object.fromEntries(
+    Object.entries({
+      preserveAspectRatio: symbol.tree[0]?.attrs.preserveAspectRatio,
+    }).filter(([, value]) => value !== undefined),
+  );
   const width = viewBox.split(' ')[2];
   const height = viewBox.split(' ')[3];
 
@@ -220,6 +227,7 @@ async function prepareIconMapEntity(compiler, icon, optimizeFn) {
     height,
     content,
     viewBox,
+    attrs: Object.keys(attrs).length ? attrs : undefined,
     subcomponents,
     symbolId: symbol.id,
     symbol: symbol.render(),

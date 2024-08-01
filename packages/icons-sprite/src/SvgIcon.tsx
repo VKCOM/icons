@@ -74,6 +74,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps, Subcomponent
   height: number,
   deprecated?: boolean,
   replacement?: string,
+  attrs?: Record<string, string>,
 ): React.FC<Props> & Subcomponents {
   let isMounted = false;
   function mountIcon() {
@@ -95,6 +96,7 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps, Subcomponent
 
     return (
       <SvgIcon
+        {...attrs}
         {...props}
         viewBox={viewBox}
         id={id}

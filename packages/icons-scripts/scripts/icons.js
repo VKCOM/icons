@@ -118,6 +118,7 @@ function generateIcons(options) {
       height,
       dirname,
       size,
+      attrs,
       subcomponents,
       isSubcomponent,
     } = icon;
@@ -127,6 +128,7 @@ function generateIcons(options) {
     // Превращаем svg-файл в ts-файл в виде строки
     const reactSource = createReactIcon({
       id: symbolId,
+      attrs,
       width,
       height,
       viewBox,
