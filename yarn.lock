@@ -1385,7 +1385,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-monorepo@workspace:."
   dependencies:
-    "@vkontakte/prettier-config": ^0.1.0
+    "@vkontakte/prettier-config": ^0.2.0
     prettier: ^3.0.3
   languageName: unknown
   linkType: soft
@@ -1455,12 +1455,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vkontakte/prettier-config@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@vkontakte/prettier-config@npm:0.1.0"
+"@vkontakte/prettier-config@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@vkontakte/prettier-config@npm:0.2.0"
   peerDependencies:
-    prettier: ^2.7.1
-  checksum: 0b761112b0c232a4d0ba9b58aad5e6e2062dbb74530d4fdc26afcec3efe32e657aac82464dff30662637a2f5808c16f8bd69e0d6dadd66929f830a7efbee760f
+    prettier: ^3.0.0
+  checksum: 6cf0f9ea27343f2bd0f50fcc3409f0d54c974b13de7e512a4e4232aa7b152d2610a4a1044898c5c73fc48ffa3c056713409d66452aa52f3bf93a688ead99ea1c
   languageName: node
   linkType: hard
 
