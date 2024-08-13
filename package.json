@@ -20,7 +20,7 @@
     "prettier:check"
   ],
   "devDependencies": {
-    "@vkontakte/prettier-config": "^0.1.0",
+    "@vkontakte/prettier-config": "^0.2.1",
     "prettier": "^3.0.3"
   },
   "packageManager": "yarn@3.6.0"
