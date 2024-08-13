@@ -16,11 +16,12 @@
     "size": "yarn workspace @vkontakte/icons run size",
     "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version"
   },
+  "prettier": "@vkontakte/prettier-config",
   "pre-commit": [
     "prettier:check"
   ],
   "devDependencies": {
-    "@vkontakte/prettier-config": "^0.1.0",
+    "@vkontakte/prettier-config": "^0.2.1",
     "prettier": "^3.0.3"
   },
   "packageManager": "yarn@3.6.0"
