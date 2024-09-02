@@ -33,7 +33,7 @@
     "@size-limit/file": "^11.1.4",
     "@size-limit/webpack": "^11.1.4",
     "@swc/cli": "^0.4.0",
-    "@swc/core": "^1.7.12",
+    "@swc/core": "^1.7.22",
     "@types/react": "16.14.34",
     "@vkontakte/icons-scripts": "workspace:*",
     "css-loader": "^7.1.2",
