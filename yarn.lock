@@ -850,13 +850,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/merge-streams@npm:^2.1.0":
-  version: 2.3.0
-  resolution: "@sindresorhus/merge-streams@npm:2.3.0"
-  checksum: e989d53dee68d7e49b4ac02ae49178d561c461144cea83f66fa91ff012d981ad0ad2340cbd13f2fdb57989197f5c987ca22a74eb56478626f04e79df84291159
-  languageName: node
-  linkType: hard
-
 "@sinonjs/commons@npm:^3.0.0":
   version: 3.0.0
   resolution: "@sinonjs/commons@npm:3.0.0"
@@ -875,24 +868,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^11.1.4":
-  version: 11.1.4
-  resolution: "@size-limit/file@npm:11.1.4"
+"@size-limit/file@npm:^11.1.5":
+  version: 11.1.5
+  resolution: "@size-limit/file@npm:11.1.5"
   peerDependencies:
-    size-limit: 11.1.4
-  checksum: 6f2670af16434d4755a215b784a1177143f3627469b4ada6e9403fc479c1e9df46f0b331ea1af2121e246e936340e881459061fedc0fbf5adf5dee1de8e8175a
+    size-limit: 11.1.5
+  checksum: 5587ef990161cc5ace5ce81d95fcc602a82e03657dd56579ae85503aa4cd50b5a9cb262e819e79ec8959d36afaa79b663aed5100924860e3ba29a8366820d5fb
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^11.1.4":
-  version: 11.1.4
-  resolution: "@size-limit/webpack@npm:11.1.4"
+"@size-limit/webpack@npm:^11.1.5":
+  version: 11.1.5
+  resolution: "@size-limit/webpack@npm:11.1.5"
   dependencies:
     nanoid: ^5.0.7
-    webpack: ^5.91.0
+    webpack: ^5.94.0
   peerDependencies:
-    size-limit: 11.1.4
-  checksum: d6de87416efd2a13ee0ff74588ab74d3e1060cad868df089b90e334c36865f5b5f02986c787a59fe01cfeb686e98c0d71f9b7a7380d50324533454a33169995a
+    size-limit: 11.1.5
+  checksum: 6211b2684ee7b4710822f8cca0d11e1d3d1c7f1bee7bd2e4cfad9840089b888316f56dfc34523328423d502db4bf302bcad6a7eac983bac57941df8b0cb3c694
   languageName: node
   linkType: hard
 
@@ -1378,8 +1371,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": ^11.1.4
-    "@size-limit/webpack": ^11.1.4
+    "@size-limit/file": ^11.1.5
+    "@size-limit/webpack": ^11.1.5
     "@swc/cli": ^0.4.0
     "@swc/core": ^1.7.24
     "@swc/helpers": ^0.5.12
@@ -1390,7 +1383,7 @@ __metadata:
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     react: 16.10.0
-    size-limit: ^11.1.4
+    size-limit: ^11.1.5
     ts-node: ^10.9.2
     typescript: ^5.5.4
   peerDependencies:
@@ -1402,8 +1395,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons@workspace:packages/icons"
   dependencies:
-    "@size-limit/file": ^11.1.4
-    "@size-limit/webpack": ^11.1.4
+    "@size-limit/file": ^11.1.5
+    "@size-limit/webpack": ^11.1.5
     "@swc/cli": ^0.4.0
     "@swc/core": ^1.7.24
     "@types/react": 16.14.34
@@ -1416,7 +1409,7 @@ __metadata:
     react: 16.10.0
     react-color: ^2.18.0
     react-dom: ^16.9.0
-    size-limit: ^11.1.4
+    size-limit: ^11.1.5
     style-loader: ^4.0.0
     swc-loader: 0.2.6
     typescript: ^5.5.4
@@ -3317,7 +3310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.5, fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.5":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -3359,6 +3352,18 @@ __metadata:
   dependencies:
     bser: 2.1.1
   checksum: b15a124cef28916fe07b400eb87cbc73ca082c142abf7ca8e8de6af43eca79ca7bd13eb4d4d48240b3bd3136eaac40d16e42d6edf87a8e5d1dd8070626860c78
+  languageName: node
+  linkType: hard
+
+"fdir@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "fdir@npm:6.3.0"
+  peerDependencies:
+    picomatch: ^3 || ^4
+  peerDependenciesMeta:
+    picomatch:
+      optional: true
+  checksum: c0fe6ddd4aa0a315a55401d468974b582b1880908c8f7b1b1c40db4cd2feb2c04402d2fbdbd6ad049f6261e0d7cd6e629cc5ae678f8883f245ebc1f94b6ff9e6
   languageName: node
   linkType: hard
 
@@ -3650,20 +3655,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "globby@npm:14.0.1"
-  dependencies:
-    "@sindresorhus/merge-streams": ^2.1.0
-    fast-glob: ^3.3.2
-    ignore: ^5.2.4
-    path-type: ^5.0.0
-    slash: ^5.1.0
-    unicorn-magic: ^0.1.0
-  checksum: 33568444289afb1135ad62d52d5e8412900cec620e3b6ece533afa46d004066f14b97052b643833d7cf4ee03e7fac571430130cde44c333df91a45d313105170
-  languageName: node
-  linkType: hard
-
 "got@npm:^11.8.5":
   version: 11.8.6
   resolution: "got@npm:11.8.6"
@@ -3944,13 +3935,6 @@ __metadata:
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
-  languageName: node
-  linkType: hard
-
-"ignore@npm:^5.2.4":
-  version: 5.2.4
-  resolution: "ignore@npm:5.2.4"
-  checksum: 3d4c309c6006e2621659311783eaea7ebcd41fe4ca1d78c91c473157ad6666a57a2df790fe0d07a12300d9aac2888204d7be8d59f9aaf665b1c7fcdb432517ef
   languageName: node
   linkType: hard
 
@@ -4825,12 +4809,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.21.0":
-  version: 1.21.0
-  resolution: "jiti@npm:1.21.0"
+"jiti@npm:^1.21.6":
+  version: 1.21.6
+  resolution: "jiti@npm:1.21.6"
   bin:
     jiti: bin/jiti.js
-  checksum: a7bd5d63921c170eaec91eecd686388181c7828e1fa0657ab374b9372bfc1f383cf4b039e6b272383d5cb25607509880af814a39abdff967322459cca41f2961
+  checksum: 9ea4a70a7bb950794824683ed1c632e2ede26949fbd348e2ba5ec8dc5efa54dc42022d85ae229cadaa60d4b95012e80ea07d625797199b688cc22ab0e8891d32
   languageName: node
   linkType: hard
 
@@ -5028,10 +5012,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lilconfig@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "lilconfig@npm:3.1.1"
-  checksum: dc8a4f4afde3f0fac6bd36163cc4777a577a90759b8ef1d0d766b19ccf121f723aa79924f32af5b954f3965268215e046d0f237c41c76e5ef01d4e6d1208a15e
+"lilconfig@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "lilconfig@npm:3.1.2"
+  checksum: 4e8b83ddd1d0ad722600994e6ba5d858ddca14f0587aa6b9c8185e17548149b5e13d4d583d811e9e9323157fa8c6a527e827739794c7502b59243c58e210b8c3
   languageName: node
   linkType: hard
 
@@ -5938,13 +5922,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-type@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "path-type@npm:5.0.0"
-  checksum: 15ec24050e8932c2c98d085b72cfa0d6b4eeb4cbde151a0a05726d8afae85784fc5544f733d8dfc68536587d5143d29c0bd793623fad03d7e61cc00067291cd5
-  languageName: node
-  linkType: hard
-
 "peek-readable@npm:^5.0.0":
   version: 5.0.0
   resolution: "peek-readable@npm:5.0.0"
@@ -5959,10 +5936,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0, picocolors@npm:^1.0.1":
+"picocolors@npm:^1.0.0":
   version: 1.0.1
   resolution: "picocolors@npm:1.0.1"
   checksum: fa68166d1f56009fc02a34cdfd112b0dd3cf1ef57667ac57281f714065558c01828cdf4f18600ad6851cbe0093952ed0660b1e0156bddf2184b6aaf5817553a5
+  languageName: node
+  linkType: hard
+
+"picocolors@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "picocolors@npm:1.1.0"
+  checksum: a64d653d3a188119ff45781dfcdaeedd7625583f45280aea33fcb032c7a0d3959f2368f9b192ad5e8aade75b74dbd954ffe3106c158509a45e4c18ab379a2acd
   languageName: node
   linkType: hard
 
@@ -5970,6 +5954,13 @@ __metadata:
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
+  languageName: node
+  linkType: hard
+
+"picomatch@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "picomatch@npm:4.0.2"
+  checksum: a7a5188c954f82c6585720e9143297ccd0e35ad8072231608086ca950bee672d51b0ef676254af0788205e59bd4e4deb4e7708769226bed725bf13370a7d1464
   languageName: node
   linkType: hard
 
@@ -6794,20 +6785,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^11.1.4":
-  version: 11.1.4
-  resolution: "size-limit@npm:11.1.4"
+"size-limit@npm:^11.1.5":
+  version: 11.1.5
+  resolution: "size-limit@npm:11.1.5"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.6.0
-    globby: ^14.0.1
-    jiti: ^1.21.0
-    lilconfig: ^3.1.1
+    jiti: ^1.21.6
+    lilconfig: ^3.1.2
     nanospinner: ^1.1.0
-    picocolors: ^1.0.1
+    picocolors: ^1.1.0
+    tinyglobby: ^0.2.6
   bin:
     size-limit: bin.js
-  checksum: 6141aa11b8e45c615bcb8dc51c9876e8a55c72d679080c358bbcd2645d5b9a0e43ce8a0fb08120493d5a096b503838bb64591d0ea7a66fa2d9ef2acfea5ad306
+  checksum: 3325cfe5f5cbbea1282f9db761d5a79287c998a363052502f36c201bbd863fc84ddb6b0e54707073772800142e8a2638352e384459c68cf9ea4613795b5f28e7
   languageName: node
   linkType: hard
 
@@ -6815,13 +6806,6 @@ __metadata:
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
   checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
-  languageName: node
-  linkType: hard
-
-"slash@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "slash@npm:5.1.0"
-  checksum: 70434b34c50eb21b741d37d455110258c42d2cf18c01e6518aeb7299f3c6e626330c889c0c552b5ca2ef54a8f5a74213ab48895f0640717cacefeef6830a1ba4
   languageName: node
   linkType: hard
 
@@ -7356,6 +7340,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tinyglobby@npm:^0.2.6":
+  version: 0.2.6
+  resolution: "tinyglobby@npm:0.2.6"
+  dependencies:
+    fdir: ^6.3.0
+    picomatch: ^4.0.2
+  checksum: 5a1844369f1c11b54b4405c267a968b87ae08a6b68dca9c00a99bc5d03e0396901c04bb5e7e78675b5b70d3d93c65707ba0340845e7bba54f66c9fea29280224
+  languageName: node
+  linkType: hard
+
 "tmpl@npm:1.0.5":
   version: 1.0.5
   resolution: "tmpl@npm:1.0.5"
@@ -7582,13 +7576,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unicorn-magic@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "unicorn-magic@npm:0.1.0"
-  checksum: 48c5882ca3378f380318c0b4eb1d73b7e3c5b728859b060276e0a490051d4180966beeb48962d850fd0c6816543bcdfc28629dcd030bb62a286a2ae2acb5acb6
-  languageName: node
-  linkType: hard
-
 "union-value@npm:^1.0.0":
   version: 1.0.1
   resolution: "union-value@npm:1.0.1"
@@ -7764,7 +7751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.91.0, webpack@npm:^5.94.0":
+"webpack@npm:^5.94.0":
   version: 5.94.0
   resolution: "webpack@npm:5.94.0"
   dependencies:
