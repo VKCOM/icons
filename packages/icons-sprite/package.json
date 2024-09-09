@@ -28,7 +28,7 @@
     "@size-limit/file": "^11.1.4",
     "@size-limit/webpack": "^11.1.4",
     "@swc/cli": "^0.4.0",
-    "@swc/core": "^1.7.22",
+    "@swc/core": "^1.7.24",
     "@swc/jest": "^0.2.36",
     "@types/node": "^22.5.2",
     "@types/react": "16.14.34",
