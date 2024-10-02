@@ -29,7 +29,7 @@ function createReactIcon({
   // Чтобы nextjs мог рендерить иконки как серверные компоненты
   return `'use client';
 
-import { SVGProps, Ref } from 'react';
+import { SVGProps, Ref, FC } from 'react';
 import { makeIcon } from '@vkontakte/icons-sprite';
 ${subcomponentsImports}
 
@@ -44,7 +44,7 @@ export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
 }
 
 ${jsdoc}
-export const ${componentName} = makeIcon<${componentName}Props, ${typeAssigns}>(
+export const ${componentName}: FC<${componentName}Props> & ${typeAssigns} = makeIcon<${componentName}Props, ${typeAssigns}>(
   '${componentName}',
   '${id}',
   '${viewBox}',
