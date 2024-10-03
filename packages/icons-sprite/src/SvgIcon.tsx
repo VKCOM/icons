@@ -8,17 +8,22 @@ export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   height?: number;
   getRootRef?: React.Ref<SVGSVGElement>;
   title?: string;
+  /**
+   * @ignore
+   */
+  iconId?: string;
 }
 
 const SvgIcon = ({
   width = 0,
   height = 0,
-  viewBox,
-  id,
-  className = '',
+  display = 'block',
+  'aria-hidden': ariaHidden = true,
+  iconId,
+  className,
   fill,
   getRootRef,
-  style: propsStyle = {},
+  'style': propsStyle,
   title,
   children,
   ...restProps
@@ -37,28 +42,27 @@ const SvgIcon = ({
 
   return (
     <svg
-      aria-hidden="true"
-      display="block"
-      {...restProps}
+      aria-hidden={ariaHidden}
+      display={display}
       className={[
         'vkuiIcon',
         `vkuiIcon--${size}`,
         `vkuiIcon--w-${width}`,
         `vkuiIcon--h-${height}`,
-        `vkuiIcon--${id}`,
+        `vkuiIcon--${iconId}`,
         className,
       ]
         .join(' ')
         .trim()}
-      viewBox={viewBox}
       width={width}
       height={height}
       style={style}
       ref={getRootRef}
+      {...restProps}
     >
       {title && <title>{title}</title>}
       {hasIconChildren && children}
-      <use xlinkHref={`#${id}`} style={{ fill: 'currentColor', color: fill }}>
+      <use xlinkHref={`#${iconId}`} style={{ fill: 'currentColor', color: fill }}>
         {!hasIconChildren && children}
       </use>
     </svg>
@@ -67,7 +71,7 @@ const SvgIcon = ({
 
 export function makeIcon<Props extends SvgIconProps = SvgIconProps, Subcomponents = {}>(
   componentName: string,
-  id: string,
+  iconId: string,
   viewBox: string,
   content: string,
   width: number,
@@ -97,9 +101,9 @@ export function makeIcon<Props extends SvgIconProps = SvgIconProps, Subcomponent
     return (
       <SvgIcon
         {...attrs}
-        {...props}
         viewBox={viewBox}
-        id={id}
+        iconId={iconId}
+        {...props}
         width={props.width !== undefined && !isNaN(props.width) ? +props.width : width}
         height={props.height !== undefined && !isNaN(props.height) ? +props.height : height}
       />
