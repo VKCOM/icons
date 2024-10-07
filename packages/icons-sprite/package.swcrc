@@ -10,6 +10,11 @@
       "syntax": "typescript",
       "tsx": true
     },
+    "transform": {
+      "react": {
+        "runtime": "automatic"
+      }
+    },
     "target": "es5",
     "preserveAllComments": true
   },
