@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserSymbol } from './browser-symbol';
 import { addSpriteSymbol, useIsomorphicLayoutEffect } from './sprite';
 import { warnOnce } from './warnOnce';
