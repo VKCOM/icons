@@ -868,24 +868,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^11.1.5":
-  version: 11.1.5
-  resolution: "@size-limit/file@npm:11.1.5"
+"@size-limit/file@npm:^11.1.6":
+  version: 11.1.6
+  resolution: "@size-limit/file@npm:11.1.6"
   peerDependencies:
-    size-limit: 11.1.5
-  checksum: 5587ef990161cc5ace5ce81d95fcc602a82e03657dd56579ae85503aa4cd50b5a9cb262e819e79ec8959d36afaa79b663aed5100924860e3ba29a8366820d5fb
+    size-limit: 11.1.6
+  checksum: 5d26178cb9488d4ec8446c4cfee770a48450755636984ce0748255e3782555cf0a7cd944f879ad3dc5e661e6b57b0996b0feead72a73596b8d13aef6d2a0bfcf
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^11.1.5":
-  version: 11.1.5
-  resolution: "@size-limit/webpack@npm:11.1.5"
+"@size-limit/webpack@npm:^11.1.6":
+  version: 11.1.6
+  resolution: "@size-limit/webpack@npm:11.1.6"
   dependencies:
     nanoid: ^5.0.7
-    webpack: ^5.94.0
+    webpack: ^5.95.0
   peerDependencies:
-    size-limit: 11.1.5
-  checksum: 6211b2684ee7b4710822f8cca0d11e1d3d1c7f1bee7bd2e4cfad9840089b888316f56dfc34523328423d502db4bf302bcad6a7eac983bac57941df8b0cb3c694
+    size-limit: 11.1.6
+  checksum: 01ce52004f933daf1db41ecdc5a97c707bd5533f4ded5e3df34186896818f4962b0284810e188890ea8bb5c7e2a307f0096c04382c559cf873c9b0c2e618e9ab
   languageName: node
   linkType: hard
 
@@ -1371,8 +1371,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": ^11.1.5
-    "@size-limit/webpack": ^11.1.5
+    "@size-limit/file": ^11.1.6
+    "@size-limit/webpack": ^11.1.6
     "@swc/cli": ^0.4.0
     "@swc/core": ^1.7.26
     "@swc/helpers": ^0.5.13
@@ -1383,7 +1383,7 @@ __metadata:
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     react: 16.10.0
-    size-limit: ^11.1.5
+    size-limit: ^11.1.6
     ts-node: ^10.9.2
     typescript: ^5.6.2
   peerDependencies:
@@ -1395,8 +1395,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons@workspace:packages/icons"
   dependencies:
-    "@size-limit/file": ^11.1.5
-    "@size-limit/webpack": ^11.1.5
+    "@size-limit/file": ^11.1.6
+    "@size-limit/webpack": ^11.1.6
     "@swc/cli": ^0.4.0
     "@swc/core": ^1.7.26
     "@types/react": 16.14.34
@@ -1409,7 +1409,7 @@ __metadata:
     react: 16.10.0
     react-color: ^2.18.0
     react-dom: ^16.9.0
-    size-limit: ^11.1.5
+    size-limit: ^11.1.6
     style-loader: ^4.0.0
     swc-loader: 0.2.6
     typescript: ^5.6.2
@@ -1760,7 +1760,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"anymatch@npm:^3.0.3, anymatch@npm:~3.1.2":
+"anymatch@npm:^3.0.3":
   version: 3.1.3
   resolution: "anymatch@npm:3.1.3"
   dependencies:
@@ -1980,13 +1980,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"binary-extensions@npm:^2.0.0":
-  version: 2.2.0
-  resolution: "binary-extensions@npm:2.2.0"
-  checksum: ccd267956c58d2315f5d3ea6757cf09863c5fc703e50fbeb13a7dc849b812ef76e3cf9ca8f35a0c48498776a7478d7b4a0418e1e2b8cb9cb9731f2922aaad7f8
-  languageName: node
-  linkType: hard
-
 "bluebird@npm:^3.5.0":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
@@ -2038,7 +2031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"braces@npm:^3.0.2, braces@npm:~3.0.2":
+"braces@npm:^3.0.2":
   version: 3.0.2
   resolution: "braces@npm:3.0.2"
   dependencies:
@@ -2222,22 +2215,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "chokidar@npm:3.6.0"
+"chokidar@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "chokidar@npm:4.0.1"
   dependencies:
-    anymatch: ~3.1.2
-    braces: ~3.0.2
-    fsevents: ~2.3.2
-    glob-parent: ~5.1.2
-    is-binary-path: ~2.1.0
-    is-glob: ~4.0.1
-    normalize-path: ~3.0.0
-    readdirp: ~3.6.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  checksum: d2f29f499705dcd4f6f3bbed79a9ce2388cf530460122eed3b9c48efeab7a4e28739c6551fd15bec9245c6b9eeca7a32baa64694d64d9b6faeb74ddb8c4a413d
+    readdirp: ^4.0.1
+  checksum: 193da9786b0422a895d59c7552195d15c6c636e6a2293ae43d09e34e243e24ccd02d693f007c767846a65abbeae5fea6bfacb8fc2ddec4ea4d397620d552010d
   languageName: node
   linkType: hard
 
@@ -3355,15 +3338,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fdir@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "fdir@npm:6.3.0"
+"fdir@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "fdir@npm:6.4.0"
   peerDependencies:
     picomatch: ^3 || ^4
   peerDependenciesMeta:
     picomatch:
       optional: true
-  checksum: c0fe6ddd4aa0a315a55401d468974b582b1880908c8f7b1b1c40db4cd2feb2c04402d2fbdbd6ad049f6261e0d7cd6e629cc5ae678f8883f245ebc1f94b6ff9e6
+  checksum: 63b4dc592c662d0c4703ffcae1e3ad15901c0b9f64e742dff1bbc74f58029b1a43f4d05b0ab75503a0b9fc7a616d8a755cd56ea680504b6a1e87249ec79b43f3
   languageName: node
   linkType: hard
 
@@ -3510,7 +3493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:^2.3.2, fsevents@npm:~2.3.2":
+"fsevents@npm:^2.3.2":
   version: 2.3.2
   resolution: "fsevents@npm:2.3.2"
   dependencies:
@@ -3520,7 +3503,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
+"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
   resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
@@ -3587,7 +3570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
+"glob-parent@npm:^5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
   dependencies:
@@ -4032,15 +4015,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-binary-path@npm:~2.1.0":
-  version: 2.1.0
-  resolution: "is-binary-path@npm:2.1.0"
-  dependencies:
-    binary-extensions: ^2.0.0
-  checksum: 84192eb88cff70d320426f35ecd63c3d6d495da9d805b19bc65b518984b7c0760280e57dbf119b7e9be6b161784a5a673ab2c6abe83abb5198a432232ad5b35c
-  languageName: node
-  linkType: hard
-
 "is-buffer@npm:^1.1.5":
   version: 1.1.6
   resolution: "is-buffer@npm:1.1.6"
@@ -4134,7 +4108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-glob@npm:^4.0.1, is-glob@npm:~4.0.1":
+"is-glob@npm:^4.0.1":
   version: 4.0.3
   resolution: "is-glob@npm:4.0.3"
   dependencies:
@@ -4809,12 +4783,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.21.6":
-  version: 1.21.6
-  resolution: "jiti@npm:1.21.6"
+"jiti@npm:^2.0.0":
+  version: 2.3.3
+  resolution: "jiti@npm:2.3.3"
   bin:
-    jiti: bin/jiti.js
-  checksum: 9ea4a70a7bb950794824683ed1c632e2ede26949fbd348e2ba5ec8dc5efa54dc42022d85ae229cadaa60d4b95012e80ea07d625797199b688cc22ab0e8891d32
+    jiti: lib/jiti-cli.mjs
+  checksum: f1a2b87d937569c966f00a8c9153c8f3e02445b31e034fdaed1b9639a4ecfae3c4df24c7644d5b4764c566f8dee09132a5b55cd049b48e618024accd31d8e6b3
   languageName: node
   linkType: hard
 
@@ -5623,7 +5597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"normalize-path@npm:^3.0.0, normalize-path@npm:~3.0.0":
+"normalize-path@npm:^3.0.0":
   version: 3.0.0
   resolution: "normalize-path@npm:3.0.0"
   checksum: 88eeb4da891e10b1318c4b2476b6e2ecbeb5ff97d946815ffea7794c31a89017c70d7f34b3c2ebf23ef4e9fc9fb99f7dffe36da22011b5b5c6ffa34f4873ec20
@@ -5950,7 +5924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3, picomatch@npm:^2.3.1":
+"picomatch@npm:^2.0.4, picomatch@npm:^2.2.3, picomatch@npm:^2.3.1":
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
@@ -6430,12 +6404,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readdirp@npm:~3.6.0":
-  version: 3.6.0
-  resolution: "readdirp@npm:3.6.0"
-  dependencies:
-    picomatch: ^2.2.1
-  checksum: 1ced032e6e45670b6d7352d71d21ce7edf7b9b928494dcaba6f11fba63180d9da6cd7061ebc34175ffda6ff529f481818c962952004d273178acd70f7059b320
+"readdirp@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "readdirp@npm:4.0.2"
+  checksum: 309376e717f94fb7eb61bec21e2603243a9e2420cd2e9bf94ddf026aefea0d7377ed1a62f016d33265682e44908049a55c3cfc2307450a1421654ea008489b39
   languageName: node
   linkType: hard
 
@@ -6785,20 +6757,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^11.1.5":
-  version: 11.1.5
-  resolution: "size-limit@npm:11.1.5"
+"size-limit@npm:^11.1.6":
+  version: 11.1.6
+  resolution: "size-limit@npm:11.1.6"
   dependencies:
     bytes-iec: ^3.1.1
-    chokidar: ^3.6.0
-    jiti: ^1.21.6
+    chokidar: ^4.0.1
+    jiti: ^2.0.0
     lilconfig: ^3.1.2
     nanospinner: ^1.1.0
     picocolors: ^1.1.0
-    tinyglobby: ^0.2.6
+    tinyglobby: ^0.2.7
   bin:
     size-limit: bin.js
-  checksum: 3325cfe5f5cbbea1282f9db761d5a79287c998a363052502f36c201bbd863fc84ddb6b0e54707073772800142e8a2638352e384459c68cf9ea4613795b5f28e7
+  checksum: b3c2bae97a955a1a7b1d28a4cedff36d054a715e2627cb895a04eed5397429a4fc4e78163c95a799b1a4e71f4ee1c1168e190e662cc99495bc03b82e9a960d6e
   languageName: node
   linkType: hard
 
@@ -7340,13 +7312,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyglobby@npm:^0.2.6":
-  version: 0.2.6
-  resolution: "tinyglobby@npm:0.2.6"
+"tinyglobby@npm:^0.2.7":
+  version: 0.2.9
+  resolution: "tinyglobby@npm:0.2.9"
   dependencies:
-    fdir: ^6.3.0
+    fdir: ^6.4.0
     picomatch: ^4.0.2
-  checksum: 5a1844369f1c11b54b4405c267a968b87ae08a6b68dca9c00a99bc5d03e0396901c04bb5e7e78675b5b70d3d93c65707ba0340845e7bba54f66c9fea29280224
+  checksum: 6fa652880c963324dbb66ee39ae9e8d809bec8d9ac4f100ee420d31df12b3d1c4bb438684ac8ade040a6916131511495db2cf3259bb067cd0af27ba1552d5efc
   languageName: node
   linkType: hard
 
