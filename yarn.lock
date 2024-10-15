@@ -1263,16 +1263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 20.14.0
-  resolution: "@types/node@npm:20.14.0"
-  dependencies:
-    undici-types: ~5.26.4
-  checksum: b62383ea004deb1b40c0612f373eaf02247381b65a90f7957dc3034dda9b5622ab61b7afafa82f67909667a5cf9ea43a0643b2a78ea295dac8b77e75e11470d7
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^22.5.5":
+"@types/node@npm:*, @types/node@npm:^22.5.5":
   version: 22.5.5
   resolution: "@types/node@npm:22.5.5"
   dependencies:
@@ -5910,14 +5901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "picocolors@npm:1.0.1"
-  checksum: fa68166d1f56009fc02a34cdfd112b0dd3cf1ef57667ac57281f714065558c01828cdf4f18600ad6851cbe0093952ed0660b1e0156bddf2184b6aaf5817553a5
-  languageName: node
-  linkType: hard
-
-"picocolors@npm:^1.1.0":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.1.0":
   version: 1.1.0
   resolution: "picocolors@npm:1.1.0"
   checksum: a64d653d3a188119ff45781dfcdaeedd7625583f45280aea33fcb032c7a0d3959f2368f9b192ad5e8aade75b74dbd954ffe3106c158509a45e4c18ab379a2acd
@@ -7534,13 +7518,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
-  languageName: node
-  linkType: hard
-
 "undici-types@npm:~6.19.2":
   version: 6.19.6
   resolution: "undici-types@npm:6.19.6"
@@ -7720,42 +7697,6 @@ __metadata:
   version: 3.2.3
   resolution: "webpack-sources@npm:3.2.3"
   checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
-  languageName: node
-  linkType: hard
-
-"webpack@npm:^5.94.0":
-  version: 5.94.0
-  resolution: "webpack@npm:5.94.0"
-  dependencies:
-    "@types/estree": ^1.0.5
-    "@webassemblyjs/ast": ^1.12.1
-    "@webassemblyjs/wasm-edit": ^1.12.1
-    "@webassemblyjs/wasm-parser": ^1.12.1
-    acorn: ^8.7.1
-    acorn-import-attributes: ^1.9.5
-    browserslist: ^4.21.10
-    chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.17.1
-    es-module-lexer: ^1.2.1
-    eslint-scope: 5.1.1
-    events: ^3.2.0
-    glob-to-regexp: ^0.4.1
-    graceful-fs: ^4.2.11
-    json-parse-even-better-errors: ^2.3.1
-    loader-runner: ^4.2.0
-    mime-types: ^2.1.27
-    neo-async: ^2.6.2
-    schema-utils: ^3.2.0
-    tapable: ^2.1.1
-    terser-webpack-plugin: ^5.3.10
-    watchpack: ^2.4.1
-    webpack-sources: ^3.2.3
-  peerDependenciesMeta:
-    webpack-cli:
-      optional: true
-  bin:
-    webpack: bin/webpack.js
-  checksum: 6a3d667be304a69cd6dcb8d676bc29f47642c0d389af514cfcd646eaaa809961bc6989fc4b2621a717dfc461130f29c6e20006d62a32e012dafaa9517813a4e6
   languageName: node
   linkType: hard
 
