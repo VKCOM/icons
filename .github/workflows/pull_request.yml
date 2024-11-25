@@ -13,12 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'yarn'
-          node-version: 18
 
-      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+      - name: Node setup
+        uses: ./.github/actions/node-setup
+
       - run: yarn build
       - name: Uploading docs artifact
         uses: actions/upload-artifact@v4
@@ -73,11 +71,10 @@ jobs:
       CI_JOB_NUMBER: 1
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'yarn'
-      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+
+      - name: Node setup
+        uses: ./.github/actions/node-setup
+
       - run: yarn workspace @vkontakte/icons-sprite build
       - uses: andresz1/size-limit-action@v1.8.0
         with:
@@ -92,10 +89,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'yarn'
-          node-version: 18
 
-      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+      - name: Node setup
+        uses: ./.github/actions/node-setup
+
       - run: yarn test
+
+  check_dependencies:
+    runs-on: ubuntu-latest
+    name: Check dependencies
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+        shell: bash
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: YARN_ENABLE_SCRIPTS=false yarn install --immutable --check-cache --check-resolutions
