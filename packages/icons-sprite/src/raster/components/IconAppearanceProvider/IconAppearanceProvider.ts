@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import * as React from 'react';
 
 export type IconAppearance = 'light' | 'dark';
 export const appearanceTypes: IconAppearance[] = ['light', 'dark'];
