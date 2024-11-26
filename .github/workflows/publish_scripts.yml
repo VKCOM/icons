@@ -40,14 +40,8 @@ jobs:
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'yarn'
-          always-auth: true
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+      - name: Node setup
+        uses: ./.github/actions/node-setup-auth
 
       - name: Set Git credentials
         run: |

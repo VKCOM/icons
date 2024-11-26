@@ -43,7 +43,6 @@
   "peerDependencies": {
     "react": "^16.9.34 || ^17 || ^18"
   },
-  "packageManager": "yarn@3.6.0",
   "size-limit": [
     {
       "name": "JS",
