@@ -1,6 +1,6 @@
-const glob = require('glob');
-const path = require('path');
-const { dashToCamel, sortArrayAlphabetically } = require('../utils');
+import * as glob from 'glob';
+import * as path from 'node:path';
+import { dashToCamel, sortArrayAlphabetically } from '../utils.js';
 
 /**
  * @typedef {Object} IconEntity
@@ -16,7 +16,7 @@ const { dashToCamel, sortArrayAlphabetically } = require('../utils');
 /**
  * @param {string} src
  */
-function createIconsMap(src) {
+export function createIconsMap(src) {
   const files = sortArrayAlphabetically(glob.sync(path.posix.join(src, `./png/**/*.png`)));
 
   /**
@@ -63,7 +63,3 @@ function createIconsMap(src) {
 function getIconComponentName(name) {
   return `RasterIcon${dashToCamel(name.replace(/([^]+)_([\d]+)$/, '$2_$1'))}`;
 }
-
-module.exports = {
-  createIconsMap,
-};

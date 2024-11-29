@@ -27,16 +27,23 @@ src/
 {
   "name": "@scope/react-icons-library",
   "version": "0.0.0",
-  "files": ["dist", "dist_es6", "src/svg"],
+  "files": ["dist", "src/svg"],
+  "type": "module",
   "main": "dist/index.js",
-  "module": "dist_es6/index.js",
+  "module": "dist/index.js",
   "typings": "dist/typings/index.d.ts",
-  "sideEffects": ["*.css"],
+  "exports": {
+    ".": {
+      "types": "./dist/typings/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build-icons": "node scripts/build-icons.js"
   },
   "dependencies": {
-    "@vkontakte/icons-sprite": "^1.0.1"
+    "@vkontakte/icons-sprite": "^1.0.1",
+    "@swc/helpers": "^0.5.15"
   },
   "peerDependencies": {
     "react": "^18.0.0"
@@ -52,7 +59,7 @@ src/
 **`scripts/build-icons.js`**:
 
 ```js
-const { generateIcons } = require('@vkontakte/icons-scripts');
+import { generateIcons } from '@vkontakte/icons-scripts';
 
 generateIcons({
   srcDirectory: './src',

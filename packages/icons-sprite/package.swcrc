@@ -1,8 +1,9 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
+  "$schema": "https://swc.rs/schema.json",
   "exclude": ["\\.(test|spec|e2e)\\.[jt]sx?$", "testing/"],
   "module": {
-    "type": "es6"
+    "type": "es6",
+    "resolveFully": true
   },
   "jsc": {
     "externalHelpers": true,
@@ -15,7 +16,11 @@
         "runtime": "automatic"
       }
     },
-    "target": "es5",
+    "target": "es2017",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules", "src/*"]
+    },
     "preserveAllComments": true
   },
   "sourceMaps": true

@@ -1,6 +1,6 @@
-const path = require('path');
-const fs = require('fs');
-const { debugError } = require('./utils');
+import * as path from 'node:path';
+import * as fs from 'node:fs';
+import { debugError } from './utils.js';
 
 /**
  * @typedef {Object.<string, string | null>} DeprecatedIcons
@@ -22,7 +22,7 @@ const { debugError } = require('./utils');
  * @param {GenerateOptions} options
  * @return {GenerateOptions}
  */
-function prepareOptions(options) {
+export function prepareOptions(options) {
   const {
     srcDirectory,
     distDirectory,
@@ -49,7 +49,6 @@ function prepareOptions(options) {
   return {
     srcDirectory: directoryPath(srcDirectory),
     distDirectory: directoryPath(distDirectory),
-    distES6Directory: directoryPath(`${distDirectory}_es6`),
     keepTSSources: keepTSSources == null ? !!tsFilesDirectory : keepTSSources,
     tsFilesDirectory: tsFilesDirectory
       ? directoryPath(tsFilesDirectory)
@@ -60,5 +59,3 @@ function prepareOptions(options) {
     deprecatedIcons,
   };
 }
-
-module.exports = { prepareOptions };

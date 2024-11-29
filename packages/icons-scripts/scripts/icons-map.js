@@ -1,8 +1,9 @@
-const glob = require('glob');
-const path = require('path');
-const fs = require('fs');
-const Compiler = require('svg-baker');
-const { dashToCamel, sortArrayAlphabetically, longestCommonPrefix } = require('./utils');
+import * as glob from 'glob';
+import * as path from 'node:path';
+import * as fs from 'node:fs';
+import { dashToCamel, sortArrayAlphabetically, longestCommonPrefix } from './utils.js';
+import { fromHtml } from 'hast-util-from-html';
+import toJsx from '@mapbox/hast-util-to-jsx';
 
 /**
  * @typedef {Object} Icon
@@ -175,7 +176,7 @@ function sortIconsByLongestCommonPrefix(icons) {
  * @param {(content: string) => string} [optimizeFn]
  * @return {Icon[]}
  */
-async function createIconsMap(
+export async function createIconsMap(
   src,
   extraCategories = [],
   prefix = '',
@@ -187,11 +188,50 @@ async function createIconsMap(
     ...extraCategories.map((category) => dirMap(src, category, prefix, deprecatedIcons)).flat(),
   ];
 
-  const compiler = new Compiler();
-
-  const promises = icons.map((icon) => prepareIconMapEntity(compiler, icon, optimizeFn));
+  const promises = icons.map((icon) => prepareIconMapEntity(icon, optimizeFn));
 
   return await Promise.all(promises);
+}
+
+const urlRegex = /url\(#(.*?)\)/g;
+
+/**
+ * Добавляет префикс для id внутри svg элемента
+ *
+ * @param {import('hast').RootContent} el
+ * @param {string} prefix
+ */
+function svgIdPrefix(el, prefix) {
+  if (!['element', 'root'].some((type) => type === el.type)) {
+    return;
+  }
+
+  for (const key in el.properties) {
+    if (!Object.prototype.hasOwnProperty.call(el.properties, key)) {
+      continue;
+    }
+
+    /**
+     * @type {string}
+     */
+    const value = el.properties[key];
+
+    if (key === 'id') {
+      el.properties[key] = `${prefix}__${value}`;
+      continue;
+    }
+
+    if (key === 'xLinkHref') {
+      el.properties[key] = `#${prefix}__${value.replace(/^#/, '')}`;
+      continue;
+    }
+
+    if (urlRegex.test(value)) {
+      el.properties[key] = value.replace(urlRegex, (match, id) => `url(#${prefix}__${id})`);
+    }
+  }
+
+  el.children.forEach((el) => svgIdPrefix(el, prefix));
 }
 
 /**
@@ -199,9 +239,9 @@ async function createIconsMap(
  * @param {Icon} icon
  * @param {(content: string) => string} [optimizeFn]
  */
-async function prepareIconMapEntity(compiler, icon, optimizeFn) {
+async function prepareIconMapEntity(icon, optimizeFn) {
   const subcomponentsPromises = icon.subcomponents?.map((icon) =>
-    prepareIconMapEntity(compiler, icon, optimizeFn),
+    prepareIconMapEntity(icon, optimizeFn),
   );
   const subcomponents = subcomponentsPromises
     ? await Promise.all(subcomponentsPromises)
@@ -209,31 +249,31 @@ async function prepareIconMapEntity(compiler, icon, optimizeFn) {
 
   const content = optimizeFn(icon.content);
 
-  const symbol = await compiler.addSymbol({ content, id: icon.filename, path: '' });
+  const tree = fromHtml(content, { fragment: true, space: 'svg' });
+  svgIdPrefix(tree, icon.filename);
 
-  const viewBox = symbol.viewBox;
-  // Список поддерживаемых аттрибутов, которые дублируются с symbol-элемента на svg-элемент, который ссылается на symbol
+  const svg = tree.children[0];
+  const svgContent = svg.children.reduce((jsxContent, tree) => jsxContent + toJsx(tree), '');
+
+  const viewBox = svg.properties.viewBox;
+  // Список поддерживаемых аттрибутов
   const attrs = Object.fromEntries(
     Object.entries({
-      preserveAspectRatio: symbol.tree[0]?.attrs.preserveAspectRatio,
+      fill: svg.properties.fill,
+      preserveAspectRatio: svg.properties.preserveAspectRatio,
     }).filter(([, value]) => value !== undefined),
   );
-  const width = viewBox.split(' ')[2];
-  const height = viewBox.split(' ')[3];
+  const width = svg.properties.width;
+  const height = svg.properties.height;
 
   return {
     ...icon,
-    width,
-    height,
-    content,
-    viewBox,
+    width: svg.properties.width,
+    height: svg.properties.height,
+    viewBox: svg.properties.viewBox,
     attrs: Object.keys(attrs).length ? attrs : undefined,
     subcomponents,
-    symbolId: symbol.id,
-    symbol: symbol.render(),
+    symbolId: icon.filename,
+    symbol: svgContent,
   };
 }
-
-module.exports = {
-  createIconsMap,
-};

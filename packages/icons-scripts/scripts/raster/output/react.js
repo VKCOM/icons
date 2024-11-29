@@ -1,5 +1,6 @@
-const path = require('path');
-const { appearanceTypes } = require('@vkontakte/icons-sprite');
+import * as path from 'node:path';
+
+const appearanceTypes = ['light', 'dark'];
 
 /**
  * @type {DensityBucketType[]}
@@ -12,7 +13,7 @@ const densityBucketTypes = ['mdpi', 'xhdpi', 'xxhdpi'];
  * @param {string} outputPath
  * @returns {string}
  */
-function createReactRasterIcon({ id, size, componentName, ...options }, outputPath) {
+export function createReactRasterIcon({ id, size, componentName, ...options }, outputPath) {
   /**
    * @type {Record<'densityBucketSetImports' | 'densityBucketAvailableImports', string[]>}
    */
@@ -57,7 +58,3 @@ export const ${componentName}: FC<${componentName}Props> = makeRasterIcon<${comp
 );
 `;
 }
-
-module.exports = {
-  createReactRasterIcon,
-};
