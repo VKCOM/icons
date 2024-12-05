@@ -38,6 +38,8 @@ export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} 
   height = ${height},
   viewBox = '${viewBox}',
   children,
+  style,
+  fill,
   ...restProps
 }: ${componentName}Props) => {
   return (
@@ -46,6 +48,7 @@ export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} 
       viewBox={viewBox}
       width={width}
       height={height}
+      style={{color: fill, ...style}}
       ${attrs ? `{...${JSON.stringify(attrs)}}` : ''}
       {...restProps}
     >
