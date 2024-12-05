@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 const iconsMap = fs.readFileSync(path.resolve(process.cwd(), 'dist/icons-map.json'), {
   encoding: 'utf-8',
 });
 
-module.exports = {
+export default {
   mode: 'production',
   entry: './src/docs/docs.js',
   output: {

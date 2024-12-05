@@ -1,17 +1,28 @@
 {
   "$schema": "https://swc.rs/schema.json",
+  "module": {
+    "type": "es6",
+    "resolveFully": true
+  },
   "jsc": {
+    "externalHelpers": true,
     "parser": {
       "syntax": "typescript",
       "tsx": true
-    },
-    "experimental": {
-      "emitIsolatedDts": true
     },
     "transform": {
       "react": {
         "runtime": "automatic"
       }
+    },
+    "target": "es2017",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules", "src/*"]
+    },
+    "preserveAllComments": true,
+    "experimental": {
+      "emitIsolatedDts": true
     }
   }
 }

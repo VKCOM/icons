@@ -1,8 +1,8 @@
-function debugInfo(...message) {
+export function debugInfo(...message) {
   console.info('[icons-scripts]', ...message);
 }
 
-function debugError(...message) {
+export function debugError(...message) {
   console.error('[icons-scripts]', ...message);
   process.exit(1);
 }
@@ -11,7 +11,7 @@ function debugError(...message) {
  * @param {string[]} array
  * @return {string[]}
  */
-function sortArrayAlphabetically(array) {
+export function sortArrayAlphabetically(array) {
   return array.sort((a, b) => a.localeCompare(b));
 }
 
@@ -19,7 +19,7 @@ function sortArrayAlphabetically(array) {
  * @param {string} dash
  * @return {string}
  */
-function dashToCamel(dash) {
+export function dashToCamel(dash) {
   const dashSplitted = dash.split('_');
   return dashSplitted.reduce((res, piece) => {
     piece = piece.charAt(0).toUpperCase() + piece.slice(1);
@@ -27,7 +27,7 @@ function dashToCamel(dash) {
   }, '');
 }
 
-function longestCommonPrefix(...strings) {
+export function longestCommonPrefix(...strings) {
   if (!strings.length) {
     return '';
   }
@@ -40,11 +40,3 @@ function longestCommonPrefix(...strings) {
 
   return strings[0];
 }
-
-module.exports = {
-  debugInfo,
-  debugError,
-  sortArrayAlphabetically,
-  dashToCamel,
-  longestCommonPrefix,
-};

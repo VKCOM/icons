@@ -1,11 +1,11 @@
-const { optimize: svgo } = require('svgo');
+import { optimize as svgo } from 'svgo';
 
 /**
  * @param {string} svg
  * @param {any[]} plugins
  * @return {string}
  */
-function optimize(svg, plugins) {
+export function optimize(svg, plugins) {
   return svgo(svg, {
     plugins: [
       {
@@ -20,5 +20,3 @@ function optimize(svg, plugins) {
     ],
   }).data;
 }
-
-module.exports = { optimize };

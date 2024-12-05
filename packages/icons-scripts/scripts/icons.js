@@ -1,25 +1,26 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-const { performance } = require('perf_hooks');
-const util = require('node:util');
-const exec = util.promisify(require('node:child_process').exec);
-const { debugInfo, debugError, sortArrayAlphabetically } = require('./utils');
-const { createIconsMap } = require('./icons-map');
-const { prepareOptions } = require('./options');
-const { optimize } = require('./optimize');
-const { createReactIcon } = require('./output');
-const { generateRasterIcons } = require('./raster/icons');
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { performance } from 'node:perf_hooks';
+import * as util from 'node:util';
+import * as childProcess from 'node:child_process';
+import * as glob from 'glob';
+import { debugInfo, debugError, sortArrayAlphabetically } from './utils.js';
+import { createIconsMap } from './icons-map.js';
+import { prepareOptions } from './options.js';
+import { optimize } from './optimize.js';
+import { createReactIcon } from './output/index.js';
+import { generateRasterIcons } from './raster/icons.js';
+
+const exec = util.promisify(childProcess.exec);
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
  * @param {GenerateOptions} options
  */
-function generateIcons(options) {
+export function generateIcons(options) {
   const {
     srcDirectory,
     distDirectory,
-    distES6Directory,
     tsFilesDirectory,
     extraCategories,
     svgoPlugins,
@@ -30,7 +31,7 @@ function generateIcons(options) {
   const start = performance.now();
 
   debugInfo('Preparing directories...');
-  [distDirectory, distES6Directory, tsFilesDirectory].forEach((dir) => {
+  [distDirectory, tsFilesDirectory].forEach((dir) => {
     fs.rmSync(dir, {
       force: true,
       recursive: true,
@@ -148,7 +149,7 @@ function generateIcons(options) {
     }
 
     const fileName = `${id}${size ? `_${size}` : ''}`;
-    fs.writeFileSync(path.join(iconDir, `${fileName}.ts`), reactSource);
+    fs.writeFileSync(path.join(iconDir, `${fileName}.tsx`), reactSource);
 
     if (!isSubcomponent) {
       exportsMap[exportName] = `./${dirname}/${fileName}`;
@@ -156,7 +157,7 @@ function generateIcons(options) {
   };
 
   const compile = async () => {
-    const swcConfig = path.resolve(__dirname, './configs/.swcrc');
+    const swcConfig = path.resolve(import.meta.dirname, './configs/.swcrc');
     if (!fs.existsSync(swcConfig)) {
       debugError('swc config not found');
     }
@@ -165,10 +166,7 @@ function generateIcons(options) {
 
     await Promise.all([
       exec(
-        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig} -C module.type=commonjs`,
-      ),
-      exec(
-        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distES6Directory}/ --config-file ${swcConfig}`,
+        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig}`,
       ),
     ]);
 
@@ -199,10 +197,7 @@ function generateIcons(options) {
  * @param {string} dir
  */
 function createIndexExports(exportsMap, dir) {
-  // TODO: v3 Удалить IconSettingsProvider
-  const exported = [
-    `export { IconSettingsProvider, IconAppearanceProvider } from '@vkontakte/icons-sprite';`,
-  ];
+  const exported = [`export { IconAppearanceProvider } from '@vkontakte/icons-sprite';`];
 
   const keys = Object.keys(exportsMap);
   if (!keys) {
@@ -217,5 +212,3 @@ function createIndexExports(exportsMap, dir) {
   const code = exported.join('\n');
   fs.writeFileSync(path.join(dir, 'index.ts'), code);
 }
-
-module.exports = { generateIcons };
