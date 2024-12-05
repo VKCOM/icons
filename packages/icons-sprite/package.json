@@ -8,9 +8,16 @@
     "directory": "packages/icons-sprite"
   },
   "license": "MIT",
-  "main": "dist/cjs/index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "concurrently 'yarn:build:*'",
     "swc-base": "swc src/ --config-file package.swcrc --strip-leading-paths",
