@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config-docs');
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import webpack from 'webpack';
+import webpackConfig from './webpack.config-docs.js';
 
 console.log('creating doc');
 

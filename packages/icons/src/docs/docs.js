@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { aliases } from './aliases.js';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
-import * as allIcons from '../../dist_es6';
+import * as allIcons from '../../dist/index.js';
 
 const Icons = {};
 

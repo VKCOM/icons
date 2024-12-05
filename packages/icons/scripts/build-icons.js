@@ -1,5 +1,5 @@
-const { generateIcons } = require('@vkontakte/icons-scripts');
-const { DEPRECATED_ICONS } = require('../src/deprecated');
+import { generateIcons } from '@vkontakte/icons-scripts';
+import { DEPRECATED_ICONS } from '../src/deprecated.js';
 
 generateIcons({
   srcDirectory: './src',

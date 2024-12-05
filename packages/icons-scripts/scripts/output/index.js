@@ -1,5 +1,1 @@
-const { createReactIcon } = require('./react');
-
-module.exports = {
-  createReactIcon,
-};
+export { createReactIcon } from './react.js';

@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const { createIconsMap } = require('./icons-map');
-const { createReactRasterIcon } = require('./output/react');
+import fs from 'node:fs';
+import path from 'node:path';
+import { createIconsMap } from './icons-map.js';
+import { createReactRasterIcon } from './output/react.js';
 
 /**
  * @param {string} srcDirectory
  * @param {string} tsFilesDirectory
  */
-function generateRasterIcons(srcDirectory, tsFilesDirectory) {
+export function generateRasterIcons(srcDirectory, tsFilesDirectory) {
   const iconsMap = createIconsMap(srcDirectory);
 
   const exportsMap = {};
@@ -38,7 +38,3 @@ function generateRasterIcons(srcDirectory, tsFilesDirectory) {
 
   return exportsMap;
 }
-
-module.exports = {
-  generateRasterIcons,
-};

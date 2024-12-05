@@ -2,7 +2,6 @@
 node_modules/
 .DS_Store
 dist/
-dist_es6/
 ts/
 packages/icons/docs/
 .cache
