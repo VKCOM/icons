@@ -255,7 +255,9 @@ async function prepareIconMapEntity(icon, optimizeFn) {
   const svg = tree.children[0];
   const svgContent = svg.children.reduce((jsxContent, tree) => jsxContent + toJsx(tree), '');
 
-  const viewBox = svg.properties.viewBox;
+  const width = svg.properties.width;
+  const height = svg.properties.height;
+
   // Список поддерживаемых аттрибутов
   const attrs = Object.fromEntries(
     Object.entries({
@@ -263,14 +265,16 @@ async function prepareIconMapEntity(icon, optimizeFn) {
       preserveAspectRatio: svg.properties.preserveAspectRatio,
     }).filter(([, value]) => value !== undefined),
   );
-  const width = svg.properties.width;
-  const height = svg.properties.height;
+
+  const viewBox = svg.properties.viewBox;
+  if (viewBox && viewBox !== `0 0 ${width} ${height}`) {
+    attrs.viewBox = viewBox;
+  }
 
   return {
     ...icon,
     width: svg.properties.width,
     height: svg.properties.height,
-    viewBox: svg.properties.viewBox,
     attrs: Object.keys(attrs).length ? attrs : undefined,
     subcomponents,
     symbolId: icon.filename,
