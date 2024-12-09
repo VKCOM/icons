@@ -42,16 +42,16 @@ src/
     "build-icons": "node scripts/build-icons.js"
   },
   "dependencies": {
-    "@vkontakte/icons-sprite": "^1.0.1",
+    "@vkontakte/icons-sprite": "^3.0.0",
     "@swc/helpers": "^0.5.15"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^19.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
+    "@types/react": "^19.0.0",
     "@vkontakte/icons-scripts": "latest",
-    "react": "^18.0.0"
+    "react": "^19.0.0"
   }
 }
 ```
