@@ -5,7 +5,6 @@ export function createReactIcon({
   attrs,
   width,
   height,
-  viewBox,
   content,
   componentName,
   deprecated,
@@ -36,7 +35,6 @@ ${jsdoc}
 export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = ({
   width = ${width},
   height = ${height},
-  viewBox = '${viewBox}',
   children,
   style,
   fill,
@@ -45,7 +43,6 @@ export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} 
   return (
     <SvgIconRoot
       baseClassName="vkuiIcon--${id}"
-      viewBox={viewBox}
       width={width}
       height={height}
       style={fill ? { color: fill, ...style } : style}

@@ -110,7 +110,6 @@ export function generateIcons(options) {
     const {
       id,
       symbolId,
-      viewBox,
       symbol,
       componentName,
       deprecated,
@@ -132,7 +131,6 @@ export function generateIcons(options) {
       attrs,
       width,
       height,
-      viewBox,
       content: symbol,
       componentName,
       deprecated,
