@@ -24,9 +24,16 @@ export default {
             loader: 'swc-loader',
             options: {
               jsc: {
+                externalHelpers: true,
                 parser: {
                   jsx: true,
                 },
+                transform: {
+                  react: {
+                    runtime: 'automatic',
+                  },
+                },
+                target: 'es2017',
               },
             },
           },
