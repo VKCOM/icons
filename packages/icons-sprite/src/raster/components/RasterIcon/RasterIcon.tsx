@@ -96,7 +96,7 @@ export function makeRasterIcon<Props extends RasterIconBaseProps>(
   size: number,
   densityBucketAppearanceSet: DensityBucketAppearanceSet,
 ): React.FC<Props> {
-  const Icon = (props: Props): JSX.Element => {
+  const Icon = (props: Props): React.JSX.Element => {
     return <RasterIcon id={id} size={size} {...densityBucketAppearanceSet} {...props} />;
   };
 
