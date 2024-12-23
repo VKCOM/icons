@@ -255,7 +255,6 @@ async function prepareIconMapEntity(icon, optimizeFn) {
   const svg = tree.children[0];
   const svgContent = svg.children.reduce((jsxContent, tree) => jsxContent + toJsx(tree), '');
 
-  const viewBox = svg.properties.viewBox;
   // Список поддерживаемых аттрибутов
   const attrs = Object.fromEntries(
     Object.entries({
@@ -263,8 +262,10 @@ async function prepareIconMapEntity(icon, optimizeFn) {
       preserveAspectRatio: svg.properties.preserveAspectRatio,
     }).filter(([, value]) => value !== undefined),
   );
-  const width = svg.properties.width;
-  const height = svg.properties.height;
+
+  if (!svg.properties.viewBox) {
+    console.warn(`У иконки ${icon.filename} нет viewBox`);
+  }
 
   return {
     ...icon,
