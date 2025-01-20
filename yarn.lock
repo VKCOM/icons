@@ -1404,12 +1404,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.10.2":
-  version: 22.10.2
-  resolution: "@types/node@npm:22.10.2"
+"@types/node@npm:^22.10.7":
+  version: 22.10.7
+  resolution: "@types/node@npm:22.10.7"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10/451adfefed4add58b069407173e616220fd4aaa3307cdde1bb701aa053b65b54ced8483db2f870dcedec7a58cb3b06101fbc19d85852716672ec1fd3660947fa
+  checksum: 10/64cde1c2f5e5f7d597d3bd462f52c3c2d688a66623eb75d25e1d1d63d384ef553a27100635ad0dbb7d74da517048aa636947863eb624cf85f25d2f22370ce474
   languageName: node
   linkType: hard
 
@@ -1500,7 +1500,7 @@ __metadata:
     "@swc/core": "npm:^1.10.1"
     "@swc/helpers": "npm:^0.5.15"
     "@swc/jest": "npm:^0.2.37"
-    "@types/node": "npm:^22.10.2"
+    "@types/node": "npm:^22.10.7"
     "@types/react": "npm:16.14.34"
     concurrently: "npm:^9.1.0"
     jest: "npm:^29.7.0"
