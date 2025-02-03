@@ -114,3 +114,12 @@ jobs:
 
       - name: Install dependencies
         run: YARN_ENABLE_SCRIPTS=false yarn install --immutable --check-cache --check-resolutions
+
+  lint:
+    runs-on: ubuntu-latest
+    name: Check typo
+    steps:
+      - name: Checkout
+        uses: VKCOM/gh-actions/shared/spell-checker-filename@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
