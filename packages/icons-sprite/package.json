@@ -25,8 +25,8 @@
     "@swc/helpers": "^0.5.15"
   },
   "devDependencies": {
-    "@size-limit/file": "^11.1.6",
-    "@size-limit/webpack": "^11.1.6",
+    "@size-limit/file": "^11.2.0",
+    "@size-limit/webpack": "^11.2.0",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.10.15",
     "@swc/jest": "^0.2.37",
@@ -36,7 +36,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "16.10.0",
-    "size-limit": "^11.1.6",
+    "size-limit": "^11.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
