@@ -38,7 +38,7 @@
     "react": "16.10.0",
     "size-limit": "^11.2.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   },
   "peerDependencies": {
     "react": "^16.9.34 || ^17 || ^18"
