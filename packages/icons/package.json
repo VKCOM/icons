@@ -13,9 +13,16 @@
   "sideEffects": [
     "*.css"
   ],
+  "type": "module",
   "main": "dist/index.js",
-  "module": "dist_es6/index.js",
+  "module": "dist/index.js",
   "typings": "dist/typings/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/typings/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "yarn icons-build && yarn docs",
     "docs": "node --max-old-space-size=4096 scripts/docs",
@@ -27,6 +34,7 @@
     "ios >= 9"
   ],
   "dependencies": {
+    "@swc/helpers": "^0.5.15",
     "@vkontakte/icons-sprite": "workspace:*"
   },
   "devDependencies": {
@@ -34,15 +42,15 @@
     "@size-limit/webpack": "^11.2.0",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.11.10",
-    "@types/react": "16.14.34",
+    "@types/react": "^19.0.1",
     "@vkontakte/icons-scripts": "workspace:*",
     "css-loader": "^7.1.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "pre-commit": "^1.2.2",
-    "react": "16.10.0",
+    "react": "^19.0.0",
     "react-color": "^2.18.0",
-    "react-dom": "^16.9.0",
+    "react-dom": "^19.0.0",
     "size-limit": "^11.2.0",
     "style-loader": "^4.0.0",
     "swc-loader": "0.2.6",
@@ -50,26 +58,29 @@
     "webpack": "^5.98.0"
   },
   "peerDependencies": {
-    "react": "^16.9.34 || ^17 || ^18"
+    "react": "^18 || ^19"
   },
   "size-limit": [
     {
       "name": "JS",
       "path": "dist/index.js",
-      "brotli": false
+      "brotli": false,
+      "import": "*"
     },
     {
       "name": "JS (gzip)",
       "path": "dist/index.js",
-      "gzip": true
+      "gzip": true,
+      "import": "*"
     },
     {
       "name": "JS (brotli)",
-      "path": "dist/index.js"
+      "path": "dist/index.js",
+      "import": "*"
     },
     {
       "name": "JS ES6 with Icon16Add only import (tree shaking)",
-      "path": "dist_es6/index.js",
+      "path": "dist/index.js",
       "import": "{ Icon16Add }",
       "brotli": false
     },

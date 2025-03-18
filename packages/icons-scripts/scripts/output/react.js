@@ -1,6 +1,6 @@
-const { dashToCamel } = require('../utils');
+import { dashToCamel } from '../utils.js';
 
-function createReactIcon({
+export function createReactIcon({
   id,
   attrs,
   width,
@@ -25,36 +25,39 @@ function createReactIcon({
 `;
   }
 
-  // TODO: Избавиться от use client, если избавимся от спрайта
-  // Чтобы nextjs мог рендерить иконки как серверные компоненты
-  return `'use client';
-
-import { SVGProps, Ref, FC } from 'react';
-import { makeIcon } from '@vkontakte/icons-sprite';
+  return `
+import * as React from 'react';
+import { SvgIconRoot, type SvgIconProps } from '@vkontakte/icons-sprite';
 ${subcomponentsImports}
 
-export interface ${componentName}Props extends SVGProps<SVGSVGElement> {
-  fill?: string;
-  width?: number;
-  height?: number;
-  getRootRef?: Ref<SVGSVGElement>;
-  title?: string;
-  deprecated?: boolean;
-  replacement?: string;
-}
+export type ${componentName}Props = SvgIconProps
 
 ${jsdoc}
-export const ${componentName}: FC<${componentName}Props> & ${typeAssigns} = makeIcon<${componentName}Props, ${typeAssigns}>(
-  '${componentName}',
-  '${id}',
-  '${viewBox}',
-  '${content}',
-  ${width},
-  ${height},
-  ${!!deprecated},
-  ${replacement ? `'${replacement}'` : undefined}
-  ${attrs ? `, ${JSON.stringify(attrs)}` : ''}
-);
+export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = ({
+  width = ${width},
+  height = ${height},
+  viewBox = '${viewBox}',
+  children,
+  style,
+  fill,
+  ...restProps
+}: ${componentName}Props) => {
+  return (
+    <SvgIconRoot
+      baseClassName="vkuiIcon--${id}"
+      viewBox={viewBox}
+      width={width}
+      height={height}
+      style={fill ? { color: fill, ...style } : style}
+      ${attrs ? `{...${JSON.stringify(attrs)}}` : ''}
+      {...restProps}
+    >
+      {children}
+      ${content}
+    </SvgIconRoot>
+  );
+}
+
 ${assigns}
 `;
 }
@@ -86,5 +89,3 @@ function getSubcomponentsAssigns(rootComponentName, subcomponents) {
     typeAssigns: assigns ? `{ ${typeAssigns.join(',\n')} }` : '{}',
   };
 }
-
-module.exports = { createReactIcon };

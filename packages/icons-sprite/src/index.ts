@@ -1,6 +1,4 @@
-export { BrowserSprite } from './browser-sprite';
-export { BrowserSymbol } from './browser-symbol';
-export { makeIcon } from './SvgIcon';
+export { SvgIconRoot, type SvgIconProps } from './SvgIconRoot';
 export { makeRasterIcon } from './raster/components/RasterIcon/RasterIcon';
 export { IconSettingsProvider } from './IconSettings';
 export {

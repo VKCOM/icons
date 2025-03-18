@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import { createRoot } from 'react-dom/client';
 import { aliases } from './aliases.js';
 import { HuePicker as Hue } from 'react-color';
 import './docs.css';
-import * as allIcons from '../../dist_es6';
+import * as allIcons from '../../dist/index.js';
 
 const Icons = {};
 
@@ -183,4 +183,5 @@ class Docs extends React.PureComponent {
   }
 }
 
-ReactDOM.render(<Docs />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<Docs />);

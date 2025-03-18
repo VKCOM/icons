@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons-sprite",
-  "version": "2.3.1",
+  "version": "3.0.0-beta.1",
   "homepage": "https://vkcom.github.io/icons/",
   "repository": {
     "type": "git",
@@ -8,18 +8,24 @@
     "directory": "packages/icons-sprite"
   },
   "license": "MIT",
-  "main": "dist/cjs/index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "concurrently 'yarn:build:*'",
     "swc-base": "swc src/ --config-file package.swcrc --strip-leading-paths",
-    "build:cjs": "yarn swc-base -d dist/cjs -C module.type=commonjs",
     "build:es6": "yarn swc-base -d dist",
     "build:types": "tsc --emitDeclarationOnly --declaration",
     "prepack": "yarn build",
     "size": "yarn build:es6 && size-limit",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@swc/helpers": "^0.5.15"
@@ -31,17 +37,17 @@
     "@swc/core": "^1.11.10",
     "@swc/jest": "^0.2.37",
     "@types/node": "^22.13.10",
-    "@types/react": "16.14.34",
+    "@types/react": "^19.0.1",
     "concurrently": "^9.1.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "react": "16.10.0",
+    "react": "^19.0.0",
     "size-limit": "^11.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "react": "^16.9.34 || ^17 || ^18"
+    "react": "^18 || ^19"
   },
   "size-limit": [
     {
