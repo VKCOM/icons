@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import webpack from 'webpack';
-import webpackConfig from './webpack.config-docs.js';
+import { rspack } from '@rspack/core';
+import rspackConfig from './rspack.config-docs.js';
 
 console.log('creating doc');
 
@@ -10,7 +10,7 @@ fs.rmSync(path.join(process.cwd(), 'docs'), {
   recursive: true,
 });
 
-const compiler = webpack(webpackConfig);
+const compiler = rspack(rspackConfig);
 
 compiler.run((err, stats) => {
   if (err) {

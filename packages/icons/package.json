@@ -38,24 +38,20 @@
     "@vkontakte/icons-sprite": "workspace:*"
   },
   "devDependencies": {
+    "@rspack/cli": "^1.2.8",
+    "@rspack/core": "^1.2.8",
     "@size-limit/file": "^11.2.0",
     "@size-limit/webpack": "^11.2.0",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.11.10",
     "@types/react": "^19.0.1",
     "@vkontakte/icons-scripts": "workspace:*",
-    "css-loader": "^7.1.2",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.6.3",
     "pre-commit": "^1.2.2",
     "react": "^19.0.0",
     "react-color": "^2.18.0",
     "react-dom": "^19.0.0",
     "size-limit": "^11.2.0",
-    "style-loader": "^4.0.0",
-    "swc-loader": "0.2.6",
-    "typescript": "^5.8.2",
-    "webpack": "^5.98.0"
+    "typescript": "^5.8.2"
   },
   "peerDependencies": {
     "react": "^18 || ^19"

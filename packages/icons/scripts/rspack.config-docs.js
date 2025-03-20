@@ -1,7 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
+import { rspack } from '@rspack/core';
 
 const iconsMap = fs.readFileSync(path.resolve(process.cwd(), 'dist/icons-map.json'), {
   encoding: 'utf-8',
@@ -13,7 +12,6 @@ export default {
   output: {
     path: path.resolve(process.cwd(), 'docs'),
   },
-  target: ['web', 'es5'],
   module: {
     rules: [
       {
@@ -21,11 +19,12 @@ export default {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'swc-loader',
+            loader: 'builtin:swc-loader',
             options: {
               jsc: {
                 externalHelpers: true,
                 parser: {
+                  syntax: 'ecmascript',
                   jsx: true,
                 },
                 transform: {
@@ -39,28 +38,20 @@ export default {
           },
         ],
       },
-      {
-        test: /\.(otf|svg)/,
-        use: 'file-loader',
-      },
-      {
-        test: /\.css/,
-        use: ['style-loader', 'css-loader'],
-      },
     ],
   },
+  experiments: {
+    css: true,
+  },
   plugins: [
-    new HtmlWebpackPlugin({
+    new rspack.HtmlRspackPlugin({
       template: './src/docs/docs.html',
       title: 'VK Icons',
       hash: true,
       scriptLoading: 'blocking',
     }),
-    new webpack.DefinePlugin({
+    new rspack.DefinePlugin({
       'window.ICONS': iconsMap,
     }),
   ],
-  cache: {
-    type: 'filesystem',
-  },
 };

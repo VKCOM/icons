@@ -21,14 +21,9 @@ updates:
         patterns:
           - 'jest*'
           - '@swc/jest'
-      webpack:
+      rspack:
         patterns:
-          - 'webpack'
-          - 'html-webpack-plugin'
-          - 'file-loader'
-          - 'css-loader'
-          - 'style-loader'
-          - 'swc-loader'
+          - '@rspack/*'
       react:
         patterns:
           - 'react'
