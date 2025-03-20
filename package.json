@@ -14,14 +14,22 @@
     "prettier:write": "yarn prettier --write --ignore-unknown .",
     "prettier:check": "yarn prettier --check --ignore-unknown .",
     "size": "yarn workspace @vkontakte/icons run size",
-    "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version"
+    "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version",
+    "prepare": "husky"
   },
   "prettier": "@vkontakte/prettier-config",
-  "pre-commit": [
-    "prettier:check"
-  ],
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --check"
+    ],
+    "*.{json,md,mdx}": [
+      "prettier --check"
+    ]
+  },
   "devDependencies": {
     "@vkontakte/prettier-config": "^0.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3"
   },
   "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9"
