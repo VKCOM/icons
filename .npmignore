@@ -3,8 +3,6 @@ docs
 scripts
 src
 
-webpack.config.js
-webpack.docs.config.js
 entries.js
 
 npm-debug.log
