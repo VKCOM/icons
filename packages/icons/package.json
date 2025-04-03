@@ -21,7 +21,8 @@
     ".": {
       "types": "./dist/typings/index.d.ts",
       "default": "./dist/index.js"
-    }
+    },
+    "./src/svg/": "./src/svg/"
   },
   "scripts": {
     "build": "yarn icons-build && yarn docs",
