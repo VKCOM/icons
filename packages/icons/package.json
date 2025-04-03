@@ -47,7 +47,6 @@
     "@swc/core": "^1.11.13",
     "@types/react": "^19.0.1",
     "@vkontakte/icons-scripts": "workspace:*",
-    "pre-commit": "^1.2.2",
     "react": "^19.0.0",
     "react-color": "^2.18.0",
     "react-dom": "^19.0.0",
