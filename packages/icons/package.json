@@ -51,7 +51,7 @@
     "react-color": "^2.18.0",
     "react-dom": "^19.0.0",
     "size-limit": "^11.2.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "react": "^18 || ^19"
