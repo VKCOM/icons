@@ -30,7 +30,7 @@ export function generateRasterIcons(srcDirectory, tsFilesDirectory) {
 
   if (iconsMap.size) {
     fs.copyFileSync(
-      require.resolve('./output/declaration.d.ts'),
+      path.resolve(import.meta.dirname, './output/declaration.d.ts'),
       path.join(tsFilesDirectory, 'declaration.d.ts'),
       fs.constants.COPYFILE_EXCL,
     );
