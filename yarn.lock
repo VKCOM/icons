@@ -1970,7 +1970,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vkontakte/icons-scripts@workspace:*, @vkontakte/icons-scripts@workspace:packages/icons-scripts":
+"@vkontakte/icons-scripts@workspace:^, @vkontakte/icons-scripts@workspace:packages/icons-scripts":
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-scripts@workspace:packages/icons-scripts"
   dependencies:
@@ -1984,7 +1984,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vkontakte/icons-sprite@workspace:*, @vkontakte/icons-sprite@workspace:packages/icons-sprite":
+"@vkontakte/icons-sprite@workspace:^, @vkontakte/icons-sprite@workspace:packages/icons-sprite":
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
@@ -2020,8 +2020,8 @@ __metadata:
     "@swc/core": "npm:^1.11.21"
     "@swc/helpers": "npm:^0.5.17"
     "@types/react": "npm:^19.0.1"
-    "@vkontakte/icons-scripts": "workspace:*"
-    "@vkontakte/icons-sprite": "workspace:*"
+    "@vkontakte/icons-scripts": "workspace:^"
+    "@vkontakte/icons-sprite": "workspace:^"
     react: "npm:^19.0.0"
     react-color: "npm:^2.18.0"
     react-dom: "npm:^19.0.0"
