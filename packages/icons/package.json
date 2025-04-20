@@ -22,7 +22,8 @@
       "types": "./dist/typings/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./src/svg/": "./src/svg/"
+    "./src/svg/": "./src/svg/",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "yarn icons-build && yarn docs",
