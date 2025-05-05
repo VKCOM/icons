@@ -33,26 +33,18 @@ ${subcomponentsImports}
 export type ${componentName}Props = SvgIconProps
 
 ${jsdoc}
-export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = ({
-  width = ${width},
-  height = ${height},
-  viewBox = '${viewBox}',
-  children,
-  style,
-  fill,
-  ...restProps
-}: ${componentName}Props) => {
+export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = (props: ${componentName}Props) => {
   return (
     <SvgIconRoot
       baseClassName="vkuiIcon--${id}"
-      viewBox={viewBox}
-      width={width}
-      height={height}
-      style={fill ? { color: fill, ...style } : style}
+      viewBox="${viewBox}"
+      width={${width}}
+      height={${height}}
+      {...props}
+      style={props.fill ? { color: props.fill, ...props.style } : props.style}
       ${attrs ? `{...${JSON.stringify(attrs)}}` : ''}
-      {...restProps}
     >
-      {children}
+      {props.children}
       ${content}
     </SvgIconRoot>
   );
