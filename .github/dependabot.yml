@@ -6,9 +6,6 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    reviewers:
-      - 'VKCOM/vk-sec'
-      - 'VKCOM/vkui-core'
 
   - package-ecosystem: 'npm'
     directory: '/'
@@ -37,6 +34,3 @@ updates:
         patterns:
           - 'prettier'
           - '@vkontakte/prettier-config'
-    reviewers:
-      - 'VKCOM/vk-sec'
-      - 'VKCOM/vkui-core'
