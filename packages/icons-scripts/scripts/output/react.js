@@ -27,7 +27,7 @@ export function createReactIcon({
 
   return `
 import * as React from 'react';
-import { SvgIconRoot, type SvgIconProps } from '@vkontakte/icons-sprite';
+import { SvgIconRootV2, type SvgIconProps } from '@vkontakte/icons-sprite';
 ${subcomponentsImports}
 
 export type ${componentName}Props = SvgIconProps
@@ -35,18 +35,14 @@ export type ${componentName}Props = SvgIconProps
 ${jsdoc}
 export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = (props: ${componentName}Props) => {
   return (
-    <SvgIconRoot
-      baseClassName="vkuiIcon--${id}"
+    <SvgIconRootV2
       viewBox="${viewBox}"
       width={${width}}
       height={${height}}
-      {...props}
-      style={props.fill ? { color: props.fill, ...props.style } : props.style}
-      ${attrs ? `{...${JSON.stringify(attrs)}}` : ''}
-    >
-      {props.children}
-      ${content}
-    </SvgIconRoot>
+      vkuiIconId="${id}"
+      ${attrs ? `vkuiAttrs={${JSON.stringify(attrs)}}` : ''}
+      vkuiProps={props}
+    >${content}</SvgIconRootV2>
   );
 }
 
