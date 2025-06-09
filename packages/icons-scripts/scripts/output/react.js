@@ -1,15 +1,5 @@
 import { dashToCamel } from '../utils.js';
 
-function IconContent(content) {
-  return `
-const IconContent = () => {
-  const reactId = React.useId();
-
-  return <>${content}</>
-}
-`.trim();
-}
-
 export function createReactIcon({
   id,
   attrs,
@@ -44,12 +34,12 @@ import * as React from 'react';
 import { SvgIconRootV2, type SvgIconProps } from '@vkontakte/icons-sprite';
 ${subcomponentsImports}
 
-${needReactId ? IconContent(content) : ''}
-
 export type ${componentName}Props = SvgIconProps
 
 ${jsdoc}
 export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} = (props: ${componentName}Props) => {
+  ${needReactId ? 'const reactId = React.useId()' : ''}
+
   return (
     <SvgIconRootV2
       viewBox="${viewBox}"
@@ -59,7 +49,7 @@ export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} 
       ${attrs ? `vkuiAttrs={${JSON.stringify(attrs)}}` : ''}
       vkuiProps={props}
     >
-      ${needReactId ? `<IconContent />` : content}
+      ${content}
     </SvgIconRootV2>
   );
 }
