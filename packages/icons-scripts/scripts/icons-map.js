@@ -228,20 +228,18 @@ function svgIdPrefix(el, prefix) {
     const value = el.properties[key];
 
     if (key === 'id') {
-      el.properties[key] = new JSXExpression(`\`${prefix}__${value}__\${reactId}\``);
+      el.properties[key] = new JSXExpression(`\`${prefix}\${reactId}${value}\``);
       continue;
     }
 
     if (key === 'xLinkHref') {
-      el.properties[key] = new JSXExpression(
-        `\`#${prefix}__${value.replace(/^#/, '')}__\${reactId}\``,
-      );
+      el.properties[key] = new JSXExpression(`\`#${prefix}\${reactId}${value.replace(/^#/, '')}\``);
       continue;
     }
 
     if (urlRegex.test(value)) {
       el.properties[key] = new JSXExpression(
-        '`' + value.replace(urlRegex, (match, id) => `url(#${prefix}__${id}__\${reactId})`) + '`',
+        '`' + value.replace(urlRegex, (match, id) => `url(#${prefix}\${reactId}${id})`) + '`',
       );
     }
   }
