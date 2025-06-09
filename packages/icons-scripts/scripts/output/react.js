@@ -1,5 +1,15 @@
 import { dashToCamel } from '../utils.js';
 
+function IconContent(content) {
+  return `
+const IconContent = () => {
+  const reactId = React.useId();
+
+  return <>${content}</>
+}
+`.trim();
+}
+
 export function createReactIcon({
   id,
   attrs,
@@ -15,6 +25,8 @@ export function createReactIcon({
   const subcomponentsImports = getSubcomponentsImports(subcomponents);
   const { assigns, typeAssigns } = getSubcomponentsAssigns(componentName, subcomponents);
 
+  const needReactId = content.includes('${reactId}');
+
   let jsdoc = '';
   if (deprecated) {
     const replacementNotice = replacement ? `. Замените на ${replacement}` : '';
@@ -26,9 +38,13 @@ export function createReactIcon({
   }
 
   return `
+${needReactId ? `'use client';` : ''}
+
 import * as React from 'react';
 import { SvgIconRootV2, type SvgIconProps } from '@vkontakte/icons-sprite';
 ${subcomponentsImports}
+
+${needReactId ? IconContent(content) : ''}
 
 export type ${componentName}Props = SvgIconProps
 
@@ -42,7 +58,9 @@ export const ${componentName}: React.FC<${componentName}Props> & ${typeAssigns} 
       vkuiIconId="${id}"
       ${attrs ? `vkuiAttrs={${JSON.stringify(attrs)}}` : ''}
       vkuiProps={props}
-    >${content}</SvgIconRootV2>
+    >
+      ${needReactId ? `<IconContent />` : content}
+    </SvgIconRootV2>
   );
 }
 

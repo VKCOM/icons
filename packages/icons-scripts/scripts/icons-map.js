@@ -195,6 +195,17 @@ export async function createIconsMap(
 
 const urlRegex = /url\(#(.*?)\)/g;
 
+class JSXExpression {
+  #value;
+  constructor(value) {
+    this.#value = value;
+  }
+
+  toString() {
+    return this.#value;
+  }
+}
+
 /**
  * Добавляет префикс для id внутри svg элемента
  *
@@ -217,17 +228,21 @@ function svgIdPrefix(el, prefix) {
     const value = el.properties[key];
 
     if (key === 'id') {
-      el.properties[key] = `${prefix}__${value}`;
+      el.properties[key] = new JSXExpression(`\`${prefix}__${value}__\${reactId}\``);
       continue;
     }
 
     if (key === 'xLinkHref') {
-      el.properties[key] = `#${prefix}__${value.replace(/^#/, '')}`;
+      el.properties[key] = new JSXExpression(
+        `\`#${prefix}__${value.replace(/^#/, '')}__\${reactId}\``,
+      );
       continue;
     }
 
     if (urlRegex.test(value)) {
-      el.properties[key] = value.replace(urlRegex, (match, id) => `url(#${prefix}__${id})`);
+      el.properties[key] = new JSXExpression(
+        '`' + value.replace(urlRegex, (match, id) => `url(#${prefix}__${id}__\${reactId})`) + '`',
+      );
     }
   }
 
