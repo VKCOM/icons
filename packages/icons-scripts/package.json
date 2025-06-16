@@ -17,7 +17,7 @@
     "@mapbox/hast-util-to-jsx": "^2.1.0",
     "@swc/cli": "^0.7.7",
     "@swc/core": "^1.11.31",
-    "glob": "^11.0.2",
+    "glob": "^11.0.3",
     "hast-util-from-html": "^2.0.3",
     "svgo": "^3.3.2"
   },
