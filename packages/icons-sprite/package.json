@@ -34,7 +34,7 @@
     "@size-limit/file": "^11.2.0",
     "@size-limit/webpack": "^11.2.0",
     "@swc/cli": "^0.7.7",
-    "@swc/core": "^1.11.31",
+    "@swc/core": "^1.12.1",
     "@swc/jest": "^0.2.38",
     "@types/node": "^22.15.30",
     "@types/react": "^19.0.1",
