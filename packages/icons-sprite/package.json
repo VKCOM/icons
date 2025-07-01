@@ -36,7 +36,7 @@
     "@swc/cli": "^0.7.7",
     "@swc/core": "^1.11.31",
     "@swc/jest": "^0.2.38",
-    "@types/node": "^22.15.30",
+    "@types/node": "^24.0.8",
     "@types/react": "^19.0.1",
     "concurrently": "^9.1.2",
     "jest": "^30.0.2",
