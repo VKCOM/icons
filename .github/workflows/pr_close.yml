@@ -19,8 +19,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Get icons version
+        id: get_version
+        run: |
+          echo "icons_version=$(node -p "require('./packages/icons/package.json').version")" >> $GITHUB_OUTPUT
+
       - name: Update release notes script
         uses: VKCOM/gh-actions/icons/auto-update-release-notes@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull_request_number: ${{ github.event.pull_request.number }}
+          current_icons_version: ${{ steps.get_version.outputs.icons_version }}
