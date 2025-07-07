@@ -7,16 +7,6 @@ import { optimize as svgo } from 'svgo';
  */
 export function optimize(svg, plugins) {
   return svgo(svg, {
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            removeViewBox: false,
-          },
-        },
-      },
-      ...plugins,
-    ],
+    plugins: ['preset-default', 'removeTitle', 'removeScripts', ...plugins],
   }).data;
 }

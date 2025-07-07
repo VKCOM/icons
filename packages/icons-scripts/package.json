@@ -19,7 +19,7 @@
     "@swc/core": "^1.12.9",
     "glob": "^11.0.3",
     "hast-util-from-html": "^2.0.3",
-    "svgo": "^3.3.2"
+    "svgo": "^4.0.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
