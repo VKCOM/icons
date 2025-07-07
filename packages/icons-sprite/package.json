@@ -38,7 +38,7 @@
     "@swc/jest": "^0.2.38",
     "@types/node": "^24.0.10",
     "@types/react": "^19.0.1",
-    "concurrently": "^9.1.2",
+    "concurrently": "^9.2.0",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
     "react": "^19.0.0",
