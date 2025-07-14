@@ -16,7 +16,7 @@
   "dependencies": {
     "@mapbox/hast-util-to-jsx": "^2.1.0",
     "@swc/cli": "^0.7.7",
-    "@swc/core": "^1.12.9",
+    "@swc/core": "^1.12.14",
     "glob": "^11.0.3",
     "hast-util-from-html": "^2.0.3",
     "svgo": "^4.0.0"
