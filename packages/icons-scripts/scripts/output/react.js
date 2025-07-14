@@ -5,7 +5,7 @@ export function createReactIcon({
   attrs,
   width,
   height,
-  viewBox,
+  viewBox = `0 0 ${width} ${height}`,
   content,
   componentName,
   deprecated,
