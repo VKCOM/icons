@@ -75,10 +75,13 @@ jobs:
           echo "version=$(yarn node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
       - name: Adding commit and tag with updated version number
+        id: git_release_tag
         run: |
           git add -A
           git commit -m 'bump(@vkontakte/icons): from ${{ steps.prev_version.outputs.version }} to ${{ steps.updated_version.outputs.version }}'
-          git tag @vkontakte/icons@${{ steps.updated_version.outputs.version }}
+          GIT_TAG=@vkontakte/icons@${{ steps.updated_version.outputs.version }}
+          git tag $GIT_TAG
+          echo "value=$GIT_TAG" >> $GITHUB_OUTPUT
 
       - name: Pushing changes
         uses: ad-m/github-push-action@master
@@ -116,3 +119,16 @@ jobs:
           folder: packages/icons/docs
           clean: false
           force: false
+
+      - name: Prepare payload data
+        run: |
+          mkdir -p publish_workflow_payload
+          echo ${{ steps.git_release_tag.outputs.value }} > publish_workflow_payload/git_release_tag.txt
+        shell: bash
+
+      - name: Upload payload data to artifact for deploy workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish_workflow_payload
+          path: publish_workflow_payload/
+          retention-days: 1

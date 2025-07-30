@@ -1,0 +1,49 @@
+name: 'Publish icons: Complete (⚠️ use manually call only if necessary)'
+# Note: display_title не задокументирован из-за чего в IDE может подчёркиваться строка
+run-name: "${{ github.event_name == 'workflow_run' && format('{0}: Complete • {1} • {2}', github.event.workflow_run.display_title, github.event.workflow_run.head_branch, github.event.workflow_run.id) || format('Publish icons {0}: Complete (⚠️ manually run)', inputs.git_release_tag) }}"
+
+on:
+  workflow_run:
+    workflows: ['Publish icons']
+    types: [completed]
+  # Note: только на случай, если потребуется ручной запуск
+  workflow_dispatch:
+    inputs:
+      git_release_tag:
+        description: 'git release tag (ex: `@vkontakte/icons@3.0.0`):'
+        required: true
+        type: string
+
+jobs:
+  payload:
+    name: Prepare payload data
+    runs-on: ubuntu-latest
+    outputs:
+      git_release_tag: ${{ steps.publish_workflow_payload.outputs.git_release_tag || inputs.git_release_tag }}
+    steps:
+      - name: Download artifact (if it is 'workflow_run')
+        if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.event == 'workflow_dispatch' && github.event.workflow_run.conclusion == 'success' }}
+        id: artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
+          name: publish_workflow_payload
+          path: publish_workflow_payload/
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Parse artifact
+        if: ${{ steps.artifact.conclusion == 'success' }}
+        id: publish_workflow_payload
+        run: |
+          echo "git_release_tag=$(cat publish_workflow_payload/git_release_tag.txt)" >> $GITHUB_OUTPUT
+
+  package_vkui_complete:
+    needs: ['payload']
+    runs-on: ubuntu-latest
+    name: Complete @vkontakte/vkui
+    steps:
+      - name: Close milestone, comment on issues and release notes
+        uses: VKCOM/gh-actions/icons/complete-publish@main
+        with:
+          token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
+          releaseTag: ${{ needs.payload.outputs.git_release_tag }}
