@@ -121,6 +121,7 @@ jobs:
           force: false
 
       - name: Prepare payload data
+        working-directory: .
         run: |
           mkdir -p publish_workflow_payload
           echo ${{ steps.git_release_tag.outputs.value }} > publish_workflow_payload/git_release_tag.txt
