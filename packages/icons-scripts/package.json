@@ -22,7 +22,7 @@
     "svgo": "^4.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=20.11.0"
