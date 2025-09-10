@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SvgIconProps, SvgIconRoot } from './SvgIconRoot';
+import {type} from "node:os";
 
 interface SvgIconRootV2Props extends SvgIconProps {
   vkuiIconId: string;
@@ -15,6 +16,13 @@ export function SvgIconRootV2({
   vkuiProps,
   ...restProps
 }: SvgIconRootV2Props) {
+  if (typeof vkuiProps.width === 'undefined') {
+    delete vkuiProps.width;
+  }
+  if (typeof vkuiProps.height === 'undefined') {
+    delete vkuiProps.height;
+  }
+
   return (
     <SvgIconRoot
       baseClassName={`vkuiIcon--${vkuiIconId}`}
