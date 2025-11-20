@@ -86,14 +86,6 @@ jobs:
           branch: ${{ github.ref }}
           tags: true
 
-      - name: Setup NPM Auth Token to .yarnrc.yml
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
-        shell: bash
-        run: |
-          yarn config set npmAlwaysAuth true
-          yarn config set npmAuthToken $NODE_AUTH_TOKEN
-
       - name: Publishing tagged release
         if: ${{ github.event.inputs.tag }}
         run: |
