@@ -39,7 +39,7 @@ jobs:
         working-directory: ./packages/icons-sprite
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.DEVTOOLS_GITHUB_TOKEN }}
 
