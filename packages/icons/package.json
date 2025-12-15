@@ -45,7 +45,7 @@
     "@size-limit/file": "^12.0.0",
     "@size-limit/webpack": "^12.0.0",
     "@swc/cli": "^0.7.9",
-    "@swc/core": "^1.15.3",
+    "@swc/core": "^1.15.4",
     "@types/react": "^19.0.1",
     "@vkontakte/icons-scripts": "workspace:^",
     "react": "^19.0.0",
