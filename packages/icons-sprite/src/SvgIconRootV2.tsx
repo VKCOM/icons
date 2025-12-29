@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SvgIconProps, SvgIconRoot } from './SvgIconRoot';
+import { type SvgIconProps } from './SvgIconRoot';
 
 interface SvgIconRootV2Props extends SvgIconProps {
   vkuiIconId: string;
@@ -11,33 +11,51 @@ interface SvgIconRootV2Props extends SvgIconProps {
 export function SvgIconRootV2({
   vkuiIconId,
   vkuiAttrs,
-  children,
   vkuiProps,
-  width: widthProp,
-  height: heightProp,
-  viewBox: viewBoxProp,
-  ...restProps
+  children: vkuiChildren,
+  ...iconProps
 }: SvgIconRootV2Props) {
   const {
-    width: widthByUser,
-    height: heightByUser,
-    viewBox: viewBoxByUser,
-    ...restVkuiProps
-  } = vkuiProps;
+    width = 0,
+    height = 0,
+    display = 'block',
+    'aria-hidden': ariaHidden = true,
+    className,
+    getRootRef,
+    style,
+    title,
+    children,
+    ...restProps
+  } = {
+    ...iconProps,
+    ...vkuiProps,
+  };
+
+  const size = Math.max(width, height);
 
   return (
-    <SvgIconRoot
-      baseClassName={`vkuiIcon--${vkuiIconId}`}
-      width={widthByUser || widthProp}
-      height={heightByUser || heightProp}
-      viewBox={viewBoxByUser || viewBoxProp}
+    <svg
+      className={
+        (className ? className + ' ' : '') +
+        `vkuiIcon vkuiIcon--${size} vkuiIcon--w-${width} vkuiIcon--h-${height} vkuiIcon--${vkuiIconId}`
+      }
+      aria-hidden={ariaHidden}
+      display={display}
+      width={width}
+      height={height}
+      ref={getRootRef}
+      style={{
+        width,
+        height,
+        color: restProps.fill,
+        ...style,
+      }}
       {...restProps}
-      {...restVkuiProps}
-      style={vkuiProps.fill ? { color: vkuiProps.fill, ...vkuiProps.style } : vkuiProps.style}
       {...vkuiAttrs}
     >
-      {vkuiProps.children}
+      {title && <title>{title}</title>}
       {children}
-    </SvgIconRoot>
+      {vkuiChildren}
+    </svg>
   );
 }
