@@ -1,0 +1,4 @@
+{
+  "$schema": "./deprecated.schema.json",
+  "old_icon_name_16": "new_icon_name_16"
+}
