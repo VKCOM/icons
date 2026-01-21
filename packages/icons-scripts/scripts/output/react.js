@@ -15,7 +15,7 @@ export function createReactIcon({
   const subcomponentsImports = getSubcomponentsImports(subcomponents);
   const { assigns, typeAssigns } = getSubcomponentsAssigns(componentName, subcomponents);
 
-  const needReactId = content.includes('${reactId}');
+  const needReactId = content.includes`\${reactId}`;
 
   let jsdoc = '';
   if (deprecated) {
@@ -67,7 +67,7 @@ function getSubcomponentsImports(subcomponents) {
 }
 
 function getSubcomponentsAssigns(rootComponentName, subcomponents) {
-  let typeAssigns = [];
+  const typeAssigns = [];
 
   const assigns =
     subcomponents

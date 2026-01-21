@@ -1,5 +1,5 @@
-import * as glob from 'glob';
 import * as path from 'node:path';
+import * as glob from 'glob';
 import { dashToCamel, sortArrayAlphabetically } from '../utils.js';
 
 /**
@@ -27,7 +27,7 @@ export function createIconsMap(src) {
   files.forEach((file) => {
     const [icon, dpiFormat] = file.split(path.sep).reverse();
 
-    const match = icon.match(/(([^]+?)(?:_(light|dark))?_([\d]+))\.(\w+)$/);
+    const match = icon.match(/(([\s\S]+?)(?:_(light|dark))?_([\d]+))\.(\w+)$/);
 
     if (!match) {
       return;
@@ -61,5 +61,5 @@ export function createIconsMap(src) {
  * @return {string}
  */
 function getIconComponentName(name) {
-  return `RasterIcon${dashToCamel(name.replace(/([^]+)_([\d]+)$/, '$2_$1'))}`;
+  return `RasterIcon${dashToCamel(name.replace(/([\s\S]+)_([\d]+)$/, '$2_$1'))}`;
 }

@@ -1,19 +1,20 @@
 import * as React from 'react';
+import { HuePicker as Hue } from 'react-color';
 import { createRoot } from 'react-dom/client';
 import { aliases } from './aliases.js';
-import { HuePicker as Hue } from 'react-color';
 import './docs.css';
 import * as allIcons from '../../dist/index.js';
 
 const Icons = {};
 
 window.ICONS.forEach(({ dirname, id, componentName, deprecated }) => {
-  if (!Icons.hasOwnProperty(dirname)) {
+  if (!Object.hasOwn(Icons, dirname)) {
     Icons[dirname] = {};
   }
 
   if (!deprecated) {
     Icons[dirname][id] = {
+      // biome-ignore lint/performance/noDynamicNamespaceImportAccess: componentName comes from data
       Icon: allIcons[componentName],
       componentName,
     };
@@ -69,9 +70,13 @@ class Docs extends React.PureComponent {
     );
   };
 
-  getTextareaEl = (el) => (this.textareaEl = el);
+  getTextareaEl = (el) => {
+    this.textareaEl = el;
+  };
 
-  getCopiedEl = (el) => (this.copiedEl = el);
+  getCopiedEl = (el) => {
+    this.copiedEl = el;
+  };
 
   isAnchor(size, name) {
     return size === this.state.anchorSize && name === this.state.anchorName;
@@ -119,6 +124,7 @@ class Docs extends React.PureComponent {
         <h2>
           <input
             placeholder="поиск"
+            // biome-ignore lint/a11y/noAutofocus: считаем что лучше в плане UX-а
             autoFocus={true}
             type="text"
             onChange={this.onSearchChange}

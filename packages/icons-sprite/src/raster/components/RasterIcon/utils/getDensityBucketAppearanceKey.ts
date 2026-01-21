@@ -1,4 +1,4 @@
-import { IconAppearance } from '../../IconAppearanceProvider/IconAppearanceProvider';
+import type { IconAppearance } from '../../IconAppearanceProvider/IconAppearanceProvider';
 import type { DensityBucketAppearanceType, DensityBucketType } from '../types';
 
 export const getDensityBucketAppearanceKey = (

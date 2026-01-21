@@ -1,9 +1,9 @@
-import * as glob from 'glob';
-import * as path from 'node:path';
 import * as fs from 'node:fs';
-import { dashToCamel, sortArrayAlphabetically, longestCommonPrefix } from './utils.js';
-import { fromHtml } from 'hast-util-from-html';
+import * as path from 'node:path';
 import toJsx from '@mapbox/hast-util-to-jsx';
+import * as glob from 'glob';
+import { fromHtml } from 'hast-util-from-html';
+import { dashToCamel, longestCommonPrefix, sortArrayAlphabetically } from './utils.js';
 
 /**
  * @typedef {Object} Icon
@@ -76,7 +76,7 @@ function dirMap(src, pattern, prefix = '', deprecatedIcons) {
 
       const [id, size] = getIconIdAndSize(name);
 
-      const deprecated = deprecatedIcons.hasOwnProperty(name);
+      const deprecated = Object.hasOwn(deprecatedIcons, name);
 
       return {
         id,
@@ -127,7 +127,7 @@ function sortIconsByLongestCommonPrefix(icons) {
 
       // Отбрасываем часть строки, если у нее нет _ в конце
       const commonPrefix = longestCommonPrefix(filename, icons[i].filename).replace(
-        /([^]+_)[^_]+$/,
+        /([\s\S]+_)[^_]+$/,
         '$1',
       );
 
@@ -185,7 +185,7 @@ export async function createIconsMap(
 ) {
   const icons = [
     ...dirMap(src, '[0-9][0-9]', prefix, deprecatedIcons),
-    ...extraCategories.map((category) => dirMap(src, category, prefix, deprecatedIcons)).flat(),
+    ...extraCategories.flatMap((category) => dirMap(src, category, prefix, deprecatedIcons)),
   ];
 
   const promises = icons.map((icon) => prepareIconMapEntity(icon, optimizeFn));
@@ -214,11 +214,11 @@ class JSXExpression {
  */
 function svgIdPrefix(el, prefix) {
   if (!['element', 'root'].some((type) => type === el.type)) {
-    return;
+    return void 0;
   }
 
   for (const key in el.properties) {
-    if (!Object.prototype.hasOwnProperty.call(el.properties, key)) {
+    if (!Object.hasOwn(el.properties, key)) {
       continue;
     }
 
@@ -239,12 +239,14 @@ function svgIdPrefix(el, prefix) {
 
     if (urlRegex.test(value)) {
       el.properties[key] = new JSXExpression(
-        '`' + value.replace(urlRegex, (match, id) => `url(#${prefix}\${reactId}${id})`) + '`',
+        `\`${value.replace(urlRegex, (_match, id) => `url(#${prefix}\${reactId}${id})`)}\``,
       );
     }
   }
 
-  el.children.forEach((el) => svgIdPrefix(el, prefix));
+  for (const child of el.children) {
+    svgIdPrefix(child, prefix);
+  }
 }
 
 /**

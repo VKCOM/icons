@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SvgIconProps, SvgIconRoot } from './SvgIconRoot';
+import type * as React from 'react';
+import { type SvgIconProps, SvgIconRoot } from './SvgIconRoot';
 
 interface SvgIconRootV2Props extends SvgIconProps {
   vkuiIconId: string;

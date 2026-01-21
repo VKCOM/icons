@@ -10,27 +10,24 @@
     "build:icons": "yarn workspace @vkontakte/icons run icons-build",
     "build:icons-docs": "yarn workspace @vkontakte/icons run docs",
     "build:icons-sprite": "yarn workspace @vkontakte/icons-sprite run build",
-    "test": "yarn prettier:check",
-    "prettier:write": "yarn prettier --write --ignore-unknown .",
-    "prettier:check": "yarn prettier --check --ignore-unknown .",
+    "test": "yarn biome",
+    "biome": "biome check",
     "size": "yarn workspace @vkontakte/icons run size",
     "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version",
     "prepare": "husky"
   },
-  "prettier": "@vkontakte/prettier-config",
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "prettier --check"
+      "biome check"
     ],
     "*.{json,md,mdx}": [
-      "prettier --check"
+      "biome check"
     ]
   },
   "devDependencies": {
-    "@vkontakte/prettier-config": "^0.2.1",
+    "@biomejs/biome": "^2.3.11",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4"
+    "lint-staged": "^16.2.7"
   },
   "packageManager": "yarn@4.12.0+sha512.f45ab632439a67f8bc759bf32ead036a1f413287b9042726b7cc4818b7b49e14e9423ba49b18f9e06ea4941c1ad062385b1d8760a8d5091a1a31e5f6219afca8"
 }

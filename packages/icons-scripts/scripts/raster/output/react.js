@@ -17,7 +17,7 @@ export function createReactRasterIcon({ id, size, componentName, ...options }, o
   /**
    * @type {Record<'densityBucketSetImports' | 'densityBucketAvailableImports', string[]>}
    */
-  let { densityBucketSetImports, densityBucketAvailableImports } = densityBucketTypes.reduce(
+  const { densityBucketSetImports, densityBucketAvailableImports } = densityBucketTypes.reduce(
     (data, densityBucketType) => {
       for (const appearance of appearanceTypes) {
         const densityPath = options[appearance]?.[densityBucketType];

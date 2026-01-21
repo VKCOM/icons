@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type * as React from 'react';
 
 function classNames(...classes: (string | undefined)[]) {
   return classes.filter((v) => v).join(' ');
@@ -31,6 +31,7 @@ export function SvgIconRoot({
   const size = Math.max(width, height);
 
   return (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: title прокидывается снаружи
     <svg
       aria-hidden={ariaHidden}
       display={display}

@@ -1,15 +1,15 @@
+import * as childProcess from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import * as util from 'node:util';
-import * as childProcess from 'node:child_process';
 import * as glob from 'glob';
-import { debugInfo, debugError, sortArrayAlphabetically } from './utils.js';
 import { createIconsMap } from './icons-map.js';
-import { prepareOptions } from './options.js';
 import { optimize } from './optimize.js';
+import { prepareOptions } from './options.js';
 import { createReactIcon } from './output/index.js';
 import { generateRasterIcons } from './raster/icons.js';
+import { debugError, debugInfo, sortArrayAlphabetically } from './utils.js';
 
 const exec = util.promisify(childProcess.exec);
 
