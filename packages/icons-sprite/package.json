@@ -33,7 +33,7 @@
   "devDependencies": {
     "@size-limit/file": "^12.0.0",
     "@size-limit/webpack": "^12.0.0",
-    "@swc/cli": "^0.7.9",
+    "@swc/cli": "^0.7.10",
     "@swc/core": "^1.15.4",
     "@types/node": "^25.0.2",
     "@types/react": "^19.0.1",

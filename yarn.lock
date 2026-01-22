@@ -766,9 +766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/cli@npm:^0.7.9":
-  version: 0.7.9
-  resolution: "@swc/cli@npm:0.7.9"
+"@swc/cli@npm:^0.7.10":
+  version: 0.7.10
+  resolution: "@swc/cli@npm:0.7.10"
   dependencies:
     "@swc/counter": "npm:^0.1.3"
     "@xhmikosr/bin-wrapper": "npm:^13.0.5"
@@ -789,7 +789,7 @@ __metadata:
     spack: bin/spack.js
     swc: bin/swc.js
     swcx: bin/swcx.js
-  checksum: 10/b138d2a7c85320b1075891f2442ed261d1c3afe3518549829c1211ac1063b29237b5c51db65511b69a6d5fc828cc4425bc4107d9e6a8be0dff8a05da06fc8218
+  checksum: 10/bb5ae65b6766bcdb645e2ccbe28d97ec899eae2e39f7eb0bb51159c5675aac06a0552ca77d5c97efb57432a9e71efdd36b6a63439ae71919edd24b9967bed663
   languageName: node
   linkType: hard
 
@@ -1279,7 +1279,7 @@ __metadata:
   resolution: "@vkontakte/icons-scripts@workspace:packages/icons-scripts"
   dependencies:
     "@mapbox/hast-util-to-jsx": "npm:^2.1.0"
-    "@swc/cli": "npm:^0.7.9"
+    "@swc/cli": "npm:^0.7.10"
     "@swc/core": "npm:^1.15.4"
     glob: "npm:^13.0.0"
     hast-util-from-html: "npm:^2.0.3"
@@ -1294,7 +1294,7 @@ __metadata:
   dependencies:
     "@size-limit/file": "npm:^12.0.0"
     "@size-limit/webpack": "npm:^12.0.0"
-    "@swc/cli": "npm:^0.7.9"
+    "@swc/cli": "npm:^0.7.10"
     "@swc/core": "npm:^1.15.4"
     "@swc/helpers": "npm:^0.5.17"
     "@types/node": "npm:^25.0.2"
@@ -1317,7 +1317,7 @@ __metadata:
     "@rspack/core": "npm:^1.6.8"
     "@size-limit/file": "npm:^12.0.0"
     "@size-limit/webpack": "npm:^12.0.0"
-    "@swc/cli": "npm:^0.7.9"
+    "@swc/cli": "npm:^0.7.10"
     "@swc/core": "npm:^1.15.4"
     "@swc/helpers": "npm:^0.5.17"
     "@types/react": "npm:^19.0.1"
