@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
-  <g clip-path="url(#a)">
-    <circle cx="6" cy="6" r="6" fill="url(#b)"/>
-    <path fill="#fff" fill-rule="evenodd" d="M6.11 2.59a.25.25 0 0 0-.334.114l-.952 1.928-2.127.31a.25.25 0 0 0-.138.426l1.539 1.5-.364 2.119a.25.25 0 0 0 .363.263L6 8.25l1.903 1a.25.25 0 0 0 .363-.263l-.364-2.119 1.54-1.5a.25.25 0 0 0-.14-.427l-2.126-.309-.952-1.928a.25.25 0 0 0-.113-.113Z" clip-rule="evenodd"/>
-  </g>
-  <defs>
-    <linearGradient id="b" x1="-6" x2="6" y1="6" y2="18" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFB73D"/>
-      <stop offset="1" stop-color="#FFA000"/>
-    </linearGradient>
-    <clipPath id="a">
-      <path fill="#fff" d="M0 0h12v12H0z"/>
-    </clipPath>
-  </defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12"><g clip-path="url(#a)"><circle cx="6" cy="6" r="6" fill="#ffa000"/><path fill="#fff" fill-rule="evenodd" d="M6.11 2.59a.25.25 0 0 0-.334.114l-.952 1.928-2.127.31a.25.25 0 0 0-.138.425l1.539 1.501-.364 2.119a.25.25 0 0 0 .363.263L6 8.25l1.903 1a.25.25 0 0 0 .363-.263l-.364-2.119 1.54-1.5a.25.25 0 0 0-.14-.427l-2.126-.31-.952-1.927a.25.25 0 0 0-.113-.113" clip-rule="evenodd"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h12v12H0z"/></clipPath></defs></svg>
