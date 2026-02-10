@@ -36,7 +36,7 @@
     "ios >= 9"
   ],
   "dependencies": {
-    "@swc/helpers": "^0.5.17",
+    "@swc/helpers": "^0.5.18",
     "@vkontakte/icons-sprite": "workspace:^"
   },
   "devDependencies": {
