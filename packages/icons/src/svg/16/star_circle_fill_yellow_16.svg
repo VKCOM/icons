@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-  <g clip-path="url(#a)">
-    <circle cx="8" cy="8" r="8" fill="url(#b)"/>
-    <path fill="#fff" d="M8.148 3.454a.333.333 0 0 0-.447.152l-1.268 2.57-2.837.412a.333.333 0 0 0-.185.569l2.053 2-.485 2.825a.334.334 0 0 0 .484.352L8 11l2.537 1.334a.333.333 0 0 0 .484-.352l-.485-2.825 2.053-2a.334.334 0 0 0-.185-.569l-2.837-.412L8.3 3.606a.333.333 0 0 0-.151-.152Z"/>
-  </g>
-  <defs>
-    <linearGradient id="b" x1="-8" x2="8" y1="8" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFB73D"/>
-      <stop offset="1" stop-color="#FFA000"/>
-    </linearGradient>
-    <clipPath id="a">
-      <path fill="#fff" d="M0 0h16v16H0z"/>
-    </clipPath>
-  </defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><g clip-path="url(#a)"><circle cx="8" cy="8" r="8" fill="#ffa000"/><path fill="#fff" d="M8.148 3.454a.333.333 0 0 0-.447.152l-1.268 2.57-2.837.412a.333.333 0 0 0-.185.569l2.053 2-.485 2.825a.334.334 0 0 0 .484.352L8 11l2.537 1.334a.333.333 0 0 0 .484-.352l-.485-2.825 2.053-2a.334.334 0 0 0-.185-.569l-2.837-.412L8.3 3.606a.33.33 0 0 0-.151-.152"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
