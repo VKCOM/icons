@@ -36,6 +36,8 @@ const RasterIcon = React.memo(function RasterIcon({
   getRootRef,
   id,
   size,
+  width,
+  height,
   className,
   ...restProps
 }: RasterIconProps) {
@@ -72,16 +74,16 @@ const RasterIcon = React.memo(function RasterIcon({
       className={[
         'vkuiIcon',
         `vkuiIcon--${size}`,
-        `vkuiIcon--w-${size}`,
-        `vkuiIcon--h-${size}`,
+        `vkuiIcon--w-${width}`,
+        `vkuiIcon--h-${height}`,
         `vkuiIcon--${id}`,
         'vkuiRasterIcon',
         className,
       ]
         .join(' ')
         .trim()}
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       srcSet={srcSet}
       loading="lazy"
       draggable={false}
@@ -95,9 +97,20 @@ export function makeRasterIcon<Props extends RasterIconBaseProps>(
   id: string,
   size: number,
   densityBucketAppearanceSet: DensityBucketAppearanceSet,
+  width: number = size,
+  height: number = size,
 ): React.FC<Props> {
   const Icon = (props: Props): React.JSX.Element => {
-    return <RasterIcon id={id} size={size} {...densityBucketAppearanceSet} {...props} />;
+    return (
+      <RasterIcon
+        id={id}
+        size={size}
+        width={width}
+        height={height}
+        {...densityBucketAppearanceSet}
+        {...props}
+      />
+    );
   };
 
   Icon.size = size;

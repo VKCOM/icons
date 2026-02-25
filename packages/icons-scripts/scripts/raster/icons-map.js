@@ -1,5 +1,7 @@
+import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as glob from 'glob';
+import { imageSize } from 'image-size';
 import { dashToCamel, sortArrayAlphabetically } from '../utils.js';
 
 /**
@@ -27,22 +29,28 @@ export function createIconsMap(src) {
   files.forEach((file) => {
     const [icon, dpiFormat] = file.split(path.sep).reverse();
 
-    const match = icon.match(/(([\s\S]+?)(?:_(light|dark))?_([\d]+))\.(\w+)$/);
+    const match = icon.match(/(([\s\S]+?)(?:_(light|dark))?_([\d]+))(w|h)?\.(\w+)$/);
 
     if (!match) {
       return;
     }
 
-    let [, name, id, appearance = 'light', size, format] = match;
+    let [, name, id, appearance = 'light', size, _dimensions, format] = match;
     size = Number(size);
     name = name.replace(`_${appearance}`, '');
 
     const dpiType = dpiFormat.split('-').pop();
 
+    // FIXME: async
+    const buffer = fs.readFileSync(file);
+    const dimensions = imageSize(buffer);
+
     const iconEntity = iconsMap.get(name) || {
       id,
       name,
       size,
+      width: dimensions.width,
+      height: dimensions.height,
       dirname: `${format}${path.sep}${size}`,
       componentName: getIconComponentName(name),
     };
