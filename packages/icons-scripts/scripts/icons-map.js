@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import toJsx from '@mapbox/hast-util-to-jsx';
 import * as glob from 'glob';
 import { fromHtml } from 'hast-util-from-html';
+import { toJsx } from './to-jsx.js';
 import { dashToCamel, longestCommonPrefix, sortArrayAlphabetically } from './utils.js';
 
 /**
