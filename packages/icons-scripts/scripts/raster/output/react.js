@@ -13,7 +13,10 @@ const densityBucketTypes = ['mdpi', 'xhdpi', 'xxhdpi'];
  * @param {string} outputPath
  * @returns {string}
  */
-export function createReactRasterIcon({ id, size, componentName, ...options }, outputPath) {
+export function createReactRasterIcon(
+  { id, size, width, height, componentName, ...options },
+  outputPath,
+) {
   /**
    * @type {Record<'densityBucketSetImports' | 'densityBucketAvailableImports', string[]>}
    */
@@ -54,7 +57,9 @@ export const ${componentName}: FC<${componentName}Props> = makeRasterIcon<${comp
   '${componentName}',
   '${id}',
   ${size},
-  {${densityBucketAvailableImports}}
+  {${densityBucketAvailableImports}},
+  ${width},
+  ${height},
 );
 `;
 }
