@@ -14,11 +14,17 @@
     "email": "ig.fedorov@corp.vk.com"
   },
   "dependencies": {
-    "@mapbox/hast-util-to-jsx": "^2.1.0",
     "@swc/cli": "^0.8.0",
     "@swc/core": "^1.15.11",
     "glob": "^13.0.3",
     "hast-util-from-html": "^2.0.3",
+    "kebab-case": "^2.0.2",
+    "postcss": "^8.5.6",
+    "postcss-js": "^5.1.0",
+    "property-information": "^7.1.0",
+    "react-attr-converter": "^0.3.1",
+    "stringify-entities": "^4.0.4",
+    "stringify-object": "^6.0.0",
     "svgo": "^4.0.0"
   },
   "devDependencies": {
