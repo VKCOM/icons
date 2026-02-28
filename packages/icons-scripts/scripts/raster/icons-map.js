@@ -43,14 +43,14 @@ export function createIconsMap(src) {
 
     // FIXME: async
     const buffer = fs.readFileSync(file);
-    const dimensions = imageSize(buffer);
+    const __dimensions = imageSize(buffer);
 
     const iconEntity = iconsMap.get(name) || {
       id,
       name,
       size,
-      width: dimensions.width,
-      height: dimensions.height,
+      width: size,
+      height: size,
       dirname: `${format}${path.sep}${size}`,
       componentName: getIconComponentName(name),
     };
