@@ -16,7 +16,7 @@
   "dependencies": {
     "@swc/cli": "^0.8.0",
     "@swc/core": "^1.15.11",
-    "glob": "^13.0.3",
+    "glob": "^13.0.6",
     "hast-util-from-html": "^2.0.3",
     "image-size": "^2.0.2",
     "kebab-case": "^2.0.2",
