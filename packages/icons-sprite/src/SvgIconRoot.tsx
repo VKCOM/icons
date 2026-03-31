@@ -4,16 +4,16 @@ function classNames(...classes: (string | undefined)[]) {
   return classes.filter((v) => v).join(' ');
 }
 
-export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
-  width?: number;
-  height?: number;
-  getRootRef?: React.Ref<SVGSVGElement>;
-  title?: string;
-}
+export type SvgIconProps = React.SVGProps<SVGSVGElement> & {
+  width?: number | undefined;
+  height?: number | undefined;
+  getRootRef?: React.Ref<SVGSVGElement> | undefined;
+  title?: string | undefined;
+};
 
-interface SvgIconRootProps extends SvgIconProps {
+type SvgIconRootProps = SvgIconProps & {
   baseClassName: string;
-}
+};
 
 export function SvgIconRoot({
   width = 0,

@@ -1,9 +1,9 @@
 import type * as React from 'react';
 
 type Props = {
-  children?: React.ReactNode;
-  classPrefix?: string;
-  globalClasses?: boolean;
+  children?: React.ReactNode | undefined;
+  classPrefix?: string | undefined;
+  globalClasses?: boolean | undefined;
 };
 
 /**
