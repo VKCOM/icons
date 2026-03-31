@@ -8,14 +8,14 @@ import {
 import type { DensityBucketAppearanceSet, DensityBucketType } from './types';
 import { getDensityBucketAppearanceKey } from './utils/getDensityBucketAppearanceKey';
 
-interface RasterIconBaseProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  getRootRef?: React.Ref<HTMLImageElement>;
-}
+type RasterIconBaseProps = React.ImgHTMLAttributes<HTMLImageElement> & {
+  getRootRef?: React.Ref<HTMLImageElement> | undefined;
+};
 
-interface RasterIconInternalProps extends DensityBucketAppearanceSet {
+type RasterIconInternalProps = DensityBucketAppearanceSet & {
   id: string;
   size: number;
-}
+};
 
 type RasterIconProps = RasterIconInternalProps & RasterIconBaseProps;
 

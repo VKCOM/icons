@@ -1,12 +1,12 @@
 import type * as React from 'react';
 import { type SvgIconProps, SvgIconRoot } from './SvgIconRoot';
 
-interface SvgIconRootV2Props extends SvgIconProps {
+type SvgIconRootV2Props = SvgIconProps & {
   vkuiIconId: string;
   vkuiProps: SvgIconProps;
-  vkuiAttrs?: SvgIconProps;
-  children?: React.ReactElement;
-}
+  vkuiAttrs?: SvgIconProps | undefined;
+  children?: React.ReactElement | undefined;
+};
 
 export function SvgIconRootV2({
   vkuiIconId,
