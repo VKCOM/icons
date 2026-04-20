@@ -14,7 +14,7 @@
     "email": "ig.fedorov@corp.vk.com"
   },
   "dependencies": {
-    "@swc/cli": "^0.8.0",
+    "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.21",
     "glob": "^13.0.6",
     "hast-util-from-html": "^2.0.3",
