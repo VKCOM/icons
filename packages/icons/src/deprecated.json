@@ -1,4 +1,11 @@
 {
   "$schema": "./deprecated.schema.json",
-  "old_icon_name_16": "new_icon_name_16"
+  "old_icon_name_16": "new_icon_name_16",
+  "music_24": "note_24",
+  "music_32": "note_32",
+  "music_outline_24": "note_outline_24",
+  "music_outline_28": "note_outline_28",
+  "music_outline_32": "note_outline_32",
+  "music_outline_36": "note_outline_36",
+  "music_outline_56": "note_outline_56"
 }
