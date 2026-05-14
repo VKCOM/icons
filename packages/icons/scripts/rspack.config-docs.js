@@ -32,16 +32,17 @@ export default {
                     runtime: 'automatic',
                   },
                 },
-                target: 'es2017',
+                target: 'es2020',
               },
             },
           },
         ],
       },
+      {
+        test: /\.css$/i,
+        type: 'css/auto',
+      },
     ],
-  },
-  experiments: {
-    css: true,
   },
   plugins: [
     new rspack.HtmlRspackPlugin({
