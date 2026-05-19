@@ -901,12 +901,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^25.6.2":
-  version: 25.6.2
-  resolution: "@types/node@npm:25.6.2"
+"@types/node@npm:^25.9.0":
+  version: 25.9.0
+  resolution: "@types/node@npm:25.9.0"
   dependencies:
-    undici-types: "npm:~7.19.0"
-  checksum: 10/a8afba633f651c80ba3c77d711f1b9bde9cd85ba79f5031af18aa9f0f872e9348cc9e1048fd1b0092cb903f028a4ce505a11dac1205e6efff8b0224de3612028
+    undici-types: "npm:>=7.24.0 <7.24.7"
+  checksum: 10/8725e4e3191ba81626b322cfb80b62064c687d5da2983d7318068069f940a9c019e6f342a674ccc4ad26ef6f0a5dcbc7451a81610155ca2c6d5202800b144a19
   languageName: node
   linkType: hard
 
@@ -966,7 +966,7 @@ __metadata:
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.15.33"
     "@swc/helpers": "npm:^0.5.21"
-    "@types/node": "npm:^25.6.2"
+    "@types/node": "npm:^25.9.0"
     "@types/react": "npm:^19.0.1"
     concurrently: "npm:^9.2.1"
     react: "npm:^19.0.0"
@@ -3756,17 +3756,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:>=7.24.0 <7.24.7":
+  version: 7.24.6
+  resolution: "undici-types@npm:7.24.6"
+  checksum: 10/defc9538b952e3c15b8526596c591f7c1f0c7605ad27a2b7feddbea7ef2e3003f3eda2cdb051a3cb1a2185e3893100fd9cb925c799db99d48131ea63b5233d10
+  languageName: node
+  linkType: hard
+
 "undici-types@npm:~6.21.0":
   version: 6.21.0
   resolution: "undici-types@npm:6.21.0"
   checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~7.19.0":
-  version: 7.19.2
-  resolution: "undici-types@npm:7.19.2"
-  checksum: 10/05c34c63444c8caca7137f122b29ed50c1d7d05d1e0b2337f423575d3264054c4a0139e47e82e65723d09b97fcad6d8b0223b3550430a9006cc00e72a1e035bf
   languageName: node
   linkType: hard
 
