@@ -28,7 +28,7 @@
     "test": "node --test '**/*.test.*'"
   },
   "dependencies": {
-    "@swc/helpers": "^0.5.21"
+    "@swc/helpers": "^0.5.23"
   },
   "devDependencies": {
     "@size-limit/file": "^12.1.0",
