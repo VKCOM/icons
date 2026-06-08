@@ -948,7 +948,7 @@ __metadata:
     kebab-case: "npm:^2.0.2"
     postcss: "npm:^8.5.15"
     postcss-js: "npm:^5.1.0"
-    property-information: "npm:^7.1.0"
+    property-information: "npm:^7.2.0"
     react-attr-converter: "npm:^0.3.1"
     stringify-entities: "npm:^4.0.4"
     stringify-object: "npm:^6.0.0"
@@ -2996,10 +2996,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"property-information@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "property-information@npm:7.1.0"
-  checksum: 10/896d38a52ad7170de73f832d277c69e76a9605d941ebb3f0d6e56271414a7fdf95ff6d2819e68036b8a0c7d2d4d88bf1d4a5765c032cb19c2343567ee3a14b15
+"property-information@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "property-information@npm:7.2.0"
+  checksum: 10/3e2919470164287dc69bc8da2c6365f674a6bd84dd670eb339af24576b0210d87edd3b7c461bf04d699d8444e94bfe9b6656c5fed3504cc277f8d72b12c8f5c1
   languageName: node
   linkType: hard
 
