@@ -5,7 +5,7 @@ type SvgIconRootV2Props = SvgIconProps & {
   vkuiIconId: string;
   vkuiProps: SvgIconProps;
   vkuiAttrs?: SvgIconProps | undefined;
-  children?: React.ReactElement | undefined;
+  children?: React.ReactNode | undefined;
 };
 
 export function SvgIconRootV2({

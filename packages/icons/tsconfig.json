@@ -11,7 +11,7 @@
     "noImplicitThis": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
     "noImplicitAny": true,
     "skipLibCheck": true
