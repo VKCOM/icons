@@ -1,6 +1,7 @@
 {
   "$schema": "./deprecated.schema.json",
   "old_icon_name_16": "new_icon_name_16",
+  "file_broken_outline_56": "document_broken_outline_56",
   "star_12": "sparkle_12",
   "stories_ideas_16": "card_sparkle_16",
   "stories_ideas_20": "card_sparkles_20",
