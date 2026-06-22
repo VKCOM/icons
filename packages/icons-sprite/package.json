@@ -35,7 +35,7 @@
     "@size-limit/webpack": "^12.1.0",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.41",
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.0.0",
     "@types/react": "^19.0.1",
     "concurrently": "^10.0.3",
     "react": "^19.0.0",
