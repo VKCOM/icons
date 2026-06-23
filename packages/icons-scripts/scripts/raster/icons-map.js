@@ -18,7 +18,7 @@ import { dashToCamel, sortArrayAlphabetically } from '../utils.js';
 /**
  * @param {string} src
  */
-export function createIconsMap(src) {
+export function createRasterIconsMap(src) {
   const files = sortArrayAlphabetically(glob.sync(path.posix.join(src, `./png/**/*.png`)));
 
   /**
