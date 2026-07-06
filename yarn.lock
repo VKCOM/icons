@@ -971,7 +971,7 @@ __metadata:
     property-information: "npm:^7.2.0"
     react-attr-converter: "npm:^0.3.1"
     stringify-entities: "npm:^4.0.4"
-    stringify-object: "npm:^6.0.0"
+    stringify-object: "npm:^7.0.0"
     svgo: "npm:^4.0.1"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -2988,6 +2988,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"quote-js-string@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "quote-js-string@npm:0.1.0"
+  checksum: 10/42989e9031948a95f825ce369784e603fdcd8639cdcca9de3e3d1ba77b5111aa45362b3e2f66f70e5c06e2230af10c48818e27dd6d22a9732812cc5d4b10d404
+  languageName: node
+  linkType: hard
+
 "react-attr-converter@npm:^0.3.1":
   version: 0.3.1
   resolution: "react-attr-converter@npm:0.3.1"
@@ -3372,15 +3379,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stringify-object@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "stringify-object@npm:6.0.0"
+"stringify-object@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "stringify-object@npm:7.0.0"
   dependencies:
     get-own-enumerable-keys: "npm:^1.0.0"
     is-identifier: "npm:^1.0.1"
     is-obj: "npm:^3.0.0"
     is-regexp: "npm:^3.1.0"
-  checksum: 10/23d1c68ae085a84ab7bd2ce693175e55ce387fabf7e64055c6292e4f637670c06ddc2728d0ec6fecf0b7b677dc6b4331952a2523b61a6ed47e66449131bdf1ef
+    quote-js-string: "npm:^0.1.0"
+  checksum: 10/72c64db7ffe25118facc25cf3b5be66e5330ce25af7b46f8acbc5116345484dfbd0b9f9498abf88050f08f45b7908fb8a791302eb06a3ecad9e7fb3863eabac8
   languageName: node
   linkType: hard
 
