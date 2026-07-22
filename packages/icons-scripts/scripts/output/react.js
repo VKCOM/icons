@@ -11,21 +11,26 @@ export function createReactIcon({
   deprecated,
   replacement,
   subcomponents,
+  base64,
 }) {
   const subcomponentsImports = getSubcomponentsImports(subcomponents);
   const { assigns, typeAssigns } = getSubcomponentsAssigns(componentName, subcomponents);
 
   const needReactId = content.includes`\${reactId}`;
 
-  let jsdoc = '';
+  const jsdocText = [];
+
+  jsdocText.push(`![${componentName}](data:image/svg+xml;base64,${base64})`);
+
   if (deprecated) {
     const replacementNotice = replacement ? `. Замените на ${replacement}` : '';
 
-    jsdoc = `/**
- * @deprecated Иконка устарела${replacementNotice}
- */
-`;
+    jsdocText.push(`@deprecated Иконка устарела${replacementNotice}`);
   }
+
+  const jsdoc = `/**
+ * ${jsdocText.join('\n *')}
+ */`;
 
   return `
 ${needReactId ? `'use client';` : ''}
