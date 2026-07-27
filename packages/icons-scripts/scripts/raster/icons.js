@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { createIconsMap } from './icons-map.js';
+import { createRasterIconsMap } from './icons-map.js';
 import { createReactRasterIcon } from './output/react.js';
 
 /**
@@ -8,7 +8,7 @@ import { createReactRasterIcon } from './output/react.js';
  * @param {string} tsFilesDirectory
  */
 export function generateRasterIcons(srcDirectory, tsFilesDirectory) {
-  const iconsMap = createIconsMap(srcDirectory);
+  const iconsMap = createRasterIconsMap(srcDirectory);
 
   const exportsMap = {};
 

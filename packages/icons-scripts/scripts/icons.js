@@ -126,6 +126,8 @@ export function generateIcons(options) {
 
     subcomponents?.forEach(processIconMapEntity);
 
+    const fileName = `${id}${size ? `_${size}` : ''}`;
+
     // Превращаем svg-файл в ts-файл в виде строки
     const reactSource = createReactIcon({
       id: symbolId,
@@ -138,6 +140,7 @@ export function generateIcons(options) {
       deprecated,
       replacement,
       subcomponents,
+      base64: Buffer.from(addPreviewBackground(icon.content)).toString('base64'),
     });
 
     const exportName = componentName;
@@ -148,7 +151,6 @@ export function generateIcons(options) {
       fs.mkdirSync(iconDir);
     }
 
-    const fileName = `${id}${size ? `_${size}` : ''}`;
     fs.writeFileSync(path.join(iconDir, `${fileName}.tsx`), reactSource);
 
     if (!isSubcomponent) {
@@ -211,4 +213,33 @@ function createIndexExports(exportsMap, dir) {
 
   const code = exported.join('\n');
   fs.writeFileSync(path.join(dir, 'index.ts'), code);
+}
+
+/**
+ * Добавляет белый фон со скруглением 4px для предпросмотра в документации.
+ *
+ * Иконки используют `currentColor` и прозрачный фон, поэтому на тёмной теме
+ * или в markdown-предпросмотре они могут быть не видны — кладём белый rect.
+ * `currentColor` заменяется на чёрный, чтобы на белом фоне иконка всегда
+ * была видна. Скругление задаётся через `rx`, а контент иконки обрезается
+ * по тому же скруглённому прямоугольнику через `clipPath`, чтобы углы не
+ * выступали за фон.
+ *
+ * @param {string} svg
+ * @return {string}
+ */
+const PREVIEW_BG_RADIUS = 4;
+const PREVIEW_CLIP_ID = 'preview-bg';
+
+function addPreviewBackground(svg) {
+  const rect = `<rect width="100%" height="100%" rx="${PREVIEW_BG_RADIUS}" fill="white"/>`;
+  const clipPath = `<clipPath id="${PREVIEW_CLIP_ID}"><rect width="100%" height="100%" rx="${PREVIEW_BG_RADIUS}"/></clipPath>`;
+
+  return svg
+    .replace(
+      /<svg\b[^>]*>/,
+      (match) => `${match}${clipPath}${rect}<g clip-path="url(#${PREVIEW_CLIP_ID})">`,
+    )
+    .replace(/<\/svg>\s*$/, '</g></svg>')
+    .replaceAll('currentColor', 'black');
 }

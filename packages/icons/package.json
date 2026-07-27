@@ -1,6 +1,6 @@
 {
   "name": "@vkontakte/icons",
-  "version": "3.58.0",
+  "version": "3.64.0",
   "description": "SVG icons, provided as a React components. With love from VKontakte",
   "homepage": "https://vkcom.github.io/icons/",
   "repository": {
@@ -40,19 +40,19 @@
     "@vkontakte/icons-sprite": "workspace:^"
   },
   "devDependencies": {
-    "@rspack/cli": "^2.0.6",
-    "@rspack/core": "^2.0.6",
-    "@size-limit/file": "^12.1.0",
-    "@size-limit/webpack": "^12.1.0",
+    "@rspack/cli": "^2.1.5",
+    "@rspack/core": "^2.1.5",
+    "@size-limit/file": "^13.0.1",
+    "@size-limit/webpack": "^13.0.1",
     "@swc/cli": "^0.8.1",
-    "@swc/core": "^1.15.40",
+    "@swc/core": "^1.15.43",
     "@types/react": "^19.0.1",
     "@vkontakte/icons-scripts": "workspace:^",
     "react": "^19.0.0",
     "react-color": "^2.18.0",
     "react-dom": "^19.0.0",
-    "size-limit": "^12.1.0",
-    "typescript": "^6.0.3"
+    "size-limit": "^13.0.1",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "react": "^18 || ^19"

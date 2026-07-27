@@ -1,6 +1,7 @@
 {
   "$schema": "./deprecated.schema.json",
   "old_icon_name_16": "new_icon_name_16",
+  "file_broken_outline_56": "document_broken_outline_56",
   "star_12": "sparkle_12",
   "stories_ideas_16": "card_sparkle_16",
   "stories_ideas_20": "card_sparkles_20",
@@ -8,4 +9,8 @@
   "stories_ideas_outline_28": "card_sparkles_outline_28",
   "coins_36": "coins_outline_36",
   "message_unread_top_28": "message_unread_top_outline_28"
+  "user_added_24": "user_check_24",
+  "user_added_outline_24": "user_check_outline_24",
+  "user_added_outline_28": "user_check_outline_28",
+  "done_outline_24": "check_outline_24"
 }
