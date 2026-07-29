@@ -36,8 +36,8 @@ const RasterIcon = React.memo(function RasterIcon({
   getRootRef,
   id,
   size,
-  width,
-  height,
+  width = size,
+  height = size,
   className,
   ...restProps
 }: RasterIconProps) {
