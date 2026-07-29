@@ -1,8 +1,7 @@
-import * as childProcess from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { performance } from 'node:perf_hooks';
-import * as util from 'node:util';
+import * as swc from '@swc/core';
 import * as glob from 'glob';
 import { createIconsMap } from './icons-map.js';
 import { optimize } from './optimize.js';
@@ -10,8 +9,6 @@ import { prepareOptions } from './options.js';
 import { createReactIcon } from './output/index.js';
 import { generateRasterIcons } from './raster/icons.js';
 import { debugError, debugInfo, sortArrayAlphabetically } from './utils.js';
-
-const exec = util.promisify(childProcess.exec);
 
 /**
  * @typedef {import('./options').GenerateOptions} GenerateOptions
@@ -159,18 +156,63 @@ export function generateIcons(options) {
   };
 
   const compile = async () => {
-    const swcConfig = path.resolve(import.meta.dirname, './configs/.swcrc');
-    if (!fs.existsSync(swcConfig)) {
+    const swcrcPath = path.resolve(import.meta.dirname, './configs/.swcrc');
+    if (!fs.existsSync(swcrcPath)) {
       debugError('swc config not found');
     }
 
     debugInfo('Running swc...');
 
-    await Promise.all([
-      exec(
-        `swc ${tsFilesDirectory} --strip-leading-paths -d ${distDirectory}/ --config-file ${swcConfig}`,
-      ),
-    ]);
+    const swcOptions = JSON.parse(fs.readFileSync(swcrcPath, 'utf8'));
+
+    // При программном вызове `jsc.baseUrl` должен быть абсолютным путём
+    // (CLI резолвил его относительно .swcrc сам — @swc/core этого не делает).
+    const configDir = path.dirname(swcrcPath);
+    if (swcOptions.jsc?.baseUrl) {
+      swcOptions.jsc.baseUrl = path.resolve(configDir, swcOptions.jsc.baseUrl);
+    }
+
+    // `--strip-leading-paths`: убираем ведущий `./` из относительного пути,
+    // сохраняя структуру каталогов из tsFilesDirectory внутри distDirectory.
+    const transformOptions = {
+      ...swcOptions,
+      filename: 'icon.tsx',
+      swcrc: false,
+      isModule: true,
+    };
+
+    const entries = await glob.glob(`${tsFilesDirectory}/**/*.{ts,tsx,js,jsx,mjs,es,es6}`, {
+      nodir: true,
+    });
+
+    await Promise.all(
+      entries.map(async (file) => {
+        const relativePath = path.relative(tsFilesDirectory, file);
+        const ext = path.extname(file);
+        const outPath = path.join(distDirectory, relativePath);
+        const outJsPath = `${outPath.slice(0, -ext.length)}.js`;
+
+        const { code, output } = await swc.transformFile(file, transformOptions);
+
+        await fs.promises.mkdir(path.dirname(outJsPath), { recursive: true });
+        await fs.promises.writeFile(outJsPath, code);
+
+        // emitIsolatedDts возвращает декларации в `output` как JSON-обёртку
+        // `{"__swc_isolated_declarations__":"..."}` — разворачиваем её,
+        // как это делает @swc/cli (см. compile.js).
+        if (!output) {
+          return;
+        }
+
+        const dts = JSON.parse(output)?.__swc_isolated_declarations__;
+        if (!dts) {
+          return;
+        }
+
+        const outDtsPath = `${outPath.slice(0, -ext.length)}.d.ts`;
+        await fs.promises.writeFile(outDtsPath, dts);
+      }),
+    );
 
     debugInfo('Copy declarations');
 
