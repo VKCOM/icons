@@ -14,7 +14,6 @@
     "email": "ig.fedorov@corp.vk.com"
   },
   "dependencies": {
-    "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.43",
     "glob": "^13.0.6",
     "hast-util-from-html": "^2.0.3",
@@ -29,6 +28,7 @@
     "svgo": "^4.0.2"
   },
   "devDependencies": {
+    "@swc/cli": "^0.8.1",
     "typescript": "^7.0.2"
   },
   "engines": {
