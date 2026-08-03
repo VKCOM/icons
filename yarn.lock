@@ -592,24 +592,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "@size-limit/file@npm:13.0.1"
+"@size-limit/file@npm:^13.0.3":
+  version: 13.0.3
+  resolution: "@size-limit/file@npm:13.0.3"
   peerDependencies:
-    size-limit: 13.0.1
-  checksum: 10/3aa26e51da057a0dc771a99b95294eb28be705a2ff3861dba370aff97647ab4ed16e3281cb31d4c2f5d83ea52cbb321fe6e6039d06c1a2f1d1c3287c665f0c01
+    size-limit: 13.0.3
+  checksum: 10/c94ba067996e71baa0965603e640730a69d5d63d924411b22f752b07ac1deba94054a20a0fcc0e2163d7051d41c40b8c4f8c995f76c3371308cc5b52667811c6
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "@size-limit/webpack@npm:13.0.1"
+"@size-limit/webpack@npm:^13.0.3":
+  version: 13.0.3
+  resolution: "@size-limit/webpack@npm:13.0.3"
   dependencies:
     nanoid: "npm:^6.0.0"
-    webpack: "npm:^5.108.4"
+    webpack: "npm:^5.109.2"
   peerDependencies:
-    size-limit: 13.0.1
-  checksum: 10/f5e7980fc62bb32d151c8bd731eadd3c4081e1fe94dbd86baaee98d7de23db1af8e1d58e73932ead3728a10760458ceae16427ba012bf422a2417d0de5149111
+    size-limit: 13.0.3
+  checksum: 10/fd9681082ed8564e7fe398dd479336239316e07f5167c56f068da25e0e9fd7c132af263ab9a591f288bf96a7f4fbada7d72d0ad2ae5ceed108e605edb1b08f9e
   languageName: node
   linkType: hard
 
@@ -1094,8 +1094,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": "npm:^13.0.1"
-    "@size-limit/webpack": "npm:^13.0.1"
+    "@size-limit/file": "npm:^13.0.3"
+    "@size-limit/webpack": "npm:^13.0.3"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.15.43"
     "@swc/helpers": "npm:^0.5.23"
@@ -1103,7 +1103,7 @@ __metadata:
     "@types/react": "npm:^19.0.1"
     concurrently: "npm:^10.0.4"
     react: "npm:^19.0.0"
-    size-limit: "npm:^13.0.1"
+    size-limit: "npm:^13.0.3"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^7.0.2"
   peerDependencies:
@@ -1117,8 +1117,8 @@ __metadata:
   dependencies:
     "@rspack/cli": "npm:^2.1.7"
     "@rspack/core": "npm:^2.1.7"
-    "@size-limit/file": "npm:^13.0.1"
-    "@size-limit/webpack": "npm:^13.0.1"
+    "@size-limit/file": "npm:^13.0.3"
+    "@size-limit/webpack": "npm:^13.0.3"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.15.43"
     "@swc/helpers": "npm:^0.5.23"
@@ -1128,7 +1128,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-color: "npm:^2.18.0"
     react-dom: "npm:^19.0.0"
-    size-limit: "npm:^13.0.1"
+    size-limit: "npm:^13.0.3"
     typescript: "npm:^7.0.2"
   peerDependencies:
     react: ^18 || ^19
@@ -1950,13 +1950,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.24.2":
-  version: 5.24.3
-  resolution: "enhanced-resolve@npm:5.24.3"
+"enhanced-resolve@npm:^5.24.4":
+  version: 5.24.5
+  resolution: "enhanced-resolve@npm:5.24.5"
   dependencies:
     graceful-fs: "npm:^4.2.4"
     tapable: "npm:^2.3.3"
-  checksum: 10/687023ac3231e9db322ba8064a3d4717d2a03c2238bd55457c491af4ceb5910b7ada809effc9e809bf15ce6752c83226851887d330a5009536575a4d55ec3baf
+  checksum: 10/cf3f6f62bd52c1d564d7967e474892d5b43690aedaf7a4e87c831fa6b4b065617baf08eb940907968c711965cbc6ccd773bcc67b8d87a71523c0512372be2a06
   languageName: node
   linkType: hard
 
@@ -3199,17 +3199,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^13.0.1":
-  version: 13.0.1
-  resolution: "size-limit@npm:13.0.1"
+"size-limit@npm:^13.0.3":
+  version: 13.0.3
+  resolution: "size-limit@npm:13.0.3"
   dependencies:
     bytes-iec: "npm:^3.1.1"
     lilconfig: "npm:^3.1.3"
     nanospinner: "npm:^1.2.2"
-    picocolors: "npm:^1.1.1"
   bin:
     size-limit: bin.js
-  checksum: 10/6c65e62ad8132b5c878ffdb9b6838daff5a7ca12c4db3f20cb1d9d88d57d789e3830f6d6d8d0599960a89db2a86753267ea3e1b2344ca8ebe37a4db9d215cede
+  checksum: 10/440de38f1b8bc7724d007defb632ab8518f71c220dd082732dc5a2321deb43a14333697fa2c6b7c066cf81e302c3017f1ebf878b673be722fa8466d9c72c48ee
   languageName: node
   linkType: hard
 
@@ -3846,9 +3845,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.108.4":
-  version: 5.109.0
-  resolution: "webpack@npm:5.109.0"
+"webpack@npm:^5.109.2":
+  version: 5.109.2
+  resolution: "webpack@npm:5.109.2"
   dependencies:
     "@types/estree": "npm:^1.0.8"
     "@types/json-schema": "npm:^7.0.15"
@@ -3858,7 +3857,7 @@ __metadata:
     acorn: "npm:^8.16.0"
     browserslist: "npm:^4.28.1"
     chrome-trace-event: "npm:^1.0.2"
-    enhanced-resolve: "npm:^5.24.2"
+    enhanced-resolve: "npm:^5.24.4"
     es-module-lexer: "npm:^2.1.0"
     eslint-scope: "npm:5.1.1"
     events: "npm:^3.2.0"
@@ -3875,7 +3874,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/926e721ba027e62fcb97ef2455fcf9d0a40ac14805d3f6c5367b5e897c63e06fc2f8e2ac69814d192981cd7d72af4a195028cd8d827095ba78c7946195d7a4d2
+  checksum: 10/cb72358e4385719921085dbc9b937a6fef07ee690c6791c52c98b526d50a52e6c6aa73a70ba4d0588fab18739703028f2be02abdc0229dbf2008bd29dd477f93
   languageName: node
   linkType: hard
 
