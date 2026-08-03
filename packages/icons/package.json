@@ -42,8 +42,8 @@
   "devDependencies": {
     "@rspack/cli": "^2.1.7",
     "@rspack/core": "^2.1.7",
-    "@size-limit/file": "^13.0.1",
-    "@size-limit/webpack": "^13.0.1",
+    "@size-limit/file": "^13.0.3",
+    "@size-limit/webpack": "^13.0.3",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.15.47",
     "@types/react": "^19.0.1",
@@ -51,7 +51,7 @@
     "react": "^19.0.0",
     "react-color": "^2.18.0",
     "react-dom": "^19.0.0",
-    "size-limit": "^13.0.1",
+    "size-limit": "^13.0.3",
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
