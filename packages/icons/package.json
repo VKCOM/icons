@@ -87,8 +87,5 @@
       "brotli": false,
       "webpack": false
     }
-  ],
-  "publishConfig": {
-    "provenance": true
-  }
+  ]
 }
