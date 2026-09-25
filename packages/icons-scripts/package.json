@@ -17,7 +17,7 @@
     "@swc/core": "^1.16.1",
     "glob": "^13.0.6",
     "hast-util-from-html": "^2.0.3",
-    "image-size": "^2.0.2",
+    "image-size": "^2.0.3",
     "kebab-case": "^2.0.2",
     "postcss": "^8.5.26",
     "postcss-js": "^5.1.0",
