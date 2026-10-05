@@ -622,23 +622,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "@size-limit/file@npm:14.0.1"
+"@size-limit/file@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "@size-limit/file@npm:14.1.0"
   peerDependencies:
-    size-limit: 14.0.1
-  checksum: 10/89086f272a94546afd1bdca85643690acb66b37a47c20f1f68736c37292351e9589f7b532d53f943a93f1bc09d376efa50625b223c937c9e510cc059b82be8c9
+    size-limit: 14.1.0
+  checksum: 10/a10c75d3638db9823149b478615925e3229e6b25b9d1845bb109f39ab3034432d5c35d67949814929f555c7e0daa585b34a505a586cfedb7a8e8914bbc814e47
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "@size-limit/webpack@npm:14.0.1"
+"@size-limit/webpack@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "@size-limit/webpack@npm:14.1.0"
   dependencies:
     webpack: "npm:^5.111.1"
   peerDependencies:
-    size-limit: 14.0.1
-  checksum: 10/001a8cc9425e4769ea6d529fe170c91250a0717c2044846a8da27e415d57f46112f0b123d48d25ff17d33d6d10e790201d23acc0d7af4cbed82cababeb76e1ce
+    size-limit: 14.1.0
+  checksum: 10/2ff91203cd7effa14c98aa541e87590112e37bf0df3f5a2944fa81a5ec5a03cd23d7617ca68ce53c7b60f25b74c7b2c468a65b7ae89824301a6b86d8beee35a5
   languageName: node
   linkType: hard
 
@@ -1123,8 +1123,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": "npm:^14.0.1"
-    "@size-limit/webpack": "npm:^14.0.1"
+    "@size-limit/file": "npm:^14.1.0"
+    "@size-limit/webpack": "npm:^14.1.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.2"
     "@swc/helpers": "npm:^0.5.23"
@@ -1132,7 +1132,7 @@ __metadata:
     "@types/react": "npm:^19.0.1"
     concurrently: "npm:^10.0.5"
     react: "npm:^19.0.0"
-    size-limit: "npm:^14.0.1"
+    size-limit: "npm:^14.1.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^7.0.2"
   peerDependencies:
@@ -1146,8 +1146,8 @@ __metadata:
   dependencies:
     "@rspack/cli": "npm:^2.2.7"
     "@rspack/core": "npm:^2.2.7"
-    "@size-limit/file": "npm:^14.0.1"
-    "@size-limit/webpack": "npm:^14.0.1"
+    "@size-limit/file": "npm:^14.1.0"
+    "@size-limit/webpack": "npm:^14.1.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.2"
     "@swc/helpers": "npm:^0.5.23"
@@ -1157,7 +1157,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-color: "npm:^2.18.0"
     react-dom: "npm:^19.0.0"
-    size-limit: "npm:^14.0.1"
+    size-limit: "npm:^14.1.0"
     typescript: "npm:^7.0.2"
   peerDependencies:
     react: ^18 || ^19
@@ -3206,15 +3206,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "size-limit@npm:14.0.1"
+"size-limit@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "size-limit@npm:14.1.0"
   dependencies:
     lilconfig: "npm:^3.1.3"
     nanospinner: "npm:^1.2.2"
   bin:
     size-limit: bin.js
-  checksum: 10/1065f6c75a7f2b4251d2b00c42526cee6aad5e8f25f0d14537d099a8cae4bc7d0b1cdabe736bc212ba3df48e3a5e26eab58bd285a3057c3546d598b4c95a6261
+  checksum: 10/2fd508ff85b1fa4508ef4f4a6dec4105e613709a082bc06cafde385de4cc2088afbbdbde87569d375205ae0cf6ac62ad4c5c3c312c710c6177995f82305e42b6
   languageName: node
   linkType: hard
 
