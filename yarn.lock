@@ -1106,7 +1106,7 @@ __metadata:
     "@swc/core": "npm:^1.16.2"
     glob: "npm:^13.0.6"
     hast-util-from-html: "npm:^2.0.3"
-    image-size: "npm:^2.0.3"
+    image-size: "npm:^2.0.4"
     kebab-case: "npm:^2.0.2"
     postcss: "npm:^8.5.29"
     postcss-js: "npm:^5.1.0"
@@ -2388,12 +2388,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"image-size@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "image-size@npm:2.0.3"
+"image-size@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "image-size@npm:2.0.4"
   bin:
     image-size: bin/image-size.js
-  checksum: 10/821ea07ac18edb63d51a54f9dc20d000d375da70327aea077fe8cc78ef1718c0647c5efaa14b6976383c7875bca1a503611a1fead17634f2048f5bf8309ee949
+  checksum: 10/a9db27f55c77869fad3420e6e614b64ab1af3fb425e4c3136c5dbb4fefd9346864fa69a1ff1706acab54ea766b01fb015cd2cbed90b122d2dbaa20f785a90e2f
   languageName: node
   linkType: hard
 
