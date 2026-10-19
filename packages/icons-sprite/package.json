@@ -37,7 +37,7 @@
     "@swc/core": "^1.16.2",
     "@types/node": "^26.6.5",
     "@types/react": "^19.0.1",
-    "concurrently": "^10.0.5",
+    "concurrently": "^10.0.6",
     "react": "^19.0.0",
     "size-limit": "^14.2.0",
     "ts-node": "^10.9.2",
