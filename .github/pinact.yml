@@ -1,0 +1,8 @@
+version: 3
+
+ignore_actions:
+  # Internal actions and reusable workflows track main.
+  - name: ^VKCOM/gh-actions/.*
+    ref: main
+  - name: ^VKCOM/\.github/\.github/workflows/.*
+    ref: main
