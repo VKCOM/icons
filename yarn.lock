@@ -622,23 +622,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:^14.2.0":
-  version: 14.2.0
-  resolution: "@size-limit/file@npm:14.2.0"
+"@size-limit/file@npm:^14.3.0":
+  version: 14.3.0
+  resolution: "@size-limit/file@npm:14.3.0"
   peerDependencies:
-    size-limit: 14.2.0
-  checksum: 10/7deaa6714c02b5dbc56be1599cf2d185cf49e2257dcf6358503fc055392e08736c3dd24a0e35a8c8a54d55aed6bdd276b8c75e623ec9daa0ba0de0ff7744a7b5
+    size-limit: 14.3.0
+  checksum: 10/76c44c52712877ad18aa3472e17d9037a6ea7dd50b2caea151d8311b251040ec5fbea34d316b31f6869b1c1bd0201020d9abc418f135f2459c71a88e01e3a108
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:^14.2.0":
-  version: 14.2.0
-  resolution: "@size-limit/webpack@npm:14.2.0"
+"@size-limit/webpack@npm:^14.3.0":
+  version: 14.3.0
+  resolution: "@size-limit/webpack@npm:14.3.0"
   dependencies:
-    webpack: "npm:^5.111.1"
+    webpack: "npm:^5.112.0"
   peerDependencies:
-    size-limit: 14.2.0
-  checksum: 10/4be98ad5d527e9c441820768ccc6f07c05853311f681cef31f48208d1e0dd1d41cd74f56be5a22b2d115c4cd5a71974971fc0bf162fa81f1bf33d7d434660325
+    size-limit: 14.3.0
+  checksum: 10/5b6d57ebafed721e54fc71e9cc8afab1d5950c1fd8efbedd392f843d79def151f2b60c7654cb07a9ee607201f8cfd39b3c3ecbcc82f377fb78470e1584eb1ed7
   languageName: node
   linkType: hard
 
@@ -907,7 +907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:^7.0.15, @types/json-schema@npm:^7.0.9":
+"@types/json-schema@npm:^7.0.15":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
   checksum: 10/1a3c3e06236e4c4aab89499c428d585527ce50c24fe8259e8b3926d3df4cfbbbcf306cfc73ddfb66cbafc973116efd15967020b0f738f63e09e64c7d260519e7
@@ -1123,8 +1123,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vkontakte/icons-sprite@workspace:packages/icons-sprite"
   dependencies:
-    "@size-limit/file": "npm:^14.2.0"
-    "@size-limit/webpack": "npm:^14.2.0"
+    "@size-limit/file": "npm:^14.3.0"
+    "@size-limit/webpack": "npm:^14.3.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.18"
     "@swc/helpers": "npm:^0.5.23"
@@ -1132,7 +1132,7 @@ __metadata:
     "@types/react": "npm:^19.0.1"
     concurrently: "npm:^10.0.6"
     react: "npm:^19.0.0"
-    size-limit: "npm:^14.2.0"
+    size-limit: "npm:^14.3.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^7.0.2"
   peerDependencies:
@@ -1146,8 +1146,8 @@ __metadata:
   dependencies:
     "@rspack/cli": "npm:^2.2.9"
     "@rspack/core": "npm:^2.2.9"
-    "@size-limit/file": "npm:^14.2.0"
-    "@size-limit/webpack": "npm:^14.2.0"
+    "@size-limit/file": "npm:^14.3.0"
+    "@size-limit/webpack": "npm:^14.3.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.18"
     "@swc/helpers": "npm:^0.5.23"
@@ -1157,7 +1157,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-color: "npm:^2.18.0"
     react-dom: "npm:^19.0.0"
-    size-limit: "npm:^14.2.0"
+    size-limit: "npm:^14.3.0"
     typescript: "npm:^7.0.2"
   peerDependencies:
     react: ^18 || ^19
@@ -1483,20 +1483,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv-formats@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "ajv-formats@npm:2.1.1"
-  dependencies:
-    ajv: "npm:^8.0.0"
-  peerDependencies:
-    ajv: ^8.0.0
-  peerDependenciesMeta:
-    ajv:
-      optional: true
-  checksum: 10/70c263ded219bf277ffd9127f793b625f10a46113b2e901e150da41931fcfd7f5592da6d66862f4449bb157ffe65867c3294a7df1d661cc232c4163d5a1718ed
-  languageName: node
-  linkType: hard
-
 "ajv-formats@npm:^3.0.1":
   version: 3.0.1
   resolution: "ajv-formats@npm:3.0.1"
@@ -1522,7 +1508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^8.0.0, ajv@npm:^8.9.0":
+"ajv@npm:^8.0.0":
   version: 8.18.0
   resolution: "ajv@npm:8.18.0"
   dependencies:
@@ -2009,13 +1995,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.25.0":
-  version: 5.25.1
-  resolution: "enhanced-resolve@npm:5.25.1"
+"enhanced-resolve@npm:^5.26.0":
+  version: 5.26.0
+  resolution: "enhanced-resolve@npm:5.26.0"
   dependencies:
     graceful-fs: "npm:^4.2.4"
     tapable: "npm:^2.3.3"
-  checksum: 10/d9704d7947c7fefd40490903fe85fd461148c1219f1d27511578099c696e0f0c46bfd16c6f5d99a5c5b6c3facc25b6075f44646605a5af500139c66b3d555792
+  checksum: 10/bd998505f0afd714a3c06ec24155fdc23101f5ace7887f36197857e388e7b2fb9616915c5c5eab6c240f12d9ff2fb09b53ab386593ef5d8664dcb07ff8447513
   languageName: node
   linkType: hard
 
@@ -2536,10 +2522,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lilconfig@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "lilconfig@npm:3.1.3"
-  checksum: 10/b932ce1af94985f0efbe8896e57b1f814a48c8dbd7fc0ef8469785c6303ed29d0090af3ccad7e36b626bfca3a4dc56cc262697e9a8dd867623cf09a39d54e4c3
+"lilconfig@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "lilconfig@npm:3.1.4"
+  checksum: 10/354a80812a3f98e3198c44e48c1ee6763a0596c99013c34b2fa013e466e74cc381bcdfe5a796591f7d0d03ee31117c9dd74267f2b8b3dfb43e0d1ef25c7a6783
   languageName: node
   linkType: hard
 
@@ -2684,13 +2670,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimizer-webpack-plugin@npm:^5.7.0":
-  version: 5.12.0
-  resolution: "minimizer-webpack-plugin@npm:5.12.0"
+"minimizer-webpack-plugin@npm:^5.13.0":
+  version: 5.13.1
+  resolution: "minimizer-webpack-plugin@npm:5.13.1"
   dependencies:
     "@jridgewell/trace-mapping": "npm:^0.3.31"
     jest-worker: "npm:^27.4.5"
-    schema-utils: "npm:^4.3.3"
+    schema-utils: "npm:^4.6.0"
     terser: "npm:^5.51.0"
   peerDependencies:
     webpack: ^5.1.0
@@ -2727,7 +2713,7 @@ __metadata:
       optional: true
     uglify-js:
       optional: true
-  checksum: 10/d12db1ee1cb6fc5910e7ee12efe538082308262eb706ce31ed493bebc8649b03a46ab94244c94949f831a9c0b67e3a0ddd8119632c2bdda466f5ee8ebe0c409d
+  checksum: 10/f03f4264d2dedebb9c3554fde055b7d018054bddb0ad1f9b99e4746dec349a4733769b06b134e4d808c12fb16dfd70199fcaf991f1726479a1f0224b52472a33
   languageName: node
   linkType: hard
 
@@ -3117,27 +3103,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^4.3.3":
-  version: 4.3.3
-  resolution: "schema-utils@npm:4.3.3"
-  dependencies:
-    "@types/json-schema": "npm:^7.0.9"
-    ajv: "npm:^8.9.0"
-    ajv-formats: "npm:^2.1.1"
-    ajv-keywords: "npm:^5.1.0"
-  checksum: 10/dba77a46ad7ff0c906f7f09a1a61109e6cb56388f15a68070b93c47a691f516c6a3eb454f81a8cceb0a0e55b87f8b05770a02bfb1f4e0a3143b5887488b2f900
-  languageName: node
-  linkType: hard
-
-"schema-utils@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "schema-utils@npm:4.5.0"
+"schema-utils@npm:^4.6.0, schema-utils@npm:^4.8.1":
+  version: 4.8.1
+  resolution: "schema-utils@npm:4.8.1"
   dependencies:
     "@types/json-schema": "npm:^7.0.15"
     ajv: "npm:^8.20.0"
     ajv-formats: "npm:^3.0.1"
     ajv-keywords: "npm:^5.1.0"
-  checksum: 10/a5c1167f5bbcce3bd4f2031b58cbd77b8bad6d8ec0278bd9c68409aa6142758def38d78a2f05fa4ce157408ed9cea6457d05d88b6368c39b8b598f59e39b19b8
+  peerDependencies:
+    webpack: ^5.112.0
+  peerDependenciesMeta:
+    webpack:
+      optional: true
+  bin:
+    schema-utils: bin/schema-utils.js
+  checksum: 10/d8a08d619478326bf60cff577f4b9b36f494937f806ad5d27cce07a93413df6d8651f36969c8ccf3c25022916c12f6364c50697fd4c7c34a6cff61d246f532b9
   languageName: node
   linkType: hard
 
@@ -3217,15 +3198,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:^14.2.0":
-  version: 14.2.0
-  resolution: "size-limit@npm:14.2.0"
+"size-limit@npm:^14.3.0":
+  version: 14.3.0
+  resolution: "size-limit@npm:14.3.0"
   dependencies:
-    lilconfig: "npm:^3.1.3"
+    lilconfig: "npm:^3.1.4"
     nanospinner: "npm:^1.2.2"
   bin:
     size-limit: bin.js
-  checksum: 10/acb211e0a801d2cedd193321599f2d97711137d68853a00fc7d29c53ab89a07cdc80465e0f9b4a84ef730add85d4b5bbba63b9fa1d56a76e11e6283c9d0d6186
+  checksum: 10/aaf5c6a04b70aeee8f4d7d2b8611f7c81213322a3dee147d61a4c159cebc6bbc88671ade5eb7fd8dd514da97e44a28bde67ea3cc8467c0761c4f219237570e3d
   languageName: node
   linkType: hard
 
@@ -3832,12 +3813,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.5.2":
-  version: 2.5.2
-  resolution: "watchpack@npm:2.5.2"
+"watchpack@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "watchpack@npm:2.6.3"
   dependencies:
     graceful-fs: "npm:^4.1.2"
-  checksum: 10/203a41249b20521da0d86d9449510b66764440a189351eb3d2f84257bfddd4713ba984b7a1e1c1ef5938d987f7df37ee960ec0e2606a204d372f6366ea816e25
+  checksum: 10/e0509644c09acbb91626cb318f2745a3d842040d458894e8f63bbbb797408cd8838cbc100f019ed4b5cc6d5426474d4d01d451f90758956e4fab2d8f4e9da384
   languageName: node
   linkType: hard
 
@@ -3855,16 +3836,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-sources@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "webpack-sources@npm:3.5.1"
-  checksum: 10/50b9699a3ab9a698e117d8a6b816235576f17e60aeca0a44269041773f960c3beb2ad10d07bc5f2ef8eebde3db5275c6a23566dad475db8f840a34a7bfabd2c3
+"webpack-sources@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "webpack-sources@npm:3.6.0"
+  checksum: 10/7f89bc6a7f08b4b19dd7098ed92eac397648bc36d4c555ad54abad621ff60643ea94d2652cb708d57a3ccf10cec0471aec8dca254c9e30721157082ff66b9964
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.111.1":
-  version: 5.111.1
-  resolution: "webpack@npm:5.111.1"
+"webpack@npm:^5.112.0":
+  version: 5.112.1
+  resolution: "webpack@npm:5.112.1"
   dependencies:
     "@types/estree": "npm:^1.0.8"
     "@types/json-schema": "npm:^7.0.15"
@@ -3873,22 +3854,22 @@ __metadata:
     "@webassemblyjs/wasm-parser": "npm:^1.14.1"
     browserslist: "npm:^4.28.1"
     chrome-trace-event: "npm:^1.0.2"
-    enhanced-resolve: "npm:^5.25.0"
+    enhanced-resolve: "npm:^5.26.0"
     es-module-lexer: "npm:^2.1.0"
     events: "npm:^3.2.0"
     graceful-fs: "npm:^4.2.11"
     mime-db: "npm:^1.54.0"
-    minimizer-webpack-plugin: "npm:^5.7.0"
-    schema-utils: "npm:^4.5.0"
+    minimizer-webpack-plugin: "npm:^5.13.0"
+    schema-utils: "npm:^4.8.1"
     tapable: "npm:^2.3.0"
-    watchpack: "npm:^2.5.2"
-    webpack-sources: "npm:^3.5.1"
+    watchpack: "npm:^2.6.3"
+    webpack-sources: "npm:^3.6.0"
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/1ce6844f0e2709083c8e24165dfa526d08a52ad2dfd7d39eed87edb170618ad5e23ac50deb646b019c41d576eed071e6bf407b7f9fce2010643f9fc9a705d284
+  checksum: 10/5177a52cbf417e5443de57dab0f39b07317fa670568c4d0e5fe541a9300ec38ffe95389fef7b31ae9c8c8c7b97ea26a17144dd055edee27eedebd67dca544763
   languageName: node
   linkType: hard
 
