@@ -57,6 +57,23 @@
       "quoteStyle": "single"
     }
   },
+  "yaml": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["packages/icons-sprite/src/raster/components/RasterIcon/RasterIcon.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noComponentHookFactories": "off"
+          }
+        }
+      }
+    }
+  ],
   "assist": {
     "enabled": true,
     "actions": { "source": { "organizeImports": "on" } },

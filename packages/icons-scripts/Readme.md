@@ -119,7 +119,7 @@ generateIcons({
 ```tsx
 <Icon28VideocamPart>
   <Icon28VideocamPart.SlashPart />
-</Icon28VideocamPart>
+</Icon28VideocamPart>;
 ```
 
 Сам компонент иконки и все его сабкомпоненты имеют одинаковый набор принимаемых параметров, поэтому каждую отдельную часть можно покрасить например через `fill`.
