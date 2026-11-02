@@ -31,15 +31,15 @@
     "@swc/helpers": "^0.5.23"
   },
   "devDependencies": {
-    "@size-limit/file": "^14.2.0",
-    "@size-limit/webpack": "^14.2.0",
+    "@size-limit/file": "^14.3.0",
+    "@size-limit/webpack": "^14.3.0",
     "@swc/cli": "^0.8.1",
     "@swc/core": "^1.16.18",
     "@types/node": "^26.6.5",
     "@types/react": "^19.0.1",
     "concurrently": "^10.0.6",
     "react": "^19.0.0",
-    "size-limit": "^14.2.0",
+    "size-limit": "^14.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   },
