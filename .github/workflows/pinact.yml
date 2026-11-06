@@ -23,4 +23,5 @@ jobs:
         with:
           review: 'true'
           skip_push: 'true'
+          fix: 'false'
           github_token: ${{ secrets.GITHUB_TOKEN }}
