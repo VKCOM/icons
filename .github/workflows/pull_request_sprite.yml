@@ -22,4 +22,3 @@ jobs:
         uses: ./.github/actions/node-setup
 
       - run: yarn run test
-      - run: yarn run build

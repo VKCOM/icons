@@ -43,28 +43,27 @@ const RasterIcon = React.memo(function RasterIcon({
 }: RasterIconProps) {
   const appearance = useIconAppearance();
 
-  const srcSet = densityBucketTypes
-    .reduce<string[]>((set, densityBucket) => {
+  const sources: string[] = [];
+  let firstSrc: string | undefined;
+  for (const densityBucket of densityBucketTypes) {
+    const densityAppearanceKey = getDensityBucketAppearanceKey(appearance, densityBucket);
+    let src = restProps[densityAppearanceKey];
+    delete restProps[densityAppearanceKey];
+
+    for (const appearance of appearanceTypes) {
       const densityAppearanceKey = getDensityBucketAppearanceKey(appearance, densityBucket);
-      let src = restProps[densityAppearanceKey];
+      if (!src) {
+        src = restProps[densityAppearanceKey];
+      }
+
       delete restProps[densityAppearanceKey];
+    }
 
-      for (const appearance of appearanceTypes) {
-        const densityAppearanceKey = getDensityBucketAppearanceKey(appearance, densityBucket);
-        if (!src) {
-          src = restProps[densityAppearanceKey];
-        }
-
-        delete restProps[densityAppearanceKey];
-      }
-
-      if (src) {
-        set.push(`${src} ${dppxModifiersMap[densityBucket]}x`);
-      }
-
-      return set;
-    }, [])
-    .join(', ');
+    if (src) {
+      firstSrc ||= src;
+      sources.push(`${src} ${dppxModifiersMap[densityBucket]}x`);
+    }
+  }
 
   return (
     <img
@@ -84,7 +83,8 @@ const RasterIcon = React.memo(function RasterIcon({
         .trim()}
       width={width}
       height={height}
-      srcSet={srcSet}
+      src={firstSrc}
+      srcSet={sources.join(', ')}
       loading="lazy"
       draggable={false}
       {...restProps}

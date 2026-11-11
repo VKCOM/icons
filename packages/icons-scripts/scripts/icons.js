@@ -22,6 +22,7 @@ export function generateIcons(options) {
     extraCategories,
     svgoPlugins,
     deprecatedIcons,
+    convertToWebp,
   } = prepareOptions(options);
 
   debugInfo('Generating icons...');
@@ -39,17 +40,17 @@ export function generateIcons(options) {
   let exportsMap = {};
 
   debugInfo('Creating raster icons map...');
-  const rasterIconsExportsMap = generateRasterIcons(srcDirectory, tsFilesDirectory);
+  let rasterIconsExportsMap;
+  const generation = generateRasterIcons(srcDirectory, tsFilesDirectory, { convertToWebp })
+    .then((rasterExports) => {
+      rasterIconsExportsMap = rasterExports;
+      exportsMap = { ...exportsMap, ...rasterExports };
 
-  exportsMap = {
-    ...exportsMap,
-    ...rasterIconsExportsMap,
-  };
-
-  debugInfo('Creating icons map...');
-  createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons, (content) => {
-    return optimize(content, svgoPlugins);
-  })
+      debugInfo('Creating icons map...');
+      return createIconsMap(srcDirectory, extraCategories, '', deprecatedIcons, (content) => {
+        return optimize(content, svgoPlugins);
+      });
+    })
     .then((iconsMap) => {
       debugInfo(
         `Writing ${iconsMap.length} vector & ${
@@ -183,6 +184,7 @@ export function generateIcons(options) {
 
     const entries = await glob.glob(`${tsFilesDirectory}/**/*.{ts,tsx,js,jsx,mjs,es,es6}`, {
       nodir: true,
+      ignore: '**/*.d.ts',
     });
 
     await Promise.all(
@@ -230,10 +232,24 @@ export function generateIcons(options) {
       await fs.promises.copyFile(file, path.join(distDirectory, 'typings', relativePath));
     };
 
+    const rasterDeclarations = path.join(tsFilesDirectory, 'declaration.d.ts');
+    if (fs.existsSync(rasterDeclarations)) {
+      await fs.promises.copyFile(rasterDeclarations, path.join(distDirectory, 'declaration.d.ts'));
+    }
+
     const matches = await glob.glob(`${distDirectory}/**/*.d.ts`);
 
     await Promise.all(matches.map(copyFile));
+
+    const rasterDirectory = path.join(tsFilesDirectory, 'raster');
+    if (fs.existsSync(rasterDirectory)) {
+      await fs.promises.cp(rasterDirectory, path.join(distDirectory, 'raster'), {
+        recursive: true,
+      });
+    }
   };
+
+  return generation;
 }
 
 /**
