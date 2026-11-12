@@ -1,14 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { createRasterIconsMap } from './icons-map.js';
+import { createRasterIconsMapAsync } from './icons-map.js';
 import { createReactRasterIcon } from './output/react.js';
 
 /**
  * @param {string} srcDirectory
  * @param {string} tsFilesDirectory
+ * @param {{convertToWebp?: boolean}} [options]
  */
-export function generateRasterIcons(srcDirectory, tsFilesDirectory) {
-  const iconsMap = createRasterIconsMap(srcDirectory);
+export async function generateRasterIcons(srcDirectory, tsFilesDirectory, options = {}) {
+  const iconsMap = await createRasterIconsMapAsync(
+    srcDirectory,
+    path.join(tsFilesDirectory, 'raster'),
+    options,
+  );
 
   const exportsMap = {};
 

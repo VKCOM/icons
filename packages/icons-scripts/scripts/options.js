@@ -16,6 +16,7 @@ import { debugError } from './utils.js';
  * @property {string} [cwd]
  * @property {any[]} [svgoPlugins]
  * @property {DeprecatedIcons} [deprecatedIcons] List of deprecated icons
+ * @property {boolean} [convertToWebp] Convert raster icons to lossless WebP. Defaults to false.
  */
 
 /**
@@ -32,6 +33,7 @@ export function prepareOptions(options) {
     cwd = process.cwd(),
     svgoPlugins = [],
     deprecatedIcons = {},
+    convertToWebp = false,
   } = options;
 
   if (!srcDirectory || !distDirectory) {
@@ -57,5 +59,6 @@ export function prepareOptions(options) {
     cwd,
     svgoPlugins,
     deprecatedIcons,
+    convertToWebp,
   };
 }

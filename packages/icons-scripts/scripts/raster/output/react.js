@@ -26,7 +26,7 @@ export function createReactRasterIcon(
         const densityPath = options[appearance]?.[densityBucketType];
 
         if (!densityPath) {
-          return data;
+          continue;
         }
 
         const importPath = path.relative(outputPath, densityPath);

@@ -10,7 +10,7 @@
     "build:icons": "yarn workspace @vkontakte/icons run icons-build",
     "build:icons-docs": "yarn workspace @vkontakte/icons run docs",
     "build:icons-sprite": "yarn workspace @vkontakte/icons-sprite run build",
-    "test": "yarn biome",
+    "test": "yarn biome && yarn workspace @vkontakte/icons-scripts test",
     "biome": "biome check",
     "size": "yarn workspace @vkontakte/icons run size",
     "g:npm:version": "cd $INIT_CWD && npm version --no-workspaces-update --no-commit-hooks --no-git-tag-version",
