@@ -1093,12 +1093,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/helpers@npm:^0.5.23":
-  version: 0.5.23
-  resolution: "@swc/helpers@npm:0.5.23"
-  dependencies:
-    tslib: "npm:^2.8.0"
-  checksum: 10/899c9761e827d5bf504bd02067596cfe59ad6c7d6b6f0691a2fb05acf3e6c2954ddece7e15d4a6a81e8d95c81500652e6abec326c6c9bbb50bc3e2141696de43
+"@swc/helpers@npm:^0.5.24":
+  version: 0.5.24
+  resolution: "@swc/helpers@npm:0.5.24"
+  checksum: 10/8e42d7b15d173c54003f4e66bd9d4bf120f6a5a662d232f942e528aaf057fc4ef176e562967c4fa05cf38bd85fa4b21ddb9a512016ebd74996eb0c9e3a4a7fad
   languageName: node
   linkType: hard
 
@@ -1410,7 +1408,7 @@ __metadata:
     "@size-limit/webpack": "npm:^14.3.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.20"
-    "@swc/helpers": "npm:^0.5.23"
+    "@swc/helpers": "npm:^0.5.24"
     "@types/node": "npm:^26.6.5"
     "@types/react": "npm:^19.0.1"
     concurrently: "npm:^10.0.6"
@@ -1434,7 +1432,7 @@ __metadata:
     "@size-limit/webpack": "npm:^14.3.0"
     "@swc/cli": "npm:^0.8.1"
     "@swc/core": "npm:^1.16.20"
-    "@swc/helpers": "npm:^0.5.23"
+    "@swc/helpers": "npm:^0.5.24"
     "@types/react": "npm:^19.0.1"
     "@vkontakte/icons-scripts": "workspace:^"
     "@vkontakte/icons-sprite": "workspace:^"
@@ -3950,7 +3948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.8.0":
+"tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10/3e2e043d5c2316461cb54e5c7fe02c30ef6dccb3384717ca22ae5c6b5bc95232a6241df19c622d9c73b809bea33b187f6dbc73030963e29950c2141bc32a79f7
