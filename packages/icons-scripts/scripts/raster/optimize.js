@@ -4,16 +4,7 @@ import sharp from 'sharp';
 
 let oxipngReady;
 
-const protectedPngChunks = new Set([
-  'acTL',
-  'iCCP',
-  'gAMA',
-  'cHRM',
-  'sRGB',
-  'cICP',
-  'mDCV',
-  'cLLI',
-]);
+const protectedPngChunks = new Set(['acTL', 'iCCP', 'cHRM', 'cICP', 'mDCV', 'cLLI']);
 
 /**
  * @param {Buffer} input
@@ -30,22 +21,20 @@ export async function optimizeRasterIcon(input, { convertToWebp = false } = {}) 
     (metadata.pages ?? 1) !== 1 ||
     metadata.hasProfile ||
     metadata.orientation ||
-    hasProtectedPngChunks(input)
+    hasProtectedPngChunks(input, convertToWebp)
   ) {
     return { buffer: input, extension: '.png' };
   }
 
-  const original = await image.clone().ensureAlpha().raw().toBuffer();
   if (convertToWebp) {
     const webp = await image
       .clone()
       .webp({ lossless: true, effort: 6, quality: 100, exact: true })
       .toBuffer();
-    if (await preservesPixels(webp, original)) {
-      return { buffer: webp, extension: '.webp' };
-    }
+    return { buffer: webp, extension: '.webp' };
   }
 
+  const original = await image.clone().ensureAlpha().raw().toBuffer();
   const pngOptions = { compressionLevel: 9, adaptiveFiltering: true };
   let png = input;
   const compressed = await image.clone().png(pngOptions).toBuffer();
@@ -103,24 +92,52 @@ async function preservesPixels(input, original) {
   return decoded.equals(original);
 }
 
-/** @param {Buffer} input */
-function hasProtectedPngChunks(input) {
+/**
+ * @param {Buffer} input
+ * @param {boolean} allowStandardSrgb
+ */
+function hasProtectedPngChunks(input, allowStandardSrgb) {
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
   if (!input.subarray(0, signature.length).equals(signature)) {
     return false;
   }
 
+  let hasSrgb = false;
+  let hasGamma = false;
   // Inspect chunk headers rather than matching pixel or metadata bytes.
   for (let offset = signature.length; offset + 12 <= input.length; ) {
     const length = input.readUInt32BE(offset);
     const type = input.toString('ascii', offset + 4, offset + 8);
+    if (length > input.length - offset - 12) {
+      return true;
+    }
+    // Unprofiled WebP uses sRGB. Only discard an explicit standard sRGB
+    // declaration with perceptual intent and its optional fallback gamma.
+    if (type === 'sRGB') {
+      if (!allowStandardSrgb || hasSrgb || length !== 1 || input[offset + 8] !== 0) {
+        return true;
+      }
+      hasSrgb = true;
+    }
+    if (type === 'gAMA') {
+      if (
+        !allowStandardSrgb ||
+        hasGamma ||
+        length !== 4 ||
+        input.readUInt32BE(offset + 8) !== 45455
+      ) {
+        return true;
+      }
+      hasGamma = true;
+    }
     if (protectedPngChunks.has(type)) {
       return true;
     }
     if (type === 'IEND') {
-      return false;
+      break;
     }
     offset += length + 12;
   }
-  return false;
+  // A gamma value alone does not specify the sRGB primaries or transfer curve.
+  return hasGamma && !hasSrgb;
 }

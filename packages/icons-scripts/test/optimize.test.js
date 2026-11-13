@@ -147,11 +147,65 @@ test('PNG colour chunks without an ICC profile are preserved in both output mode
   for (const [type, data] of [
     ['gAMA', gamma],
     ['cHRM', chromaticities],
-    ['sRGB', Buffer.from([0])],
+    ['sRGB', Buffer.from([1])],
   ]) {
     await t.test(type, async () => {
       const input = Buffer.concat([base.subarray(0, 33), pngChunk(type, data), base.subarray(33)]);
       assert.equal((await sharp(input).metadata()).hasProfile, false);
+      for (const convertToWebp of [false, true]) {
+        const optimized = await optimizeRasterIcon(input, { convertToWebp });
+        assert.equal(optimized.extension, '.png');
+        assert.deepEqual(optimized.buffer, input);
+      }
+    });
+  }
+});
+
+test('standard sRGB PNGs convert to exact WebP while PNG mode preserves colour chunks', async (t) => {
+  const base = await noisyPng();
+  const gamma = Buffer.alloc(4);
+  gamma.writeUInt32BE(45455);
+  const srgbChunk = pngChunk('sRGB', Buffer.from([0]));
+  const gammaChunk = pngChunk('gAMA', gamma);
+  for (const [name, chunks] of [
+    ['sRGB only', [srgbChunk]],
+    ['sRGB followed by gamma', [srgbChunk, gammaChunk]],
+    ['gamma followed by sRGB', [gammaChunk, srgbChunk]],
+  ]) {
+    await t.test(name, async () => {
+      const input = Buffer.concat([base.subarray(0, 33), ...chunks, base.subarray(33)]);
+      const webp = await optimizeRasterIcon(input, { convertToWebp: true });
+      assert.equal(webp.extension, '.webp');
+      assert.equal((await sharp(webp.buffer).metadata()).format, 'webp');
+      assert.deepEqual(await rgba(webp.buffer), await rgba(input));
+      const png = await optimizeRasterIcon(input, { convertToWebp: false });
+      assert.equal(png.extension, '.png');
+      assert.deepEqual(png.buffer, input);
+    });
+  }
+});
+
+test('sRGB exceptions do not bypass protection for other colour metadata', async (t) => {
+  const base = await noisyPng();
+  const gamma = Buffer.alloc(4);
+  gamma.writeUInt32BE(45455);
+  const nonstandardGamma = Buffer.alloc(4);
+  nonstandardGamma.writeUInt32BE(100000);
+  const chromaticities = Buffer.alloc(32);
+  [31270, 32900, 64000, 33000, 30000, 60000, 15000, 6000].forEach((value, index) => {
+    chromaticities.writeUInt32BE(value, index * 4);
+  });
+  const srgbChunk = pngChunk('sRGB', Buffer.from([0]));
+  for (const [name, chunks] of [
+    ['standard gamma without sRGB', [pngChunk('gAMA', gamma)]],
+    ['nonstandard gamma with sRGB', [pngChunk('gAMA', nonstandardGamma), srgbChunk]],
+    ['chromaticities with sRGB', [srgbChunk, pngChunk('cHRM', chromaticities)]],
+    ['relative colorimetric intent', [pngChunk('sRGB', Buffer.from([1]))]],
+    ['saturation intent', [pngChunk('sRGB', Buffer.from([2]))]],
+    ['absolute colorimetric intent', [pngChunk('sRGB', Buffer.from([3]))]],
+  ]) {
+    await t.test(name, async () => {
+      const input = Buffer.concat([base.subarray(0, 33), ...chunks, base.subarray(33)]);
       for (const convertToWebp of [false, true]) {
         const optimized = await optimizeRasterIcon(input, { convertToWebp });
         assert.equal(optimized.extension, '.png');
