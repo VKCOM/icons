@@ -19,7 +19,7 @@
   "dependencies": {
     "@jsquash/oxipng": "^2.3.0",
     "@swc/core": "^1.16.20",
-    "glob": "^14.0.2",
+    "glob": "^14.0.4",
     "hast-util-from-html": "^2.0.3",
     "image-size": "^2.0.4",
     "kebab-case": "^2.0.2",
