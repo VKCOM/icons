@@ -20,7 +20,7 @@
     "@jsquash/oxipng": "^2.3.0",
     "@swc/core": "^1.16.20",
     "glob": "^14.0.4",
-    "hast-util-from-html": "^2.0.3",
+    "hast-util-from-html": "^2.1.0",
     "image-size": "^2.1.0",
     "kebab-case": "^2.0.2",
     "postcss": "^8.5.31",
