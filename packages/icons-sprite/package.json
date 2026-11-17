@@ -28,7 +28,7 @@
     "test": "yarn build && node --test '**/*.test.*'"
   },
   "dependencies": {
-    "@swc/helpers": "^0.5.23"
+    "@swc/helpers": "^0.5.24"
   },
   "devDependencies": {
     "@size-limit/file": "^14.3.0",
