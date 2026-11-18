@@ -23,6 +23,7 @@
       "default": "./dist/index.js"
     },
     "./src/svg/": "./src/svg/",
+    "./src/deprecated.json": "./src/deprecated.json",
     "./package.json": "./package.json"
   },
   "scripts": {
