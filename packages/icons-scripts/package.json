@@ -23,7 +23,7 @@
     "hast-util-from-html": "^2.1.0",
     "image-size": "^2.1.0",
     "kebab-case": "^2.0.2",
-    "postcss": "^8.5.31",
+    "postcss": "^8.5.33",
     "postcss-js": "^5.1.0",
     "property-information": "^7.2.0",
     "react-attr-converter": "^0.3.1",
