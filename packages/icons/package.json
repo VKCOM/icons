@@ -41,8 +41,8 @@
     "@vkontakte/icons-sprite": "workspace:^"
   },
   "devDependencies": {
-    "@rspack/cli": "^2.3.2",
-    "@rspack/core": "^2.3.2",
+    "@rspack/cli": "^2.3.3",
+    "@rspack/core": "^2.3.3",
     "@size-limit/file": "^14.3.0",
     "@size-limit/webpack": "^14.3.0",
     "@swc/cli": "^0.8.1",
